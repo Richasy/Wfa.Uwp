@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\..\Adapter\Adapter.Interfaces\Adapter.Interfaces.csproj" />
         <ProjectReference Include="..\Provider.Interfaces\Provider.Interfaces.csproj" />
     </ItemGroup>
 

@@ -144,9 +144,25 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Adapter\Adapter.Implementation\Adapter.Implementation.csproj">
+      <Project>{45974AF9-9748-4B24-B13D-C35A6969A5C4}</Project>
+      <Name>Adapter.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Adapter\Adapter.Interfaces\Adapter.Interfaces.csproj">
+      <Project>{D4CC4A6B-3B1F-4AE1-AE9A-557AFEFF4A92}</Project>
+      <Name>Adapter.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Models\Models.Data\Models.Data.csproj">
       <Project>{1D8683BF-5284-4FD2-8E57-8FDDAAFBDFFB}</Project>
       <Name>Models.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Provider\Provider.Implementation\Provider.Implementation.csproj">
+      <Project>{10E68C04-C482-4CB4-BE48-C93F78BE4462}</Project>
+      <Name>Provider.Implementation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Provider\Provider.Interfaces\Provider.Interfaces.csproj">
+      <Project>{5D7D2218-2FB3-45D5-88FF-645F07809858}</Project>
+      <Name>Provider.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>

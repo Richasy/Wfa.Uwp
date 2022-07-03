@@ -1,9 +1,15 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using System;
+using System.Threading.Tasks;
+using Splat;
 using Wfa.DI.App;
+using Wfa.Models.Data.Constants;
+using Wfa.Toolkit.Interfaces;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Foundation;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -21,9 +27,10 @@ namespace Richasy.Wfa.App
         public App()
         {
             InitializeComponent();
-            DIFactory.RegisterRequiredServices();
+            DIFactory.RegisterBasicServices();
             Suspending += OnSuspending;
             UnhandledException += OnUnhandledException;
+            Locator.Current.GetService<IAppToolkit>().InitializeTheme();
         }
 
         /// <summary>
@@ -31,25 +38,25 @@ namespace Richasy.Wfa.App
         /// Will be used in situations such as launching an application to open a specific file.
         /// </summary>
         /// <param name="e">Detailed information about the start request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
-        {
-            OnLaunchedOrActivated(e);
-        }
+        protected override async void OnLaunched(LaunchActivatedEventArgs e)
+            => await OnLaunchedOrActivatedAsync(e);
 
         /// <summary>
         /// Called when the application is activated by the end user.
         /// </summary>
         /// <param name="args">Detailed information about the active request and process.</param>
-        protected override void OnActivated(IActivatedEventArgs args)
-        {
-            OnLaunchedOrActivated(args);
-        }
+        protected override async void OnActivated(IActivatedEventArgs args)
+            => await OnLaunchedOrActivatedAsync(args);
 
-        private void OnLaunchedOrActivated(IActivatedEventArgs e)
+        private async Task OnLaunchedOrActivatedAsync(IActivatedEventArgs e)
         {
+            var appView = ApplicationView.GetForCurrentView();
+            appView.SetPreferredMinSize(new Size(AppConstants.AppMinWidth, AppConstants.AppMinHeight));
+            appView.SetDesiredBoundsMode(ApplicationViewBoundsMode.UseCoreWindow);
+
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
-            if (!(Window.Current.Content is Frame rootFrame))
+            if (Window.Current.Content is not Frame rootFrame)
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
@@ -63,6 +70,7 @@ namespace Richasy.Wfa.App
 
                 // Place the frame in the current Window
                 Window.Current.Content = rootFrame;
+                await DIFactory.RegisterRequiredServicesAsync();
             }
 
             if (e is LaunchActivatedEventArgs && (e as LaunchActivatedEventArgs).PrelaunchActivated == false)
@@ -74,7 +82,7 @@ namespace Richasy.Wfa.App
             }
 
             // App launched or activated by link
-            else if (e is ProtocolActivatedEventArgs protocalArgs)
+            else if (e is IProtocolActivatedEventArgs protocalArgs)
             {
                 var arg = protocalArgs.Uri.Query.Replace("?", string.Empty);
                 if (rootFrame.Content == null)
@@ -107,6 +115,7 @@ namespace Richasy.Wfa.App
             }
 
             Window.Current.Activate();
+            Locator.Current.GetService<IAppToolkit>().InitializeTitleBar();
         }
 
         /// <summary>
@@ -140,8 +149,7 @@ namespace Richasy.Wfa.App
         private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-
-            // TODO: Handle e.Exception
+            Locator.Current.GetService<IFullLogger>().Error(e.Exception);
         }
     }
 }
