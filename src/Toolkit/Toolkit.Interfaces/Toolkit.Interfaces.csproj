@@ -2,7 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <RootNamespace>Richasy.Toolkit.Interfaces</RootNamespace>
+        <RootNamespace>Wfa.Toolkit.Interfaces</RootNamespace>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Models\Models.Enums\Models.Enums.csproj" />
+    </ItemGroup>
 
 </Project>

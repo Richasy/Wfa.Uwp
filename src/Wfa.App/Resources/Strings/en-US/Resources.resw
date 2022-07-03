@@ -121,7 +121,10 @@
     <value>App description</value>
   </data>
   <data name="AppName" xml:space="preserve">
-    <value>Project</value>
+    <value>Warframe Alerting Prime</value>
+  </data>
+  <data name="AppShortName" xml:space="preserve">
+    <value>WFA</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>

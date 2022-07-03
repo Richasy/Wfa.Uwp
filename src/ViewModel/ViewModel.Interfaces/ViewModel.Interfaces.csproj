@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Wfa.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+</Project>

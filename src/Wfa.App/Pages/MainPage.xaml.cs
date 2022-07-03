@@ -14,7 +14,7 @@ namespace Richasy.Wfa.App.Pages
         /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }
