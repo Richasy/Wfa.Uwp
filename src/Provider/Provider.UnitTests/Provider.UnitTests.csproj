@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <RootNamespace>Richasy.Provider.UnitTests</RootNamespace>
+    </PropertyGroup>
+
+    <Import Project="$(SolutionDir)\UnitTests.targets" />
+
+    <ItemGroup>
+        <ProjectReference Include="..\Provider.Implementation\Provider.Implementation.csproj" />
+    </ItemGroup>
+
+</Project>
