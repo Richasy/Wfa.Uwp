@@ -2,6 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 using Wfa.Models.Community;
+using Wfa.Models.Data.Center;
 
 namespace Wfa.Models.Data.Context
 {
@@ -69,6 +70,21 @@ namespace Wfa.Models.Data.Context
         /// 装甲数据集.
         /// </summary>
         public DbSet<Warframe> Warframes { get; set; }
+
+        /// <summary>
+        /// 物品翻译数据集.
+        /// </summary>
+        public DbSet<Dict> Dicts { get; set; }
+
+        /// <summary>
+        /// 元数据集.
+        /// </summary>
+        public DbSet<Meta> Metas { get; set; }
+
+        /// <summary>
+        /// WM商品数据集.
+        /// </summary>
+        public DbSet<MarketItem> MarketItems { get; set; }
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

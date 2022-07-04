@@ -21,5 +21,15 @@ namespace Wfa.Models.Data.Constants
 
         public const string LoggerFolder = "Logger";
         public const string LoggerName = "AppLog.log";
+
+        public const string WarframeItemsReleaseIdKey = "WarframeItemsReleaseId";
+        public const string LanguageKey = "Language";
+
+        /// <summary>
+        /// 伪加载时间.
+        /// </summary>
+        public const int FakeLoadingMilliseconds = 300;
+
+        public static string CacheFolder { get; set; }
     }
 }

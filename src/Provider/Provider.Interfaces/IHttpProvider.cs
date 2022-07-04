@@ -52,6 +52,7 @@ namespace Wfa.Provider.Interfaces
         /// <param name="response">得到的 <see cref="HttpResponseMessage"/>.</param>
         /// <typeparam name="T">需要转换的目标类型.</typeparam>
         /// <returns>转换结果.</returns>
-        Task<T> ParseAsync<T>(HttpResponseMessage response);
+        Task<T> ParseAsync<T>(HttpResponseMessage response)
+            where T : class;
     }
 }

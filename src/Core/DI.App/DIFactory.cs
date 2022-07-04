@@ -1,10 +1,7 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Splat;
 using Splat.NLog;
@@ -16,7 +13,6 @@ using Wfa.Provider;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit;
 using Wfa.Toolkit.Interfaces;
-using Windows.ApplicationModel;
 using Windows.Storage;
 
 namespace Wfa.DI.App
