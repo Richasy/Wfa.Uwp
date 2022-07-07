@@ -23,6 +23,12 @@ public class EntryBase
     [JsonProperty("uniqueName")]
     public string UniqueName { get; set; }
 
+    /// <summary>
+    /// 物品名.
+    /// </summary>
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
     /// <inheritdoc/>
     public override bool Equals(object? obj) => obj is EntryBase @base && UniqueName == @base.UniqueName;
 

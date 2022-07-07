@@ -20,9 +20,8 @@
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x64</AppxBundlePlatforms>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
-    <PackageCertificateThumbprint>00927473C1EC4DCA0B4E609151EA63F31A01F304</PackageCertificateThumbprint>
     <PackageCertificateKeyFile />
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(SolutionDir)\src\Shared\SharedAssemblyInfo.cs">
@@ -31,6 +30,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AppPage.cs" />
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -163,8 +163,13 @@
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
       <Name>Toolkit.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.Uwp\ViewModel.Uwp.csproj">
+      <Project>{F1BB38A9-6C97-43C1-9DD0-D80D36ACA647}</Project>
+      <Name>ViewModel.Uwp</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\lib.db" />
     <None Include="NLog.config" />
     <PRIResource Include="Resources\Strings\zh-Hant\Resources.resw" />
     <None Include="Wfa.App_TemporaryKey.pfx" />

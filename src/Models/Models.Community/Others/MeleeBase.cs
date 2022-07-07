@@ -82,12 +82,6 @@ public class MeleeBase : EntryBase, IPolarities
     public int MasteryReq { get; set; }
 
     /// <summary>
-    /// 名称.
-    /// </summary>
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    /// <summary>
     /// 裂罅倾向值.
     /// </summary>
     [JsonProperty("omegaAttenuation")]

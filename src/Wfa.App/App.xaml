@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="Richasy.Wfa.App.App"
+    x:Class="Wfa.App.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:Richasy.Wfa.App">
+    xmlns:local="using:Wfa.App">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

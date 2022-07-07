@@ -1,17 +1,22 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>Wfa.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>Wfa.$(MSBuildProjectName.Replace(" ", "_"))</RootNamespace>
+        <LangVersion>10</LangVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.26" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.26" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.26" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.26" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.26">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Models.Community\Models.Community.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Models.Community\Models.Community.csproj" />
+    </ItemGroup>
 
 </Project>

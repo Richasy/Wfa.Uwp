@@ -9,6 +9,9 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppViewModel\AppViewModel.cs" />
+    <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
+    <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="$(SolutionDir)\src\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
@@ -16,9 +19,39 @@
     <Content Include="Properties\ViewModel.Uwp.rd.xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore">
+      <Version>3.1.26</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
     </PackageReference>
+    <PackageReference Include="ReactiveUI">
+      <Version>18.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="ReactiveUI.Fody">
+      <Version>18.2.5</Version>
+    </PackageReference>
+    <PackageReference Include="ReactiveUI.Uwp">
+      <Version>18.2.5</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Models\Models.Data\Models.Data.csproj">
+      <Project>{1D8683BF-5284-4FD2-8E57-8FDDAAFBDFFB}</Project>
+      <Name>Models.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Models.Enums\Models.Enums.csproj">
+      <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
+      <Name>Models.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Provider\Provider.Interfaces\Provider.Interfaces.csproj">
+      <Project>{5D7D2218-2FB3-45D5-88FF-645F07809858}</Project>
+      <Name>Provider.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
+      <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
+      <Name>Toolkit.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
 </Project>

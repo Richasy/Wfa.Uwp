@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Center;
 
-namespace Wfa.Models.Data.Context
+namespace Wfa.Console
 {
     /// <summary>
     /// 资料库上下文.

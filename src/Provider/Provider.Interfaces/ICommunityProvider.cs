@@ -34,10 +34,22 @@ namespace Wfa.Provider.Interfaces
         Task<ConcurrentDictionary<string, bool>> CacheLibraryFilesAsync();
 
         /// <summary>
+        /// 提交资料库版本.
+        /// </summary>
+        /// <returns><see cref="Task"/>.</returns>
+        Task CommitLibraryVersionAsync(string version);
+
+        /// <summary>
         /// 更新资料数据.
         /// </summary>
         /// <param name="dataType">数据类型.</param>
         /// <returns>更新是否成功.</returns>
         Task<bool> UpdateDataAsync(CommunityDataType dataType);
+
+        /// <summary>
+        /// 更新字典翻译数据.
+        /// </summary>
+        /// <returns><see cref="Task"/>.</returns>
+        Task UpdateDictAsync();
     }
 }
