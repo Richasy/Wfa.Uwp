@@ -44,6 +44,10 @@
       <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
       <Name>Models.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Provider\Provider.Interfaces\Provider.Interfaces.csproj">
+      <Project>{5D7D2218-2FB3-45D5-88FF-645F07809858}</Project>
+      <Name>Provider.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
       <Name>Toolkit.Interfaces</Name>

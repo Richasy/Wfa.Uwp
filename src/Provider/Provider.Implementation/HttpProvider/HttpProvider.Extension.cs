@@ -69,6 +69,7 @@ namespace Wfa.Provider
             };
             var client = new HttpClient(handler);
             client.DefaultRequestHeaders.CacheControl = new CacheControlHeaderValue { NoCache = false, NoStore = false };
+            client.DefaultRequestHeaders.Add("user-agent", ServiceConstants.DefaultUserAgentString);
             client.DefaultRequestHeaders.Add("accept", ServiceConstants.DefaultAcceptString);
             _httpClient = client;
         }

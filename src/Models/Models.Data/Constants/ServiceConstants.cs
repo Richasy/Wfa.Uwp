@@ -34,6 +34,7 @@ namespace Wfa.Models.Data.Constants
         public static class Market
         {
             public const string MarketApiBase = "https://api.warframe.market/v1";
+
             public static string MarketItems => MarketApiBase + "/items";
         }
     }

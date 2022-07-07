@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using Windows.UI.Xaml;
 
 namespace Wfa.App.Pages
@@ -21,6 +22,7 @@ namespace Wfa.App.Pages
         private async void OnLoadedAsync(object sender, RoutedEventArgs e)
         {
             await CoreViewModel.InitializeLanguageAsync();
+            CoreViewModel.CheckDatabaseCommand.Execute().Subscribe();
         }
     }
 }

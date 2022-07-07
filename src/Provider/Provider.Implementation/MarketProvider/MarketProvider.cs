@@ -66,7 +66,7 @@ namespace Wfa.Provider
             }
 
             // 移除表格数据.
-            await _dbContext.Database.ExecuteSqlRawAsync($"TRUNCATE TABLE marketitems;");
+            await _dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM MarketItems;DELETE FROM sqlite_sequence Where name = \'MarketItems\'");
 
             // 写入数据.
             await _dbContext.MarketItems.AddRangeAsync(list);

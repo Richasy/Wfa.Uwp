@@ -13,6 +13,7 @@ using Wfa.Provider;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit;
 using Wfa.Toolkit.Interfaces;
+using Wfa.ViewModel;
 using Windows.Storage;
 
 namespace Wfa.DI.App
@@ -37,6 +38,8 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<IResourceToolkit, ResourceToolkit>();
             SplatRegistrations.RegisterLazySingleton<ISettingsToolkit, SettingsToolkit>();
             SplatRegistrations.RegisterLazySingleton<IAppToolkit, AppToolkit>();
+
+            SplatRegistrations.SetupIOC();
         }
 
         /// <summary>
@@ -50,22 +53,27 @@ namespace Wfa.DI.App
 
             SplatRegistrations.RegisterLazySingleton<ICommunityAdapter, CommunityAdapter>();
 
+            SplatRegistrations.RegisterLazySingleton<IHttpProvider, HttpProvider>();
             SplatRegistrations.RegisterLazySingleton<ICommunityProvider, CommunityProvider>();
+            SplatRegistrations.RegisterLazySingleton<IMarketProvider, MarketProvider>();
+
+            SplatRegistrations.RegisterLazySingleton<AppViewModel>();
+
+            SplatRegistrations.SetupIOC();
         }
 
         private static async Task InitializeDatabaseAsync()
         {
             var localFolder = ApplicationData.Current.LocalFolder;
-            if (File.Exists(Path.Combine(localFolder.Path, "data.db")))
+            var path = Path.Combine(localFolder.Path, "lib.db");
+            if (!File.Exists(path))
             {
-                return;
+                var dbFile = await localFolder.CreateFileAsync("lib.db", CreationCollisionOption.ReplaceExisting);
+                var sourceDb = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/lib.db"));
+                await sourceDb.CopyAndReplaceAsync(dbFile).AsTask();
             }
 
-            var dbFile = await localFolder.CreateFileAsync("data.db", CreationCollisionOption.ReplaceExisting);
-            var sourceDb = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/data.db"));
-            await sourceDb.CopyAndReplaceAsync(dbFile).AsTask();
-
-            var libContext = new LibraryDbContext(dbFile.Path);
+            var libContext = new LibraryDbContext(path);
             SplatRegistrations.RegisterConstant(libContext);
         }
     }

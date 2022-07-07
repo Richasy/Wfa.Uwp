@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Center;
 
-namespace Wfa.Models.Data.Context
+namespace Wfa.Console
 {
     /// <summary>
     /// 资料库上下文.
@@ -25,6 +25,11 @@ namespace Wfa.Models.Data.Context
         /// <param name="dbPath">数据库文件路径.</param>
         public LibraryDbContext(string dbPath)
             => _dbPath = dbPath;
+
+        /// <summary>
+        /// 赋能数据集.
+        /// </summary>
+        public DbSet<Arcane> Arcanes { get; set; }
 
         /// <summary>
         /// 空战装甲数据集.
@@ -88,6 +93,11 @@ namespace Wfa.Models.Data.Context
         /// <inheritdoc/>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Arcane>()
+                .HasMany(p => p.Effects)
+                .WithOne()
+                .OnDelete(DeleteBehavior.Cascade);
+
             modelBuilder.Entity<Archwing>()
                 .HasMany(p => p.Abilities)
                 .WithOne()

@@ -195,11 +195,11 @@ namespace Wfa.Provider
                 var tableRows = new List<string>();
                 foreach (var name in tableNames)
                 {
-                    tableRows.Add($"TRUNCATE TABLE {name};");
+                    tableRows.Add($"DELETE FROM {name};\nDELETE FROM sqlite_sequence Where name = \'{name}\';");
                 }
 
                 // 移除表格数据.
-                await _dbContext.Database.ExecuteSqlRawAsync($"SET foreign_key_checks = 0;\n{string.Join("\n", tableRows)}\nSET foreign_key_checks = 1;");
+                await _dbContext.Database.ExecuteSqlRawAsync($"{string.Join("\n", tableRows)}");
 
                 // 写入数据.
                 await dataSet.AddRangeAsync(dataList);

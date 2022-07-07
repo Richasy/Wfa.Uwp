@@ -95,55 +95,55 @@ namespace Wfa.Provider
                                                 WarframeFileName,
                                                 _dbContext.Warframes,
                                                 default,
-                                                "warframes",
-                                                "warframeability"),
+                                                "Warframes",
+                                                "WarframeAbility"),
                 CommunityDataType.ArchGun => UpdateLibAsync(
                                                 ArchGunFileName,
                                                 _dbContext.ArchGun,
                                                 default,
-                                                "archgun",
-                                                "archgunattack",
-                                                "archgundamage"),
+                                                "ArchGun",
+                                                "ArchGunAttack",
+                                                "ArchGunDamage"),
                 CommunityDataType.ArchMelee => UpdateLibAsync(
                                                 ArchMeleeFileName,
                                                 _dbContext.ArchMelee,
                                                 default,
-                                                "archmelee",
-                                                "archmeleeattack",
-                                                "archmeleedamage"),
+                                                "ArchMelee",
+                                                "ArchMeleeAttack",
+                                                "ArchMeleeDamage"),
                 CommunityDataType.Archwing => UpdateLibAsync(
                                                 ArchwingFileName,
                                                 _dbContext.Archwing,
                                                 default,
-                                                "archwing",
-                                                "archwingability"),
+                                                "Archwing",
+                                                "ArchwingAbility"),
                 CommunityDataType.Melee => UpdateLibAsync(
                                                 MeleeFileName,
                                                 _dbContext.Melee,
                                                 default,
-                                                "melee",
-                                                "meleeattack",
-                                                "meleedamage"),
+                                                "Melee",
+                                                "MeleeAttack",
+                                                "MeleeDamage"),
                 CommunityDataType.Primary => UpdateLibAsync(
                                                 PrimaryFileName,
                                                 _dbContext.Primaries,
                                                 default,
-                                                "primaries",
-                                                "primaryattack",
-                                                "primarydamage"),
+                                                "Primaries",
+                                                "PrimaryAttack",
+                                                "PrimaryDamage"),
                 CommunityDataType.Secondary => UpdateLibAsync(
                                                 SecondaryFileName,
                                                 _dbContext.Secondaries,
                                                 default,
-                                                "secondaries",
-                                                "secondaryattack",
-                                                "secondarydamage"),
+                                                "Secondaries",
+                                                "SecondaryAttack",
+                                                "SecondaryDamage"),
                 CommunityDataType.Mod => UpdateLibAsync(
                                                 ModFileName,
                                                 _dbContext.Mods,
                                                 default,
-                                                "mods",
-                                                "modeffect"),
+                                                "Mods",
+                                                "ModEffect"),
                 _ => throw new System.NotImplementedException(),
             };
 
@@ -172,7 +172,7 @@ namespace Wfa.Provider
             }
 
             // 移除表格数据.
-            await _dbContext.Database.ExecuteSqlRawAsync($"TRUNCATE TABLE dicts;");
+            await _dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM Dicts;\nDELETE FROM sqlite_sequence Where name = \'Dicts\'");
 
             // 写入数据.
             await _dbContext.Dicts.AddRangeAsync(dictList);

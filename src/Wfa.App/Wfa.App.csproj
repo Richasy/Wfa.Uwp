@@ -169,6 +169,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\lib.db" />
     <None Include="NLog.config" />
     <PRIResource Include="Resources\Strings\zh-Hant\Resources.resw" />
     <None Include="Wfa.App_TemporaryKey.pfx" />

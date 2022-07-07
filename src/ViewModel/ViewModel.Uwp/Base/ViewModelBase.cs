@@ -21,7 +21,7 @@ namespace Wfa.ViewModel.Base
         /// <param name="exception">错误信息.</param>
         protected void LogException(Exception exception)
         {
-            Debug.WriteLine(exception.StackTrace);
+            Debug.WriteLine($"{exception.Message}\n{exception.StackTrace}");
             this.Log().Error(exception);
         }
 
@@ -57,5 +57,12 @@ namespace Wfa.ViewModel.Base
                 collection.Clear();
             }
         }
+
+        /// <summary>
+        /// 输出调试信息.
+        /// </summary>
+        /// <param name="msg">调试窗口需要显示的信息.</param>
+        protected void WriteMessage(string msg)
+            => Debug.WriteLine(msg);
     }
 }

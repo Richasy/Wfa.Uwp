@@ -23,7 +23,7 @@ namespace Wfa.App.Pages
         /// 获取页面注册的视图模型.
         /// </summary>
         /// <returns>视图模型，如果没有则返回<c>null</c>.</returns>
-        public virtual object GetViewModel() => null;
+        public virtual object GetViewModel() => CoreViewModel;
 
         /// <inheritdoc/>
         protected override void OnPointerReleased(PointerRoutedEventArgs e)
