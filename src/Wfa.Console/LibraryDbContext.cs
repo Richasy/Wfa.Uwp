@@ -27,11 +27,6 @@ namespace Wfa.Console
             => _dbPath = dbPath;
 
         /// <summary>
-        /// 赋能数据集.
-        /// </summary>
-        public DbSet<Arcane> Arcanes { get; set; }
-
-        /// <summary>
         /// 空战装甲数据集.
         /// </summary>
         public DbSet<Archwing> Archwing { get; set; }
@@ -88,16 +83,12 @@ namespace Wfa.Console
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlite($"Data Source={_dbPath};");
+            => optionsBuilder.UseSqlite($"Data Source={_dbPath};")
+                             .EnableSensitiveDataLogging();
 
         /// <inheritdoc/>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Arcane>()
-                .HasMany(p => p.Effects)
-                .WithOne()
-                .OnDelete(DeleteBehavior.Cascade);
-
             modelBuilder.Entity<Archwing>()
                 .HasMany(p => p.Abilities)
                 .WithOne()

@@ -34,6 +34,12 @@ namespace Wfa.Provider.Interfaces
         Task<ConcurrentDictionary<string, bool>> CacheLibraryFilesAsync();
 
         /// <summary>
+        /// 提交资料库版本.
+        /// </summary>
+        /// <returns><see cref="Task"/>.</returns>
+        Task CommitLibraryVersionAsync(string version);
+
+        /// <summary>
         /// 更新资料数据.
         /// </summary>
         /// <param name="dataType">数据类型.</param>

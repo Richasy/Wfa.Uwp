@@ -9,7 +9,6 @@ using Wfa.Toolkit.Interfaces;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
-using Windows.Storage;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -29,7 +28,6 @@ namespace Wfa.App
         {
             InitializeComponent();
             DIFactory.RegisterBasicServices();
-            AppConstants.CacheFolder = ApplicationData.Current.LocalCacheFolder.Path;
             Suspending += OnSuspending;
             UnhandledException += OnUnhandledException;
             Locator.Current.GetService<IAppToolkit>().InitializeTheme();

@@ -13,7 +13,7 @@ using Wfa.Models.Data.Context;
 using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.Provider.Interfaces;
-
+using Wfa.Toolkit.Interfaces;
 using static Wfa.Models.Data.Constants.ServiceConstants.Community;
 
 namespace Wfa.Provider
@@ -28,10 +28,12 @@ namespace Wfa.Provider
         /// </summary>
         public CommunityProvider(
             LibraryDbContext dbContext,
+            IFileToolkit fileToolkit,
             ICommunityAdapter communityAdapter,
             IHttpProvider httpProvider)
         {
             _dbContext = dbContext;
+            _fileToolkit = fileToolkit;
             _communityAdapter = communityAdapter;
             _httpProvider = httpProvider;
         }
@@ -65,6 +67,25 @@ namespace Wfa.Provider
             var cloudId = await GetWarframeItemsLatestReleaseIdAsync();
             var needUpdate = string.IsNullOrEmpty(localId?.Value) || cloudId != localId.Value;
             return new CommunityUpdateCheckResult(needUpdate, cloudId);
+        }
+
+        /// <inheritdoc/>
+        public async Task CommitLibraryVersionAsync(string version)
+        {
+            var localId = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsReleaseIdKey);
+            if (localId == null)
+            {
+                localId = new Meta(AppConstants.WarframeItemsReleaseIdKey, version);
+                await _dbContext.Metas.AddAsync(localId);
+            }
+            else
+            {
+                localId.Value = version;
+                _dbContext.Metas.Update(localId);
+            }
+
+            await _dbContext.SaveChangesAsync();
+            await _fileToolkit.ClearCacheFolderAsync();
         }
 
         /// <inheritdoc/>

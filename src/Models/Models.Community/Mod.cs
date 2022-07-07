@@ -53,12 +53,6 @@ public class Mod : EntryBase
     public List<ModEffect> Effects { get; set; }
 
     /// <summary>
-    /// 名称.
-    /// </summary>
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    /// <summary>
     /// 极性.
     /// </summary>
     [JsonProperty("polarity")]

@@ -3,7 +3,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -15,6 +14,7 @@ using Wfa.Models.Community;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
 using Wfa.Provider.Interfaces;
+using Wfa.Toolkit.Interfaces;
 
 namespace Wfa.Provider
 {
@@ -24,6 +24,7 @@ namespace Wfa.Provider
     public sealed partial class CommunityProvider
     {
         private readonly LibraryDbContext _dbContext;
+        private readonly IFileToolkit _fileToolkit;
         private readonly ICommunityAdapter _communityAdapter;
         private readonly IHttpProvider _httpProvider;
 
@@ -46,25 +47,18 @@ namespace Wfa.Provider
         {
             var tasks = new List<Task>();
             var result = new ConcurrentDictionary<string, bool>();
-            var folder = AppConstants.CacheFolder;
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
-
             fileNames = fileNames.Distinct();
             foreach (var fileName in fileNames)
             {
                 var fn = fileName.TrimStart('/');
 
-                var localPath = Path.Combine(folder, fn);
                 var task = Task.Run(async () =>
                 {
                     var uri = ServiceConstants.Community.ItemsRepoRawUrl + fn;
                     var request = _httpProvider.GetRequestMessage(HttpMethod.Get, uri);
                     var response = await _httpProvider.SendAsync(request);
                     var content = await _httpProvider.ParseAsync<string>(response);
-                    File.WriteAllText(localPath, content);
+                    await _fileToolkit.WriteContentToCacheAsync(fn, content);
                 }).ContinueWith(t =>
                 {
                     result.TryAdd(fn, t.IsCompleted);
@@ -86,9 +80,8 @@ namespace Wfa.Provider
         /// <exception cref="TaskCanceledException">尝试从远程下载文件失败.</exception>
         private async Task<string> GetFileContentAsync(string fileName)
         {
-            var cacheFolder = AppConstants.CacheFolder;
-            var filePath = Path.Combine(cacheFolder, fileName);
-            if (!File.Exists(filePath))
+            var content = await _fileToolkit.GetContentFromCacheAsync(fileName);
+            if (string.IsNullOrEmpty(content))
             {
                 var response = await DownloadWarframeItemsFilesAsync(new[] { fileName });
                 if (!response.TryGetValue(fileName, out _))
@@ -97,7 +90,7 @@ namespace Wfa.Provider
                 }
             }
 
-            var fileContent = File.ReadAllText(filePath);
+            var fileContent = await _fileToolkit.GetContentFromCacheAsync(fileName);
             return fileContent;
         }
 

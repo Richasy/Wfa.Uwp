@@ -70,6 +70,7 @@ namespace Wfa.Provider
 
             // 写入数据.
             await _dbContext.MarketItems.AddRangeAsync(list);
+            await CommitWarframeMarketUpdateTimeAsync();
             await _dbContext.SaveChangesAsync();
         }
     }

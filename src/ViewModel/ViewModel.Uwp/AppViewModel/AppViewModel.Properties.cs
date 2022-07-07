@@ -21,8 +21,18 @@ namespace Wfa.ViewModel
         private readonly LibraryDbContext _dbContext;
 
         /// <summary>
-        /// 检查数据库更新的命令.
+        /// 检查社区资料库更新的命令.
         /// </summary>
-        public ReactiveCommand<Unit, Unit> CheckDatabaseCommand { get; }
+        public ReactiveCommand<Unit, Unit> CheckLibraryDatabaseCommand { get; }
+
+        /// <summary>
+        /// 检查 WM 数据库是否初始化的命令.
+        /// </summary>
+        public ReactiveCommand<Unit, Unit> CheckWarframeMarketDatabaseCommand { get; }
+
+        /// <summary>
+        /// 更新 WM 数据库的命令.
+        /// </summary>
+        public ReactiveCommand<Unit, Unit> UpdateWarframeMarketDatabaseCommand { get; }
     }
 }

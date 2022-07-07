@@ -12,6 +12,24 @@ namespace Wfa.Models.Data.Center;
 public class Meta
 {
     /// <summary>
+    /// Initializes a new instance of the <see cref="Meta"/> class.
+    /// </summary>
+    public Meta()
+    {
+    }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Meta"/> class.
+    /// </summary>
+    /// <param name="name">数据名.</param>
+    /// <param name="value">数据值.</param>
+    public Meta(string name, string value)
+    {
+        Name = name;
+        Value = value;
+    }
+
+    /// <summary>
     /// 标识符.
     /// </summary>
     [Key]

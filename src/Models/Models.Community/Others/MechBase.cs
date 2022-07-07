@@ -46,12 +46,6 @@ public class MechBase : EntryBase, IPolarities
     public int MasteryReq { get; set; }
 
     /// <summary>
-    /// 名称.
-    /// </summary>
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    /// <summary>
     /// 能量.
     /// </summary>
     [JsonProperty("power")]

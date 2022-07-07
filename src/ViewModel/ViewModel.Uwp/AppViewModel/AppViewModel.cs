@@ -2,6 +2,7 @@
 
 using System;
 using System.Linq;
+using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
@@ -37,9 +38,14 @@ namespace Wfa.ViewModel
             _marketProvider = marketProvider;
             _dbContext = dbContext;
 
-            CheckDatabaseCommand = ReactiveCommand.CreateFromTask(CheckDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            CheckLibraryDatabaseCommand = ReactiveCommand.CreateFromTask(CheckLibraryDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            CheckWarframeMarketDatabaseCommand = ReactiveCommand.CreateFromTask(CheckWaframeMarketDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            UpdateWarframeMarketDatabaseCommand = ReactiveCommand.CreateFromTask(UpdateWarframeMarketDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
 
-            CheckDatabaseCommand.ThrownExceptions.Subscribe(LogException);
+            CheckLibraryDatabaseCommand.ThrownExceptions
+                .Merge(CheckWarframeMarketDatabaseCommand.ThrownExceptions)
+                .Merge(UpdateWarframeMarketDatabaseCommand.ThrownExceptions)
+                .Subscribe(LogException);
         }
 
         /// <summary>
@@ -52,7 +58,7 @@ namespace Wfa.ViewModel
             var supportLan = "en";
             if (appLanguage.Contains("zh", System.StringComparison.OrdinalIgnoreCase))
             {
-                supportLan = appLanguage.Contains("cn") || appLanguage.Contains("hans")
+                supportLan = appLanguage.Contains("cn", StringComparison.OrdinalIgnoreCase) || appLanguage.Contains("hans", StringComparison.OrdinalIgnoreCase)
                     ? "zh"
                     : "tc";
             }
@@ -80,7 +86,7 @@ namespace Wfa.ViewModel
             }
         }
 
-        private async Task CheckDatabaseAsync()
+        private async Task CheckLibraryDatabaseAsync()
         {
             var communityUpdateCheckResult = await _communityProvider.CheckUpdateAsync();
             if (communityUpdateCheckResult.NeedUpdate)
@@ -107,7 +113,6 @@ namespace Wfa.ViewModel
                     CommunityDataType.Archwing,
                     CommunityDataType.Melee,
                     CommunityDataType.Primary,
-                    CommunityDataType.Primary,
                     CommunityDataType.Secondary,
                     CommunityDataType.Mod,
                 };
@@ -119,12 +124,38 @@ namespace Wfa.ViewModel
                     WriteMessage($"更新 {updateKey} 完成");
                 }
 
-                WriteMessage("开始更新WM条目内容");
-                await _marketProvider.UpdateMarketItemsAsync();
-                WriteMessage("WM 条目内容更新完成");
-
-                WriteMessage("全部内容更新完成");
+                WriteMessage("全部内容更新完成，正在清理缓存");
+                await _communityProvider.CommitLibraryVersionAsync(communityUpdateCheckResult.RemoteVersion);
+                WriteMessage("缓存已清理，记录此次更新 Id");
             }
+            else
+            {
+                WriteMessage("社区数据已经更新至最新");
+            }
+        }
+
+        /// <summary>
+        /// 如果 WM 数据库内容为空，则进行更新.
+        /// </summary>
+        /// <returns><see cref="Task"/>.</returns>
+        private async Task CheckWaframeMarketDatabaseAsync()
+        {
+            var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeMarketUpdateTimeKey);
+            if (!string.IsNullOrEmpty(meta?.Value))
+            {
+                // 不需要初始化.
+                WriteMessage("WM 数据已初始化完成");
+                return;
+            }
+
+            await UpdateWarframeMarketDatabaseAsync();
+        }
+
+        private async Task UpdateWarframeMarketDatabaseAsync()
+        {
+            WriteMessage("开始更新WM条目内容");
+            await _marketProvider.UpdateMarketItemsAsync();
+            WriteMessage("WM 条目内容更新完成");
         }
     }
 }

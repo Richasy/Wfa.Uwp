@@ -35,6 +35,7 @@ namespace Wfa.DI.App
             NLog.GlobalDiagnosticsContext.Set("LogPath", fullPath);
             Locator.CurrentMutable.UseNLogWithWrappingFullLogger();
 
+            SplatRegistrations.RegisterLazySingleton<IFileToolkit, FileToolkit>();
             SplatRegistrations.RegisterLazySingleton<IResourceToolkit, ResourceToolkit>();
             SplatRegistrations.RegisterLazySingleton<ISettingsToolkit, SettingsToolkit>();
             SplatRegistrations.RegisterLazySingleton<IAppToolkit, AppToolkit>();

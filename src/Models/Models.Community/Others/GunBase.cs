@@ -82,12 +82,6 @@ public class GunBase : EntryBase, IPolarities
     public double Multishot { get; set; }
 
     /// <summary>
-    /// 武器名称.
-    /// </summary>
-    [JsonProperty("name")]
-    public string Name { get; set; }
-
-    /// <summary>
     /// 噪音等级.
     /// </summary>
     [JsonProperty("noise")]

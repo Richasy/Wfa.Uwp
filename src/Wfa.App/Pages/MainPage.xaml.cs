@@ -22,7 +22,8 @@ namespace Wfa.App.Pages
         private async void OnLoadedAsync(object sender, RoutedEventArgs e)
         {
             await CoreViewModel.InitializeLanguageAsync();
-            CoreViewModel.CheckDatabaseCommand.Execute().Subscribe();
+            CoreViewModel.CheckLibraryDatabaseCommand.Execute().Subscribe();
+            CoreViewModel.CheckWarframeMarketDatabaseCommand.Execute().Subscribe();
         }
     }
 }

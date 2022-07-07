@@ -83,7 +83,8 @@ namespace Wfa.Models.Data.Context
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlite($"Data Source={_dbPath};");
+            => optionsBuilder.UseSqlite($"Data Source={_dbPath};")
+                             .EnableSensitiveDataLogging();
 
         /// <inheritdoc/>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
