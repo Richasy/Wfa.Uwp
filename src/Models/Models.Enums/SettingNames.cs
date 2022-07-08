@@ -10,5 +10,6 @@ namespace Wfa.Models.Enums
 #pragma warning disable SA1602 // Enumeration items should be documented
         AppTheme,
         LanguageNeedInitialized,
+        Platform,
     }
 }

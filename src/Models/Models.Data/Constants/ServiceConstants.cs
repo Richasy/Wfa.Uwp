@@ -37,5 +37,13 @@ namespace Wfa.Models.Data.Constants
 
             public static string MarketItems => MarketApiBase + "/items";
         }
+
+        public static class State
+        {
+            public const string StateApiBase = "https://api.warframestat.us/";
+
+            public static string StateInformation(string platform, string language = "en")
+                => $"{StateApiBase}{platform}?language={language}";
+        }
     }
 }

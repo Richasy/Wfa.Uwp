@@ -29,6 +29,8 @@ namespace Wfa.ViewModel
             IResourceToolkit resourceToolkit,
             ICommunityProvider communityProvider,
             IMarketProvider marketProvider,
+            IWikiProvider wikiProvider,
+            IStateProvider stateProvider,
             LibraryDbContext dbContext)
         {
             _settingsToolkit = settingsToolkit;
@@ -36,16 +38,43 @@ namespace Wfa.ViewModel
 
             _communityProvider = communityProvider;
             _marketProvider = marketProvider;
+            _wikiProvider = wikiProvider;
+            _stateProvider = stateProvider;
             _dbContext = dbContext;
 
-            CheckLibraryDatabaseCommand = ReactiveCommand.CreateFromTask(CheckLibraryDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            _stateTimer = new Windows.UI.Xaml.DispatcherTimer();
+            _stateTimer.Interval = TimeSpan.FromMinutes(1.5);
+            _stateTimer.Tick += OnStateTimerTick;
+
+            _stateProvider.StateChanged += OnWorldStateChanged;
+
+            CheckLibraryDatabaseCommand = ReactiveCommand.CreateFromTask<bool>(CheckLibraryDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
             CheckWarframeMarketDatabaseCommand = ReactiveCommand.CreateFromTask(CheckWaframeMarketDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            CheckTranslateDatabaseCommand = ReactiveCommand.CreateFromTask(CheckTranslateDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            CheckPatchDatabaseCommand = ReactiveCommand.CreateFromTask(CheckPatchDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+
+            UpdateLibraryDatabaseCommand = ReactiveCommand.CreateFromTask<string>(UpdateLibraryDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
             UpdateWarframeMarketDatabaseCommand = ReactiveCommand.CreateFromTask(UpdateWarframeMarketDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            UpdateTranslateDatabaseCommand = ReactiveCommand.CreateFromTask(UpdateTranslateDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+            UpdatePatchDatabaseCommand = ReactiveCommand.CreateFromTask(UpdatePatchDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
+
+            RequestWorldStateCommand = ReactiveCommand.CreateFromTask(RequestWorldStateAsync, outputScheduler: RxApp.MainThreadScheduler);
+
+            _isRequestingState = RequestWorldStateCommand.IsExecuting.ToProperty(this, x => x.IsRequestingState, scheduler: RxApp.MainThreadScheduler);
 
             CheckLibraryDatabaseCommand.ThrownExceptions
                 .Merge(CheckWarframeMarketDatabaseCommand.ThrownExceptions)
+                .Merge(CheckTranslateDatabaseCommand.ThrownExceptions)
+                .Merge(CheckPatchDatabaseCommand.ThrownExceptions)
                 .Merge(UpdateWarframeMarketDatabaseCommand.ThrownExceptions)
+                .Merge(UpdateLibraryDatabaseCommand.ThrownExceptions)
+                .Merge(UpdateTranslateDatabaseCommand.ThrownExceptions)
+                .Merge(UpdatePatchDatabaseCommand.ThrownExceptions)
+                .Merge(RequestWorldStateCommand.ThrownExceptions)
                 .Subscribe(LogException);
+
+            RequestWorldStateCommand.Execute().Subscribe();
+            _stateTimer.Start();
         }
 
         /// <summary>
@@ -55,12 +84,12 @@ namespace Wfa.ViewModel
         public async Task InitializeLanguageAsync()
         {
             var appLanguage = ApplicationLanguages.Languages.First();
-            var supportLan = "en";
-            if (appLanguage.Contains("zh", System.StringComparison.OrdinalIgnoreCase))
+            var supportLan = AppConstants.LanguageEn;
+            if (appLanguage.Contains("zh", StringComparison.OrdinalIgnoreCase))
             {
                 supportLan = appLanguage.Contains("cn", StringComparison.OrdinalIgnoreCase) || appLanguage.Contains("hans", StringComparison.OrdinalIgnoreCase)
-                    ? "zh"
-                    : "tc";
+                    ? AppConstants.LanguageChs
+                    : AppConstants.LanguageCht;
             }
 
             var localLan = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.LanguageKey);
@@ -86,47 +115,13 @@ namespace Wfa.ViewModel
             }
         }
 
-        private async Task CheckLibraryDatabaseAsync()
+        private async Task CheckLibraryDatabaseAsync(bool ignoreDate = false)
         {
-            var communityUpdateCheckResult = await _communityProvider.CheckUpdateAsync();
+            var communityUpdateCheckResult = await _communityProvider.CheckUpdateAsync(ignoreDate);
             if (communityUpdateCheckResult.NeedUpdate)
             {
                 WriteMessage($"社区资料库需要更新，远端版本：{communityUpdateCheckResult.RemoteVersion}");
-                WriteMessage($"开始缓存所需文件...");
-
-                // TODO: 显示更新UI.
-                var cacheResult = await _communityProvider.CacheLibraryFilesAsync();
-                foreach (var cacheItem in cacheResult)
-                {
-                    WriteMessage($"{cacheItem.Key}: {cacheItem.Value}");
-                }
-
-                WriteMessage("缓存结束，开始更新词典数据");
-                await _communityProvider.UpdateDictAsync();
-
-                WriteMessage("词典数据更新完成，开始更新其它内容");
-                var updateArray = new[]
-                {
-                    CommunityDataType.Warframe,
-                    CommunityDataType.ArchGun,
-                    CommunityDataType.ArchMelee,
-                    CommunityDataType.Archwing,
-                    CommunityDataType.Melee,
-                    CommunityDataType.Primary,
-                    CommunityDataType.Secondary,
-                    CommunityDataType.Mod,
-                };
-
-                foreach (var updateKey in updateArray)
-                {
-                    WriteMessage($"更新内容 {updateKey} ...");
-                    await _communityProvider.UpdateDataAsync(updateKey);
-                    WriteMessage($"更新 {updateKey} 完成");
-                }
-
-                WriteMessage("全部内容更新完成，正在清理缓存");
-                await _communityProvider.CommitLibraryVersionAsync(communityUpdateCheckResult.RemoteVersion);
-                WriteMessage("缓存已清理，记录此次更新 Id");
+                await UpdateLibraryDatabaseAsync(communityUpdateCheckResult.RemoteVersion);
             }
             else
             {
@@ -151,11 +146,116 @@ namespace Wfa.ViewModel
             await UpdateWarframeMarketDatabaseAsync();
         }
 
+        private async Task CheckTranslateDatabaseAsync()
+        {
+            var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WikiDictUpdateTimeKey);
+            if (!string.IsNullOrEmpty(meta?.Value))
+            {
+                // 不需要初始化.
+                WriteMessage("维基翻译数据已初始化完成");
+                return;
+            }
+
+            await UpdateTranslateDatabaseAsync();
+        }
+
+        private async Task CheckPatchDatabaseAsync()
+        {
+            var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WikiPatchUpdateTimeKey);
+            if (!string.IsNullOrEmpty(meta?.Value))
+            {
+                // 不需要初始化.
+                WriteMessage("维基简繁互译数据已初始化完成");
+                return;
+            }
+
+            await UpdatePatchDatabaseAsync();
+        }
+
+        private async Task UpdateLibraryDatabaseAsync(string remoteVersion = default)
+        {
+            WriteMessage($"开始缓存所需文件...");
+
+            // TODO: 显示更新UI.
+            if (string.IsNullOrEmpty(remoteVersion))
+            {
+                var communityUpdateCheckResult = await _communityProvider.CheckUpdateAsync(true);
+                remoteVersion = communityUpdateCheckResult.RemoteVersion;
+            }
+
+            var cacheResult = await _communityProvider.CacheLibraryFilesAsync();
+            foreach (var cacheItem in cacheResult)
+            {
+                WriteMessage($"{cacheItem.Key}: {cacheItem.Value}");
+            }
+
+            WriteMessage("缓存结束，开始更新词典数据");
+            await _communityProvider.UpdateDictAsync();
+
+            WriteMessage("词典数据更新完成，开始更新其它内容");
+            var updateArray = new[]
+            {
+                CommunityDataType.Warframe,
+                CommunityDataType.ArchGun,
+                CommunityDataType.ArchMelee,
+                CommunityDataType.Archwing,
+                CommunityDataType.Melee,
+                CommunityDataType.Primary,
+                CommunityDataType.Secondary,
+                CommunityDataType.Mod,
+            };
+
+            foreach (var updateKey in updateArray)
+            {
+                WriteMessage($"更新内容 {updateKey} ...");
+                await _communityProvider.UpdateDataAsync(updateKey);
+                WriteMessage($"更新 {updateKey} 完成");
+            }
+
+            WriteMessage("全部内容更新完成，正在清理缓存");
+            await _communityProvider.CommitLibraryVersionAsync(remoteVersion);
+            WriteMessage("缓存已清理，记录此次更新 Id");
+        }
+
         private async Task UpdateWarframeMarketDatabaseAsync()
         {
             WriteMessage("开始更新WM条目内容");
             await _marketProvider.UpdateMarketItemsAsync();
             WriteMessage("WM 条目内容更新完成");
+        }
+
+        private async Task UpdateTranslateDatabaseAsync()
+        {
+            WriteMessage("开始更新维基翻译数据");
+            await _wikiProvider.UpdateTranslatesAsync();
+            WriteMessage("维基翻译数据更新完成");
+        }
+
+        private async Task UpdatePatchDatabaseAsync()
+        {
+            WriteMessage("开始更新维基简繁互译数据");
+            await _wikiProvider.UpdatePatchesAsync();
+            WriteMessage("简繁互译数据更新完成");
+        }
+
+        private async Task RequestWorldStateAsync()
+        {
+            if (IsRequestingState)
+            {
+                return;
+            }
+
+            WriteMessage("正在请求世界状态...");
+            await _stateProvider.CacheWorldStateAsync();
+            WriteMessage("世界状态更新完成");
+        }
+
+        private void OnStateTimerTick(object sender, object e)
+            => RequestWorldStateCommand.Execute().Subscribe();
+
+        private void OnWorldStateChanged(object sender, EventArgs e)
+        {
+            var syndicate = _stateProvider.GetOstronSyndicateMission();
         }
     }
 }

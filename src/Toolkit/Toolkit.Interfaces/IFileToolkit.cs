@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Wfa.Toolkit.Interfaces
@@ -29,5 +30,12 @@ namespace Wfa.Toolkit.Interfaces
         /// </summary>
         /// <returns><see cref="Task"/>.</returns>
         Task ClearCacheFolderAsync();
+
+        /// <summary>
+        /// 从本地路径获取文件流.
+        /// </summary>
+        /// <param name="path">本地文件路径.</param>
+        /// <returns><see cref="Stream"/>.</returns>
+        Task<Stream> GetFileStreamFromLocalPath(string path);
     }
 }

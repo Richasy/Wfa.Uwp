@@ -9,6 +9,7 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Models\Models.Data\Models.Data.csproj" />
       <ProjectReference Include="..\..\Models\Models.Enums\Models.Enums.csproj" />
+      <ProjectReference Include="..\..\Models\Models.State\Models.State.csproj" />
     </ItemGroup>
 
 </Project>

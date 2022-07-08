@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,11 +62,17 @@ namespace Wfa.Provider
         }
 
         /// <inheritdoc/>
-        public async Task<CommunityUpdateCheckResult> CheckUpdateAsync()
+        public async Task<CommunityUpdateCheckResult> CheckUpdateAsync(bool ignoreDate)
         {
             var localId = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsReleaseIdKey);
+            var updateTime = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsUpdateTimeKey);
+
+            var time = updateTime == null
+                ? DateTimeOffset.MinValue
+                : DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(updateTime));
             var cloudId = await GetWarframeItemsLatestReleaseIdAsync();
-            var needUpdate = string.IsNullOrEmpty(localId?.Value) || cloudId != localId.Value;
+            var isToday = time.Date.Equals(DateTimeOffset.Now.Date) && !ignoreDate;
+            var needUpdate = string.IsNullOrEmpty(localId?.Value) || (cloudId != localId.Value && !isToday);
             return new CommunityUpdateCheckResult(needUpdate, cloudId);
         }
 
@@ -73,6 +80,8 @@ namespace Wfa.Provider
         public async Task CommitLibraryVersionAsync(string version)
         {
             var localId = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsReleaseIdKey);
+            var updateTime = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsUpdateTimeKey);
+            var now = DateTimeOffset.Now.ToUnixTimeSeconds().ToString();
             if (localId == null)
             {
                 localId = new Meta(AppConstants.WarframeItemsReleaseIdKey, version);
@@ -82,6 +91,17 @@ namespace Wfa.Provider
             {
                 localId.Value = version;
                 _dbContext.Metas.Update(localId);
+            }
+
+            if (updateTime == null)
+            {
+                updateTime = new Meta(AppConstants.WarframeItemsUpdateTimeKey, now);
+                await _dbContext.Metas.AddAsync(updateTime);
+            }
+            else
+            {
+                updateTime.Value = now;
+                _dbContext.Metas.Update(updateTime);
             }
 
             await _dbContext.SaveChangesAsync();

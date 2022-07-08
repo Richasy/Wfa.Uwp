@@ -67,9 +67,19 @@ namespace Wfa.Models.Data.Context
         public DbSet<Warframe> Warframes { get; set; }
 
         /// <summary>
-        /// 物品翻译数据集.
+        /// 来自 WFCD 的物品翻译数据集.
         /// </summary>
         public DbSet<Dict> Dicts { get; set; }
+
+        /// <summary>
+        /// 来自维基的翻译数据集.
+        /// </summary>
+        public DbSet<Translate> Translates { get; set; }
+
+        /// <summary>
+        /// 增补翻译集.
+        /// </summary>
+        public DbSet<Patch> Patches { get; set; }
 
         /// <summary>
         /// 元数据集.

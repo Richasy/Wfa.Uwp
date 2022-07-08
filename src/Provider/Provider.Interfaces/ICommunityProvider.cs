@@ -24,8 +24,13 @@ namespace Wfa.Provider.Interfaces
         /// <summary>
         /// 检查更新.
         /// </summary>
+        /// <param name="ignoreDate">是否忽略日期检查.</param>
         /// <returns>更新结果.</returns>
-        Task<CommunityUpdateCheckResult> CheckUpdateAsync();
+        /// <remarks>
+        /// 由于 Github 的更新比较频繁，默认机制是如果今天更新了，即便版本号不同，也不再更新.
+        /// 可以通过 ignoreDate 参数改变这一策略.
+        /// </remarks>
+        Task<CommunityUpdateCheckResult> CheckUpdateAsync(bool ignoreDate);
 
         /// <summary>
         /// 缓存资料库所需文件.
