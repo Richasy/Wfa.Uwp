@@ -1,7 +1,17 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
+using Wfa.Models.Data.Constants;
+using Wfa.Models.Data.Context;
+using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
+using Wfa.Toolkit.Interfaces;
 
 namespace Wfa.Provider
 {
@@ -10,7 +20,135 @@ namespace Wfa.Provider
     /// </summary>
     public sealed partial class StateProvider : IStateProvider
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StateProvider"/> class.
+        /// </summary>
+        public StateProvider(
+            IHttpProvider httpProvider,
+            ISettingsToolkit settingsToolkit,
+            LibraryDbContext dbContext)
+        {
+            _httpProvider = httpProvider;
+            _settingsToolkit = settingsToolkit;
+            _dbContext = dbContext;
+        }
+
         /// <inheritdoc/>
-        public Task CacheWorldStateAsync() => throw new System.NotImplementedException();
+        public async Task CacheWorldStateAsync()
+        {
+            var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.LanguageKey);
+            var lan = meta?.Value ?? "en";
+            if (lan == "tc")
+            {
+                lan = "zh";
+            }
+
+            var platform = _settingsToolkit.ReadLocalSetting(Models.Enums.SettingNames.Platform, AppConstants.PlartformPc);
+            var totalRequest = _httpProvider.GetRequestMessage(HttpMethod.Get, ServiceConstants.State.StateInformation(platform, lan));
+            var totalResponse = await _httpProvider.SendAsync(totalRequest);
+            var jsonStr = await _httpProvider.ParseAsync<string>(totalResponse);
+            var totalObj = JObject.Parse(jsonStr);
+            _cacheTime = DateTime.Now;
+
+            _news = GetParsedData<List<News>>(totalObj, "news");
+            _events = GetParsedData<List<Event>>(totalObj, "events");
+            _fissures = GetParsedData<List<Fissure>>(totalObj, "fissures");
+            _invasions = GetParsedData<List<Invasion>>(totalObj, "invasions");
+            _sortie = GetParsedData<Sortie>(totalObj, "sortie");
+            _voidTrader = GetParsedData<VoidTrader>(totalObj, "voidTrader");
+            _dailySale = GetParsedData<List<DailySale>>(totalObj, "dailyDeals").FirstOrDefault();
+            _earthStatus = GetParsedData<EarthStatus>(totalObj, "earthCycle");
+            _cetusStatus = GetParsedData<CetusStatus>(totalObj, "cetusCycle");
+            _cambionStatus = GetParsedData<CambionStatus>(totalObj, "cambionCycle");
+            _zarimanStatus = GetParsedData<ZarimanStatus>(totalObj, "zarimanCycle");
+            _vallisStatus = GetParsedData<VallisStatus>(totalObj, "vallisCycle");
+            _constructionProgress = GetParsedData<ConstructionProgress>(totalObj, "constructionProgress");
+            _nightwave = GetParsedData<Nightwave>(totalObj, "nightwave");
+            _arbitration = GetParsedData<Arbitration>(totalObj, "arbitration");
+            _sentientBattle = GetParsedData<SentientBattle>(totalObj, "sentientOutposts");
+            _steelPath = GetParsedData<SteelPath>(totalObj, "steelPath");
+
+            InitializeSyndicateMissions(totalObj, "syndicateMissions");
+        }
+
+        /// <inheritdoc/>
+        public Arbitration GetArbitration()
+            => _arbitration;
+
+        /// <inheritdoc/>
+        public CambionStatus GetCambionStatus()
+            => _cambionStatus;
+
+        /// <inheritdoc/>
+        public ConstructionProgress GetConstructionProgress()
+            => _constructionProgress;
+
+        /// <inheritdoc/>
+        public DailySale GetDailySale()
+            => _dailySale;
+
+        /// <inheritdoc/>
+        public EarthStatus GetEarthStatus()
+            => _earthStatus;
+
+        /// <inheritdoc/>
+        public SyndicateMission GetEntratiSyndicateMission()
+            => _entratiSyndicateMission;
+
+        /// <inheritdoc/>
+        public IEnumerable<Event> GetEvents()
+            => _events;
+
+        /// <inheritdoc/>
+        public IEnumerable<Fissure> GetFissures()
+            => _fissures;
+
+        /// <inheritdoc/>
+        public IEnumerable<Invasion> GetInvasions()
+            => _invasions;
+
+        /// <inheritdoc/>
+        public DateTime GetLastCacheTime()
+            => _cacheTime;
+
+        /// <inheritdoc/>
+        public IEnumerable<News> GetNews()
+            => _news;
+
+        /// <inheritdoc/>
+        public Nightwave GetNightwave()
+            => _nightwave;
+
+        /// <inheritdoc/>
+        public SyndicateMission GetOstronSyndicateMission()
+            => _ostronSyndicateMission;
+
+        /// <inheritdoc/>
+        public SentientBattle GetSentientBattle()
+            => _sentientBattle;
+
+        /// <inheritdoc/>
+        public SyndicateMission GetSolarisSyndicateMission()
+            => _solarisSyndicateMission;
+
+        /// <inheritdoc/>
+        public Sortie GetSortie()
+            => _sortie;
+
+        /// <inheritdoc/>
+        public SteelPath GetSteelPath()
+            => _steelPath;
+
+        /// <inheritdoc/>
+        public VallisStatus GetVallisStatus()
+            => _vallisStatus;
+
+        /// <inheritdoc/>
+        public VoidTrader GetVoidTrader()
+            => _voidTrader;
+
+        /// <inheritdoc/>
+        public ZarimanStatus GetZarimanStatus()
+            => _zarimanStatus;
     }
 }

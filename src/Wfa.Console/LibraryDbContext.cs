@@ -72,6 +72,16 @@ namespace Wfa.Console
         public DbSet<Dict> Dicts { get; set; }
 
         /// <summary>
+        /// 来自维基的翻译数据集.
+        /// </summary>
+        public DbSet<Translate> Translates { get; set; }
+
+        /// <summary>
+        /// 增补翻译集.
+        /// </summary>
+        public DbSet<Patch> Patches { get; set; }
+
+        /// <summary>
         /// 元数据集.
         /// </summary>
         public DbSet<Meta> Metas { get; set; }

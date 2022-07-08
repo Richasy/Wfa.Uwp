@@ -12,6 +12,11 @@ namespace Wfa.Models.Data.Constants
         public const string ThemeLight = "Light";
         public const string ThemeDark = "Dark";
 
+        public const string PlartformPc = "pc";
+        public const string PlartformXbox = "xb1";
+        public const string PlartformPs = "ps4";
+        public const string PlartformSwitch = "sw1";
+
         public const string SettingContainerName = "Richasy.Wfa.Uwp";
 
         public const string StartupTaskId = "Richasy.Wfa";
