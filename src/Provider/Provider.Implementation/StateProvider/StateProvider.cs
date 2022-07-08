@@ -34,11 +34,15 @@ namespace Wfa.Provider
         }
 
         /// <inheritdoc/>
+        public event EventHandler<EventArgs> StateChanged;
+
+        /// <inheritdoc/>
         public async Task CacheWorldStateAsync()
         {
             var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.LanguageKey);
-            var lan = meta?.Value ?? "en";
-            if (lan == "tc")
+            var language = meta?.Value ?? AppConstants.LanguageEn;
+            var lan = language;
+            if (lan == AppConstants.LanguageCht)
             {
                 lan = "zh";
             }
@@ -68,7 +72,19 @@ namespace Wfa.Provider
             _sentientBattle = GetParsedData<SentientBattle>(totalObj, "sentientOutposts");
             _steelPath = GetParsedData<SteelPath>(totalObj, "steelPath");
 
-            InitializeSyndicateMissions(totalObj, "syndicateMissions");
+            InitializeNews(language);
+            InitializeSortie(language);
+            InitializeFissures(language);
+            InitializeArbitration(language);
+            InitializeDailySale(language);
+            InitializeInvasions(language);
+            InitializeNightwave(language);
+            InitializeSentientBattle(language);
+            InitializeSteelPath(language);
+            InitializeVoidTrader(language);
+            InitializeSyndicateMissions(totalObj, "syndicateMissions", language);
+
+            StateChanged?.Invoke(this, EventArgs.Empty);
         }
 
         /// <inheritdoc/>
@@ -90,6 +106,10 @@ namespace Wfa.Provider
         /// <inheritdoc/>
         public EarthStatus GetEarthStatus()
             => _earthStatus;
+
+        /// <inheritdoc/>
+        public CetusStatus GetCetusStatus()
+            => _cetusStatus;
 
         /// <inheritdoc/>
         public SyndicateMission GetEntratiSyndicateMission()

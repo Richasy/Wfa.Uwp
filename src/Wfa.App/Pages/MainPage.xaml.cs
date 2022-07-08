@@ -24,6 +24,8 @@ namespace Wfa.App.Pages
             await CoreViewModel.InitializeLanguageAsync();
             CoreViewModel.CheckLibraryDatabaseCommand.Execute().Subscribe();
             CoreViewModel.CheckWarframeMarketDatabaseCommand.Execute().Subscribe();
+            CoreViewModel.CheckTranslateDatabaseCommand.Execute().Subscribe();
+            CoreViewModel.CheckPatchDatabaseCommand.Execute().Subscribe();
         }
     }
 }

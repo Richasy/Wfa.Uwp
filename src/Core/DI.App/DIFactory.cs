@@ -58,6 +58,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<ICommunityProvider, CommunityProvider>();
             SplatRegistrations.RegisterLazySingleton<IMarketProvider, MarketProvider>();
             SplatRegistrations.RegisterLazySingleton<IStateProvider, StateProvider>();
+            SplatRegistrations.RegisterLazySingleton<IWikiProvider, WikiProvider>();
 
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
 

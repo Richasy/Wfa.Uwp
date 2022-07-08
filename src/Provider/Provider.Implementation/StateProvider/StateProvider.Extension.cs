@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using ToolGood.Words;
+using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
 using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
@@ -54,7 +56,7 @@ namespace Wfa.Provider
             return JsonConvert.DeserializeObject<T>(json);
         }
 
-        private void InitializeSyndicateMissions(JObject totalObj, string key)
+        private void InitializeSyndicateMissions(JObject totalObj, string key, string language)
         {
             if (!totalObj.ContainsKey(key))
             {
@@ -62,12 +64,12 @@ namespace Wfa.Provider
             }
 
             var syndicateMissions = totalObj[key] as JArray;
-            _ostronSyndicateMission = GetSyndicateMission(syndicateMissions, "Ostrons");
-            _entratiSyndicateMission = GetSyndicateMission(syndicateMissions, "Entrati");
-            _solarisSyndicateMission = GetSyndicateMission(syndicateMissions, "Solaris United");
+            _ostronSyndicateMission = GetSyndicateMission(syndicateMissions, "Ostrons", language);
+            _entratiSyndicateMission = GetSyndicateMission(syndicateMissions, "Entrati", language);
+            _solarisSyndicateMission = GetSyndicateMission(syndicateMissions, "Solaris United", language);
         }
 
-        private SyndicateMission GetSyndicateMission(JArray missionsArr, string key)
+        private SyndicateMission GetSyndicateMission(JArray missionsArr, string key, string language)
         {
             var mission = missionsArr
                 .OfType<JObject>()
@@ -79,7 +81,268 @@ namespace Wfa.Provider
             }
 
             var data = JsonConvert.DeserializeObject<SyndicateMission>(mission.ToString());
+
+            if (language != AppConstants.LanguageEn)
+            {
+                foreach (var job in data.Jobs)
+                {
+                    var rewards = job.RewardPool;
+                    for (var i = 0; i < rewards.Count; i++)
+                    {
+                        var text = TranslateSyndicateReward(rewards[i]);
+                        if (text != rewards[i] && language == AppConstants.LanguageCht)
+                        {
+                            text = WordsHelper.ToTraditionalChinese(text);
+                        }
+
+                        rewards[i] = text;
+                    }
+                }
+            }
+
             return data;
+        }
+
+        private void InitializeNews(string language)
+        {
+            if (language != AppConstants.LanguageCht)
+            {
+                return;
+            }
+
+            if (_news?.Any() ?? false)
+            {
+                foreach (var item in _news)
+                {
+                    item.Message = WordsHelper.ToTraditionalChinese(item.Message);
+                }
+            }
+        }
+
+        private void InitializeSortie(string language)
+        {
+            if (_sortie == null)
+            {
+                return;
+            }
+
+            if (language == AppConstants.LanguageChs)
+            {
+                var variants = _sortie.Variants;
+                foreach (var v in variants)
+                {
+                    v.MissionType = WordsHelper.ToSimplifiedChinese(v.MissionType);
+                    v.Modifier = WordsHelper.ToSimplifiedChinese(v.Modifier);
+                    v.ModifierDescription = WordsHelper.ToSimplifiedChinese(v.ModifierDescription);
+                    v.Node = WordsHelper.ToSimplifiedChinese(v.Node);
+                }
+            }
+        }
+
+        private void InitializeFissures(string language)
+        {
+            if (language != AppConstants.LanguageCht)
+            {
+                return;
+            }
+
+            if (_fissures?.Any() ?? false)
+            {
+                foreach (var item in _fissures)
+                {
+                    item.Tier = WordsHelper.ToTraditionalChinese(item.Tier);
+                    item.Node = WordsHelper.ToTraditionalChinese(item.Node);
+                    item.MissionType = WordsHelper.ToTraditionalChinese(item.MissionType);
+                }
+            }
+        }
+
+        private void InitializeInvasions(string language)
+        {
+            if (language == AppConstants.LanguageEn)
+            {
+                return;
+            }
+
+            if (_invasions?.Any() ?? false)
+            {
+                return;
+            }
+
+            foreach (var item in _invasions)
+            {
+                if (language == AppConstants.LanguageChs)
+                {
+                    item.Node = WordsHelper.ToSimplifiedChinese(item.Node);
+                }
+                else if (language == AppConstants.LanguageCht)
+                {
+                    if (!string.IsNullOrEmpty(item.Attacker?.Reward?.Content))
+                    {
+                        item.Attacker.Reward.Content = WordsHelper.ToTraditionalChinese(item.Attacker.Reward.Content);
+                    }
+
+                    if (!string.IsNullOrEmpty(item.Defender?.Reward?.Content))
+                    {
+                        item.Defender.Reward.Content = WordsHelper.ToTraditionalChinese(item.Attacker.Reward.Content);
+                    }
+                }
+            }
+        }
+
+        private void InitializeVoidTrader(string language)
+        {
+            if (_voidTrader == null || language != AppConstants.LanguageCht)
+            {
+                return;
+            }
+
+            _voidTrader.Location = WordsHelper.ToTraditionalChinese(_voidTrader.Location);
+        }
+
+        private void InitializeDailySale(string language)
+        {
+            if (_dailySale == null || language != AppConstants.LanguageCht)
+            {
+                return;
+            }
+
+            _dailySale.Item = WordsHelper.ToTraditionalChinese(_dailySale.Item);
+        }
+
+        private void InitializeNightwave(string language)
+        {
+            if ((_nightwave?.Challenges?.Any() ?? false) || language == AppConstants.LanguageEn)
+            {
+                return;
+            }
+
+            foreach (var item in _nightwave.Challenges)
+            {
+                if (language == AppConstants.LanguageChs)
+                {
+                    item.Title = WordsHelper.ToSimplifiedChinese(item.Title);
+                    item.Description = WordsHelper.ToSimplifiedChinese(item.Description);
+                }
+                else if (language == AppConstants.LanguageCht)
+                {
+                    item.Title = WordsHelper.ToTraditionalChinese(item.Title);
+                    item.Description = WordsHelper.ToTraditionalChinese(item.Description);
+                }
+            }
+        }
+
+        private void InitializeArbitration(string language)
+        {
+            if (_arbitration == null || language == AppConstants.LanguageEn)
+            {
+                return;
+            }
+
+            if (language == AppConstants.LanguageChs)
+            {
+                _arbitration.Type = WordsHelper.ToSimplifiedChinese(_arbitration.Type);
+                _arbitration.Node = WordsHelper.ToSimplifiedChinese(_arbitration.Node);
+            }
+            else if (language == AppConstants.LanguageCht)
+            {
+                _arbitration.Type = WordsHelper.ToTraditionalChinese(_arbitration.Type);
+                _arbitration.Node = WordsHelper.ToTraditionalChinese(_arbitration.Node);
+            }
+        }
+
+        private void InitializeSentientBattle(string language)
+        {
+            if (_sentientBattle?.Mission == null || language == AppConstants.LanguageEn)
+            {
+                return;
+            }
+
+            if (language == AppConstants.LanguageChs)
+            {
+                _sentientBattle.Mission.Node = WordsHelper.ToSimplifiedChinese(_sentientBattle.Mission.Node);
+                _sentientBattle.Mission.Type = WordsHelper.ToSimplifiedChinese(_sentientBattle.Mission.Type);
+            }
+            else if (language == AppConstants.LanguageCht)
+            {
+                _sentientBattle.Mission.Node = WordsHelper.ToTraditionalChinese(_sentientBattle.Mission.Node);
+                _sentientBattle.Mission.Type = WordsHelper.ToTraditionalChinese(_sentientBattle.Mission.Type);
+            }
+        }
+
+        private void InitializeSteelPath(string language)
+        {
+            if (_steelPath == null || language != AppConstants.LanguageCht)
+            {
+                return;
+            }
+
+            _steelPath.CurrentReward.Name = WordsHelper.ToTraditionalChinese(_steelPath.CurrentReward.Name);
+            foreach (var item in _steelPath.Rotation)
+            {
+                item.Name = WordsHelper.ToTraditionalChinese(item.Name);
+            }
+
+            foreach (var item in _steelPath.Evergreens)
+            {
+                item.Name = WordsHelper.ToTraditionalChinese(item.Name);
+            }
+        }
+
+        private string TranslateSyndicateReward(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return default;
+            }
+
+            if (char.IsNumber(text.First()))
+            {
+                // 第一种情况，包含数字的物品，比如 100X Oxium.
+                var number = text.Split(' ').First();
+                var itemName = text.Replace(number, string.Empty).Trim();
+                itemName = TranslateItem(itemName);
+                return string.Join(" ", number, itemName);
+            }
+            else if (text.EndsWith("Relic"))
+            {
+                // 第二种情况，包含遗物，比如 Lith C8 Relic.
+                var splits = text.Split(' ');
+                var identifier = splits[1];
+                var suffix = "遗物";
+                var tier = splits.First() switch
+                {
+                    "Lith" => "古纪",
+                    "Meso" => "前纪",
+                    "Neo" => "中纪",
+                    "Axi" => "后纪",
+                    _ => "安魂",
+                };
+                return string.Join(" ", tier, identifier, suffix);
+            }
+            else
+            {
+                var itemName = TranslateItem(text);
+                if (itemName == text && itemName.Contains(" "))
+                {
+                    // 第三种情况，文本翻译得不到结果，此时考虑需要分拆翻译，比如 Gara Systems Blueprint.
+                    var splits = itemName.Split(' ');
+                    for (var i = 0; i < splits.Length; i++)
+                    {
+                        splits[i] = TranslateItem(splits[i]);
+                    }
+
+                    itemName = string.Join(" ", splits);
+                }
+
+                return itemName;
+            }
+
+            string TranslateItem(string name)
+            {
+                var translate = _dbContext.Translates.FirstOrDefault(p => p.En.Equals(name));
+                return translate?.Zh ?? name;
+            }
         }
     }
 }

@@ -13,6 +13,11 @@ namespace Wfa.Provider.Interfaces
     public interface IStateProvider
     {
         /// <summary>
+        /// 世界状态已经更新.
+        /// </summary>
+        event EventHandler<EventArgs> StateChanged;
+
+        /// <summary>
         /// 缓存当前世界状态.
         /// </summary>
         /// <returns><see cref="Task"/>.</returns>
@@ -89,6 +94,12 @@ namespace Wfa.Provider.Interfaces
         /// </summary>
         /// <returns>地球状态.</returns>
         EarthStatus GetEarthStatus();
+
+        /// <summary>
+        /// 获取希图斯状态.
+        /// </summary>
+        /// <returns>希图斯状态.</returns>
+        CetusStatus GetCetusStatus();
 
         /// <summary>
         /// 获取魔胎之境状态.

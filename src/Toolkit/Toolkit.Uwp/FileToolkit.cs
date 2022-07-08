@@ -43,6 +43,14 @@ namespace Wfa.Toolkit
         }
 
         /// <inheritdoc/>
+        public async Task<Stream> GetFileStreamFromLocalPath(string path)
+        {
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri(path));
+            var stream = await file.OpenStreamForReadAsync();
+            return stream;
+        }
+
+        /// <inheritdoc/>
         public async Task WriteContentToCacheAsync(string fileName, string content)
         {
             var folder = ApplicationData.Current.LocalCacheFolder;

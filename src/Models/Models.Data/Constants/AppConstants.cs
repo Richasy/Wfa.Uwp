@@ -17,6 +17,10 @@ namespace Wfa.Models.Data.Constants
         public const string PlartformPs = "ps4";
         public const string PlartformSwitch = "sw1";
 
+        public const string LanguageChs = "zh";
+        public const string LanguageCht = "tc";
+        public const string LanguageEn = "en";
+
         public const string SettingContainerName = "Richasy.Wfa.Uwp";
 
         public const string StartupTaskId = "Richasy.Wfa";
@@ -28,7 +32,10 @@ namespace Wfa.Models.Data.Constants
         public const string LoggerName = "AppLog.log";
 
         public const string WarframeItemsReleaseIdKey = "WarframeItemsReleaseId";
+        public const string WarframeItemsUpdateTimeKey = "WarframeItemsUpdateTime";
         public const string WarframeMarketUpdateTimeKey = "WarframeMarketUpdateTime";
+        public const string WikiDictUpdateTimeKey = "WikiDictUpdateTime";
+        public const string WikiPatchUpdateTimeKey = "WikiPatchUpdateTime";
         public const string LanguageKey = "Language";
 
         /// <summary>

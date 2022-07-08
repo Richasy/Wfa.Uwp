@@ -44,6 +44,10 @@
       <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
       <Name>Models.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Models\Models.State\Models.State.csproj">
+      <Project>{19162B6D-5B66-4CD9-912F-9E94933175BA}</Project>
+      <Name>Models.State</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Provider\Provider.Interfaces\Provider.Interfaces.csproj">
       <Project>{5D7D2218-2FB3-45D5-88FF-645F07809858}</Project>
       <Name>Provider.Interfaces</Name>
