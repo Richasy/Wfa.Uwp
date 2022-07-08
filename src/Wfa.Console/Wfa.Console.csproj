@@ -19,4 +19,8 @@
     <ProjectReference Include="..\Models\Models.Market\Models.Market.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
