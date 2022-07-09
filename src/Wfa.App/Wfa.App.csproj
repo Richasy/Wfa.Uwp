@@ -33,6 +33,9 @@
     <Compile Include="Controls\App\AppNavigationView.xaml.cs">
       <DependentUpon>AppNavigationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\App\AppSearchBox.xaml.cs">
+      <DependentUpon>AppSearchBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\AppTitleBar.xaml.cs">
       <DependentUpon>AppTitleBar.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="Controls\App\AppNavigationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\App\AppSearchBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

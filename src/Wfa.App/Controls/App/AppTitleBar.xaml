@@ -166,7 +166,7 @@
                 Grid.Column="3"
                 MaxWidth="520"
                 VerticalAlignment="Center">
-                <AutoSuggestBox x:Name="SearchBox" TabIndex="3" />
+                <local:AppSearchBox x:Name="SearchBox" TabIndex="3" />
             </Grid>
         </Grid>
     </Grid>

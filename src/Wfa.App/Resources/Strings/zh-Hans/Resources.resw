@@ -153,6 +153,12 @@
   <data name="Nightwave" xml:space="preserve">
     <value>午夜电波</value>
   </data>
+  <data name="SearchTip" xml:space="preserve">
+    <value>从 Warframe Market 中找找你想要的</value>
+  </data>
+  <data name="SearchTipSlim" xml:space="preserve">
+    <value>在 WM 中搜索</value>
+  </data>
   <data name="Sortie" xml:space="preserve">
     <value>突击任务</value>
   </data>

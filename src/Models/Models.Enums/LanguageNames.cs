@@ -23,5 +23,7 @@ namespace Wfa.Models.Enums
         HelpAndSupport,
         BackToPrevious,
         Menu,
+        SearchTip,
+        SearchTipSlim,
     }
 }
