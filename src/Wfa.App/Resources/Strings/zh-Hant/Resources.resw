@@ -126,10 +126,43 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="BackToPrevious" xml:space="preserve">
+    <value>返回上一頁</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>確認</value>
+  </data>
+  <data name="Fissure" xml:space="preserve">
+    <value>虛空裂縫</value>
+  </data>
+  <data name="HelpAndSupport" xml:space="preserve">
+    <value>幫助 &amp; 支持</value>
+  </data>
+  <data name="Invasions" xml:space="preserve">
+    <value>入侵任務</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>資料庫</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>菜單</value>
+  </data>
+  <data name="Nightwave" xml:space="preserve">
+    <value>午夜電波</value>
+  </data>
+  <data name="Sortie" xml:space="preserve">
+    <value>突擊任務</value>
+  </data>
+  <data name="SteelPath" xml:space="preserve">
+    <value>鋼鐵之路</value>
+  </data>
+  <data name="SyndicateMissions" xml:space="preserve">
+    <value>賞金任務</value>
+  </data>
+  <data name="WorldState" xml:space="preserve">
+    <value>世界狀態</value>
   </data>
 </root>

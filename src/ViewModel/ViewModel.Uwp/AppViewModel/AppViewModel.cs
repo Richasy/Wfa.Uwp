@@ -13,6 +13,7 @@ using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Windows.Globalization;
+using Windows.UI.Xaml;
 
 namespace Wfa.ViewModel
 {
@@ -41,6 +42,10 @@ namespace Wfa.ViewModel
             _wikiProvider = wikiProvider;
             _stateProvider = stateProvider;
             _dbContext = dbContext;
+
+            _isWide = null;
+            IsNavigatePaneOpen = true;
+            IsShowTitleBar = true;
 
             _stateTimer = new Windows.UI.Xaml.DispatcherTimer();
             _stateTimer.Interval = TimeSpan.FromMinutes(1.5);
@@ -111,6 +116,30 @@ namespace Wfa.ViewModel
             if (lanChanged)
             {
                 await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        /// <summary>
+        /// 初始化边距设置.
+        /// </summary>
+        public void InitializePadding()
+        {
+            var width = Window.Current.Bounds.Width;
+            var isWide = _isWide.HasValue && _isWide.Value;
+            if (width >= MediumWindowThresholdWidth)
+            {
+                if (!isWide)
+                {
+                    _isWide = true;
+                    PageHorizontalPadding = _resourceToolkit.GetResource<Thickness>("DefaultPageHorizontalPadding");
+                    PageTopPadding = _resourceToolkit.GetResource<Thickness>("DefaultPageTopPadding");
+                }
+            }
+            else
+            {
+                _isWide = false;
+                PageHorizontalPadding = _resourceToolkit.GetResource<Thickness>("NarrowPageHorizontalPadding");
+                PageTopPadding = _resourceToolkit.GetResource<Thickness>("NarrowPageTopPadding");
             }
         }
 
@@ -276,11 +305,5 @@ namespace Wfa.ViewModel
                 _stateTimer.Start();
             }
         }
-
-        private void OnStateTimerTick(object sender, object e)
-            => RequestWorldStateCommand.Execute().Subscribe();
-
-        private void OnWorldStateChanged(object sender, EventArgs e)
-            => WriteMessage("世界状态已经更新");
     }
 }

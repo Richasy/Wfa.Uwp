@@ -61,6 +61,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<IWikiProvider, WikiProvider>();
 
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
+            SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
 
             SplatRegistrations.SetupIOC();
         }

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppDescription" xml:space="preserve">
-    <value>Various information to detect Warframe</value>
+    <value>Warframe 的动态信息</value>
   </data>
   <data name="AppName" xml:space="preserve">
     <value>Warframe Alerting Prime</value>
@@ -126,10 +126,43 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="BackToPrevious" xml:space="preserve">
+    <value>返回上一页</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>确认</value>
+  </data>
+  <data name="Fissure" xml:space="preserve">
+    <value>虚空裂缝</value>
+  </data>
+  <data name="HelpAndSupport" xml:space="preserve">
+    <value>帮助 &amp; 支持</value>
+  </data>
+  <data name="Invasions" xml:space="preserve">
+    <value>入侵任务</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>资料库</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="Nightwave" xml:space="preserve">
+    <value>午夜电波</value>
+  </data>
+  <data name="Sortie" xml:space="preserve">
+    <value>突击任务</value>
+  </data>
+  <data name="SteelPath" xml:space="preserve">
+    <value>钢铁之路</value>
+  </data>
+  <data name="SyndicateMissions" xml:space="preserve">
+    <value>赏金任务</value>
+  </data>
+  <data name="WorldState" xml:space="preserve">
+    <value>世界状态</value>
   </data>
 </root>
