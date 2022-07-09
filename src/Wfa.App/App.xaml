@@ -7,12 +7,17 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+                <ResourceDictionary Source="ms-appx:///Styles/Style.Overwrite.xaml" />
+                <ResourceDictionary Source="ms-appx:///Styles/Style.Dimensions.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Theme.Light.xaml" />
                 <ResourceDictionary x:Key="Dark" Source="ms-appx:///Styles/Theme.Dark.xaml" />
                 <ResourceDictionary x:Key="HighContrast" Source="ms-appx:///Styles/Theme.HighContrast.xaml" />
             </ResourceDictionary.ThemeDictionaries>
+
+            <x:Boolean x:Key="True">True</x:Boolean>
+            <x:Boolean x:Key="False">False</x:Boolean>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

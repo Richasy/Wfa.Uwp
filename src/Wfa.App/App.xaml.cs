@@ -77,7 +77,7 @@ namespace Wfa.App
             {
                 if (rootFrame.Content == null)
                 {
-                    rootFrame.Navigate(typeof(Pages.MainPage), (e as LaunchActivatedEventArgs).Arguments);
+                    rootFrame.Navigate(typeof(Pages.RootPage), (e as LaunchActivatedEventArgs).Arguments);
                 }
             }
 
@@ -87,7 +87,7 @@ namespace Wfa.App
                 var arg = protocalArgs.Uri.Query.Replace("?", string.Empty);
                 if (rootFrame.Content == null)
                 {
-                    rootFrame.Navigate(typeof(Pages.MainPage), arg);
+                    rootFrame.Navigate(typeof(Pages.RootPage), arg);
                 }
             }
 
@@ -96,7 +96,7 @@ namespace Wfa.App
             {
                 if (rootFrame.Content == null)
                 {
-                    rootFrame.Navigate(typeof(Pages.MainPage));
+                    rootFrame.Navigate(typeof(Pages.RootPage));
                 }
             }
 
@@ -108,7 +108,7 @@ namespace Wfa.App
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(Pages.MainPage));
+                    rootFrame.Navigate(typeof(Pages.RootPage));
                 }
 
                 // TODO: Parse toastActivationArgs.Argument

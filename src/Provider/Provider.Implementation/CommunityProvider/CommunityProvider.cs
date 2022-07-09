@@ -44,7 +44,6 @@ namespace Wfa.Provider
         {
             var fileNames = new[]
             {
-                ArcaneFileName,
                 ArchGunFileName,
                 ArchMeleeFileName,
                 ArchwingFileName,
@@ -68,7 +67,7 @@ namespace Wfa.Provider
 
             var time = updateTime == null
                 ? DateTimeOffset.MinValue
-                : DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(updateTime));
+                : DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(updateTime.Value));
             var cloudId = await GetWarframeItemsLatestReleaseIdAsync();
             var isToday = time.Date.Equals(DateTimeOffset.Now.Date) && !ignoreDate;
             var needUpdate = string.IsNullOrEmpty(localId?.Value) || (cloudId != localId.Value && !isToday);

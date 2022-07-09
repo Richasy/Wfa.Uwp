@@ -126,10 +126,49 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="BackToPrevious" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
+  </data>
+  <data name="Fissure" xml:space="preserve">
+    <value>Fissures</value>
+  </data>
+  <data name="HelpAndSupport" xml:space="preserve">
+    <value>Help &amp; support</value>
+  </data>
+  <data name="Invasions" xml:space="preserve">
+    <value>Invasions</value>
+  </data>
+  <data name="Library" xml:space="preserve">
+    <value>Library</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Nightwave" xml:space="preserve">
+    <value>Nightwave</value>
+  </data>
+  <data name="SearchTip" xml:space="preserve">
+    <value>Find what you want from the Warframe Market</value>
+  </data>
+  <data name="SearchTipSlim" xml:space="preserve">
+    <value>Search in WM</value>
+  </data>
+  <data name="Sortie" xml:space="preserve">
+    <value>Sortie</value>
+  </data>
+  <data name="SteelPath" xml:space="preserve">
+    <value>Steel path</value>
+  </data>
+  <data name="SyndicateMissions" xml:space="preserve">
+    <value>Syndicate missions</value>
+  </data>
+  <data name="WorldState" xml:space="preserve">
+    <value>World state</value>
   </data>
 </root>

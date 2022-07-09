@@ -2,6 +2,7 @@
 
 using System.Reactive;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 using Wfa.Models.Data.Context;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
@@ -25,6 +26,8 @@ namespace Wfa.ViewModel
 
         private readonly DispatcherTimer _stateTimer;
         private readonly ObservableAsPropertyHelper<bool> _isRequestingState;
+
+        private bool? _isWide;
 
         /// <summary>
         /// 检查社区资料库更新的命令.
@@ -80,5 +83,35 @@ namespace Wfa.ViewModel
         /// 是否正在请求世界状态.
         /// </summary>
         public bool IsRequestingState => _isRequestingState.Value;
+
+        /// <summary>
+        /// 导航面板是否已展开.
+        /// </summary>
+        [Reactive]
+        public bool IsNavigatePaneOpen { get; set; }
+
+        /// <summary>
+        /// 页面横向边距.
+        /// </summary>
+        [Reactive]
+        public Thickness PageHorizontalPadding { get; set; }
+
+        /// <summary>
+        /// 页面顶部边距.
+        /// </summary>
+        [Reactive]
+        public Thickness PageTopPadding { get; set; }
+
+        /// <summary>
+        /// 是否显示标题栏.
+        /// </summary>
+        [Reactive]
+        public bool IsShowTitleBar { get; set; }
+
+        /// <summary>
+        /// 是否显示菜单按钮.
+        /// </summary>
+        [Reactive]
+        public bool IsShowMenuButton { get; set; }
     }
 }

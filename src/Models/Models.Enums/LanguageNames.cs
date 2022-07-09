@@ -12,5 +12,18 @@ namespace Wfa.Models.Enums
         AppDescription,
         Confirm,
         Cancel,
+        WorldState,
+        Library,
+        SyndicateMissions,
+        Invasions,
+        Nightwave,
+        Fissure,
+        Sortie,
+        SteelPath,
+        HelpAndSupport,
+        BackToPrevious,
+        Menu,
+        SearchTip,
+        SearchTipSlim,
     }
 }

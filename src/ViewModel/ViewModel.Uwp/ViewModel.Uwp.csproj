@@ -10,8 +10,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppViewModel\AppViewModel.cs" />
+    <Compile Include="AppViewModel\AppViewModel.Methods.cs" />
     <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
+    <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="NavigationViewModel\NavigationViewModel.cs" />
+    <Compile Include="NavigationViewModel\NavigationViewModel.Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="$(SolutionDir)\src\Shared\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
@@ -57,5 +61,6 @@
       <Name>Toolkit.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
 </Project>
