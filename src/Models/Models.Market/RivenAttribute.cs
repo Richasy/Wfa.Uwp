@@ -46,12 +46,6 @@ namespace Wfa.Models.Market
         public bool PositiveIsNegative { get; set; }
 
         /// <summary>
-        /// 专属的武器类型（用,分隔）.
-        /// </summary>
-        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "exclusive_to", Required = Required.Default)]
-        public string ExclusiveTo { get; set; }
-
-        /// <summary>
         /// 增益类型.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "effect", Required = Required.Default)]

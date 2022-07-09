@@ -72,6 +72,11 @@ namespace Wfa.ViewModel
         public ReactiveCommand<Unit, Unit> RequestWorldStateCommand { get; }
 
         /// <summary>
+        /// 开始循环请求世界状态的命令.
+        /// </summary>
+        public ReactiveCommand<Unit, Unit> BeginLoopWorldStateCommand { get; }
+
+        /// <summary>
         /// 是否正在请求世界状态.
         /// </summary>
         public bool IsRequestingState => _isRequestingState.Value;

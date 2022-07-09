@@ -59,6 +59,7 @@ namespace Wfa.ViewModel
             UpdatePatchDatabaseCommand = ReactiveCommand.CreateFromTask(UpdatePatchDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
 
             RequestWorldStateCommand = ReactiveCommand.CreateFromTask(RequestWorldStateAsync, outputScheduler: RxApp.MainThreadScheduler);
+            BeginLoopWorldStateCommand = ReactiveCommand.CreateFromTask(BeginLoopWorldStateAsync, outputScheduler: RxApp.MainThreadScheduler);
 
             _isRequestingState = RequestWorldStateCommand.IsExecuting.ToProperty(this, x => x.IsRequestingState, scheduler: RxApp.MainThreadScheduler);
 
@@ -71,10 +72,8 @@ namespace Wfa.ViewModel
                 .Merge(UpdateTranslateDatabaseCommand.ThrownExceptions)
                 .Merge(UpdatePatchDatabaseCommand.ThrownExceptions)
                 .Merge(RequestWorldStateCommand.ThrownExceptions)
+                .Merge(BeginLoopWorldStateCommand.ThrownExceptions)
                 .Subscribe(LogException);
-
-            RequestWorldStateCommand.Execute().Subscribe();
-            _stateTimer.Start();
         }
 
         /// <summary>
@@ -219,9 +218,28 @@ namespace Wfa.ViewModel
 
         private async Task UpdateWarframeMarketDatabaseAsync()
         {
-            WriteMessage("开始更新WM条目内容");
-            await _marketProvider.UpdateMarketItemsAsync();
-            WriteMessage("WM 条目内容更新完成");
+            WriteMessage($"开始更新 Warframe Market 资料...");
+
+            var updateArray = new[]
+            {
+                MarketDataType.Items,
+                MarketDataType.LichWeapons,
+                MarketDataType.LichEpemeras,
+                MarketDataType.LichQuirks,
+                MarketDataType.RivenWeapons,
+                MarketDataType.RivenAttributes,
+            };
+
+            foreach (var updateKey in updateArray)
+            {
+                WriteMessage($"更新内容 {updateKey} ...");
+                await _marketProvider.UpdateDataAsync(updateKey);
+                WriteMessage($"更新 {updateKey} 完成");
+            }
+
+            WriteMessage("市场数据更新完成，正在提交更新时间");
+            await _marketProvider.CommitUpdateTimeAsync();
+            WriteMessage("已记录此次更新时间");
         }
 
         private async Task UpdateTranslateDatabaseAsync()
@@ -250,12 +268,19 @@ namespace Wfa.ViewModel
             WriteMessage("世界状态更新完成");
         }
 
+        private async Task BeginLoopWorldStateAsync()
+        {
+            await RequestWorldStateAsync();
+            if (!_stateTimer.IsEnabled)
+            {
+                _stateTimer.Start();
+            }
+        }
+
         private void OnStateTimerTick(object sender, object e)
             => RequestWorldStateCommand.Execute().Subscribe();
 
         private void OnWorldStateChanged(object sender, EventArgs e)
-        {
-            var syndicate = _stateProvider.GetOstronSyndicateMission();
-        }
+            => WriteMessage("世界状态已经更新");
     }
 }

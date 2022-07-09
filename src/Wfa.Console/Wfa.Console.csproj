@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -17,10 +17,6 @@
     <ProjectReference Include="..\Models\Models.Data\Models.Data.csproj" />
     <ProjectReference Include="..\Models\Models.Enums\Models.Enums.csproj" />
     <ProjectReference Include="..\Models\Models.Market\Models.Market.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
