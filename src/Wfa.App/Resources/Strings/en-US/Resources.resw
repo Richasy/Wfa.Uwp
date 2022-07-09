@@ -135,8 +135,14 @@
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
   </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>Fissures</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>Follow system</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
@@ -147,11 +153,20 @@
   <data name="Library" xml:space="preserve">
     <value>Library</value>
   </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>Nightwave</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>Find what you want from the Warframe Market</value>

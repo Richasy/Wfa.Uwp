@@ -30,7 +30,7 @@ namespace Wfa.Models.Enums
         /// <summary>
         /// 常用世界状态首页.
         /// </summary>
-        Home = 3,
+        WorldStateHome = 3,
 
         /// <summary>
         /// 资料展示页面.

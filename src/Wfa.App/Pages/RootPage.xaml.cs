@@ -47,12 +47,13 @@ namespace Wfa.App.Pages
 
         private async void OnNavViewFirstLoadedAsync(object sender, EventArgs e)
         {
-            ViewModel.NavigateToMainView(PageIds.Home);
+            ViewModel.NavigateToMainView(PageIds.WorldStateHome);
             await CoreViewModel.InitializeLanguageAsync();
             CoreViewModel.CheckLibraryDatabaseCommand.Execute().Subscribe();
             CoreViewModel.CheckWarframeMarketDatabaseCommand.Execute().Subscribe();
             CoreViewModel.CheckTranslateDatabaseCommand.Execute().Subscribe();
             CoreViewModel.CheckPatchDatabaseCommand.Execute().Subscribe();
+            CoreViewModel.BeginLoopWorldStateCommand.Execute().Subscribe();
         }
     }
 

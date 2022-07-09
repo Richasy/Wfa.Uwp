@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using ReactiveUI;
 using Splat;
+using Wfa.App.Pages;
 using Wfa.App.Resources.Extensions;
 using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
@@ -70,7 +71,7 @@ namespace Wfa.App.Controls.App
             {
                 PageIds.Help => throw new NotImplementedException(),
                 PageIds.Settings => throw new NotImplementedException(),
-                PageIds.Home => typeof(Windows.UI.Xaml.Controls.Page),
+                PageIds.WorldStateHome => typeof(WorldStatePage),
                 PageIds.Library => throw new NotImplementedException(),
                 PageIds.SyndicateMissions => throw new NotImplementedException(),
                 PageIds.Invasions => throw new NotImplementedException(),

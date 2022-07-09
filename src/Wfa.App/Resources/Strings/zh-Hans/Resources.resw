@@ -135,8 +135,14 @@
   <data name="Confirm" xml:space="preserve">
     <value>确认</value>
   </data>
+  <data name="Dark" xml:space="preserve">
+    <value>深色</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>虚空裂缝</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>跟随系统</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>帮助 &amp; 支持</value>
@@ -147,11 +153,20 @@
   <data name="Library" xml:space="preserve">
     <value>资料库</value>
   </data>
+  <data name="Light" xml:space="preserve">
+    <value>浅色</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜单</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>新闻</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>午夜电波</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>从 Warframe Market 中找找你想要的</value>

@@ -294,7 +294,6 @@ namespace Wfa.ViewModel
 
             WriteMessage("正在请求世界状态...");
             await _stateProvider.CacheWorldStateAsync();
-            WriteMessage("世界状态更新完成");
         }
 
         private async Task BeginLoopWorldStateAsync()

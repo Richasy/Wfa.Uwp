@@ -25,5 +25,10 @@ namespace Wfa.Models.Enums
         Menu,
         SearchTip,
         SearchTipSlim,
+        Refresh,
+        Light,
+        Dark,
+        FollowSystem,
+        News,
     }
 }

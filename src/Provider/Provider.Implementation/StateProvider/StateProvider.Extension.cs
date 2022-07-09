@@ -241,13 +241,13 @@ namespace Wfa.Provider
 
             if (language == AppConstants.LanguageChs)
             {
-                _arbitration.Type = WordsHelper.ToSimplifiedChinese(_arbitration.Type);
-                _arbitration.Node = WordsHelper.ToSimplifiedChinese(_arbitration.Node);
+                _arbitration.Type = WordsHelper.ToSimplifiedChinese(_arbitration.Type ?? string.Empty);
+                _arbitration.Node = WordsHelper.ToSimplifiedChinese(_arbitration.Node ?? string.Empty);
             }
             else if (language == AppConstants.LanguageCht)
             {
-                _arbitration.Type = WordsHelper.ToTraditionalChinese(_arbitration.Type);
-                _arbitration.Node = WordsHelper.ToTraditionalChinese(_arbitration.Node);
+                _arbitration.Type = WordsHelper.ToTraditionalChinese(_arbitration.Type ?? string.Empty);
+                _arbitration.Node = WordsHelper.ToTraditionalChinese(_arbitration.Node ?? string.Empty);
             }
         }
 

@@ -62,6 +62,7 @@ namespace Wfa.DI.App
 
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
             SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
+            SplatRegistrations.RegisterLazySingleton<WorldStatePageViewModel>();
 
             SplatRegistrations.SetupIOC();
         }
