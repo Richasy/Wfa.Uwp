@@ -44,7 +44,6 @@ namespace Wfa.Provider
         {
             var fileNames = new[]
             {
-                AllDataFileName,
                 ArcaneFileName,
                 ArchGunFileName,
                 ArchMeleeFileName,

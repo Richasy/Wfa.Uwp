@@ -3,6 +3,7 @@
 using Microsoft.EntityFrameworkCore;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Center;
+using Wfa.Models.Market;
 
 namespace Wfa.Models.Data.Context
 {
@@ -90,6 +91,31 @@ namespace Wfa.Models.Data.Context
         /// WM商品数据集.
         /// </summary>
         public DbSet<MarketItem> MarketItems { get; set; }
+
+        /// <summary>
+        /// 玄骸幻纹集.
+        /// </summary>
+        public DbSet<LichEphemera> LichEphemeras { get; set; }
+
+        /// <summary>
+        /// 玄骸怪癖集.
+        /// </summary>
+        public DbSet<LichQuirk> LichQuirks { get; set; }
+
+        /// <summary>
+        /// 玄骸武器集.
+        /// </summary>
+        public DbSet<LichWeapon> LichWeapons { get; set; }
+
+        /// <summary>
+        /// 紫卡属性集.
+        /// </summary>
+        public DbSet<RivenAttribute> RivenAttributes { get; set; }
+
+        /// <summary>
+        /// 紫卡武器集.
+        /// </summary>
+        public DbSet<RivenWeapon> RivenWeapons { get; set; }
 
         /// <inheritdoc/>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

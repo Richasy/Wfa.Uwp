@@ -1344,32 +1344,6 @@ namespace Wfa.Console.Migrations
                     b.ToTable("Dicts");
                 });
 
-            modelBuilder.Entity("Wfa.Models.Data.Center.MarketItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Code")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Main")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("MarketId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Thumbnail")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("MarketItems");
-                });
-
             modelBuilder.Entity("Wfa.Models.Data.Center.Meta", b =>
                 {
                     b.Property<int>("Id")
@@ -1422,6 +1396,153 @@ namespace Wfa.Console.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Translates");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.LichEphemera", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Animation")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Element")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Thumb")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LichEphemeras");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.LichQuirk", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LichQuirks");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.LichWeapon", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Thumb")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LichWeapons");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.MarketItem", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Thumb")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MarketItems");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.RivenAttribute", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Effect")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("IsNegativeOnly")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("IsSearchOnly")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("PositiveIsNegative")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Prefix")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Suffix")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Unit")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RivenAttributes");
+                });
+
+            modelBuilder.Entity("Wfa.Models.Market.RivenWeapon", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Identifier")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RivenType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Thumb")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RivenWeapons");
                 });
 
             modelBuilder.Entity("Wfa.Models.Community.ArchGunAttack", b =>

@@ -1,12 +1,17 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Wfa.Models.Data.Center;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Enums;
 using Wfa.Provider.Interfaces;
+using Wfa.Toolkit.Interfaces;
 
 namespace Wfa.Provider
 {
@@ -17,21 +22,59 @@ namespace Wfa.Provider
     {
         private readonly LibraryDbContext _dbContext;
         private readonly IHttpProvider _httpProvider;
+        private readonly ISettingsToolkit _settingsToolkit;
 
-        private async Task CommitWarframeMarketUpdateTimeAsync()
+        private async Task<bool> UpdateDataAsync<T>(string url, string key, DbSet<T> dataSet, string tableName, Action<T> injectAction = null)
+            where T : class
         {
-            var currentTime = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
-            var localData = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeMarketUpdateTimeKey);
-            if (localData == null)
+            try
             {
-                localData = new Meta(AppConstants.WarframeMarketUpdateTimeKey, currentTime);
-                await _dbContext.Metas.AddAsync(localData);
+                var request = _httpProvider.GetRequestMessage(HttpMethod.Get, url);
+                await FillRequestHeaderAsync(request);
+                var response = await _httpProvider.SendAsync(request);
+                var content = await _httpProvider.ParseAsync<string>(response);
+                var jobj = JObject.Parse(content);
+                var itemsStr = jobj["payload"][key].ToString();
+
+                var list = JsonConvert.DeserializeObject<List<T>>(itemsStr);
+
+                if (injectAction != null)
+                {
+                    list.ForEach(p => injectAction.Invoke(p));
+                }
+
+                // 移除表格数据.
+                await _dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM {tableName};DELETE FROM sqlite_sequence Where name = \'{tableName}\'");
+
+                // 写入数据.
+                await dataSet.AddRangeAsync(list);
+                await _dbContext.SaveChangesAsync();
+                return true;
             }
-            else
+            catch (Exception)
             {
-                localData.Value = currentTime;
-                _dbContext.Metas.Update(localData);
+                return false;
             }
+        }
+
+        private async Task FillRequestHeaderAsync(HttpRequestMessage request)
+        {
+            var language = (await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.LanguageKey))?.Value;
+            var lan = language switch
+            {
+                "zh" => "zh-hans",
+                "tc" => "zh-hant",
+                _ => "en",
+            };
+
+            var platform = _settingsToolkit.ReadLocalSetting(SettingNames.Platform, AppConstants.PlartformPc);
+
+            if (!string.IsNullOrEmpty(lan))
+            {
+                request.Headers.Add("Language", lan);
+            }
+
+            request.Headers.Add("Platform", platform);
         }
     }
 }
