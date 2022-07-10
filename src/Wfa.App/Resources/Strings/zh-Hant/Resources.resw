@@ -135,6 +135,9 @@
   <data name="Confirm" xml:space="preserve">
     <value>確認</value>
   </data>
+  <data name="ConstructionProgress" xml:space="preserve">
+    <value>戰艦建造進度</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="FollowSystem" xml:space="preserve">
     <value>跟隨系統</value>
+  </data>
+  <data name="Fomorian" xml:space="preserve">
+    <value>巨人戰艦</value>
   </data>
   <data name="GameEvents" xml:space="preserve">
     <value>遊戲活動</value>
@@ -173,6 +179,9 @@
   </data>
   <data name="NoEvents" xml:space="preserve">
     <value>當前沒有遊戲活動</value>
+  </data>
+  <data name="Razorback" xml:space="preserve">
+    <value>利刃豺狼</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>刷新</value>

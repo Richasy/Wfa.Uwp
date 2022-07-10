@@ -135,6 +135,9 @@
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
   </data>
+  <data name="ConstructionProgress" xml:space="preserve">
+    <value>Battleship construction progress</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="FollowSystem" xml:space="preserve">
     <value>Follow system</value>
+  </data>
+  <data name="Fomorian" xml:space="preserve">
+    <value>Fomorian</value>
   </data>
   <data name="GameEvents" xml:space="preserve">
     <value>Game events</value>
@@ -173,6 +179,9 @@
   </data>
   <data name="NoEvents" xml:space="preserve">
     <value>There are currently no game events</value>
+  </data>
+  <data name="Razorback" xml:space="preserve">
+    <value>Razorback</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Refresh</value>

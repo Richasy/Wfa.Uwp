@@ -36,6 +36,7 @@ namespace Wfa.ViewModel
         {
             InitializeNews();
             InitializeEvents();
+            InitializeConstructionProgress();
         }
 
         private void InitializeNews()
@@ -82,6 +83,24 @@ namespace Wfa.ViewModel
             }
 
             IsEventsEmpty = Events.Count == 0;
+        }
+
+        private void InitializeConstructionProgress()
+        {
+            var progress = _stateProvider.GetConstructionProgress();
+            if (progress == null)
+            {
+                return;
+            }
+
+            if (ConstructionProgress == null)
+            {
+                ConstructionProgress = new ConstructionProgressViewModel(progress);
+            }
+            else
+            {
+                ConstructionProgress.UpdateDataCommand.Execute(progress).Subscribe();
+            }
         }
 
         private void OnWorldStateChanged(object sender, EventArgs e)

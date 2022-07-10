@@ -71,7 +71,7 @@ namespace Wfa.ViewModel
         /// 建造进度.
         /// </summary>
         [Reactive]
-        public ConstructionProgress ConstructionProgress { get; set; }
+        public ConstructionProgressViewModel ConstructionProgress { get; set; }
 
         /// <summary>
         /// 前哨战信息.

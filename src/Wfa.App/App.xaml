@@ -22,6 +22,36 @@
             <x:Boolean x:Key="True">True</x:Boolean>
             <x:Boolean x:Key="False">False</x:Boolean>
 
+            <!-- Corpus 渐变色 -->
+            <LinearGradientBrush x:Key="CorpusGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#165EFE" />
+                <GradientStop Offset="1" Color="#43AFF7" />
+            </LinearGradientBrush>
+
+            <!-- Grineer 渐变色 -->
+            <LinearGradientBrush x:Key="GrineerGreenGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#29B7C1" />
+                <GradientStop Offset="1" Color="#8EE499" />
+            </LinearGradientBrush>
+
+            <!-- 感染者渐变色 -->
+            <LinearGradientBrush x:Key="InfestedRedGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#FA2F89" />
+                <GradientStop Offset="1" Color="#F93BC7" />
+            </LinearGradientBrush>
+
+            <!-- 灵煞渐变色 -->
+            <LinearGradientBrush x:Key="SentientGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#BC68D4" />
+                <GradientStop Offset="1" Color="#693FBD" />
+            </LinearGradientBrush>
+
+            <!-- 奥罗金渐变色 -->
+            <LinearGradientBrush x:Key="OrikinGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#F7B770" />
+                <GradientStop Offset="1" Color="#ED7063" />
+            </LinearGradientBrush>
+
             <converters:ObjectToBoolConverter x:Key="ObjectToBoolConverter" />
             <converters:ObjectToBoolConverter x:Key="ObjectToBoolReverseConverter" IsReverse="True" />
             <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />

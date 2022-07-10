@@ -33,5 +33,8 @@ namespace Wfa.Models.Enums
         GameEvents,
         ExpiryDateFormat,
         NoEvents,
+        ConstructionProgress,
+        Fomorian,
+        Razorback,
     }
 }

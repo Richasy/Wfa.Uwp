@@ -33,6 +33,7 @@
                         <Setter Target="NewsPanel.ImageHeight" Value="240" />
                         <Setter Target="SecondaryContainer.(Grid.Row)" Value="1" />
                         <Setter Target="SecondaryContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="SecondaryContainer.RowSpacing" Value="20" />
                         <Setter Target="SecondaryColumn.Width" Value="0" />
                     </VisualState.Setters>
                 </VisualState>
@@ -56,8 +57,9 @@
                 <Grid
                     x:Name="SecondaryContainer"
                     Grid.Column="1"
-                    RowSpacing="20">
+                    RowSpacing="32">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
@@ -71,6 +73,10 @@
                         Grid.Row="1"
                         IsEmpty="{x:Bind ViewModel.IsEventsEmpty, Mode=OneWay}"
                         ItemsSource="{x:Bind ViewModel.Events}" />
+                    <state:ConstructionPanel
+                        x:Name="ConstructionPanel"
+                        Grid.Row="2"
+                        ViewModel="{x:Bind ViewModel.ConstructionProgress, Mode=OneWay}" />
                 </Grid>
             </Grid>
         </ScrollViewer>
