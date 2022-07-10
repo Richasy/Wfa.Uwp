@@ -30,5 +30,8 @@ namespace Wfa.Models.Enums
         Dark,
         FollowSystem,
         News,
+        GameEvents,
+        ExpiryDateFormat,
+        NoEvents,
     }
 }

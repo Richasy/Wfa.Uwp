@@ -23,7 +23,7 @@ namespace Wfa.App.Pages
         {
             var width = Window.Current.Bounds.Width;
             NewsPanel.Width = width < CoreViewModel.MediumWindowThresholdWidth
-                ? width - CoreViewModel.PageHorizontalPadding.Left - CoreViewModel.PageHorizontalPadding.Right - 4
+                ? e.NewSize.Width - CoreViewModel.PageHorizontalPadding.Left - CoreViewModel.PageHorizontalPadding.Right - 4
                 : SecondaryColumn.Width.Value;
         }
     }

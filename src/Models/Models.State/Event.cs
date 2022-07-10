@@ -65,9 +65,9 @@ namespace Wfa.Models.State
         public double Progress { get; set; }
 
         /// <inheritdoc/>
-        public override bool Equals(object obj) => obj is Event @event && Id == @event.Id;
+        public override bool Equals(object obj) => obj is Event @event && Name == @event.Name;
 
         /// <inheritdoc/>
-        public override int GetHashCode() => Id.GetHashCode();
+        public override int GetHashCode() => Name.GetHashCode();
     }
 }

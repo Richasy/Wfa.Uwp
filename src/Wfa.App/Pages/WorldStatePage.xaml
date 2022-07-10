@@ -53,8 +53,12 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                <Grid x:Name="SecondaryContainer" Grid.Column="1">
+                <Grid
+                    x:Name="SecondaryContainer"
+                    Grid.Column="1"
+                    RowSpacing="20">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
@@ -62,6 +66,11 @@
                         x:Name="NewsPanel"
                         ItemsSource="{x:Bind ViewModel.News}"
                         NewsCount="{x:Bind ViewModel.NewsCount, Mode=OneWay}" />
+                    <state:EventsPanel
+                        x:Name="EventsPanel"
+                        Grid.Row="1"
+                        IsEmpty="{x:Bind ViewModel.IsEventsEmpty, Mode=OneWay}"
+                        ItemsSource="{x:Bind ViewModel.Events}" />
                 </Grid>
             </Grid>
         </ScrollViewer>

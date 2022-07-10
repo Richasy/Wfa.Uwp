@@ -23,7 +23,7 @@ namespace Wfa.ViewModel
         /// <summary>
         /// 活动列表.
         /// </summary>
-        public ObservableCollection<Event> Events { get; }
+        public ObservableCollection<EventItemViewModel> Events { get; }
 
         /// <summary>
         /// 每日商品 (Darvo).

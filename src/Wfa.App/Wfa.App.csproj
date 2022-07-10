@@ -50,6 +50,9 @@
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
     <Compile Include="Controls\App\WfaIcon.cs" />
+    <Compile Include="Controls\State\EventsPanel.xaml.cs">
+      <DependentUpon>EventsPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\NewsPanel.xaml.cs">
       <DependentUpon>NewsPanel.xaml</DependentUpon>
     </Compile>
@@ -170,6 +173,10 @@
     <Page Include="Controls\App\IconTextBlock\IconTextBlock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\State\EventsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\NewsPanel.xaml">
       <SubType>Designer</SubType>

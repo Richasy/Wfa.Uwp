@@ -1,0 +1,82 @@
+﻿<UserControl
+    x:Class="Wfa.App.Controls.State.EventsPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBlock
+            Margin="0,0,0,8"
+            HorizontalAlignment="Left"
+            Text="{ext:Locale Name=GameEvents}" />
+        <muxc:ItemsRepeater ItemsSource="{x:Bind ItemsSource, Mode=OneWay}" Visibility="{x:Bind IsEmpty, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}">
+            <muxc:ItemsRepeater.Layout>
+                <muxc:StackLayout Spacing="4" />
+            </muxc:ItemsRepeater.Layout>
+            <muxc:ItemsRepeater.ItemTemplate>
+                <DataTemplate x:DataType="items:EventItemViewModel">
+                    <Grid
+                        Background="{ThemeResource SystemFillColorAttentionBackgroundBrush}"
+                        BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
+                        BorderThickness="1"
+                        ColumnSpacing="8"
+                        CornerRadius="{ThemeResource ControlCornerRadius}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel
+                            Margin="16,8,0,8"
+                            VerticalAlignment="Center"
+                            Spacing="4">
+                            <TextBlock
+                                FontWeight="Bold"
+                                Text="{x:Bind Data.Name}"
+                                TextTrimming="CharacterEllipsis" />
+                            <TextBlock
+                                Style="{StaticResource CaptionTextBlockStyle}"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                Text="{x:Bind ExpiryDate}" />
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Column="1"
+                            Margin="0,8,16,8"
+                            VerticalAlignment="Center">
+                            <Run
+                                FontSize="28"
+                                FontWeight="Bold"
+                                Text="{x:Bind Progress, Mode=OneWay}" />
+                            <Run
+                                FontSize="12"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                Text="%" />
+                        </TextBlock>
+
+                        <muxc:ProgressBar
+                            Grid.Row="1"
+                            Grid.ColumnSpan="2"
+                            Maximum="100"
+                            Value="{x:Bind Data.Progress, Mode=OneWay}" />
+                    </Grid>
+                </DataTemplate>
+            </muxc:ItemsRepeater.ItemTemplate>
+        </muxc:ItemsRepeater>
+        <TextBlock
+            Style="{StaticResource CaptionTextBlockStyle}"
+            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+            Text="{ext:Locale Name=NoEvents}"
+            Visibility="{x:Bind IsEmpty, Mode=OneWay}" />
+    </StackPanel>
+</UserControl>

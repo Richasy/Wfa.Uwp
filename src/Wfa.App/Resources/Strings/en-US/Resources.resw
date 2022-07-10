@@ -138,11 +138,17 @@
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
+  <data name="ExpiryDateFormat" xml:space="preserve">
+    <value>Expires {0}</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>Fissures</value>
   </data>
   <data name="FollowSystem" xml:space="preserve">
     <value>Follow system</value>
+  </data>
+  <data name="GameEvents" xml:space="preserve">
+    <value>Game events</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
@@ -164,6 +170,9 @@
   </data>
   <data name="Nightwave" xml:space="preserve">
     <value>Nightwave</value>
+  </data>
+  <data name="NoEvents" xml:space="preserve">
+    <value>There are currently no game events</value>
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Refresh</value>

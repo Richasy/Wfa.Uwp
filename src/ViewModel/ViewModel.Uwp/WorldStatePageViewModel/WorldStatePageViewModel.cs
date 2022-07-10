@@ -26,7 +26,7 @@ namespace Wfa.ViewModel
         {
             _stateProvider = stateProvider;
             News = new ObservableCollection<NewsItemViewModel>();
-            Events = new ObservableCollection<Event>();
+            Events = new ObservableCollection<EventItemViewModel>();
 
             _stateProvider.StateChanged += OnWorldStateChanged;
             InitializeData();
@@ -35,6 +35,7 @@ namespace Wfa.ViewModel
         private void InitializeData()
         {
             InitializeNews();
+            InitializeEvents();
         }
 
         private void InitializeNews()
@@ -49,10 +50,38 @@ namespace Wfa.ViewModel
             if (newCount > 0)
             {
                 // 有新的新闻传入，此时整体刷新.
-                News.Clear();
+                TryClear(News);
                 news.OrderByDescending(p => p.Date).ToList().ForEach(p => News.Add(new NewsItemViewModel(p)));
                 NewsCount = News.Count;
             }
+        }
+
+        private void InitializeEvents()
+        {
+            var events = _stateProvider.GetEvents();
+            if (!events?.Any() ?? true)
+            {
+                IsEventsEmpty = true;
+                TryClear(Events);
+                return;
+            }
+
+            var newCount = events.Count(p => !Events.Any(j => j.Data.Equals(p)));
+            if (newCount > 0)
+            {
+                TryClear(Events);
+                events.ToList().ForEach(p => Events.Add(new EventItemViewModel(p)));
+            }
+            else
+            {
+                foreach (var newEvent in events)
+                {
+                    var sourceEvent = Events.FirstOrDefault(p => p.Data.Equals(newEvent));
+                    sourceEvent?.UpdateDataCommand.Execute(newEvent).Subscribe();
+                }
+            }
+
+            IsEventsEmpty = Events.Count == 0;
         }
 
         private void OnWorldStateChanged(object sender, EventArgs e)

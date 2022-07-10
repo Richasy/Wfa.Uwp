@@ -14,6 +14,7 @@
     <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
     <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Items\EventItemViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Properties.cs" />
     <Compile Include="Items\NewsItemViewModel.cs" />
