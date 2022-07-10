@@ -36,5 +36,15 @@ namespace Wfa.Models.Enums
         ConstructionProgress,
         Fomorian,
         Razorback,
+        Earth,
+        CambionDrift,
+        OrbVallis,
+        PlainsOfEidolon,
+        Zariman,
+        Day,
+        Night,
+        Warm,
+        Cold,
+        WorldCycle,
     }
 }

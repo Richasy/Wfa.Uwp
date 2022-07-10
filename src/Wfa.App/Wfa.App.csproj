@@ -59,6 +59,9 @@
     <Compile Include="Controls\State\NewsPanel.xaml.cs">
       <DependentUpon>NewsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\WorldCyclePanel.xaml.cs">
+      <DependentUpon>WorldCyclePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AppPage.cs" />
     <Compile Include="Pages\WorldStatePage.xaml.cs">
       <DependentUpon>WorldStatePage.xaml</DependentUpon>
@@ -80,6 +83,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\boss_Nef_Anyo.png" />
+    <Content Include="Assets\boss_Tyl_Regor.png" />
     <Content Include="Assets\Logo\LargeTile.scale-100.png" />
     <Content Include="Assets\Logo\LargeTile.scale-125.png" />
     <Content Include="Assets\Logo\LargeTile.scale-150.png" />
@@ -130,7 +135,11 @@
     <Content Include="Assets\Logo\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Logo\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Logo\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\moon.png" />
     <Content Include="Assets\placeholder.png" />
+    <Content Include="Assets\snow.png" />
+    <Content Include="Assets\sun.png" />
+    <Content Include="Assets\warm.png" />
     <Content Include="Assets\wfalogo.png" />
     <Content Include="Assets\wfalogo_small.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -189,6 +198,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\State\WorldCyclePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\WorldStatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -239,7 +252,7 @@
       <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.7.1</Version>
+      <Version>2.8.0-prerelease.220601001</Version>
     </PackageReference>
     <PackageReference Include="Richasy.ExpanderEx.UWP">
       <Version>1.0.4</Version>

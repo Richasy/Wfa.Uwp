@@ -16,6 +16,7 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="Items\ConstructionProgressViewModel.cs" />
     <Compile Include="Items\EventItemViewModel.cs" />
+    <Compile Include="Items\WorldCycleItemViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Properties.cs" />
     <Compile Include="Items\NewsItemViewModel.cs" />

@@ -129,8 +129,14 @@
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一页</value>
   </data>
+  <data name="CambionDrift" xml:space="preserve">
+    <value>魔胎之境</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="Cold" xml:space="preserve">
+    <value>寒冷</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>确认</value>
@@ -140,6 +146,12 @@
   </data>
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>白昼</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>地球</value>
   </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}过期</value>
@@ -174,11 +186,20 @@
   <data name="News" xml:space="preserve">
     <value>新闻</value>
   </data>
+  <data name="Night" xml:space="preserve">
+    <value>黑夜</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>午夜电波</value>
   </data>
   <data name="NoEvents" xml:space="preserve">
     <value>当前没有游戏活动</value>
+  </data>
+  <data name="OrbVallis" xml:space="preserve">
+    <value>奥布山谷</value>
+  </data>
+  <data name="PlainsOfEidolon" xml:space="preserve">
+    <value>夜灵平野</value>
   </data>
   <data name="Razorback" xml:space="preserve">
     <value>利刃豺狼</value>
@@ -201,7 +222,16 @@
   <data name="SyndicateMissions" xml:space="preserve">
     <value>赏金任务</value>
   </data>
+  <data name="Warm" xml:space="preserve">
+    <value>温暖</value>
+  </data>
+  <data name="WorldCycle" xml:space="preserve">
+    <value>世界周期</value>
+  </data>
   <data name="WorldState" xml:space="preserve">
     <value>世界状态</value>
+  </data>
+  <data name="Zariman" xml:space="preserve">
+    <value>扎里曼号</value>
   </data>
 </root>

@@ -30,7 +30,7 @@
                     <VisualState.Setters>
                         <Setter Target="ContentGrid.ColumnSpacing" Value="0" />
                         <Setter Target="ContentGrid.RowSpacing" Value="20" />
-                        <Setter Target="NewsPanel.ImageHeight" Value="240" />
+                        <Setter Target="NewsPanel.ImageHeight" Value="220" />
                         <Setter Target="SecondaryContainer.(Grid.Row)" Value="1" />
                         <Setter Target="SecondaryContainer.(Grid.Column)" Value="0" />
                         <Setter Target="SecondaryContainer.RowSpacing" Value="20" />
@@ -54,6 +54,16 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
+                <Grid x:Name="MainContainer">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <state:WorldCyclePanel
+                        Grid.Row="1"
+                        HorizontalAlignment="Stretch"
+                        ItemsSource="{x:Bind ViewModel.Cycles}" />
+                </Grid>
                 <Grid
                     x:Name="SecondaryContainer"
                     Grid.Column="1"
@@ -66,6 +76,7 @@
                     </Grid.RowDefinitions>
                     <state:NewsPanel
                         x:Name="NewsPanel"
+                        ImageHeight="180"
                         ItemsSource="{x:Bind ViewModel.News}"
                         NewsCount="{x:Bind ViewModel.NewsCount, Mode=OneWay}" />
                     <state:EventsPanel

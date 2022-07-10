@@ -22,9 +22,13 @@ namespace Wfa.App.Pages
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
         {
             var width = Window.Current.Bounds.Width;
+            var pageContentWidth = e.NewSize.Width - CoreViewModel.PageHorizontalPadding.Left - CoreViewModel.PageHorizontalPadding.Right;
             NewsPanel.Width = width < CoreViewModel.MediumWindowThresholdWidth
-                ? e.NewSize.Width - CoreViewModel.PageHorizontalPadding.Left - CoreViewModel.PageHorizontalPadding.Right - 4
+                ? pageContentWidth
                 : SecondaryColumn.Width.Value;
+            MainContainer.Width = width < CoreViewModel.MediumWindowThresholdWidth
+                ? pageContentWidth
+                : pageContentWidth - SecondaryColumn.Width.Value - 24;
         }
     }
 

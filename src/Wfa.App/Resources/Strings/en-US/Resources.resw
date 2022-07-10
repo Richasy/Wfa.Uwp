@@ -129,8 +129,14 @@
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="CambionDrift" xml:space="preserve">
+    <value>Cambion drift</value>
+  </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="Cold" xml:space="preserve">
+    <value>Cold</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
@@ -140,6 +146,12 @@
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Earth</value>
   </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>Expires {0}</value>
@@ -174,11 +186,20 @@
   <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+  <data name="Night" xml:space="preserve">
+    <value>Night</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>Nightwave</value>
   </data>
   <data name="NoEvents" xml:space="preserve">
     <value>There are currently no game events</value>
+  </data>
+  <data name="OrbVallis" xml:space="preserve">
+    <value>Orb vallis</value>
+  </data>
+  <data name="PlainsOfEidolon" xml:space="preserve">
+    <value>Plains of Eidolon</value>
   </data>
   <data name="Razorback" xml:space="preserve">
     <value>Razorback</value>
@@ -201,7 +222,13 @@
   <data name="SyndicateMissions" xml:space="preserve">
     <value>Syndicate missions</value>
   </data>
+  <data name="Warm" xml:space="preserve">
+    <value>Warm</value>
+  </data>
   <data name="WorldState" xml:space="preserve">
     <value>World state</value>
+  </data>
+  <data name="Zariman" xml:space="preserve">
+    <value>Zariman</value>
   </data>
 </root>

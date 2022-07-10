@@ -3,7 +3,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using Wfa.Models.State;
+using Splat;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Items;
@@ -25,8 +25,12 @@ namespace Wfa.ViewModel
             IStateProvider stateProvider)
         {
             _stateProvider = stateProvider;
+            _timer = new Windows.UI.Xaml.DispatcherTimer();
+            _timer.Interval = TimeSpan.FromMilliseconds(500);
+            _timer.Tick += OnTimerTick;
             News = new ObservableCollection<NewsItemViewModel>();
             Events = new ObservableCollection<EventItemViewModel>();
+            Cycles = new ObservableCollection<WorldCycleItemViewModel>();
 
             _stateProvider.StateChanged += OnWorldStateChanged;
             InitializeData();
@@ -34,9 +38,15 @@ namespace Wfa.ViewModel
 
         private void InitializeData()
         {
+            if (!_timer.IsEnabled)
+            {
+                _timer.Start();
+            }
+
             InitializeNews();
             InitializeEvents();
             InitializeConstructionProgress();
+            InitializePlains();
         }
 
         private void InitializeNews()
@@ -103,7 +113,52 @@ namespace Wfa.ViewModel
             }
         }
 
+        private void InitializePlains()
+        {
+            var zariman = _stateProvider.GetZarimanStatus();
+            var cambion = _stateProvider.GetCambionStatus();
+            var vallis = _stateProvider.GetVallisStatus();
+            var cetus = _stateProvider.GetCetusStatus();
+            var earth = _stateProvider.GetEarthStatus();
+            AddOrUpdatePlainIntoCollection(zariman);
+            AddOrUpdatePlainIntoCollection(cambion);
+            AddOrUpdatePlainIntoCollection(vallis);
+            AddOrUpdatePlainIntoCollection(cetus);
+            AddOrUpdatePlainIntoCollection(earth);
+        }
+
+        private void AddOrUpdatePlainIntoCollection(object data)
+        {
+            if (data == null)
+            {
+                return;
+            }
+
+            var source = Cycles.FirstOrDefault(p => p.Data.GetType().Equals(data.GetType()));
+            if (source != null)
+            {
+                source.UpdateDataCommand.Execute(data).Subscribe();
+            }
+            else
+            {
+                var vm = Locator.Current.GetService<WorldCycleItemViewModel>();
+                vm.UpdateDataCommand.Execute(data).Subscribe();
+                Cycles.Add(vm);
+            }
+        }
+
         private void OnWorldStateChanged(object sender, EventArgs e)
             => InitializeData();
+
+        private void OnTimerTick(object sender, object e)
+        {
+            if (Cycles.Count > 0)
+            {
+                foreach (var cycle in Cycles)
+                {
+                    cycle.UpdateCountdownCommand.Execute().Subscribe();
+                }
+            }
+        }
     }
 }

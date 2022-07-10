@@ -5,6 +5,7 @@ using ReactiveUI.Fody.Helpers;
 using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Items;
+using Windows.UI.Xaml;
 
 namespace Wfa.ViewModel
 {
@@ -14,6 +15,7 @@ namespace Wfa.ViewModel
     public sealed partial class WorldStatePageViewModel
     {
         private readonly IStateProvider _stateProvider;
+        private readonly DispatcherTimer _timer;
 
         /// <summary>
         /// 新闻.
@@ -26,40 +28,15 @@ namespace Wfa.ViewModel
         public ObservableCollection<EventItemViewModel> Events { get; }
 
         /// <summary>
+        /// 平原列表.
+        /// </summary>
+        public ObservableCollection<WorldCycleItemViewModel> Cycles { get; }
+
+        /// <summary>
         /// 每日商品 (Darvo).
         /// </summary>
         [Reactive]
         public DailySale DailySale { get; set; }
-
-        /// <summary>
-        /// 地球状态.
-        /// </summary>
-        [Reactive]
-        public EarthStatus EarthStatus { get; set; }
-
-        /// <summary>
-        /// 奥布山谷状态.
-        /// </summary>
-        [Reactive]
-        public VallisStatus VallisStatus { get; set; }
-
-        /// <summary>
-        /// 魔胎之境状态.
-        /// </summary>
-        [Reactive]
-        public CambionStatus CambionStatus { get; set; }
-
-        /// <summary>
-        /// 希图斯状态.
-        /// </summary>
-        [Reactive]
-        public CetusStatus CetusStatus { get; set; }
-
-        /// <summary>
-        /// 扎里曼号状态.
-        /// </summary>
-        [Reactive]
-        public ZarimanStatus ZarimanStatus { get; set; }
 
         /// <summary>
         /// 仲裁信息.
