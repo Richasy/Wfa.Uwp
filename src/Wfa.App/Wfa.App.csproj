@@ -53,6 +53,9 @@
     <Compile Include="Controls\State\ConstructionPanel.xaml.cs">
       <DependentUpon>ConstructionPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\DailySalePanel.xaml.cs">
+      <DependentUpon>DailySalePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\EventsPanel.xaml.cs">
       <DependentUpon>EventsPanel.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\State\ConstructionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\DailySalePanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

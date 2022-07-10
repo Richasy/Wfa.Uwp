@@ -144,6 +144,9 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>Battleship construction progress</value>
   </data>
+  <data name="DailySale" xml:space="preserve">
+    <value>Daily discount</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
@@ -224,6 +227,9 @@
   </data>
   <data name="Warm" xml:space="preserve">
     <value>Warm</value>
+  </data>
+  <data name="WorldCycle" xml:space="preserve">
+    <value>World cycle</value>
   </data>
   <data name="WorldState" xml:space="preserve">
     <value>World state</value>

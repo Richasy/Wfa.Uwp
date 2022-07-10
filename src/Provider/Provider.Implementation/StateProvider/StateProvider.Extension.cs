@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ToolGood.Words;
@@ -202,12 +203,20 @@ namespace Wfa.Provider
 
         private void InitializeDailySale(string language)
         {
-            if (_dailySale == null || language != AppConstants.LanguageCht)
+            if (_dailySale == null)
             {
                 return;
             }
 
-            _dailySale.Item = WordsHelper.ToTraditionalChinese(_dailySale.Item);
+            if (!HasChinese(_dailySale.Item) && language != AppConstants.LanguageEn)
+            {
+                _dailySale.Item = TranslateItem(_dailySale.Item);
+            }
+
+            if (language == AppConstants.LanguageCht)
+            {
+                _dailySale.Item = WordsHelper.ToTraditionalChinese(_dailySale.Item);
+            }
         }
 
         private void InitializeNightwave(string language)
@@ -337,12 +346,15 @@ namespace Wfa.Provider
 
                 return itemName;
             }
-
-            string TranslateItem(string name)
-            {
-                var translate = _dbContext.Translates.FirstOrDefault(p => p.En.Equals(name));
-                return translate?.Zh ?? name;
-            }
         }
+
+        private string TranslateItem(string name)
+        {
+            var translate = _dbContext.Translates.FirstOrDefault(p => p.En.Equals(name));
+            return translate?.Zh ?? name;
+        }
+
+        private bool HasChinese(string str)
+            => Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
     }
 }

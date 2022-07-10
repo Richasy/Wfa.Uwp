@@ -46,5 +46,6 @@ namespace Wfa.Models.Enums
         Warm,
         Cold,
         WorldCycle,
+        DailySale,
     }
 }

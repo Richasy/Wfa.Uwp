@@ -36,7 +36,7 @@ namespace Wfa.ViewModel
         /// 每日商品 (Darvo).
         /// </summary>
         [Reactive]
-        public DailySale DailySale { get; set; }
+        public DailySaleViewModel DailySale { get; set; }
 
         /// <summary>
         /// 仲裁信息.

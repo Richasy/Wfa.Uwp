@@ -144,6 +144,9 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>戰艦建造進度</value>
   </data>
+  <data name="DailySale" xml:space="preserve">
+    <value>每日折扣</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
   </data>
@@ -224,6 +227,9 @@
   </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>
+  </data>
+  <data name="WorldCycle" xml:space="preserve">
+    <value>世界週期</value>
   </data>
   <data name="WorldState" xml:space="preserve">
     <value>世界狀態</value>

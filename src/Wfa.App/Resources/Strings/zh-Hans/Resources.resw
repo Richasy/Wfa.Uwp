@@ -144,6 +144,9 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>战舰建造进度</value>
   </data>
+  <data name="DailySale" xml:space="preserve">
+    <value>每日折扣</value>
+  </data>
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
   </data>
