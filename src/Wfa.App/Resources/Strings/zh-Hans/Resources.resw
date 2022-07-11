@@ -135,6 +135,9 @@
   <data name="Arrived" xml:space="preserve">
     <value>已经到达</value>
   </data>
+  <data name="Attacker" xml:space="preserve">
+    <value>入侵方</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一页</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="Day" xml:space="preserve">
     <value>白昼</value>
+  </data>
+  <data name="Defender" xml:space="preserve">
+    <value>防守方</value>
   </data>
   <data name="Earth" xml:space="preserve">
     <value>地球</value>
@@ -227,6 +233,9 @@
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>刷新</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>奖励</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>从 Warframe Market 中找找你想要的</value>

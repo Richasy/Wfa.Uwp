@@ -2,7 +2,6 @@
 
 using System;
 using Wfa.ViewModel;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 
 namespace Wfa.App.Pages
@@ -15,11 +14,7 @@ namespace Wfa.App.Pages
         /// <summary>
         /// Initializes a new instance of the <see cref="WorldStatePage"/> class.
         /// </summary>
-        public WorldStatePage()
-        {
-            InitializeComponent();
-            SizeChanged += OnSizeChanged;
-        }
+        public WorldStatePage() => InitializeComponent();
 
         /// <inheritdoc/>
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -28,18 +23,6 @@ namespace Wfa.App.Pages
         /// <inheritdoc/>
         protected override void OnNavigatedFrom(NavigationEventArgs e)
             => ViewModel.DeactiveCommand.Execute().Subscribe();
-
-        private void OnSizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            var width = Window.Current.Bounds.Width;
-            var pageContentWidth = e.NewSize.Width - CoreViewModel.PageHorizontalPadding.Left - CoreViewModel.PageHorizontalPadding.Right;
-            NewsPanel.Width = width < CoreViewModel.MediumWindowThresholdWidth
-                ? pageContentWidth
-                : SecondaryColumn.Width.Value;
-            MainContainer.Width = width < CoreViewModel.MediumWindowThresholdWidth
-                ? pageContentWidth
-                : pageContentWidth - SecondaryColumn.Width.Value - 24;
-        }
     }
 
     /// <summary>

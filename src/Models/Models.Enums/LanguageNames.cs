@@ -57,5 +57,8 @@ namespace Wfa.Models.Enums
         Found,
         Close,
         VoidTraderItems,
+        Attacker,
+        Defender,
+        Reward,
     }
 }

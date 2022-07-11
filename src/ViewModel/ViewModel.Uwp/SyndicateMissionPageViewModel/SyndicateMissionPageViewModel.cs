@@ -28,7 +28,6 @@ namespace Wfa.ViewModel
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(500);
             _timer.Tick += OnTimerTick;
-            _stateProvider.StateChanged += OnStateChanged;
 
             ActiveCommand = ReactiveCommand.Create(Active);
             DeactiveCommand = ReactiveCommand.Create(Deactive);
