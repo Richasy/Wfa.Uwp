@@ -14,9 +14,11 @@
     <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
     <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Items\ArbitrationViewModel.cs" />
     <Compile Include="Items\ConstructionProgressViewModel.cs" />
     <Compile Include="Items\DailySaleViewModel.cs" />
     <Compile Include="Items\EventItemViewModel.cs" />
+    <Compile Include="Items\SkirmishViewModel.cs" />
     <Compile Include="Items\VoidTraderViewModel.cs" />
     <Compile Include="Items\WorldCycleItemViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
@@ -77,6 +79,10 @@
     <ProjectReference Include="..\..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
       <Name>Toolkit.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
+      <Project>{76F23A53-0675-4C7A-AEA8-E5A94410960C}</Project>
+      <Name>ViewModel.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

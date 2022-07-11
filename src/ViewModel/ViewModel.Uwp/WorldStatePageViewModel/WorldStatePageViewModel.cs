@@ -50,6 +50,8 @@ namespace Wfa.ViewModel
             InitializePlains();
             InitializeDailySale();
             InitializeVoidTrader();
+            InitializeArbitration();
+            InitializeSkirmish();
         }
     }
 }

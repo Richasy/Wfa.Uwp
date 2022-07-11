@@ -126,6 +126,42 @@ namespace Wfa.ViewModel
             }
         }
 
+        private void InitializeArbitration()
+        {
+            var data = _stateProvider.GetArbitration();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (Arbitration == null)
+            {
+                Arbitration = new ArbitrationViewModel(data);
+            }
+            else
+            {
+                Arbitration.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
+        private void InitializeSkirmish()
+        {
+            var data = _stateProvider.GetSkirmish();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (Skirmish == null)
+            {
+                Skirmish = new SkirmishViewModel(data);
+            }
+            else
+            {
+                Skirmish.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
         private void AddOrUpdatePlainIntoCollection(object data)
         {
             if (data == null)
@@ -161,6 +197,7 @@ namespace Wfa.ViewModel
 
             DailySale?.UpdateCountdownCommand.Execute().Subscribe();
             VoidTrader?.UpdateCountdownCommand.Execute().Subscribe();
+            Arbitration?.UpdateCountdownCommand.Execute().Subscribe();
         }
     }
 }

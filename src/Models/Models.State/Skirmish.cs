@@ -5,15 +5,15 @@ using Newtonsoft.Json;
 namespace Wfa.Models.State
 {
     /// <summary>
-    /// Sentient 战舰（九重天）.
+    /// 前哨战（九重天）.
     /// </summary>
-    public sealed class SentientBattle : DurationEntityBase
+    public sealed class Skirmish : DurationEntityBase
     {
         /// <summary>
         /// 任务信息.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mission", Required = Required.Default)]
-        public SentientMission Mission { get; set; }
+        public SkirmishMission Mission { get; set; }
 
         /// <summary>
         /// 是否正在进行.
@@ -31,7 +31,7 @@ namespace Wfa.Models.State
     /// <summary>
     /// Sentient 战舰任务（九重天）.
     /// </summary>
-    public class SentientMission
+    public class SkirmishMission
     {
         /// <summary>
         /// 星球节点.

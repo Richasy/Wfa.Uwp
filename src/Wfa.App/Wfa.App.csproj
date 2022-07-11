@@ -50,6 +50,9 @@
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
     <Compile Include="Controls\App\WfaIcon.cs" />
+    <Compile Include="Controls\State\ArbitrationPanel.xaml.cs">
+      <DependentUpon>ArbitrationPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\ConstructionPanel.xaml.cs">
       <DependentUpon>ConstructionPanel.xaml</DependentUpon>
     </Compile>
@@ -61,6 +64,9 @@
     </Compile>
     <Compile Include="Controls\State\NewsPanel.xaml.cs">
       <DependentUpon>NewsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\SkirmishPanel.xaml.cs">
+      <DependentUpon>SkirmishPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\State\VoidTraderPanel.xaml.cs">
       <DependentUpon>VoidTraderPanel.xaml</DependentUpon>
@@ -192,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\State\ArbitrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\State\ConstructionPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +215,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\NewsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\SkirmishPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -317,6 +331,10 @@
     <ProjectReference Include="..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
       <Name>Toolkit.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
+      <Project>{76f23a53-0675-4c7a-aea8-e5a94410960c}</Project>
+      <Name>ViewModel.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.Uwp\ViewModel.Uwp.csproj">
       <Project>{F1BB38A9-6C97-43C1-9DD0-D80D36ACA647}</Project>

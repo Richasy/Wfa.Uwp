@@ -129,6 +129,9 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="Arbitration" xml:space="preserve">
+    <value>仲裁</value>
+  </data>
   <data name="Arrived" xml:space="preserve">
     <value>已经到达</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="Fomorian" xml:space="preserve">
     <value>巨人战舰</value>
   </data>
+  <data name="Found" xml:space="preserve">
+    <value>已发现</value>
+  </data>
   <data name="GameEvents" xml:space="preserve">
     <value>游戏活动</value>
   </data>
@@ -204,6 +210,9 @@
   <data name="NoEvents" xml:space="preserve">
     <value>当前没有游戏活动</value>
   </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>未发现</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>奥布山谷</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>查看物品</value>
+  </data>
+  <data name="Skirmish" xml:space="preserve">
+    <value>前哨战</value>
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>突击任务</value>

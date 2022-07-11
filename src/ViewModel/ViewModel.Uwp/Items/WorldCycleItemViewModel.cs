@@ -9,13 +9,14 @@ using Wfa.Models.Enums;
 using Wfa.Models.State;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
+using Wfa.ViewModel.Interfaces;
 
 namespace Wfa.ViewModel.Items
 {
     /// <summary>
     /// 平原状态条目视图模型.
     /// </summary>
-    public sealed class WorldCycleItemViewModel : ViewModelBase
+    public sealed class WorldCycleItemViewModel : ViewModelBase, ICountdownViewModel
     {
         private readonly IResourceToolkit _resourceToolkit;
         private DateTime _expiryTime;

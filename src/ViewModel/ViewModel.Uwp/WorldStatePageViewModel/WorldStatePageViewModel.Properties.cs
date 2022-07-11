@@ -48,7 +48,7 @@ namespace Wfa.ViewModel
         /// 仲裁信息.
         /// </summary>
         [Reactive]
-        public Arbitration Arbitration { get; set; }
+        public ArbitrationViewModel Arbitration { get; set; }
 
         /// <summary>
         /// 建造进度.
@@ -60,7 +60,7 @@ namespace Wfa.ViewModel
         /// 前哨战信息.
         /// </summary>
         [Reactive]
-        public SentientBattle SentientBattle { get; set; }
+        public SkirmishViewModel Skirmish { get; set; }
 
         /// <summary>
         /// 活动是否为空.

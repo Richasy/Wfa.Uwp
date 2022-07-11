@@ -135,7 +135,7 @@ namespace Wfa.Provider.Interfaces
         /// 获取九重天信息.
         /// </summary>
         /// <returns>九重天信息.</returns>
-        SentientBattle GetSentientBattle();
+        Skirmish GetSkirmish();
 
         /// <summary>
         /// 获取钢铁之路信息.

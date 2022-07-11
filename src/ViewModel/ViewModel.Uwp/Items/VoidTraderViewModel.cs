@@ -9,13 +9,14 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Models.State;
 using Wfa.ViewModel.Base;
+using Wfa.ViewModel.Interfaces;
 
 namespace Wfa.ViewModel.Items
 {
     /// <summary>
     /// 虚空商人视图模型.
     /// </summary>
-    public sealed class VoidTraderViewModel : ViewModelBase
+    public sealed class VoidTraderViewModel : ViewModelBase, ICountdownViewModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="VoidTraderViewModel"/> class.

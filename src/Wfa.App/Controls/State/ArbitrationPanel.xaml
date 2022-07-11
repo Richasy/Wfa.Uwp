@@ -1,0 +1,76 @@
+﻿<local:ArbitrationPanelBase
+    x:Class="Wfa.App.Controls.State.ArbitrationPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Text="{ext:Locale Name=Arbitration}" />
+        <app:CardPanel
+            Grid.Row="1"
+            Height="108"
+            HorizontalAlignment="Stretch"
+            IsEnableHoverAnimation="False">
+            <Grid Padding="16" RowSpacing="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <app:WfaIcon
+                    Grid.RowSpan="3"
+                    Grid.ColumnSpan="2"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="60"
+                    Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                    Symbol="{x:Bind ViewModel.FactionSymbol, Mode=OneWay}" />
+                <TextBlock
+                    Style="{StaticResource CaptionTextBlockStyle}"
+                    HorizontalAlignment="Left"
+                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                    Text="{x:Bind ViewModel.Data.Enemy, Mode=OneWay}" />
+
+                <TextBlock
+                    Grid.Row="1"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Text="{x:Bind ViewModel.Data.Type, Mode=OneWay}"
+                    TextTrimming="CharacterEllipsis" />
+
+                <TextBlock
+                    Style="{StaticResource CaptionTextBlockStyle}"
+                    Grid.Row="2"
+                    HorizontalAlignment="Left"
+                    Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}" />
+
+                <TextBlock
+                    Grid.RowSpan="3"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="24"
+                    FontWeight="Bold"
+                    Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                    Text="{x:Bind ViewModel.Countdown, Mode=OneWay}" />
+            </Grid>
+        </app:CardPanel>
+    </Grid>
+</local:ArbitrationPanelBase>

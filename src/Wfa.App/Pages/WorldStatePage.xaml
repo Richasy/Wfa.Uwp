@@ -54,8 +54,13 @@
                         <Setter Target="TraderSecondaryColumn.Width" Value="Auto" />
                         <Setter Target="TraderContainer.ColumnSpacing" Value="0" />
                         <Setter Target="TraderContainer.RowSpacing" Value="20" />
+                        <Setter Target="MissionSecondaryColumn.Width" Value="Auto" />
+                        <Setter Target="HostMissionContainer.ColumnSpacing" Value="0" />
+                        <Setter Target="HostMissionContainer.RowSpacing" Value="20" />
                         <Setter Target="VoidTraderPanel.(Grid.Column)" Value="0" />
                         <Setter Target="VoidTraderPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="SkirmishPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="SkirmishPanel.(Grid.Row)" Value="1" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -80,8 +85,9 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <Grid x:Name="MainContainer" RowSpacing="20">
+                    <Grid x:Name="MainContainer" RowSpacing="24">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
@@ -103,6 +109,24 @@
                                 x:Name="VoidTraderPanel"
                                 Grid.Column="1"
                                 ViewModel="{x:Bind ViewModel.VoidTrader, Mode=OneWay}" />
+                        </Grid>
+                        <Grid
+                            x:Name="HostMissionContainer"
+                            Grid.Row="2"
+                            ColumnSpacing="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition x:Name="MissionSecondaryColumn" Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <state:ArbitrationPanel ViewModel="{x:Bind ViewModel.Arbitration, Mode=OneWay}" />
+                            <state:SkirmishPanel
+                                x:Name="SkirmishPanel"
+                                Grid.Column="1"
+                                ViewModel="{x:Bind ViewModel.Skirmish, Mode=OneWay}" />
                         </Grid>
                     </Grid>
                     <Grid

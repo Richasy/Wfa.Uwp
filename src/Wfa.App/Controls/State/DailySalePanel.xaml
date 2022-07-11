@@ -71,7 +71,7 @@
                     <TextBlock
                         Style="{StaticResource CaptionTextBlockStyle}"
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                        Text="{x:Bind ViewModel.ExpiryTip, Mode=OneWay}" />
+                        Text="{x:Bind ViewModel.Countdown, Mode=OneWay}" />
                 </StackPanel>
                 <TextBlock
                     Grid.RowSpan="2"

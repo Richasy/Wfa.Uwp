@@ -129,6 +129,9 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="Arbitration" xml:space="preserve">
+    <value>Arbitration</value>
+  </data>
   <data name="Arrived" xml:space="preserve">
     <value>Arrived</value>
   </data>
@@ -174,6 +177,9 @@
   <data name="Fomorian" xml:space="preserve">
     <value>Fomorian</value>
   </data>
+  <data name="Found" xml:space="preserve">
+    <value>Found</value>
+  </data>
   <data name="GameEvents" xml:space="preserve">
     <value>Game events</value>
   </data>
@@ -204,6 +210,9 @@
   <data name="NoEvents" xml:space="preserve">
     <value>There are currently no game events</value>
   </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>Show items</value>
+  </data>
+  <data name="Skirmish" xml:space="preserve">
+    <value>Skirmish</value>
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>

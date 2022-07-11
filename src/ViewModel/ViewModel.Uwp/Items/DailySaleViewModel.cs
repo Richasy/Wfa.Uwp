@@ -9,13 +9,14 @@ using Splat;
 using Wfa.Models.State;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
+using Wfa.ViewModel.Interfaces;
 
 namespace Wfa.ViewModel.Items
 {
     /// <summary>
     /// 每日折扣视图模型.
     /// </summary>
-    public sealed class DailySaleViewModel : ViewModelBase
+    public sealed class DailySaleViewModel : ViewModelBase, ICountdownViewModel
     {
         private DateTime _expiryTime;
 
@@ -43,7 +44,7 @@ namespace Wfa.ViewModel.Items
         /// 过期提示.
         /// </summary>
         [Reactive]
-        public string ExpiryTip { get; set; }
+        public string Countdown { get; set; }
 
         /// <summary>
         /// 剩余数量.
@@ -70,12 +71,12 @@ namespace Wfa.ViewModel.Items
             if (_expiryTime == DateTime.MinValue
                 || _expiryTime <= DateTime.Now)
             {
-                ExpiryTip = "--";
+                Countdown = "--";
                 return;
             }
 
             var expiryFormat = Locator.Current.GetService<IResourceToolkit>().GetLocaleString(Models.Enums.LanguageNames.ExpiryDateFormat);
-            ExpiryTip = string.Format(expiryFormat, _expiryTime.Humanize());
+            Countdown = string.Format(expiryFormat, _expiryTime.Humanize());
         }
     }
 }

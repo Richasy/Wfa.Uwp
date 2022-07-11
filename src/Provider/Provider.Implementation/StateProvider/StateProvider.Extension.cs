@@ -42,7 +42,7 @@ namespace Wfa.Provider
         private VallisStatus _vallisStatus;
         private Nightwave _nightwave;
         private Arbitration _arbitration;
-        private SentientBattle _sentientBattle;
+        private Skirmish _skirmish;
         private SteelPath _steelPath;
         private ConstructionProgress _constructionProgress;
 
@@ -269,22 +269,22 @@ namespace Wfa.Provider
             }
         }
 
-        private void InitializeSentientBattle(string language)
+        private void InitializeSkirmish(string language)
         {
-            if (_sentientBattle?.Mission == null || language == AppConstants.LanguageEn)
+            if (_skirmish?.Mission == null || language == AppConstants.LanguageEn)
             {
                 return;
             }
 
             if (language == AppConstants.LanguageChs)
             {
-                _sentientBattle.Mission.Node = WordsHelper.ToSimplifiedChinese(_sentientBattle.Mission.Node);
-                _sentientBattle.Mission.Type = WordsHelper.ToSimplifiedChinese(_sentientBattle.Mission.Type);
+                _skirmish.Mission.Node = WordsHelper.ToSimplifiedChinese(_skirmish.Mission.Node);
+                _skirmish.Mission.Type = WordsHelper.ToSimplifiedChinese(_skirmish.Mission.Type);
             }
             else if (language == AppConstants.LanguageCht)
             {
-                _sentientBattle.Mission.Node = WordsHelper.ToTraditionalChinese(_sentientBattle.Mission.Node);
-                _sentientBattle.Mission.Type = WordsHelper.ToTraditionalChinese(_sentientBattle.Mission.Type);
+                _skirmish.Mission.Node = WordsHelper.ToTraditionalChinese(_skirmish.Mission.Node);
+                _skirmish.Mission.Type = WordsHelper.ToTraditionalChinese(_skirmish.Mission.Type);
             }
         }
 

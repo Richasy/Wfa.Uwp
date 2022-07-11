@@ -6,4 +6,8 @@
     <LangVersion>10</LangVersion>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="18.2.5" />
+  </ItemGroup>
+
 </Project>

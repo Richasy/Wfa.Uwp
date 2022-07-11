@@ -51,5 +51,9 @@ namespace Wfa.Models.Enums
         AboutToArrive,
         Arrived,
         ShowItems,
+        Arbitration,
+        Skirmish,
+        NotFound,
+        Found,
     }
 }
