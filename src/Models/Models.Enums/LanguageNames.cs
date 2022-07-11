@@ -55,5 +55,7 @@ namespace Wfa.Models.Enums
         Skirmish,
         NotFound,
         Found,
+        Close,
+        VoidTraderItems,
     }
 }

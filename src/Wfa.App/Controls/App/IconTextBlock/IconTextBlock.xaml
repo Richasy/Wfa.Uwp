@@ -23,7 +23,6 @@
                             Grid.Column="1"
                             VerticalAlignment="Center"
                             FontSize="{TemplateBinding FontSize}"
-                            Foreground="{TemplateBinding Foreground}"
                             Text="{TemplateBinding Text}"
                             TextLineBounds="Tight"
                             TextTrimming="CharacterEllipsis">

@@ -1,12 +1,12 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using Humanizer;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using Splat;
 using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
@@ -23,10 +23,10 @@ namespace Wfa.ViewModel.Items
         /// </summary>
         public VoidTraderViewModel(VoidTrader data)
         {
-            Items = new ObservableCollection<VoidTraderItem>();
             UpdateData(data);
             UpdateDataCommand = ReactiveCommand.Create<VoidTrader>(UpdateData);
             UpdateCountdownCommand = ReactiveCommand.Create(UpdateCountdown);
+            ShowItemsCommand = ReactiveCommand.Create(ShowItems);
         }
 
         /// <summary>
@@ -40,9 +40,9 @@ namespace Wfa.ViewModel.Items
         public ReactiveCommand<Unit, Unit> UpdateCountdownCommand { get; }
 
         /// <summary>
-        /// 物品清单.
+        /// 显示条目列表的命令.
         /// </summary>
-        public ObservableCollection<VoidTraderItem> Items { get; }
+        public ReactiveCommand<Unit, Unit> ShowItemsCommand { get; }
 
         /// <summary>
         /// 是否有物品清单.
@@ -71,21 +71,8 @@ namespace Wfa.ViewModel.Items
         private void UpdateData(VoidTrader data)
         {
             Data = data;
-            if ((data.Inventory?.Any() ?? false) && Items.Count == 0)
-            {
-                foreach (var item in data.Inventory)
-                {
-                    Items.Add(item);
-                }
-            }
-            else
-            {
-                TryClear(Items);
-                HasItems = false;
-            }
-
             IsArrived = data.IsActive;
-            HasItems = Items.Count > 0;
+            HasItems = Data.Inventory?.Any() ?? false;
             UpdateCountdown();
         }
 
@@ -101,6 +88,12 @@ namespace Wfa.ViewModel.Items
             }
 
             Countdown = (time - DateTime.Now).Humanize(maxUnit: Humanizer.Localisation.TimeUnit.Day, minUnit: Humanizer.Localisation.TimeUnit.Second);
+        }
+
+        private void ShowItems()
+        {
+            var appVM = Locator.Current.GetService<AppViewModel>();
+            appVM.ShowVoidTraderItems(Data.Inventory);
         }
     }
 }

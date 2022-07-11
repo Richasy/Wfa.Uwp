@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.ObjectModel;
+using ReactiveUI;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Items;
@@ -30,8 +31,20 @@ namespace Wfa.ViewModel
             Events = new ObservableCollection<EventItemViewModel>();
             Cycles = new ObservableCollection<WorldCycleItemViewModel>();
 
+            ActiveCommand = ReactiveCommand.Create(Active);
+            DeactiveCommand = ReactiveCommand.Create(Deactive);
+        }
+
+        private void Active()
+        {
             _stateProvider.StateChanged += OnWorldStateChanged;
             InitializeData();
+        }
+
+        private void Deactive()
+        {
+            _stateProvider.StateChanged -= OnWorldStateChanged;
+            _timer.Stop();
         }
 
         private void InitializeData()

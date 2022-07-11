@@ -1,6 +1,7 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using ReactiveUI;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
 using Wfa.Models.Enums;
+using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
@@ -142,6 +144,13 @@ namespace Wfa.ViewModel
                 PageTopPadding = _resourceToolkit.GetResource<Thickness>("NarrowPageTopPadding");
             }
         }
+
+        /// <summary>
+        /// 显示虚空商人条目列表.
+        /// </summary>
+        /// <param name="items">货品列表.</param>
+        public void ShowVoidTraderItems(IEnumerable<VoidTraderItem> items)
+            => RequestShowVoidTraderItems?.Invoke(this, items);
 
         private async Task CheckLibraryDatabaseAsync(bool ignoreDate = false)
         {

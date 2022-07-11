@@ -144,6 +144,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
   <data name="Cold" xml:space="preserve">
     <value>寒冷</value>
   </data>
@@ -248,6 +251,9 @@
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>虛空商人</value>
+  </data>
+  <data name="VoidTraderItems" xml:space="preserve">
+    <value>虛空商人貨品清單</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>
