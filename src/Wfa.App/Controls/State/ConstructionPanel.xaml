@@ -1,0 +1,56 @@
+﻿<local:ConstructionPanelBase
+    x:Class="Wfa.App.Controls.State.ConstructionPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <StackPanel Spacing="8">
+        <TextBlock HorizontalAlignment="Left" Text="{ext:Locale Name=ConstructionProgress}" />
+        <RelativePanel Margin="0,8,0,0">
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                Text="{ext:Locale Name=Fomorian}" />
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Foreground="{ThemeResource TextFillColorTertiaryBrush}">
+                <Run Text="{x:Bind ViewModel.FomorianProgressText, Mode=OneWay}" /><Run Text="%" />
+            </TextBlock>
+        </RelativePanel>
+
+        <muxc:ProgressBar
+            Foreground="{StaticResource GrineerGreenGradient}"
+            Maximum="100"
+            Value="{x:Bind ViewModel.FomorianProgress, Mode=OneWay}" />
+        <RelativePanel Margin="0,8,0,0">
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                RelativePanel.AlignLeftWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                Text="{ext:Locale Name=Razorback}" />
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                RelativePanel.AlignRightWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True"
+                Foreground="{ThemeResource TextFillColorTertiaryBrush}">
+                <Run Text="{x:Bind ViewModel.RazaorbackProgressText, Mode=OneWay}" /><Run Text="%" />
+            </TextBlock>
+        </RelativePanel>
+        <muxc:ProgressBar
+            Foreground="{StaticResource CorpusGradient}"
+            Maximum="100"
+            Value="{x:Bind ViewModel.RazorbackProgress, Mode=OneWay}" />
+    </StackPanel>
+</local:ConstructionPanelBase>

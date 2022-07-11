@@ -1,0 +1,72 @@
+﻿<app:CenterPopup
+    x:Class="Wfa.App.Controls.State.VoidTraderItemsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:state="using:Wfa.Models.State"
+    Title="{ext:Locale Name=VoidTraderItems}"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <Grid>
+        <ScrollViewer Style="{StaticResource PageScrollViewerStyle}">
+            <muxc:ItemsRepeater x:Name="Repeater">
+                <muxc:ItemsRepeater.Layout>
+                    <muxc:StackLayout Spacing="4" />
+                </muxc:ItemsRepeater.Layout>
+                <muxc:ItemsRepeater.ItemTemplate>
+                    <DataTemplate x:DataType="state:VoidTraderItem">
+                        <app:CardPanel IsEnableCheck="False" IsEnableHoverAnimation="False">
+                            <Grid Padding="16" ColumnSpacing="12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="72" />
+                                    <ColumnDefinition Width="72" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="{x:Bind Name}" TextTrimming="CharacterEllipsis" />
+                                <StackPanel
+                                    Grid.Column="1"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Spacing="8">
+                                    <app:WfaIcon
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{ThemeResource OrikinGradient}"
+                                        Symbol="Ducats" />
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="12"
+                                        Text="{x:Bind Ducats}" />
+                                </StackPanel>
+                                <StackPanel
+                                    Grid.Column="2"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Center"
+                                    Orientation="Horizontal"
+                                    Spacing="8">
+                                    <app:WfaIcon
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        Foreground="{ThemeResource CorpusGradient}"
+                                        Symbol="Credit" />
+                                    <TextBlock
+                                        VerticalAlignment="Center"
+                                        FontSize="12"
+                                        Text="{x:Bind Credits}" />
+                                </StackPanel>
+                            </Grid>
+                        </app:CardPanel>
+                    </DataTemplate>
+                </muxc:ItemsRepeater.ItemTemplate>
+            </muxc:ItemsRepeater>
+        </ScrollViewer>
+    </Grid>
+</app:CenterPopup>

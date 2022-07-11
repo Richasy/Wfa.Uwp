@@ -25,4 +25,10 @@
 
     <SolidColorBrush x:Key="ToggleSwitchKnobOffForeground" Color="Black" />
     <SolidColorBrush x:Key="TransparentBackground" Color="#01000000" />
+    <LinearGradientBrush x:Key="ImageMaskGradientBackground" StartPoint="0,0.5" EndPoint="0,1">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Offset="0" Color="#01000000" />
+            <GradientStop Offset="1" Color="#cc000000" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
 </ResourceDictionary>

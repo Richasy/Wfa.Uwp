@@ -2,6 +2,7 @@
     x:Class="Wfa.App.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:converters="using:Wfa.App.Resources.Converters"
     xmlns:local="using:Wfa.App">
     <Application.Resources>
         <ResourceDictionary>
@@ -9,6 +10,8 @@
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
                 <ResourceDictionary Source="ms-appx:///Styles/Style.Overwrite.xaml" />
                 <ResourceDictionary Source="ms-appx:///Styles/Style.Dimensions.xaml" />
+                <ResourceDictionary Source="ms-appx:///Controls/App/IconTextBlock/IconTextBlock.xaml" />
+                <ResourceDictionary Source="ms-appx:///Controls/App/CommonImageEx/CommonImageEx.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>
                 <ResourceDictionary x:Key="Light" Source="ms-appx:///Styles/Theme.Light.xaml" />
@@ -18,6 +21,44 @@
 
             <x:Boolean x:Key="True">True</x:Boolean>
             <x:Boolean x:Key="False">False</x:Boolean>
+
+            <!-- Corpus 渐变色 -->
+            <LinearGradientBrush x:Key="CorpusGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#165EFE" />
+                <GradientStop Offset="1" Color="#43AFF7" />
+            </LinearGradientBrush>
+
+            <!-- Grineer 渐变色 -->
+            <LinearGradientBrush x:Key="GrineerGreenGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#29B7C1" />
+                <GradientStop Offset="1" Color="#8EE499" />
+            </LinearGradientBrush>
+
+            <!-- 感染者渐变色 -->
+            <LinearGradientBrush x:Key="InfestedRedGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#FA2F89" />
+                <GradientStop Offset="1" Color="#F93BC7" />
+            </LinearGradientBrush>
+
+            <!-- 灵煞渐变色 -->
+            <LinearGradientBrush x:Key="SentientGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#BC68D4" />
+                <GradientStop Offset="1" Color="#693FBD" />
+            </LinearGradientBrush>
+
+            <!-- 奥罗金渐变色 -->
+            <LinearGradientBrush x:Key="OrikinGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#F7B770" />
+                <GradientStop Offset="1" Color="#ED7063" />
+            </LinearGradientBrush>
+
+            <converters:ObjectToBoolConverter x:Key="ObjectToBoolConverter" />
+            <converters:ObjectToBoolConverter x:Key="ObjectToBoolReverseConverter" IsReverse="True" />
+            <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
+            <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityReverseConverter" IsReverse="True" />
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityReverseConverter" IsReverse="True" />
+            <converters:ThemeStringConverter x:Key="ThemeStringConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

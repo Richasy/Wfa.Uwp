@@ -69,7 +69,7 @@ namespace Wfa.Provider
             _constructionProgress = GetParsedData<ConstructionProgress>(totalObj, "constructionProgress");
             _nightwave = GetParsedData<Nightwave>(totalObj, "nightwave");
             _arbitration = GetParsedData<Arbitration>(totalObj, "arbitration");
-            _sentientBattle = GetParsedData<SentientBattle>(totalObj, "sentientOutposts");
+            _skirmish = GetParsedData<Skirmish>(totalObj, "sentientOutposts");
             _steelPath = GetParsedData<SteelPath>(totalObj, "steelPath");
 
             InitializeNews(language);
@@ -79,7 +79,7 @@ namespace Wfa.Provider
             InitializeDailySale(language);
             InitializeInvasions(language);
             InitializeNightwave(language);
-            InitializeSentientBattle(language);
+            InitializeSkirmish(language);
             InitializeSteelPath(language);
             InitializeVoidTrader(language);
             InitializeSyndicateMissions(totalObj, "syndicateMissions", language);
@@ -144,8 +144,8 @@ namespace Wfa.Provider
             => _ostronSyndicateMission;
 
         /// <inheritdoc/>
-        public SentientBattle GetSentientBattle()
-            => _sentientBattle;
+        public Skirmish GetSkirmish()
+            => _skirmish;
 
         /// <inheritdoc/>
         public SyndicateMission GetSolarisSyndicateMission()

@@ -24,6 +24,12 @@
         <Setter Property="IsActive" Value="True" />
     </Style>
 
+    <Style x:Key="PageScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="HorizontalScrollMode" Value="Disabled" />
+        <Setter Property="HorizontalScrollBarVisibility" Value="Hidden" />
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    </Style>
+
     <Style
         x:Key="ThinPaddingFlyoutPresenterStyle"
         BasedOn="{StaticResource DefaultFlyoutPresenterStyle}"

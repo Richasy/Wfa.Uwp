@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="Wfa.App.Controls.State.NewsPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <StackPanel Spacing="8">
+        <TextBlock HorizontalAlignment="Left" Text="{ext:Locale Name=News}" />
+        <FlipView
+            x:Name="Gallery"
+            Height="{x:Bind ImageHeight, Mode=OneWay}"
+            HorizontalAlignment="Stretch"
+            ItemsSource="{x:Bind ItemsSource, Mode=OneWay}">
+            <FlipView.ItemTemplate>
+                <DataTemplate x:DataType="items:NewsItemViewModel">
+                    <app:CardPanel Command="{x:Bind OpenInBroswerCommand}" IsEnableHoverAnimation="False">
+                        <Grid>
+                            <app:CommonImageEx ImageUrl="{x:Bind Data.ImageLink, Mode=OneWay}" />
+                            <Grid Background="{ThemeResource ImageMaskGradientBackground}">
+                                <StackPanel Padding="12,8" VerticalAlignment="Bottom">
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Bottom"
+                                        FontWeight="Bold"
+                                        Text="{x:Bind Data.Message}"
+                                        TextWrapping="Wrap" />
+                                    <TextBlock
+                                        Style="{StaticResource CaptionTextBlockStyle}"
+                                        HorizontalAlignment="Left"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                        Text="{x:Bind PublishTime}" />
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </app:CardPanel>
+                </DataTemplate>
+            </FlipView.ItemTemplate>
+        </FlipView>
+        <muxc:PipsPager
+            x:Name="Pager"
+            Margin="0,4,0,0"
+            HorizontalAlignment="Center"
+            NumberOfPages="{x:Bind NewsCount, Mode=OneWay}"
+            SelectedPageIndex="{x:Bind Path=Gallery.SelectedIndex, Mode=TwoWay}" />
+    </StackPanel>
+</UserControl>

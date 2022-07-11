@@ -20,5 +20,11 @@ namespace Wfa.Models.State
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "state", Required = Required.Default)]
         public string State { get; set; }
+
+        /// <summary>
+        /// 是否为 Corpus 入侵.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "isCorpus", Required = Required.Default)]
+        public bool IsCorpus { get; set; }
     }
 }

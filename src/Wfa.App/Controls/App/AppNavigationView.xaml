@@ -49,9 +49,9 @@
             IsPaneOpen="{x:Bind AppViewModel.IsNavigatePaneOpen, Mode=TwoWay}"
             ItemInvoked="OnRootNavViewItemInvoked">
             <muxc:NavigationView.MenuItems>
-                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Home" Content="{ext:Locale Name=WorldState}">
+                <muxc:NavigationViewItem ext:NavigationExtension.PageId="WorldStateHome" Content="{ext:Locale Name=WorldState}">
                     <muxc:NavigationViewItem.Icon>
-                        <icons:RegularFluentIcon Symbol="Home16" />
+                        <icons:RegularFluentIcon Symbol="Globe16" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
                 <muxc:NavigationViewItem ext:NavigationExtension.PageId="Library" Content="{ext:Locale Name=Library}">

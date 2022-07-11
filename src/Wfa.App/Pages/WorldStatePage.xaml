@@ -1,0 +1,163 @@
+﻿<local:WorldStatePageBase
+    x:Class="Wfa.App.Pages.WorldStatePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:state="using:Wfa.App.Controls.State"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="MediumState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource MediumWindowThresholdWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="ContentGrid.ColumnSpacing" Value="0" />
+                        <Setter Target="ContentGrid.RowSpacing" Value="20" />
+                        <Setter Target="NewsPanel.ImageHeight" Value="220" />
+                        <Setter Target="SecondaryContainer.(Grid.Row)" Value="1" />
+                        <Setter Target="SecondaryContainer.(Grid.Column)" Value="0" />
+                        <Setter Target="SecondaryContainer.RowSpacing" Value="20" />
+                        <Setter Target="SecondaryColumn.Width" Value="0" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource WideWindowThresholdWidth}" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="TraderSecondaryColumn.Width" Value="Auto" />
+                        <Setter Target="TraderContainer.ColumnSpacing" Value="0" />
+                        <Setter Target="TraderContainer.RowSpacing" Value="20" />
+                        <Setter Target="MissionSecondaryColumn.Width" Value="Auto" />
+                        <Setter Target="HostMissionContainer.ColumnSpacing" Value="0" />
+                        <Setter Target="HostMissionContainer.RowSpacing" Value="20" />
+                        <Setter Target="VoidTraderPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="VoidTraderPanel.(Grid.Row)" Value="1" />
+                        <Setter Target="SkirmishPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="SkirmishPanel.(Grid.Row)" Value="1" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <app:AppPageHeader Title="{ext:Locale Name=WorldState}" RefreshCommand="{x:Bind CoreViewModel.RequestWorldStateCommand}" />
+        <ScrollViewer
+            Style="{StaticResource PageScrollViewerStyle}"
+            Grid.Row="1"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
+            <Grid>
+                <Grid
+                    x:Name="ContentGrid"
+                    Margin="0,0,0,36"
+                    ColumnSpacing="24"
+                    Visibility="{x:Bind ViewModel.IsLoading, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition x:Name="SecondaryColumn" Width="320" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="MainContainer" RowSpacing="24">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <state:WorldCyclePanel HorizontalAlignment="Stretch" ItemsSource="{x:Bind ViewModel.Cycles}" />
+                        <Grid
+                            x:Name="TraderContainer"
+                            Grid.Row="1"
+                            ColumnSpacing="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition x:Name="TraderSecondaryColumn" Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <state:DailySalePanel ViewModel="{x:Bind ViewModel.DailySale, Mode=OneWay}" />
+                            <state:VoidTraderPanel
+                                x:Name="VoidTraderPanel"
+                                Grid.Column="1"
+                                ViewModel="{x:Bind ViewModel.VoidTrader, Mode=OneWay}" />
+                        </Grid>
+                        <Grid
+                            x:Name="HostMissionContainer"
+                            Grid.Row="2"
+                            ColumnSpacing="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition x:Name="MissionSecondaryColumn" Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <state:ArbitrationPanel ViewModel="{x:Bind ViewModel.Arbitration, Mode=OneWay}" />
+                            <state:SkirmishPanel
+                                x:Name="SkirmishPanel"
+                                Grid.Column="1"
+                                ViewModel="{x:Bind ViewModel.Skirmish, Mode=OneWay}" />
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        x:Name="SecondaryContainer"
+                        Grid.Column="1"
+                        RowSpacing="32">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <state:NewsPanel
+                            x:Name="NewsPanel"
+                            ImageHeight="180"
+                            ItemsSource="{x:Bind ViewModel.News}"
+                            NewsCount="{x:Bind ViewModel.NewsCount, Mode=OneWay}" />
+                        <state:EventsPanel
+                            x:Name="EventsPanel"
+                            Grid.Row="1"
+                            IsEmpty="{x:Bind ViewModel.IsEventsEmpty, Mode=OneWay}"
+                            ItemsSource="{x:Bind ViewModel.Events}" />
+                        <state:ConstructionPanel
+                            x:Name="ConstructionPanel"
+                            Grid.Row="2"
+                            ViewModel="{x:Bind ViewModel.ConstructionProgress, Mode=OneWay}" />
+                    </Grid>
+                </Grid>
+                <muxc:ProgressRing Style="{StaticResource PageProgressRingStyle}" IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
+            </Grid>
+
+        </ScrollViewer>
+    </Grid>
+</local:WorldStatePageBase>

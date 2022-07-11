@@ -1,9 +1,12 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
+using System.Collections.Generic;
 using System.Reactive;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Models.Data.Context;
+using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
 using Windows.UI.Xaml;
@@ -28,6 +31,11 @@ namespace Wfa.ViewModel
         private readonly ObservableAsPropertyHelper<bool> _isRequestingState;
 
         private bool? _isWide;
+
+        /// <summary>
+        /// 请求显示虚空商人货品列表.
+        /// </summary>
+        public event EventHandler<IEnumerable<VoidTraderItem>> RequestShowVoidTraderItems;
 
         /// <summary>
         /// 检查社区资料库更新的命令.

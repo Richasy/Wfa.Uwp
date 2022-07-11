@@ -33,18 +33,64 @@
     <Compile Include="Controls\App\AppNavigationView.xaml.cs">
       <DependentUpon>AppNavigationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\App\AppPageHeader.xaml.cs">
+      <DependentUpon>AppPageHeader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\AppSearchBox.xaml.cs">
       <DependentUpon>AppSearchBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\App\AppTitleBar.xaml.cs">
       <DependentUpon>AppTitleBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\App\CardPanel\CardPanel.cs" />
+    <Compile Include="Controls\App\CardPanel\CardPanel.Fields.cs" />
+    <Compile Include="Controls\App\CardPanel\CardPanel.Properties.cs" />
+    <Compile Include="Controls\App\CardPanel\CardPanelAutomationPeer.cs" />
+    <Compile Include="Controls\App\CardPanel\CardPanelStateChangedEventArgs.cs" />
+    <Compile Include="Controls\App\CenterPopup\CenterPopup.cs" />
+    <Compile Include="Controls\App\CenterPopup\CenterPopup.Properties.cs" />
+    <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
+    <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
     <Compile Include="Controls\App\WfaIcon.cs" />
+    <Compile Include="Controls\State\ArbitrationPanel.xaml.cs">
+      <DependentUpon>ArbitrationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\ConstructionPanel.xaml.cs">
+      <DependentUpon>ConstructionPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\DailySalePanel.xaml.cs">
+      <DependentUpon>DailySalePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\EventsPanel.xaml.cs">
+      <DependentUpon>EventsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\NewsPanel.xaml.cs">
+      <DependentUpon>NewsPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\SkirmishPanel.xaml.cs">
+      <DependentUpon>SkirmishPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\VoidTraderItemsView.xaml.cs">
+      <DependentUpon>VoidTraderItemsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\VoidTraderPanel.xaml.cs">
+      <DependentUpon>VoidTraderPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\WorldCyclePanel.xaml.cs">
+      <DependentUpon>WorldCyclePanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AppPage.cs" />
+    <Compile Include="Pages\WorldStatePage.xaml.cs">
+      <DependentUpon>WorldStatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RootPage.xaml.cs">
       <DependentUpon>RootPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Resources\Converters\ObjectToBoolConverter.cs" />
+    <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
   </ItemGroup>
@@ -54,6 +100,8 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\boss_Nef_Anyo.png" />
+    <Content Include="Assets\boss_Tyl_Regor.png" />
     <Content Include="Assets\Logo\LargeTile.scale-100.png" />
     <Content Include="Assets\Logo\LargeTile.scale-125.png" />
     <Content Include="Assets\Logo\LargeTile.scale-150.png" />
@@ -104,6 +152,11 @@
     <Content Include="Assets\Logo\Wide310x150Logo.scale-150.png" />
     <Content Include="Assets\Logo\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Logo\Wide310x150Logo.scale-400.png" />
+    <Content Include="Assets\moon.png" />
+    <Content Include="Assets\placeholder.png" />
+    <Content Include="Assets\snow.png" />
+    <Content Include="Assets\sun.png" />
+    <Content Include="Assets\warm.png" />
     <Content Include="Assets\wfalogo.png" />
     <Content Include="Assets\wfalogo_small.png" />
     <Content Include="Properties\Default.rd.xml" />
@@ -126,11 +179,71 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\App\AppPageHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\App\AppSearchBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\App\AppTitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\App\CardPanel\CardPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\App\CenterPopup\CenterPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\App\CommonImageEx\CommonImageEx.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\App\IconTextBlock\IconTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\State\ArbitrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\ConstructionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\DailySalePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\EventsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\NewsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\SkirmishPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\VoidTraderItemsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\VoidTraderPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\WorldCyclePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WorldStatePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.Metrics">
@@ -176,7 +293,7 @@
       <Version>7.1.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.UI.Xaml">
-      <Version>2.7.1</Version>
+      <Version>2.8.0-prerelease.220601001</Version>
     </PackageReference>
     <PackageReference Include="Richasy.ExpanderEx.UWP">
       <Version>1.0.4</Version>
@@ -204,6 +321,10 @@
       <Project>{5935e572-613f-41ff-a2da-1c4e1f6fe960}</Project>
       <Name>DI.App</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\Models.Community\Models.Community.csproj">
+      <Project>{0de55c85-3f66-4bbb-9440-79508b1ebff1}</Project>
+      <Name>Models.Community</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.Data\Models.Data.csproj">
       <Project>{1D8683BF-5284-4FD2-8E57-8FDDAAFBDFFB}</Project>
       <Name>Models.Data</Name>
@@ -212,9 +333,21 @@
       <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
       <Name>Models.Enums</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Models\Models.Market\Models.Market.csproj">
+      <Project>{a03bf623-a01d-43f2-8ffe-131069e8c4ce}</Project>
+      <Name>Models.Market</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.State\Models.State.csproj">
+      <Project>{19162b6d-5b66-4cd9-912f-9e94933175ba}</Project>
+      <Name>Models.State</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Toolkit\Toolkit.Interfaces\Toolkit.Interfaces.csproj">
       <Project>{26A805E7-83CA-48B2-B2B3-3C786E6436BA}</Project>
       <Name>Toolkit.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ViewModel\ViewModel.Interfaces\ViewModel.Interfaces.csproj">
+      <Project>{76f23a53-0675-4c7a-aea8-e5a94410960c}</Project>
+      <Name>ViewModel.Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.Uwp\ViewModel.Uwp.csproj">
       <Project>{F1BB38A9-6C97-43C1-9DD0-D80D36ACA647}</Project>

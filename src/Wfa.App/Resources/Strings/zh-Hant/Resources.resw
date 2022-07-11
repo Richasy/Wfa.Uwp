@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutToArrive" xml:space="preserve">
+    <value>即將抵達</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>用於檢測 Warframe 的各種信息</value>
   </data>
@@ -126,17 +129,62 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="Arbitration" xml:space="preserve">
+    <value>仲裁</value>
+  </data>
+  <data name="Arrived" xml:space="preserve">
+    <value>已經到達</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一頁</value>
+  </data>
+  <data name="CambionDrift" xml:space="preserve">
+    <value>魔胎之境</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Cold" xml:space="preserve">
+    <value>寒冷</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>確認</value>
   </data>
+  <data name="ConstructionProgress" xml:space="preserve">
+    <value>戰艦建造進度</value>
+  </data>
+  <data name="DailySale" xml:space="preserve">
+    <value>每日折扣</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>深色</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>白晝</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>地球</value>
+  </data>
+  <data name="ExpiryDateFormat" xml:space="preserve">
+    <value>{0}過期</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>虛空裂縫</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>跟隨系統</value>
+  </data>
+  <data name="Fomorian" xml:space="preserve">
+    <value>巨人戰艦</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>已發現</value>
+  </data>
+  <data name="GameEvents" xml:space="preserve">
+    <value>遊戲活動</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
@@ -147,17 +195,50 @@
   <data name="Library" xml:space="preserve">
     <value>資料庫</value>
   </data>
+  <data name="Light" xml:space="preserve">
+    <value>淺色</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>新聞</value>
+  </data>
+  <data name="Night" xml:space="preserve">
+    <value>黑夜</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>午夜電波</value>
+  </data>
+  <data name="NoEvents" xml:space="preserve">
+    <value>當前沒有遊戲活動</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>未發現</value>
+  </data>
+  <data name="OrbVallis" xml:space="preserve">
+    <value>奧布山谷</value>
+  </data>
+  <data name="PlainsOfEidolon" xml:space="preserve">
+    <value>夜靈平野</value>
+  </data>
+  <data name="Razorback" xml:space="preserve">
+    <value>利刃豺狼</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>刷新</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>從 Warframe Market 中找找你想要的</value>
   </data>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>在 WM 中搜索</value>
+  </data>
+  <data name="ShowItems" xml:space="preserve">
+    <value>查看物品</value>
+  </data>
+  <data name="Skirmish" xml:space="preserve">
+    <value>前哨戰</value>
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>突擊任務</value>
@@ -168,7 +249,22 @@
   <data name="SyndicateMissions" xml:space="preserve">
     <value>賞金任務</value>
   </data>
+  <data name="VoidTrader" xml:space="preserve">
+    <value>虛空商人</value>
+  </data>
+  <data name="VoidTraderItems" xml:space="preserve">
+    <value>虛空商人貨品清單</value>
+  </data>
+  <data name="Warm" xml:space="preserve">
+    <value>溫暖</value>
+  </data>
+  <data name="WorldCycle" xml:space="preserve">
+    <value>世界週期</value>
+  </data>
   <data name="WorldState" xml:space="preserve">
     <value>世界狀態</value>
+  </data>
+  <data name="Zariman" xml:space="preserve">
+    <value>扎里曼號</value>
   </data>
 </root>

@@ -14,6 +14,7 @@ using Wfa.Provider.Interfaces;
 using Wfa.Toolkit;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel;
+using Wfa.ViewModel.Items;
 using Windows.Storage;
 
 namespace Wfa.DI.App
@@ -62,6 +63,9 @@ namespace Wfa.DI.App
 
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
             SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
+            SplatRegistrations.RegisterLazySingleton<WorldStatePageViewModel>();
+
+            SplatRegistrations.Register<WorldCycleItemViewModel>();
 
             SplatRegistrations.SetupIOC();
         }

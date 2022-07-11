@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutToArrive" xml:space="preserve">
+    <value>About to arrive</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>App description</value>
   </data>
@@ -126,17 +129,62 @@
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
   </data>
+  <data name="Arbitration" xml:space="preserve">
+    <value>Arbitration</value>
+  </data>
+  <data name="Arrived" xml:space="preserve">
+    <value>Arrived</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="CambionDrift" xml:space="preserve">
+    <value>Cambion drift</value>
   </data>
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Cold" xml:space="preserve">
+    <value>Cold</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
   </data>
+  <data name="ConstructionProgress" xml:space="preserve">
+    <value>Battleship construction progress</value>
+  </data>
+  <data name="DailySale" xml:space="preserve">
+    <value>Daily discount</value>
+  </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="Day" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="Earth" xml:space="preserve">
+    <value>Earth</value>
+  </data>
+  <data name="ExpiryDateFormat" xml:space="preserve">
+    <value>Expires {0}</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>Fissures</value>
+  </data>
+  <data name="FollowSystem" xml:space="preserve">
+    <value>Follow system</value>
+  </data>
+  <data name="Fomorian" xml:space="preserve">
+    <value>Fomorian</value>
+  </data>
+  <data name="Found" xml:space="preserve">
+    <value>Found</value>
+  </data>
+  <data name="GameEvents" xml:space="preserve">
+    <value>Game events</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
@@ -147,17 +195,50 @@
   <data name="Library" xml:space="preserve">
     <value>Library</value>
   </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+  <data name="News" xml:space="preserve">
+    <value>News</value>
+  </data>
+  <data name="Night" xml:space="preserve">
+    <value>Night</value>
+  </data>
   <data name="Nightwave" xml:space="preserve">
     <value>Nightwave</value>
+  </data>
+  <data name="NoEvents" xml:space="preserve">
+    <value>There are currently no game events</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not found</value>
+  </data>
+  <data name="OrbVallis" xml:space="preserve">
+    <value>Orb vallis</value>
+  </data>
+  <data name="PlainsOfEidolon" xml:space="preserve">
+    <value>Plains of Eidolon</value>
+  </data>
+  <data name="Razorback" xml:space="preserve">
+    <value>Razorback</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>Find what you want from the Warframe Market</value>
   </data>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>Search in WM</value>
+  </data>
+  <data name="ShowItems" xml:space="preserve">
+    <value>Show items</value>
+  </data>
+  <data name="Skirmish" xml:space="preserve">
+    <value>Skirmish</value>
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>
@@ -168,7 +249,22 @@
   <data name="SyndicateMissions" xml:space="preserve">
     <value>Syndicate missions</value>
   </data>
+  <data name="VoidTrader" xml:space="preserve">
+    <value>Void trader</value>
+  </data>
+  <data name="VoidTraderItems" xml:space="preserve">
+    <value>Void trader inventory</value>
+  </data>
+  <data name="Warm" xml:space="preserve">
+    <value>Warm</value>
+  </data>
+  <data name="WorldCycle" xml:space="preserve">
+    <value>World cycle</value>
+  </data>
   <data name="WorldState" xml:space="preserve">
     <value>World state</value>
+  </data>
+  <data name="Zariman" xml:space="preserve">
+    <value>Zariman</value>
   </data>
 </root>

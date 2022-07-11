@@ -51,6 +51,7 @@
             Width="80"
             HorizontalAlignment="Left"
             VerticalAlignment="Stretch"
+            BorderThickness="0"
             CornerRadius="4,0,0,4">
             <ComboBoxItem Content="物品" IsSelected="True" />
         </ComboBox>
