@@ -2,20 +2,19 @@
 
 using System;
 using Wfa.ViewModel;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Navigation;
 
 namespace Wfa.App.Pages
 {
     /// <summary>
-    /// 赏金任务页面.
+    /// 入侵页面.
     /// </summary>
-    public sealed partial class SyndicateMissionPage : SyndicateMissionPageBase
+    public sealed partial class InvasionPage : InvasionPageBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="SyndicateMissionPage"/> class.
+        /// Initializes a new instance of the <see cref="InvasionPage"/> class.
         /// </summary>
-        public SyndicateMissionPage() => InitializeComponent();
+        public InvasionPage() => InitializeComponent();
 
         /// <inheritdoc/>
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -27,9 +26,9 @@ namespace Wfa.App.Pages
     }
 
     /// <summary>
-    /// <see cref="SyndicateMissionPage"/> 的基类.
+    /// <see cref="InvasionPage"/> 的基类.
     /// </summary>
-    public class SyndicateMissionPageBase : AppPage<SyndicateMissionPageViewModel>
+    public class InvasionPageBase : AppPage<InvasionPageViewModel>
     {
     }
 }

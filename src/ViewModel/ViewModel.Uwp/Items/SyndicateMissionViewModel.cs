@@ -80,18 +80,11 @@ namespace Wfa.ViewModel.Items
             };
 
             _expiryTime = mission.ExpiryTime.ToLocalTime();
-            if (Jobs.Count > 0)
+            var newsCount = mission.Jobs.Count(p => !Jobs.Any(j => j.Id == p.Id));
+            if (newsCount > 0)
             {
-                var newsCount = mission.Jobs.Count(p => !Jobs.Any(p => p.Id == p.Id));
-                if (newsCount > 0)
-                {
-                    // 赏金列表刷新了.
-                    TryClear(Jobs);
-                    mission.Jobs.ForEach(p => Jobs.Add(new SyndicateMissionJobViewModel(p, symbol)));
-                }
-            }
-            else
-            {
+                // 赏金列表刷新了.
+                TryClear(Jobs);
                 mission.Jobs.ForEach(p => Jobs.Add(new SyndicateMissionJobViewModel(p, symbol)));
             }
 

@@ -58,6 +58,7 @@
             <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityReverseConverter" IsReverse="True" />
             <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
             <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityReverseConverter" IsReverse="True" />
+            <converters:FactionColorConverter x:Key="FactionColorConverter" />
             <converters:ThemeStringConverter x:Key="ThemeStringConverter" />
         </ResourceDictionary>
     </Application.Resources>

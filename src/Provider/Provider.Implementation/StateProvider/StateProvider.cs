@@ -57,7 +57,7 @@ namespace Wfa.Provider
             _news = GetParsedData<List<News>>(totalObj, "news");
             _events = GetParsedData<List<Event>>(totalObj, "events");
             _fissures = GetParsedData<List<Fissure>>(totalObj, "fissures");
-            _invasions = GetParsedData<List<Invasion>>(totalObj, "invasions");
+            _invasions = GetParsedData<List<Invasion>>(totalObj, "invasions").Where(p => !p.IsCompleted).ToList();
             _sortie = GetParsedData<Sortie>(totalObj, "sortie");
             _voidTrader = GetParsedData<VoidTrader>(totalObj, "voidTrader");
             _dailySale = GetParsedData<List<DailySale>>(totalObj, "dailyDeals").FirstOrDefault();

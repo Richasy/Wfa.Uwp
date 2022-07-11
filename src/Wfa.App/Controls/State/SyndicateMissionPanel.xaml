@@ -55,6 +55,14 @@
                                 FontSize="60"
                                 Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
                                 Symbol="{x:Bind Symbol, Mode=OneWay}" />
+                            <Ellipse
+                                Grid.RowSpan="2"
+                                Width="8"
+                                Height="8"
+                                Margin="0,8,8,0"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Fill="{x:Bind Symbol, Mode=OneWay, Converter={StaticResource FactionColorConverter}}" />
                             <StackPanel Padding="16,8,16,0" Spacing="2">
                                 <TextBlock
                                     HorizontalAlignment="Left"

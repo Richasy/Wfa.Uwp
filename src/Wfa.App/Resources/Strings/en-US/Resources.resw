@@ -135,6 +135,9 @@
   <data name="Arrived" xml:space="preserve">
     <value>Arrived</value>
   </data>
+  <data name="Attacker" xml:space="preserve">
+    <value>Attacker</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="Day" xml:space="preserve">
     <value>Day</value>
+  </data>
+  <data name="Defender" xml:space="preserve">
+    <value>Defender</value>
   </data>
   <data name="Earth" xml:space="preserve">
     <value>Earth</value>
@@ -227,6 +233,9 @@
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Refresh</value>
+  </data>
+  <data name="Reward" xml:space="preserve">
+    <value>Reward</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>Find what you want from the Warframe Market</value>
