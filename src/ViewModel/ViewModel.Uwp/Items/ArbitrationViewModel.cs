@@ -59,7 +59,7 @@ namespace Wfa.ViewModel.Items
                 "Infested" => WfaSymbol.Infested,
                 "Grineer" => WfaSymbol.Grineer,
                 "Corpus" => WfaSymbol.Corpus,
-                "Orokin" => WfaSymbol.Orikin,
+                "Orokin" => WfaSymbol.Orokin,
                 _ => WfaSymbol.Melee,
             };
 

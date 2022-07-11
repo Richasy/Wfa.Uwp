@@ -29,15 +29,15 @@
             </LinearGradientBrush>
 
             <!-- Grineer 渐变色 -->
-            <LinearGradientBrush x:Key="GrineerGreenGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
-                <GradientStop Offset="0" Color="#29B7C1" />
-                <GradientStop Offset="1" Color="#8EE499" />
+            <LinearGradientBrush x:Key="GrineerGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#FA2F89" />
+                <GradientStop Offset="1" Color="#F93BC7" />
             </LinearGradientBrush>
 
             <!-- 感染者渐变色 -->
-            <LinearGradientBrush x:Key="InfestedRedGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
-                <GradientStop Offset="0" Color="#FA2F89" />
-                <GradientStop Offset="1" Color="#F93BC7" />
+            <LinearGradientBrush x:Key="InfestedGradient" StartPoint="0.8,0.2" EndPoint="0.2,0.8">
+                <GradientStop Offset="0" Color="#29B7C1" />
+                <GradientStop Offset="1" Color="#8EE499" />
             </LinearGradientBrush>
 
             <!-- 灵煞渐变色 -->

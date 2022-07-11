@@ -35,5 +35,9 @@
                 </muxc:ItemsRepeater>
             </Grid>
         </ScrollViewer>
+        <muxc:ProgressRing
+            Style="{StaticResource PageProgressRingStyle}"
+            Grid.Row="1"
+            IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
     </Grid>
 </local:SyndicateMissionPageBase>

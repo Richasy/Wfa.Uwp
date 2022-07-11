@@ -17,10 +17,10 @@ namespace Wfa.App.Resources.Converters
             return value is WfaSymbol symbol
                 ? symbol switch
                 {
-                    WfaSymbol.Grineer => resourceToolkit.GetResource<Brush>("GrineerGreenGradient"),
+                    WfaSymbol.Grineer => resourceToolkit.GetResource<Brush>("GrineerGradient"),
                     WfaSymbol.Corpus => resourceToolkit.GetResource<Brush>("CorpusGradient"),
-                    WfaSymbol.Infested => resourceToolkit.GetResource<Brush>("InfestedRedGradient"),
-                    WfaSymbol.Orikin => resourceToolkit.GetResource<Brush>("OrikinGradient"),
+                    WfaSymbol.Infested => resourceToolkit.GetResource<Brush>("InfestedGradient"),
+                    WfaSymbol.Orokin => resourceToolkit.GetResource<Brush>("OrikinGradient"),
                     WfaSymbol.Ostron => resourceToolkit.GetResource<Brush>("OrikinGradient"),
                     WfaSymbol.Solaris => resourceToolkit.GetResource<Brush>("CorpusGradient"),
                     _ => resourceToolkit.GetResource<Brush>("SentientGradient"),

@@ -147,7 +147,7 @@ namespace Wfa.Provider
 
         private void InitializeFissures(string language)
         {
-            if (language != AppConstants.LanguageCht)
+            if (language == AppConstants.LanguageEn)
             {
                 return;
             }
@@ -156,9 +156,15 @@ namespace Wfa.Provider
             {
                 foreach (var item in _fissures)
                 {
-                    item.Tier = WordsHelper.ToTraditionalChinese(item.Tier);
-                    item.Node = WordsHelper.ToTraditionalChinese(item.Node);
-                    item.MissionType = WordsHelper.ToTraditionalChinese(item.MissionType);
+                    item.Tier = language == AppConstants.LanguageChs
+                        ? WordsHelper.ToSimplifiedChinese(item.Tier)
+                        : WordsHelper.ToTraditionalChinese(item.Tier);
+                    item.Node = language == AppConstants.LanguageChs
+                        ? WordsHelper.ToSimplifiedChinese(item.Node)
+                        : WordsHelper.ToTraditionalChinese(item.Node);
+                    item.MissionType = language == AppConstants.LanguageChs
+                        ? WordsHelper.ToSimplifiedChinese(item.MissionType)
+                        : WordsHelper.ToTraditionalChinese(item.MissionType);
                 }
             }
         }

@@ -174,6 +174,12 @@
   <data name="Earth" xml:space="preserve">
     <value>地球</value>
   </data>
+  <data name="EndDateFormat" xml:space="preserve">
+    <value>{0}結束</value>
+  </data>
+  <data name="Enemy" xml:space="preserve">
+    <value>敵人</value>
+  </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}過期</value>
   </data>
@@ -204,6 +210,9 @@
   <data name="Light" xml:space="preserve">
     <value>淺色</value>
   </data>
+  <data name="Location" xml:space="preserve">
+    <value>地點</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
   </data>
@@ -215,6 +224,9 @@
   </data>
   <data name="Nightwave" xml:space="preserve">
     <value>午夜電波</value>
+  </data>
+  <data name="NoData" xml:space="preserve">
+    <value>沒找到所需要的內容</value>
   </data>
   <data name="NoEvents" xml:space="preserve">
     <value>當前沒有遊戲活動</value>
@@ -257,6 +269,9 @@
   </data>
   <data name="SyndicateMissions" xml:space="preserve">
     <value>賞金任務</value>
+  </data>
+  <data name="Tier" xml:space="preserve">
+    <value>紀元</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>虛空商人</value>

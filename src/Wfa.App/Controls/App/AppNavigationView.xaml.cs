@@ -11,6 +11,7 @@ using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.ViewModel;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
 namespace Wfa.App.Controls.App
@@ -72,11 +73,11 @@ namespace Wfa.App.Controls.App
                 PageIds.Help => throw new NotImplementedException(),
                 PageIds.Settings => throw new NotImplementedException(),
                 PageIds.WorldStateHome => typeof(WorldStatePage),
-                PageIds.Library => typeof(Windows.UI.Xaml.Controls.Page),
+                PageIds.Library => typeof(Page),
                 PageIds.SyndicateMissions => typeof(SyndicateMissionPage),
                 PageIds.Invasions => typeof(InvasionPage),
-                PageIds.Nightwave => throw new NotImplementedException(),
-                PageIds.Fissure => throw new NotImplementedException(),
+                PageIds.Nightwave => typeof(Page),
+                PageIds.Fissure => typeof(FissurePage),
                 PageIds.Sortie => throw new NotImplementedException(),
                 PageIds.SteelPath => throw new NotImplementedException(),
                 _ => default,

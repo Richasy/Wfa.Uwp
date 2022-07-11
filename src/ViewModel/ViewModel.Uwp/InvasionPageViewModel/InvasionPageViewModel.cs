@@ -39,6 +39,15 @@ namespace Wfa.ViewModel
         private void InitializeData()
         {
             var invasions = _stateProvider.GetInvasions();
+
+            IsLoading = invasions == null;
+            if (!(invasions?.Any() ?? false))
+            {
+                IsLoading = invasions == null;
+                IsEmpty = invasions != null && invasions.Count() == 0;
+                return;
+            }
+
             var newsCount = invasions.Count(p => !Invasions.Any(j => j.Id == p.Id));
             if (newsCount > 0)
             {

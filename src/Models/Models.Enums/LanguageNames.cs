@@ -60,5 +60,10 @@ namespace Wfa.Models.Enums
         Attacker,
         Defender,
         Reward,
+        NoData,
+        Location,
+        Tier,
+        Enemy,
+        EndDateFormat,
     }
 }
