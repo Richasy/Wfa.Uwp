@@ -1,0 +1,39 @@
+﻿<local:SyndicateMissionPageBase
+    x:Class="Wfa.App.Pages.SyndicateMissionPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:local="using:Wfa.App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:state="using:Wfa.App.Controls.State"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <app:AppPageHeader Title="{ext:Locale Name=SyndicateMissions}" RefreshCommand="{x:Bind CoreViewModel.RequestWorldStateCommand}" />
+        <ScrollViewer
+            Style="{StaticResource PageScrollViewerStyle}"
+            Grid.Row="1"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
+            <Grid x:Name="ContentContainer" Margin="0,0,0,24">
+                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.Missions}">
+                    <muxc:ItemsRepeater.Layout>
+                        <muxc:StackLayout Spacing="20" />
+                    </muxc:ItemsRepeater.Layout>
+                    <muxc:ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="items:SyndicateMissionViewModel">
+                            <state:SyndicateMissionPanel ViewModel="{x:Bind}" />
+                        </DataTemplate>
+                    </muxc:ItemsRepeater.ItemTemplate>
+                </muxc:ItemsRepeater>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</local:SyndicateMissionPageBase>
