@@ -30,7 +30,7 @@
         </RelativePanel>
 
         <muxc:ProgressBar
-            Foreground="{StaticResource GrineerGreenGradient}"
+            Foreground="{StaticResource GrineerGradient}"
             Maximum="100"
             Value="{x:Bind ViewModel.FomorianProgress, Mode=OneWay}" />
         <RelativePanel Margin="0,8,0,0">

@@ -14,12 +14,15 @@
     <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
     <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="FissurePageViewModel\FissurePageViewModel.cs" />
+    <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
     <Compile Include="Items\ArbitrationViewModel.cs" />
     <Compile Include="Items\ConstructionProgressViewModel.cs" />
     <Compile Include="Items\DailySaleViewModel.cs" />
     <Compile Include="Items\EventItemViewModel.cs" />
+    <Compile Include="Items\FissureItemViewModel.cs" />
     <Compile Include="Items\InvasionItemViewModel.cs" />
     <Compile Include="Items\SkirmishViewModel.cs" />
     <Compile Include="Items\SyndicateMissionJobViewModel.cs" />

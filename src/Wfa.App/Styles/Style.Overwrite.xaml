@@ -40,6 +40,16 @@
         <Setter Property="Foreground" Value="{x:Null}" />
     </Style>
 
+    <Style
+        x:Key="EmptyTextStyle"
+        BasedOn="{StaticResource CaptionTextBlockStyle}"
+        TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
     <!-- 在Expander(有内容的ExpanderEx)头部的Wrapper样式 -->
     <Style x:Key="WrapperInExpanderHeaderStyle" TargetType="expander:ExpanderExWrapper">
         <Setter Property="InlineWidePadding" Value="0,8,0,12" />

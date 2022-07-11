@@ -64,6 +64,9 @@
     <Compile Include="Controls\State\EventsPanel.xaml.cs">
       <DependentUpon>EventsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\FissureItem.xaml.cs">
+      <DependentUpon>FissureItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\InvasionItem.xaml.cs">
       <DependentUpon>InvasionItem.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,9 @@
       <DependentUpon>WorldCyclePanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AppPage.cs" />
+    <Compile Include="Pages\FissurePage.xaml.cs">
+      <DependentUpon>FissurePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\InvasionPage.xaml.cs">
       <DependentUpon>InvasionPage.xaml</DependentUpon>
     </Compile>
@@ -236,6 +242,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\State\FissureItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\State\InvasionItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -261,6 +271,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\WorldCyclePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FissurePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

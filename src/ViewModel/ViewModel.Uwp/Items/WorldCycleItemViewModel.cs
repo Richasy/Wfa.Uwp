@@ -173,7 +173,7 @@ namespace Wfa.ViewModel.Items
         private void LoadDataFromZariman(ZarimanStatus zariman)
         {
             Name = _resourceToolkit.GetLocaleString(LanguageNames.Zariman);
-            FactionSymbol = WfaSymbol.Orikin;
+            FactionSymbol = WfaSymbol.Orokin;
             Status = zariman.State.ToUpper();
             StatusIcon = zariman.IsCorpus
                 ? "ms-appx:///Assets/boss_Nef_Anyo.png"

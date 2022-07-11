@@ -17,7 +17,7 @@ namespace Wfa.Models.Enums
         Infested = '\ue91b',
         Invasion = '\ue91c',
         Wfa = '\ue91d',
-        Orikin = '\ue91e',
+        Orokin = '\ue91e',
         Sortie = '\ue91f',
         VoidTrader = '\ue920',
         Koneksi = '\ue925',
