@@ -19,8 +19,12 @@
     <Compile Include="Items\DailySaleViewModel.cs" />
     <Compile Include="Items\EventItemViewModel.cs" />
     <Compile Include="Items\SkirmishViewModel.cs" />
+    <Compile Include="Items\SyndicateMissionJobViewModel.cs" />
+    <Compile Include="Items\SyndicateMissionViewModel.cs" />
     <Compile Include="Items\VoidTraderViewModel.cs" />
     <Compile Include="Items\WorldCycleItemViewModel.cs" />
+    <Compile Include="SyndicateMissionPageViewModel\SyndicateMissionPageViewModel.cs" />
+    <Compile Include="SyndicateMissionPageViewModel\SyndicateMissionPageViewModel.Properties.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Methods.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Properties.cs" />

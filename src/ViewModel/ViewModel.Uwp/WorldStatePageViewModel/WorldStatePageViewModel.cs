@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using ReactiveUI;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Base;
+using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.Items;
 
 namespace Wfa.ViewModel
@@ -15,7 +16,7 @@ namespace Wfa.ViewModel
     /// <remarks>
     /// 应包含的模块：世界周期, 游戏新闻，商人，活动，仲裁，前哨战，战舰建造进度.
     /// </remarks>
-    public sealed partial class WorldStatePageViewModel : ViewModelBase
+    public sealed partial class WorldStatePageViewModel : ViewModelBase, IPageViewModel
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="WorldStatePageViewModel"/> class.

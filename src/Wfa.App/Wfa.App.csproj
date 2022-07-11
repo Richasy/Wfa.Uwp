@@ -70,6 +70,9 @@
     <Compile Include="Controls\State\SkirmishPanel.xaml.cs">
       <DependentUpon>SkirmishPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\SyndicateMissionPanel.xaml.cs">
+      <DependentUpon>SyndicateMissionPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\VoidTraderItemsView.xaml.cs">
       <DependentUpon>VoidTraderItemsView.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
       <DependentUpon>WorldCyclePanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AppPage.cs" />
+    <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
+      <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WorldStatePage.xaml.cs">
       <DependentUpon>WorldStatePage.xaml</DependentUpon>
     </Compile>
@@ -231,6 +237,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\State\SyndicateMissionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\State\VoidTraderItemsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -240,6 +250,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\WorldCyclePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SyndicateMissionPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

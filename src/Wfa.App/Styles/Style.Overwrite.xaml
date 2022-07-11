@@ -26,7 +26,6 @@
 
     <Style x:Key="PageScrollViewerStyle" TargetType="ScrollViewer">
         <Setter Property="HorizontalScrollMode" Value="Disabled" />
-        <Setter Property="HorizontalScrollBarVisibility" Value="Hidden" />
         <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
     </Style>
 

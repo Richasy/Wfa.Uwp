@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.Reactive;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
-using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Items;
 using Windows.UI.Xaml;
@@ -19,14 +18,10 @@ namespace Wfa.ViewModel
         private readonly IStateProvider _stateProvider;
         private readonly DispatcherTimer _timer;
 
-        /// <summary>
-        /// 激活命令.
-        /// </summary>
+        /// <inheritdoc/>
         public ReactiveCommand<Unit, Unit> ActiveCommand { get; }
 
-        /// <summary>
-        /// 注销命令.
-        /// </summary>
+        /// <inheritdoc/>
         public ReactiveCommand<Unit, Unit> DeactiveCommand { get; }
 
         /// <summary>

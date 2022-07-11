@@ -73,7 +73,7 @@ namespace Wfa.App.Controls.App
                 PageIds.Settings => throw new NotImplementedException(),
                 PageIds.WorldStateHome => typeof(WorldStatePage),
                 PageIds.Library => throw new NotImplementedException(),
-                PageIds.SyndicateMissions => throw new NotImplementedException(),
+                PageIds.SyndicateMissions => typeof(SyndicateMissionPage),
                 PageIds.Invasions => throw new NotImplementedException(),
                 PageIds.Nightwave => throw new NotImplementedException(),
                 PageIds.Fissure => throw new NotImplementedException(),

@@ -85,6 +85,11 @@ namespace Wfa.Provider
 
             if (language != AppConstants.LanguageEn)
             {
+                if (language == AppConstants.LanguageChs)
+                {
+                    data.Name = WordsHelper.ToSimplifiedChinese(data.Name);
+                }
+
                 foreach (var job in data.Jobs)
                 {
                     var rewards = job.RewardPool;
