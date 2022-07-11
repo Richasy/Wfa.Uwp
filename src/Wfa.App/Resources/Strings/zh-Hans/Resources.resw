@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutToArrive" xml:space="preserve">
+    <value>即将抵达</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>Warframe 的动态信息</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
+  </data>
+  <data name="Arrived" xml:space="preserve">
+    <value>已经到达</value>
   </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一页</value>
@@ -216,6 +222,9 @@
   <data name="SearchTipSlim" xml:space="preserve">
     <value>在 WM 中搜索</value>
   </data>
+  <data name="ShowItems" xml:space="preserve">
+    <value>查看物品</value>
+  </data>
   <data name="Sortie" xml:space="preserve">
     <value>突击任务</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="SyndicateMissions" xml:space="preserve">
     <value>赏金任务</value>
+  </data>
+  <data name="VoidTrader" xml:space="preserve">
+    <value>虚空商人</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>温暖</value>

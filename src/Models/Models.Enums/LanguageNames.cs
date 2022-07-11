@@ -47,5 +47,9 @@ namespace Wfa.Models.Enums
         Cold,
         WorldCycle,
         DailySale,
+        VoidTrader,
+        AboutToArrive,
+        Arrived,
+        ShowItems,
     }
 }

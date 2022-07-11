@@ -90,7 +90,7 @@ namespace Wfa.Provider
                     var rewards = job.RewardPool;
                     for (var i = 0; i < rewards.Count; i++)
                     {
-                        var text = TranslateSyndicateReward(rewards[i]);
+                        var text = TranslateSyndicateReward(rewards[i], language);
                         if (text != rewards[i] && language == AppConstants.LanguageCht)
                         {
                             text = WordsHelper.ToTraditionalChinese(text);
@@ -193,12 +193,26 @@ namespace Wfa.Provider
 
         private void InitializeVoidTrader(string language)
         {
-            if (_voidTrader == null || language != AppConstants.LanguageCht)
+            if (_voidTrader == null)
             {
                 return;
             }
 
-            _voidTrader.Location = WordsHelper.ToTraditionalChinese(_voidTrader.Location);
+            if ((_voidTrader.Inventory?.Any() ?? false) && language != AppConstants.LanguageEn)
+            {
+                foreach (var item in _voidTrader.Inventory)
+                {
+                    if (!HasChinese(item.Name))
+                    {
+                        item.Name = TranslateItem(item.Name, language);
+                    }
+                }
+            }
+
+            if (language == AppConstants.LanguageCht)
+            {
+                _voidTrader.Location = WordsHelper.ToTraditionalChinese(_voidTrader.Location);
+            }
         }
 
         private void InitializeDailySale(string language)
@@ -210,18 +224,13 @@ namespace Wfa.Provider
 
             if (!HasChinese(_dailySale.Item) && language != AppConstants.LanguageEn)
             {
-                _dailySale.Item = TranslateItem(_dailySale.Item);
-            }
-
-            if (language == AppConstants.LanguageCht)
-            {
-                _dailySale.Item = WordsHelper.ToTraditionalChinese(_dailySale.Item);
+                _dailySale.Item = TranslateItem(_dailySale.Item, language);
             }
         }
 
         private void InitializeNightwave(string language)
         {
-            if ((_nightwave?.Challenges?.Any() ?? false) || language == AppConstants.LanguageEn)
+            if (_nightwave == null || !(_nightwave?.Challenges?.Any() ?? false) || language == AppConstants.LanguageEn)
             {
                 return;
             }
@@ -298,7 +307,7 @@ namespace Wfa.Provider
             }
         }
 
-        private string TranslateSyndicateReward(string text)
+        private string TranslateSyndicateReward(string text, string language)
         {
             if (string.IsNullOrEmpty(text))
             {
@@ -310,7 +319,7 @@ namespace Wfa.Provider
                 // 第一种情况，包含数字的物品，比如 100X Oxium.
                 var number = text.Split(' ').First();
                 var itemName = text.Replace(number, string.Empty).Trim();
-                itemName = TranslateItem(itemName);
+                itemName = TranslateItem(itemName, language);
                 return string.Join(" ", number, itemName);
             }
             else if (text.EndsWith("Relic"))
@@ -331,14 +340,14 @@ namespace Wfa.Provider
             }
             else
             {
-                var itemName = TranslateItem(text);
+                var itemName = TranslateItem(text, language);
                 if (itemName == text && itemName.Contains(" "))
                 {
                     // 第三种情况，文本翻译得不到结果，此时考虑需要分拆翻译，比如 Gara Systems Blueprint.
                     var splits = itemName.Split(' ');
                     for (var i = 0; i < splits.Length; i++)
                     {
-                        splits[i] = TranslateItem(splits[i]);
+                        splits[i] = TranslateItem(splits[i], language);
                     }
 
                     itemName = string.Join(" ", splits);
@@ -348,10 +357,22 @@ namespace Wfa.Provider
             }
         }
 
-        private string TranslateItem(string name)
+        private string TranslateItem(string name, string language)
         {
             var translate = _dbContext.Translates.FirstOrDefault(p => p.En.Equals(name));
-            return translate?.Zh ?? name;
+            if (translate != null)
+            {
+                var zh = translate.Zh;
+                if (language == AppConstants.LanguageCht)
+                {
+                    var chtItem = _dbContext.Patches.FirstOrDefault(p => p.Chs == zh);
+                    zh = chtItem?.Cht ?? WordsHelper.ToTraditionalChinese(zh);
+                }
+
+                return zh;
+            }
+
+            return name;
         }
 
         private bool HasChinese(string str)

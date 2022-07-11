@@ -62,6 +62,9 @@
     <Compile Include="Controls\State\NewsPanel.xaml.cs">
       <DependentUpon>NewsPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\VoidTraderPanel.xaml.cs">
+      <DependentUpon>VoidTraderPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\WorldCyclePanel.xaml.cs">
       <DependentUpon>WorldCyclePanel.xaml</DependentUpon>
     </Compile>
@@ -202,6 +205,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\NewsPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\VoidTraderPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

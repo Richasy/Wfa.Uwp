@@ -41,11 +41,15 @@ namespace Wfa.ViewModel
                 _timer.Start();
             }
 
+            var testData = _stateProvider.GetEarthStatus();
+            IsLoading = testData == null;
+
             InitializeNews();
             InitializeEvents();
             InitializeConstructionProgress();
             InitializePlains();
             InitializeDailySale();
+            InitializeVoidTrader();
         }
     }
 }

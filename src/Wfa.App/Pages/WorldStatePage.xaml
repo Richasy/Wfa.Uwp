@@ -8,6 +8,7 @@
     xmlns:ext="using:Wfa.App.Resources.Extensions"
     xmlns:local="using:Wfa.App.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:state="using:Wfa.App.Controls.State"
     mc:Ignorable="d">
 
@@ -53,6 +54,8 @@
                         <Setter Target="TraderSecondaryColumn.Width" Value="Auto" />
                         <Setter Target="TraderContainer.ColumnSpacing" Value="0" />
                         <Setter Target="TraderContainer.RowSpacing" Value="20" />
+                        <Setter Target="VoidTraderPanel.(Grid.Column)" Value="0" />
+                        <Setter Target="VoidTraderPanel.(Grid.Row)" Value="1" />
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
@@ -63,62 +66,74 @@
             Style="{StaticResource PageScrollViewerStyle}"
             Grid.Row="1"
             Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
-            <Grid x:Name="ContentGrid" ColumnSpacing="24">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition x:Name="SecondaryColumn" Width="320" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid x:Name="MainContainer" RowSpacing="20">
+            <Grid>
+                <Grid
+                    x:Name="ContentGrid"
+                    Margin="0,0,0,36"
+                    ColumnSpacing="24"
+                    Visibility="{x:Bind ViewModel.IsLoading, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition x:Name="SecondaryColumn" Width="320" />
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <state:WorldCyclePanel HorizontalAlignment="Stretch" ItemsSource="{x:Bind ViewModel.Cycles}" />
-                    <Grid
-                        x:Name="TraderContainer"
-                        Grid.Row="1"
-                        ColumnSpacing="20">
+                    <Grid x:Name="MainContainer" RowSpacing="20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition x:Name="TraderSecondaryColumn" Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <state:DailySalePanel ViewModel="{x:Bind ViewModel.DailySale, Mode=OneWay}" />
+                        <state:WorldCyclePanel HorizontalAlignment="Stretch" ItemsSource="{x:Bind ViewModel.Cycles}" />
+                        <Grid
+                            x:Name="TraderContainer"
+                            Grid.Row="1"
+                            ColumnSpacing="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition x:Name="TraderSecondaryColumn" Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <state:DailySalePanel ViewModel="{x:Bind ViewModel.DailySale, Mode=OneWay}" />
+                            <state:VoidTraderPanel
+                                x:Name="VoidTraderPanel"
+                                Grid.Column="1"
+                                ViewModel="{x:Bind ViewModel.VoidTrader, Mode=OneWay}" />
+                        </Grid>
+                    </Grid>
+                    <Grid
+                        x:Name="SecondaryContainer"
+                        Grid.Column="1"
+                        RowSpacing="32">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <state:NewsPanel
+                            x:Name="NewsPanel"
+                            ImageHeight="180"
+                            ItemsSource="{x:Bind ViewModel.News}"
+                            NewsCount="{x:Bind ViewModel.NewsCount, Mode=OneWay}" />
+                        <state:EventsPanel
+                            x:Name="EventsPanel"
+                            Grid.Row="1"
+                            IsEmpty="{x:Bind ViewModel.IsEventsEmpty, Mode=OneWay}"
+                            ItemsSource="{x:Bind ViewModel.Events}" />
+                        <state:ConstructionPanel
+                            x:Name="ConstructionPanel"
+                            Grid.Row="2"
+                            ViewModel="{x:Bind ViewModel.ConstructionProgress, Mode=OneWay}" />
                     </Grid>
                 </Grid>
-                <Grid
-                    x:Name="SecondaryContainer"
-                    Grid.Column="1"
-                    RowSpacing="32">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="*" />
-                    </Grid.RowDefinitions>
-                    <state:NewsPanel
-                        x:Name="NewsPanel"
-                        ImageHeight="180"
-                        ItemsSource="{x:Bind ViewModel.News}"
-                        NewsCount="{x:Bind ViewModel.NewsCount, Mode=OneWay}" />
-                    <state:EventsPanel
-                        x:Name="EventsPanel"
-                        Grid.Row="1"
-                        IsEmpty="{x:Bind ViewModel.IsEventsEmpty, Mode=OneWay}"
-                        ItemsSource="{x:Bind ViewModel.Events}" />
-                    <state:ConstructionPanel
-                        x:Name="ConstructionPanel"
-                        Grid.Row="2"
-                        ViewModel="{x:Bind ViewModel.ConstructionProgress, Mode=OneWay}" />
-                </Grid>
+                <muxc:ProgressRing Style="{StaticResource PageProgressRingStyle}" IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
             </Grid>
+
         </ScrollViewer>
     </Grid>
 </local:WorldStatePageBase>

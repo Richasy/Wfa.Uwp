@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Wfa.Models.State
@@ -37,12 +38,42 @@ namespace Wfa.Models.State
         /// 商品清单.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "inventory", Required = Required.Default)]
-        public object[] Inventory { get; set; }
+        public List<VoidTraderItem> Inventory { get; set; }
 
         /// <inheritdoc/>
         public override bool Equals(object obj) => obj is VoidTrader trader && Id == trader.Id;
 
         /// <inheritdoc/>
         public override int GetHashCode() => Id.GetHashCode();
+    }
+
+    /// <summary>
+    /// 虚空商人物品.
+    /// </summary>
+    public class VoidTraderItem
+    {
+        /// <summary>
+        /// 物品名.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "item", Required = Required.Default)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 杜卡德金币.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "ducats", Required = Required.Default)]
+        public int Ducats { get; set; }
+
+        /// <summary>
+        /// 现金.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "credits", Required = Required.Default)]
+        public int Credits { get; set; }
+
+        /// <inheritdoc/>
+        public override bool Equals(object obj) => obj is VoidTraderItem inventory && Name == inventory.Name;
+
+        /// <inheritdoc/>
+        public override int GetHashCode() => Name.GetHashCode();
     }
 }

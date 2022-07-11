@@ -17,6 +17,7 @@
     <Compile Include="Items\ConstructionProgressViewModel.cs" />
     <Compile Include="Items\DailySaleViewModel.cs" />
     <Compile Include="Items\EventItemViewModel.cs" />
+    <Compile Include="Items\VoidTraderViewModel.cs" />
     <Compile Include="Items\WorldCycleItemViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Methods.cs" />

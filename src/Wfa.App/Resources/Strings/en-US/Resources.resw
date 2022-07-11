@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutToArrive" xml:space="preserve">
+    <value>About to arrive</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>App description</value>
   </data>
@@ -125,6 +128,9 @@
   </data>
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
+  </data>
+  <data name="Arrived" xml:space="preserve">
+    <value>Arrived</value>
   </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
@@ -216,6 +222,9 @@
   <data name="SearchTipSlim" xml:space="preserve">
     <value>Search in WM</value>
   </data>
+  <data name="ShowItems" xml:space="preserve">
+    <value>Show items</value>
+  </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="SyndicateMissions" xml:space="preserve">
     <value>Syndicate missions</value>
+  </data>
+  <data name="VoidTrader" xml:space="preserve">
+    <value>Void trader</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>Warm</value>

@@ -39,6 +39,12 @@ namespace Wfa.ViewModel
         public DailySaleViewModel DailySale { get; set; }
 
         /// <summary>
+        /// 虚空商人.
+        /// </summary>
+        [Reactive]
+        public VoidTraderViewModel VoidTrader { get; set; }
+
+        /// <summary>
         /// 仲裁信息.
         /// </summary>
         [Reactive]
@@ -57,12 +63,6 @@ namespace Wfa.ViewModel
         public SentientBattle SentientBattle { get; set; }
 
         /// <summary>
-        /// 虚空商人是否已经抵达.
-        /// </summary>
-        [Reactive]
-        public bool IsVoidTraderArrived { get; set; }
-
-        /// <summary>
         /// 活动是否为空.
         /// </summary>
         [Reactive]
@@ -73,5 +73,11 @@ namespace Wfa.ViewModel
         /// </summary>
         [Reactive]
         public int NewsCount { get; set; }
+
+        /// <summary>
+        /// 是否正在加载.
+        /// </summary>
+        [Reactive]
+        public bool IsLoading { get; set; }
     }
 }

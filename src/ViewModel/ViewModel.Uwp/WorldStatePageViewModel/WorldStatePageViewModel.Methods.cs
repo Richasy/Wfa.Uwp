@@ -108,6 +108,24 @@ namespace Wfa.ViewModel
             }
         }
 
+        private void InitializeVoidTrader()
+        {
+            var data = _stateProvider.GetVoidTrader();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (VoidTrader == null)
+            {
+                VoidTrader = new VoidTraderViewModel(data);
+            }
+            else
+            {
+                VoidTrader.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
         private void AddOrUpdatePlainIntoCollection(object data)
         {
             if (data == null)
@@ -142,6 +160,7 @@ namespace Wfa.ViewModel
             }
 
             DailySale?.UpdateCountdownCommand.Execute().Subscribe();
+            VoidTrader?.UpdateCountdownCommand.Execute().Subscribe();
         }
     }
 }
