@@ -13,6 +13,9 @@ namespace Wfa.ViewModel
             => RequestWorldStateCommand.Execute().Subscribe();
 
         private void OnWorldStateChanged(object sender, EventArgs e)
-            => WriteMessage("世界状态已经更新");
+        {
+            IsShowNightwave = _stateProvider.GetNightwave() != null;
+            WriteMessage("世界状态已经更新");
+        }
     }
 }

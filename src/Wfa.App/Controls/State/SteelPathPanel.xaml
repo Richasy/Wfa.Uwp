@@ -1,0 +1,83 @@
+﻿<local:SteelPathPanelBase
+    x:Class="Wfa.App.Controls.State.SteelPathPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:icons="using:Richasy.FluentIcon.Uwp"
+    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Text="{ext:Locale Name=SteelPath}" />
+        <Grid Grid.Row="1" ColumnSpacing="8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                Text="{x:Bind ViewModel.Countdown, Mode=OneWay}"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Style="{StaticResource CaptionTextBlockStyle}"
+                Grid.Column="1"
+                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                Text="{ext:Locale Name=RotationItems}" />
+        </Grid>
+
+        <muxc:ItemsRepeater Grid.Row="2" ItemsSource="{x:Bind ViewModel.Rewards}">
+            <muxc:ItemsRepeater.Layout>
+                <muxc:StackLayout Spacing="4" />
+            </muxc:ItemsRepeater.Layout>
+            <muxc:ItemsRepeater.ItemTemplate>
+                <DataTemplate x:DataType="items:SteelPathRewardItemViewModel">
+                    <app:CardPanel
+                        IsChecked="{x:Bind IsSelected, Mode=OneWay}"
+                        IsEnableCheck="False"
+                        IsEnableHoverAnimation="False">
+                        <Grid Padding="12" ColumnSpacing="8">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+                                FontSize="12"
+                                Text="{x:Bind Data.Name}"
+                                TextTrimming="CharacterEllipsis" />
+                            <StackPanel
+                                Grid.Column="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Center"
+                                Orientation="Horizontal"
+                                Spacing="8">
+                                <icons:RegularFluentIcon
+                                    VerticalAlignment="Center"
+                                    FontSize="14"
+                                    Foreground="{ThemeResource OrikinGradient}"
+                                    Symbol="AppFolder20" />
+                                <TextBlock
+                                    Width="36"
+                                    VerticalAlignment="Center"
+                                    FontSize="12"
+                                    Text="{x:Bind Data.Cost}" />
+                            </StackPanel>
+                        </Grid>
+                    </app:CardPanel>
+                </DataTemplate>
+            </muxc:ItemsRepeater.ItemTemplate>
+        </muxc:ItemsRepeater>
+    </Grid>
+</local:SteelPathPanelBase>

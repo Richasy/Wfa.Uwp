@@ -120,6 +120,9 @@
   <data name="AboutToArrive" xml:space="preserve">
     <value>About to arrive</value>
   </data>
+  <data name="AlertFormatText" xml:space="preserve">
+    <value>The alert will ends in {0}, please log in to the game to view</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>App description</value>
   </data>
@@ -175,7 +178,7 @@
     <value>Earth</value>
   </data>
   <data name="EndDateFormat" xml:space="preserve">
-    <value>Ends {0}</value>
+    <value>Ends in {0}</value>
   </data>
   <data name="Enemy" xml:space="preserve">
     <value>Enemy</value>
@@ -198,6 +201,9 @@
   <data name="GameEvents" xml:space="preserve">
     <value>Game events</value>
   </data>
+  <data name="HasAlert" xml:space="preserve">
+    <value>There are new alerts!</value>
+  </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
   </data>
@@ -215,6 +221,9 @@
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
+  </data>
+  <data name="Modifier" xml:space="preserve">
+    <value>Modifier</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>News</value>
@@ -248,6 +257,9 @@
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>
+  </data>
+  <data name="RotationItems" xml:space="preserve">
+    <value>Rotation items</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>Find what you want from the Warframe Market</value>

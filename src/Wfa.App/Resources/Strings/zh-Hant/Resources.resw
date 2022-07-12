@@ -120,6 +120,9 @@
   <data name="AboutToArrive" xml:space="preserve">
     <value>即將抵達</value>
   </data>
+  <data name="AlertFormatText" xml:space="preserve">
+    <value>警報將在 {0} 結束，請登錄遊戲查看</value>
+  </data>
   <data name="AppDescription" xml:space="preserve">
     <value>用於檢測 Warframe 的各種信息</value>
   </data>
@@ -198,6 +201,9 @@
   <data name="GameEvents" xml:space="preserve">
     <value>遊戲活動</value>
   </data>
+  <data name="HasAlert" xml:space="preserve">
+    <value>有新的警報！</value>
+  </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
   </data>
@@ -215,6 +221,9 @@
   </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
+  </data>
+  <data name="Modifier" xml:space="preserve">
+    <value>強化類型</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>新聞</value>
@@ -248,6 +257,9 @@
   </data>
   <data name="Reward" xml:space="preserve">
     <value>獎勵</value>
+  </data>
+  <data name="RotationItems" xml:space="preserve">
+    <value>輪替商品</value>
   </data>
   <data name="SearchTip" xml:space="preserve">
     <value>從 Warframe Market 中找找你想要的</value>

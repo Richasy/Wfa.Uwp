@@ -4,6 +4,7 @@ using System;
 using System.Collections.ObjectModel;
 using ReactiveUI;
 using Wfa.Provider.Interfaces;
+using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.Items;
@@ -22,9 +23,11 @@ namespace Wfa.ViewModel
         /// Initializes a new instance of the <see cref="WorldStatePageViewModel"/> class.
         /// </summary>
         public WorldStatePageViewModel(
-            IStateProvider stateProvider)
+            IStateProvider stateProvider,
+            IResourceToolkit resourceToolkit)
         {
             _stateProvider = stateProvider;
+            _resourceToolkit = resourceToolkit;
             _timer = new Windows.UI.Xaml.DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(500);
             _timer.Tick += OnTimerTick;
@@ -59,13 +62,16 @@ namespace Wfa.ViewModel
             IsLoading = testData == null;
 
             InitializeNews();
+            InitializeAlert();
             InitializeEvents();
-            InitializeConstructionProgress();
             InitializePlains();
+            InitializeSortie();
+            InitializeSkirmish();
+            InitializeSteelPath();
             InitializeDailySale();
             InitializeVoidTrader();
             InitializeArbitration();
-            InitializeSkirmish();
+            InitializeConstructionProgress();
         }
     }
 }

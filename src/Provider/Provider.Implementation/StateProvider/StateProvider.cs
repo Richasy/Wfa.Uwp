@@ -56,7 +56,7 @@ namespace Wfa.Provider
 
             _news = GetParsedData<List<News>>(totalObj, "news");
             _events = GetParsedData<List<Event>>(totalObj, "events");
-            _fissures = GetParsedData<List<Fissure>>(totalObj, "fissures");
+            _fissures = GetParsedData<List<Fissure>>(totalObj, "fissures").Where(p => p.IsActive && !p.IsExpired).OrderBy(p => p.TierIndex).ToList();
             _invasions = GetParsedData<List<Invasion>>(totalObj, "invasions").Where(p => !p.IsCompleted).ToList();
             _sortie = GetParsedData<Sortie>(totalObj, "sortie");
             _voidTrader = GetParsedData<VoidTrader>(totalObj, "voidTrader");
@@ -71,6 +71,7 @@ namespace Wfa.Provider
             _arbitration = GetParsedData<Arbitration>(totalObj, "arbitration");
             _skirmish = GetParsedData<Skirmish>(totalObj, "sentientOutposts");
             _steelPath = GetParsedData<SteelPath>(totalObj, "steelPath");
+            _alert = GetParsedData<List<Alert>>(totalObj, "alerts").FirstOrDefault();
 
             InitializeNews(language);
             InitializeSortie(language);
@@ -170,5 +171,9 @@ namespace Wfa.Provider
         /// <inheritdoc/>
         public ZarimanStatus GetZarimanStatus()
             => _zarimanStatus;
+
+        /// <inheritdoc/>
+        public Alert GetAlert()
+            => _alert;
     }
 }

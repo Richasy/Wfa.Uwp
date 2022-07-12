@@ -162,6 +162,60 @@ namespace Wfa.ViewModel
             }
         }
 
+        private void InitializeSortie()
+        {
+            var data = _stateProvider.GetSortie();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (Sortie == null)
+            {
+                Sortie = new SortieViewModel(data);
+            }
+            else
+            {
+                Sortie.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
+        private void InitializeSteelPath()
+        {
+            var data = _stateProvider.GetSteelPath();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (SteelPath == null)
+            {
+                SteelPath = new SteelPathViewModel(data);
+            }
+            else
+            {
+                SteelPath.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
+        private void InitializeAlert()
+        {
+            var data = _stateProvider.GetAlert();
+            if (data == null)
+            {
+                return;
+            }
+
+            if (Alert == null)
+            {
+                Alert = new AlertViewModel(data);
+            }
+            else
+            {
+                Alert.UpdateDataCommand.Execute(data).Subscribe();
+            }
+        }
+
         private void AddOrUpdatePlainIntoCollection(object data)
         {
             if (data == null)
@@ -195,6 +249,9 @@ namespace Wfa.ViewModel
                 }
             }
 
+            Alert?.UpdateCountdownCommand.Execute().Subscribe();
+            Sortie?.UpdateCountdownCommand.Execute().Subscribe();
+            SteelPath?.UpdateCountdownCommand.Execute().Subscribe();
             DailySale?.UpdateCountdownCommand.Execute().Subscribe();
             VoidTrader?.UpdateCountdownCommand.Execute().Subscribe();
             Arbitration?.UpdateCountdownCommand.Execute().Subscribe();

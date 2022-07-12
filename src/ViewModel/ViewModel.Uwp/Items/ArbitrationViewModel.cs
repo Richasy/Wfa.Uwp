@@ -46,6 +46,12 @@ namespace Wfa.ViewModel.Items
         public Arbitration Data { get; set; }
 
         /// <summary>
+        /// 数据是否为空.
+        /// </summary>
+        [Reactive]
+        public bool IsEmpty { get; set; }
+
+        /// <summary>
         /// 阵营标识.
         /// </summary>
         [Reactive]
@@ -54,6 +60,7 @@ namespace Wfa.ViewModel.Items
         private void UpdateData(Arbitration data)
         {
             Data = data;
+            IsEmpty = string.IsNullOrEmpty(data.Type);
             FactionSymbol = data.Enemy switch
             {
                 "Infested" => WfaSymbol.Infested,

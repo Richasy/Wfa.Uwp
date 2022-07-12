@@ -45,6 +45,7 @@ namespace Wfa.Provider
         private Skirmish _skirmish;
         private SteelPath _steelPath;
         private ConstructionProgress _constructionProgress;
+        private Alert _alert;
 
         private T GetParsedData<T>(JObject totalObj, string key)
         {

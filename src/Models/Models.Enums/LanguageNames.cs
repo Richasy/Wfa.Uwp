@@ -65,5 +65,9 @@ namespace Wfa.Models.Enums
         Tier,
         Enemy,
         EndDateFormat,
+        Modifier,
+        RotationItems,
+        AlertFormatText,
+        HasAlert,
     }
 }

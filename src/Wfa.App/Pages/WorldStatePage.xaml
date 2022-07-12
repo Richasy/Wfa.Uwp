@@ -15,6 +15,7 @@
     <Grid RowSpacing="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -67,9 +68,22 @@
         </VisualStateManager.VisualStateGroups>
 
         <app:AppPageHeader Title="{ext:Locale Name=WorldState}" RefreshCommand="{x:Bind CoreViewModel.RequestWorldStateCommand}" />
+
+        <muxc:InfoBar
+            Title="{ext:Locale Name=HasAlert}"
+            Grid.Row="1"
+            Margin="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            IsClosable="True"
+            IsIconVisible="True"
+            IsOpen="{x:Bind ViewModel.Alert.Countdown, Converter={StaticResource ObjectToBoolConverter}, Mode=OneWay}"
+            Message="{x:Bind ViewModel.Alert.Countdown, Mode=OneWay}"
+            Severity="Warning" />
+
         <ScrollViewer
             Style="{StaticResource PageScrollViewerStyle}"
-            Grid.Row="1"
+            Grid.Row="2"
             Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
             <Grid>
                 <Grid
@@ -87,6 +101,7 @@
                     </Grid.RowDefinitions>
                     <Grid x:Name="MainContainer" RowSpacing="24">
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
@@ -128,6 +143,7 @@
                                 Grid.Column="1"
                                 ViewModel="{x:Bind ViewModel.Skirmish, Mode=OneWay}" />
                         </Grid>
+                        <state:SortiePanel Grid.Row="3" ViewModel="{x:Bind ViewModel.Sortie, Mode=OneWay}" />
                     </Grid>
                     <Grid
                         x:Name="SecondaryContainer"
@@ -137,7 +153,7 @@
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
-                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
                         <state:NewsPanel
                             x:Name="NewsPanel"
@@ -153,11 +169,11 @@
                             x:Name="ConstructionPanel"
                             Grid.Row="2"
                             ViewModel="{x:Bind ViewModel.ConstructionProgress, Mode=OneWay}" />
+                        <state:SteelPathPanel Grid.Row="3" ViewModel="{x:Bind ViewModel.SteelPath, Mode=OneWay}" />
                     </Grid>
                 </Grid>
                 <muxc:ProgressRing Style="{StaticResource PageProgressRingStyle}" IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
             </Grid>
-
         </ScrollViewer>
     </Grid>
 </local:WorldStatePageBase>
