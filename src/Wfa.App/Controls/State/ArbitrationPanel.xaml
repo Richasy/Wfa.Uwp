@@ -53,13 +53,23 @@
                     FontSize="20"
                     FontWeight="Bold"
                     Text="{x:Bind ViewModel.Data.Type, Mode=OneWay}"
-                    TextTrimming="CharacterEllipsis" />
+                    TextTrimming="CharacterEllipsis"
+                    Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
 
                 <TextBlock
                     Style="{StaticResource CaptionTextBlockStyle}"
                     Grid.Row="2"
                     HorizontalAlignment="Left"
-                    Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}" />
+                    Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}"
+                    Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
+
+                <TextBlock
+                    Grid.RowSpan="3"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Text="{ext:Locale Name=NoData}"
+                    TextTrimming="CharacterEllipsis"
+                    Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay}" />
 
                 <TextBlock
                     Grid.RowSpan="3"
@@ -69,7 +79,8 @@
                     FontSize="24"
                     FontWeight="Bold"
                     Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
-                    Text="{x:Bind ViewModel.Countdown, Mode=OneWay}" />
+                    Text="{x:Bind ViewModel.Countdown, Mode=OneWay}"
+                    Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
             </Grid>
         </app:CardPanel>
     </Grid>

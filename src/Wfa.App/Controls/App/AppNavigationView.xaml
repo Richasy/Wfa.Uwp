@@ -69,7 +69,10 @@
                         <local:WfaIcon Symbol="Invasion" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Nightwave" Content="{ext:Locale Name=Nightwave}">
+                <muxc:NavigationViewItem
+                    ext:NavigationExtension.PageId="Nightwave"
+                    Content="{ext:Locale Name=Nightwave}"
+                    Visibility="{x:Bind AppViewModel.IsShowNightwave, Mode=OneWay}">
                     <muxc:NavigationViewItem.Icon>
                         <icons:RegularFluentIcon Symbol="HeadphonesSoundWave20" />
                     </muxc:NavigationViewItem.Icon>
@@ -77,16 +80,6 @@
                 <muxc:NavigationViewItem ext:NavigationExtension.PageId="Fissure" Content="{ext:Locale Name=Fissure}">
                     <muxc:NavigationViewItem.Icon>
                         <local:WfaIcon Symbol="Fissure" />
-                    </muxc:NavigationViewItem.Icon>
-                </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Sortie" Content="{ext:Locale Name=Sortie}">
-                    <muxc:NavigationViewItem.Icon>
-                        <local:WfaIcon Symbol="Sortie" />
-                    </muxc:NavigationViewItem.Icon>
-                </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem ext:NavigationExtension.PageId="SteelPath" Content="{ext:Locale Name=SteelPath}">
-                    <muxc:NavigationViewItem.Icon>
-                        <icons:RegularFluentIcon Symbol="RoadCone16" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.MenuItems>

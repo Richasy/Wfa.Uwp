@@ -1,0 +1,128 @@
+﻿<local:SortiePanelBase
+    x:Class="Wfa.App.Controls.State.SortiePanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Controls.State"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:state="using:Wfa.Models.State"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    mc:Ignorable="d">
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Left" Text="{ext:Locale Name=Sortie}" />
+        <ScrollViewer
+            Grid.Row="1"
+            HorizontalScrollBarVisibility="Auto"
+            HorizontalScrollMode="Enabled"
+            VerticalScrollMode="Disabled">
+            <StackPanel Orientation="Horizontal" Spacing="12">
+                <app:CardPanel
+                    Width="200"
+                    Height="160"
+                    BorderBrush="{x:Bind ViewModel.Symbol, Mode=OneWay, Converter={StaticResource FactionColorConverter}}"
+                    IsEnableHoverAnimation="False"
+                    PointerOverBorderBrush="{x:Bind ViewModel.Symbol, Mode=OneWay, Converter={StaticResource FactionColorConverter}}"
+                    StrokeThickness="2">
+                    <Grid Padding="16" RowSpacing="8">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <app:WfaIcon
+                            Grid.RowSpan="3"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            FontSize="60"
+                            Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                            Symbol="{x:Bind ViewModel.Symbol, Mode=OneWay}" />
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            FontSize="20"
+                            FontWeight="Bold"
+                            Text="{x:Bind ViewModel.BossName, Mode=OneWay}"
+                            TextTrimming="CharacterEllipsis" />
+                        <StackPanel
+                            Grid.Row="1"
+                            HorizontalAlignment="Left"
+                            Spacing="4">
+                            <TextBlock
+                                Style="{StaticResource CaptionTextBlockStyle}"
+                                Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                Text="{ext:Locale Name=Enemy}" />
+                            <TextBlock Text="{x:Bind ViewModel.FactionName, Mode=OneWay}" />
+                        </StackPanel>
+                        <TextBlock
+                            Grid.Row="2"
+                            VerticalAlignment="Bottom"
+                            Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                            Text="{x:Bind ViewModel.Countdown, Mode=OneWay}" />
+                        <Ellipse
+                            Width="8"
+                            Height="8"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Fill="{x:Bind ViewModel.Symbol, Mode=OneWay, Converter={StaticResource FactionColorConverter}}" />
+                    </Grid>
+                </app:CardPanel>
+                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.Variants}">
+                    <muxc:ItemsRepeater.Layout>
+                        <muxc:StackLayout Orientation="Horizontal" Spacing="12" />
+                    </muxc:ItemsRepeater.Layout>
+                    <muxc:ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="state:SortieVariant">
+                            <app:CardPanel
+                                Width="200"
+                                Height="160"
+                                IsEnableHoverAnimation="False">
+                                <Grid Padding="16" RowSpacing="8">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        FontSize="20"
+                                        FontWeight="Bold"
+                                        Text="{x:Bind MissionType, Mode=OneWay}"
+                                        TextTrimming="CharacterEllipsis" />
+                                    <StackPanel
+                                        Grid.Row="1"
+                                        HorizontalAlignment="Left"
+                                        Spacing="4">
+                                        <TextBlock
+                                            Style="{StaticResource CaptionTextBlockStyle}"
+                                            Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                            Text="{ext:Locale Name=Modifier}" />
+                                        <TextBlock Text="{x:Bind Modifier, Mode=OneWay}" ToolTipService.ToolTip="{x:Bind ModifierDescription}" />
+                                    </StackPanel>
+                                    <StackPanel
+                                        Grid.Row="2"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                                        Spacing="4">
+                                        <TextBlock
+                                            Style="{StaticResource CaptionTextBlockStyle}"
+                                            Foreground="{ThemeResource TextFillColorTertiaryBrush}"
+                                            Text="{ext:Locale Name=Location}" />
+                                        <TextBlock Text="{x:Bind Node, Mode=OneWay}" />
+                                    </StackPanel>
+                                </Grid>
+                            </app:CardPanel>
+                        </DataTemplate>
+                    </muxc:ItemsRepeater.ItemTemplate>
+                </muxc:ItemsRepeater>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</local:SortiePanelBase>

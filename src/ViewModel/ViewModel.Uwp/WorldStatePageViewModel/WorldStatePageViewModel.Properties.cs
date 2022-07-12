@@ -5,6 +5,7 @@ using System.Reactive;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Provider.Interfaces;
+using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Items;
 using Windows.UI.Xaml;
 
@@ -16,6 +17,7 @@ namespace Wfa.ViewModel
     public sealed partial class WorldStatePageViewModel
     {
         private readonly IStateProvider _stateProvider;
+        private readonly IResourceToolkit _resourceToolkit;
         private readonly DispatcherTimer _timer;
 
         /// <inheritdoc/>
@@ -68,6 +70,24 @@ namespace Wfa.ViewModel
         /// </summary>
         [Reactive]
         public SkirmishViewModel Skirmish { get; set; }
+
+        /// <summary>
+        /// 突击信息.
+        /// </summary>
+        [Reactive]
+        public SortieViewModel Sortie { get; set; }
+
+        /// <summary>
+        /// 钢铁之路.
+        /// </summary>
+        [Reactive]
+        public SteelPathViewModel SteelPath { get; set; }
+
+        /// <summary>
+        /// 警报信息.
+        /// </summary>
+        [Reactive]
+        public AlertViewModel Alert { get; set; }
 
         /// <summary>
         /// 活动是否为空.

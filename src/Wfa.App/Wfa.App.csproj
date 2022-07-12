@@ -76,6 +76,12 @@
     <Compile Include="Controls\State\SkirmishPanel.xaml.cs">
       <DependentUpon>SkirmishPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\State\SortiePanel.xaml.cs">
+      <DependentUpon>SortiePanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\State\SteelPathPanel.xaml.cs">
+      <DependentUpon>SteelPathPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\SyndicateMissionPanel.xaml.cs">
       <DependentUpon>SyndicateMissionPanel.xaml</DependentUpon>
     </Compile>
@@ -255,6 +261,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\State\SkirmishPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\SortiePanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\State\SteelPathPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -18,6 +18,7 @@
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
+    <Compile Include="Items\AlertViewModel.cs" />
     <Compile Include="Items\ArbitrationViewModel.cs" />
     <Compile Include="Items\ConstructionProgressViewModel.cs" />
     <Compile Include="Items\DailySaleViewModel.cs" />
@@ -25,6 +26,9 @@
     <Compile Include="Items\FissureItemViewModel.cs" />
     <Compile Include="Items\InvasionItemViewModel.cs" />
     <Compile Include="Items\SkirmishViewModel.cs" />
+    <Compile Include="Items\SortieViewModel.cs" />
+    <Compile Include="Items\SteelPathRewardItemViewModel.cs" />
+    <Compile Include="Items\SteelPathViewModel.cs" />
     <Compile Include="Items\SyndicateMissionJobViewModel.cs" />
     <Compile Include="Items\SyndicateMissionViewModel.cs" />
     <Compile Include="Items\VoidTraderViewModel.cs" />

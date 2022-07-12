@@ -148,5 +148,11 @@ namespace Wfa.Provider.Interfaces
         /// </summary>
         /// <returns>战舰进度.</returns>
         ConstructionProgress GetConstructionProgress();
+
+        /// <summary>
+        /// 获取警报信息.
+        /// </summary>
+        /// <returns>警报信息.</returns>
+        Alert GetAlert();
     }
 }

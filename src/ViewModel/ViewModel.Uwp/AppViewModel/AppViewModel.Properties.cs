@@ -121,5 +121,11 @@ namespace Wfa.ViewModel
         /// </summary>
         [Reactive]
         public bool IsShowMenuButton { get; set; }
+
+        /// <summary>
+        /// 是否显示午夜电波.
+        /// </summary>
+        [Reactive]
+        public bool IsShowNightwave { get; set; }
     }
 }
