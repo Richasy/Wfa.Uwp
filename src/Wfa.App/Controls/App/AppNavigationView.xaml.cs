@@ -73,13 +73,11 @@ namespace Wfa.App.Controls.App
                 PageIds.Help => throw new NotImplementedException(),
                 PageIds.Settings => throw new NotImplementedException(),
                 PageIds.WorldStateHome => typeof(WorldStatePage),
-                PageIds.Library => typeof(Page),
+                PageIds.Library => typeof(LibraryPage),
                 PageIds.SyndicateMissions => typeof(SyndicateMissionPage),
                 PageIds.Invasions => typeof(InvasionPage),
                 PageIds.Nightwave => typeof(Page),
                 PageIds.Fissure => typeof(FissurePage),
-                PageIds.Sortie => throw new NotImplementedException(),
-                PageIds.SteelPath => throw new NotImplementedException(),
                 _ => default,
             };
 

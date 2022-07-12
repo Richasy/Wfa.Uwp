@@ -64,6 +64,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
             SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
             SplatRegistrations.RegisterLazySingleton<WorldStatePageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<LibraryPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<SyndicateMissionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<InvasionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<FissurePageViewModel>();

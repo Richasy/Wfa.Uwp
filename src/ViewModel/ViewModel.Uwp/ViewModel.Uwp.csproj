@@ -25,6 +25,7 @@
     <Compile Include="Items\EventItemViewModel.cs" />
     <Compile Include="Items\FissureItemViewModel.cs" />
     <Compile Include="Items\InvasionItemViewModel.cs" />
+    <Compile Include="Items\LibrarySectionItemViewModel.cs" />
     <Compile Include="Items\SkirmishViewModel.cs" />
     <Compile Include="Items\SortieViewModel.cs" />
     <Compile Include="Items\SteelPathRewardItemViewModel.cs" />
@@ -33,6 +34,8 @@
     <Compile Include="Items\SyndicateMissionViewModel.cs" />
     <Compile Include="Items\VoidTraderViewModel.cs" />
     <Compile Include="Items\WorldCycleItemViewModel.cs" />
+    <Compile Include="LibraryPageViewModel\LibraryPageViewModel.cs" />
+    <Compile Include="LibraryPageViewModel\LibraryPageViewModel.Properties.cs" />
     <Compile Include="SyndicateMissionPageViewModel\SyndicateMissionPageViewModel.cs" />
     <Compile Include="SyndicateMissionPageViewModel\SyndicateMissionPageViewModel.Properties.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />

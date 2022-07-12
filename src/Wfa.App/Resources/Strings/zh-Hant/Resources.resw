@@ -135,6 +135,12 @@
   <data name="Arbitration" xml:space="preserve">
     <value>仲裁</value>
   </data>
+  <data name="ArchGun" xml:space="preserve">
+    <value>空戰槍械</value>
+  </data>
+  <data name="ArchMelee" xml:space="preserve">
+    <value>空戰近戰武器</value>
+  </data>
   <data name="Arrived" xml:space="preserve">
     <value>已經到達</value>
   </data>
@@ -210,6 +216,9 @@
   <data name="Invasions" xml:space="preserve">
     <value>入侵任務</value>
   </data>
+  <data name="LastUpdateTimeFormatText" xml:space="preserve">
+    <value>最近更新：{0}</value>
+  </data>
   <data name="Library" xml:space="preserve">
     <value>資料庫</value>
   </data>
@@ -219,11 +228,17 @@
   <data name="Location" xml:space="preserve">
     <value>地點</value>
   </data>
+  <data name="Melee" xml:space="preserve">
+    <value>近戰武器</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
   </data>
   <data name="Modifier" xml:space="preserve">
     <value>強化類型</value>
+  </data>
+  <data name="NeverUpdate" xml:space="preserve">
+    <value>數據尚未更新</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>新聞</value>
@@ -249,6 +264,9 @@
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>夜靈平野</value>
   </data>
+  <data name="Primary" xml:space="preserve">
+    <value>主要武器</value>
+  </data>
   <data name="Razorback" xml:space="preserve">
     <value>利刃豺狼</value>
   </data>
@@ -266,6 +284,9 @@
   </data>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>在 WM 中搜索</value>
+  </data>
+  <data name="Secondary" xml:space="preserve">
+    <value>次要武器</value>
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>查看物品</value>
@@ -290,6 +311,9 @@
   </data>
   <data name="VoidTraderItems" xml:space="preserve">
     <value>虛空商人貨品清單</value>
+  </data>
+  <data name="Warframe" xml:space="preserve">
+    <value>戰甲</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>

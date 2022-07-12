@@ -69,5 +69,13 @@ namespace Wfa.Models.Enums
         RotationItems,
         AlertFormatText,
         HasAlert,
+        Warframe,
+        Secondary,
+        Primary,
+        Melee,
+        ArchMelee,
+        ArchGun,
+        NeverUpdate,
+        LastUpdateTimeFormatText,
     }
 }

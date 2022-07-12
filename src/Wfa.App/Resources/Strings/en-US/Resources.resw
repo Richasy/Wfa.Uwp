@@ -135,6 +135,12 @@
   <data name="Arbitration" xml:space="preserve">
     <value>Arbitration</value>
   </data>
+  <data name="ArchGun" xml:space="preserve">
+    <value>Arch-melee</value>
+  </data>
+  <data name="ArchMelee" xml:space="preserve">
+    <value>Arch-gun</value>
+  </data>
   <data name="Arrived" xml:space="preserve">
     <value>Arrived</value>
   </data>
@@ -210,6 +216,9 @@
   <data name="Invasions" xml:space="preserve">
     <value>Invasions</value>
   </data>
+  <data name="LastUpdateTimeFormatText" xml:space="preserve">
+    <value>Recent Updates: {0}</value>
+  </data>
   <data name="Library" xml:space="preserve">
     <value>Library</value>
   </data>
@@ -219,11 +228,17 @@
   <data name="Location" xml:space="preserve">
     <value>Location</value>
   </data>
+  <data name="Melee" xml:space="preserve">
+    <value>Melee</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
   <data name="Modifier" xml:space="preserve">
     <value>Modifier</value>
+  </data>
+  <data name="NeverUpdate" xml:space="preserve">
+    <value>Data has not been updated</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>News</value>
@@ -249,6 +264,9 @@
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>Plains of Eidolon</value>
   </data>
+  <data name="Primary" xml:space="preserve">
+    <value>Primary</value>
+  </data>
   <data name="Razorback" xml:space="preserve">
     <value>Razorback</value>
   </data>
@@ -266,6 +284,9 @@
   </data>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>Search in WM</value>
+  </data>
+  <data name="Secondary" xml:space="preserve">
+    <value>Secondary</value>
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>Show items</value>
@@ -290,6 +311,9 @@
   </data>
   <data name="VoidTraderItems" xml:space="preserve">
     <value>Void trader inventory</value>
+  </data>
+  <data name="Warframe" xml:space="preserve">
+    <value>Warframe</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>Warm</value>
