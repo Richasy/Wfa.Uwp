@@ -15,14 +15,6 @@ namespace Wfa.App.Pages
         /// Initializes a new instance of the <see cref="LibraryPage"/> class.
         /// </summary>
         public LibraryPage() => InitializeComponent();
-
-        /// <inheritdoc/>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-            => ViewModel.ActiveCommand.Execute().Subscribe();
-
-        /// <inheritdoc/>
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-            => ViewModel.DeactiveCommand.Execute().Subscribe();
     }
 
     /// <summary>

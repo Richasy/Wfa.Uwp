@@ -141,18 +141,6 @@ public class GunBase : EntryBase, IPolarities
     [JsonProperty("type")]
     public string Type { get; set; }
 
-    /// <summary>
-    /// 维基缩略图.
-    /// </summary>
-    [JsonProperty("wikiaThumbnail")]
-    public string? WikiaThumbnail { get; set; }
-
-    /// <summary>
-    /// 维基地址.
-    /// </summary>
-    [JsonProperty("wikiaUrl")]
-    public string? WikiaUrl { get; set; }
-
     /// <inheritdoc/>
     [JsonProperty("selfPolarities")]
     public string? SelfPolarities { get; set; }

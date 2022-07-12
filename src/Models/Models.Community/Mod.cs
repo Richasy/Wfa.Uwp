@@ -89,18 +89,6 @@ public class Mod : EntryBase
     public string Type { get; set; }
 
     /// <summary>
-    /// 维基缩略图.
-    /// </summary>
-    [JsonProperty("wikiaThumbnail")]
-    public string? WikiaThumbnail { get; set; }
-
-    /// <summary>
-    /// 维基地址.
-    /// </summary>
-    [JsonProperty("wikiaUrl")]
-    public string? WikiaUrl { get; set; }
-
-    /// <summary>
     /// 是否为增益卡.
     /// </summary>
     [JsonProperty("isUtility")]

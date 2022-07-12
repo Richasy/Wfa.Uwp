@@ -5,8 +5,10 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
+using Splat;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Enums;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
@@ -30,17 +32,15 @@ namespace Wfa.ViewModel
             _resourceToolkit = resourceToolkit;
             _settingsToolkit = settingsToolkit;
             _dbContext = dbContext;
-            Sections = new ObservableCollection<LibrarySectionItemViewModel>
-            {
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Warframe),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Archwing),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.ArchGun),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.ArchMelee),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Primary),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Secondary),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Melee),
-                new LibrarySectionItemViewModel(Models.Enums.CommunityDataType.Mod),
-            };
+            Sections = new ObservableCollection<LibrarySectionViewModel>();
+            AddSection(CommunityDataType.Warframe);
+            AddSection(CommunityDataType.Archwing);
+            AddSection(CommunityDataType.ArchGun);
+            AddSection(CommunityDataType.ArchMelee);
+            AddSection(CommunityDataType.Primary);
+            AddSection(CommunityDataType.Secondary);
+            AddSection(CommunityDataType.Melee);
+            AddSection(CommunityDataType.Mod);
 
             ActiveCommand = ReactiveCommand.CreateFromTask(ActiveAsync);
             DeactiveCommand = ReactiveCommand.Create(() => { });
@@ -51,15 +51,22 @@ namespace Wfa.ViewModel
             var lastUpdateTime = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsUpdateTimeKey);
             if (lastUpdateTime == null)
             {
-                LastUpdateTime = _resourceToolkit.GetLocaleString(Models.Enums.LanguageNames.NeverUpdate);
+                LastUpdateTime = _resourceToolkit.GetLocaleString(LanguageNames.NeverUpdate);
             }
             else
             {
                 var time = DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(lastUpdateTime.Value)).ToLocalTime();
                 LastUpdateTime = string.Format(
-                    _resourceToolkit.GetLocaleString(Models.Enums.LanguageNames.LastUpdateTimeFormatText),
+                    _resourceToolkit.GetLocaleString(LanguageNames.LastUpdateTimeFormatText),
                     time.ToString("yyyy/MM/dd HH:mm"));
             }
+        }
+
+        private void AddSection(CommunityDataType type)
+        {
+            var vm = Locator.Current.GetService<LibrarySectionViewModel>();
+            vm.SetData(type);
+            Sections.Add(vm);
         }
     }
 }

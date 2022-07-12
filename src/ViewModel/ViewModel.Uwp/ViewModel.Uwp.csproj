@@ -25,7 +25,8 @@
     <Compile Include="Items\EventItemViewModel.cs" />
     <Compile Include="Items\FissureItemViewModel.cs" />
     <Compile Include="Items\InvasionItemViewModel.cs" />
-    <Compile Include="Items\LibrarySectionItemViewModel.cs" />
+    <Compile Include="Items\LibraryItemViewModel.cs" />
+    <Compile Include="Items\LibrarySectionViewModel.cs" />
     <Compile Include="Items\SkirmishViewModel.cs" />
     <Compile Include="Items\SortieViewModel.cs" />
     <Compile Include="Items\SteelPathRewardItemViewModel.cs" />
@@ -34,6 +35,8 @@
     <Compile Include="Items\SyndicateMissionViewModel.cs" />
     <Compile Include="Items\VoidTraderViewModel.cs" />
     <Compile Include="Items\WorldCycleItemViewModel.cs" />
+    <Compile Include="LibraryDetailPageViewModel\LibraryDetailPageViewModel.cs" />
+    <Compile Include="LibraryDetailPageViewModel\LibraryDetailPageViewModel.Properties.cs" />
     <Compile Include="LibraryPageViewModel\LibraryPageViewModel.cs" />
     <Compile Include="LibraryPageViewModel\LibraryPageViewModel.Properties.cs" />
     <Compile Include="SyndicateMissionPageViewModel\SyndicateMissionPageViewModel.cs" />
@@ -77,6 +80,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Models\Models.Community\Models.Community.csproj">
+      <Project>{0DE55C85-3F66-4BBB-9440-79508B1EBFF1}</Project>
+      <Name>Models.Community</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Models\Models.Data\Models.Data.csproj">
       <Project>{1D8683BF-5284-4FD2-8E57-8FDDAAFBDFFB}</Project>
       <Name>Models.Data</Name>

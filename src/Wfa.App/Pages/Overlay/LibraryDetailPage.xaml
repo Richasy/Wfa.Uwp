@@ -1,12 +1,12 @@
-﻿<local:LibraryPageBase
-    x:Class="Wfa.App.Pages.LibraryPage"
+﻿<local:LibraryDetailPageBase
+    x:Class="Wfa.App.Pages.Overlay.LibraryDetailPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:app="using:Wfa.App.Controls.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
     xmlns:items="using:Wfa.ViewModel.Items"
-    xmlns:local="using:Wfa.App.Pages"
+    xmlns:local="using:Wfa.App.Pages.Overlay"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     mc:Ignorable="d">
@@ -16,55 +16,50 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <app:AppPageHeader Title="{ext:Locale Name=Library}">
-            <app:AppPageHeader.Element>
-                <TextBlock
-                    Style="{StaticResource CaptionTextBlockStyle}"
-                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                    Text="{x:Bind ViewModel.LastUpdateTime, Mode=OneWay}" />
-            </app:AppPageHeader.Element>
+        <app:AppPageHeader>
+            <app:AppPageHeader.Title>
+                <TextBlock>
+                    <Run
+                        FontWeight="Bold"
+                        Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                        Text="{x:Bind ViewModel.Title, Mode=OneWay}" />
+                    <Run Text="{ext:Locale Name=Library}" />
+                </TextBlock>
+            </app:AppPageHeader.Title>
         </app:AppPageHeader>
+
         <ScrollViewer
             Style="{StaticResource PageScrollViewerStyle}"
             Grid.Row="1"
             Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
-            <muxc:ItemsRepeater Margin="0,4,0,0" ItemsSource="{x:Bind ViewModel.Sections}">
+            <muxc:ItemsRepeater Margin="0,4,0,24" ItemsSource="{x:Bind ViewModel.Items}">
                 <muxc:ItemsRepeater.Layout>
                     <muxc:UniformGridLayout
                         ItemsStretch="Fill"
                         MinColumnSpacing="12"
-                        MinItemHeight="160"
+                        MinItemHeight="180"
                         MinItemWidth="140"
                         MinRowSpacing="12" />
                 </muxc:ItemsRepeater.Layout>
                 <muxc:ItemsRepeater.ItemTemplate>
-                    <DataTemplate x:DataType="items:LibrarySectionViewModel">
-                        <app:CardPanel Command="{x:Bind NavigateToDetailCommand}" DataContext="{x:Bind}">
+                    <DataTemplate x:DataType="items:LibraryItemViewModel">
+                        <app:CardPanel DataContext="{x:Bind}">
                             <Grid Padding="16,20" RowSpacing="8">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
-                                <Border
-                                    Width="80"
-                                    Height="80"
-                                    HorizontalAlignment="Center"
-                                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                                    CornerRadius="{StaticResource ControlCornerRadius}">
-                                    <app:WfaIcon
-                                        HorizontalAlignment="Center"
-                                        VerticalAlignment="Center"
-                                        FontSize="32"
-                                        Symbol="{x:Bind Icon, Mode=OneWay}" />
-                                </Border>
-
+                                <app:CommonImageEx
+                                    Width="96"
+                                    Height="96"
+                                    ImageUrl="{x:Bind Image, Mode=OneWay}" />
                                 <TextBlock
                                     Style="{StaticResource BodyTextBlockStyle}"
                                     Grid.Row="1"
                                     Margin="0,12,0,0"
                                     HorizontalAlignment="Center"
                                     FontWeight="Bold"
-                                    Text="{x:Bind Title, Mode=OneWay}"
+                                    Text="{x:Bind Name, Mode=OneWay}"
                                     TextAlignment="Center"
                                     TextTrimming="CharacterEllipsis" />
                             </Grid>
@@ -74,4 +69,4 @@
             </muxc:ItemsRepeater>
         </ScrollViewer>
     </Grid>
-</local:LibraryPageBase>
+</local:LibraryDetailPageBase>

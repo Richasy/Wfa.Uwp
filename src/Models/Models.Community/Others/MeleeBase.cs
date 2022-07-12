@@ -150,16 +150,4 @@ public class MeleeBase : EntryBase, IPolarities
     /// </summary>
     [JsonProperty("type")]
     public string Type { get; set; }
-
-    /// <summary>
-    /// 维基缩略图.
-    /// </summary>
-    [JsonProperty("wikiaThumbnail")]
-    public string? WikiaThumbnail { get; set; }
-
-    /// <summary>
-    /// 维基网址.
-    /// </summary>
-    [JsonProperty("wikiaUrl")]
-    public string? WikiaUrl { get; set; }
 }

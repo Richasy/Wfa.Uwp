@@ -65,11 +65,13 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
             SplatRegistrations.RegisterLazySingleton<WorldStatePageViewModel>();
             SplatRegistrations.RegisterLazySingleton<LibraryPageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<LibraryDetailPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<SyndicateMissionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<InvasionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<FissurePageViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
+            SplatRegistrations.Register<LibrarySectionViewModel>();
 
             SplatRegistrations.SetupIOC();
         }

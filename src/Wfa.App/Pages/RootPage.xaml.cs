@@ -3,12 +3,15 @@
 using System;
 using System.Collections.Generic;
 using Wfa.App.Controls.State;
+using Wfa.App.Pages.Overlay;
+using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.Models.State;
 using Wfa.ViewModel;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Wfa.App.Pages
 {
@@ -26,6 +29,7 @@ namespace Wfa.App.Pages
             Current = this;
             Loaded += OnLoaded;
             SizeChanged += OnSizeChanged;
+            ViewModel.Navigating += OnNavigating;
             CoreViewModel.RequestShowVoidTraderItems += OnRequestShowVoidTraderItems;
 
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
@@ -75,6 +79,19 @@ namespace Wfa.App.Pages
             Back();
         }
 
+        private void OnNavigating(object sender, AppNavigationEventArgs e)
+        {
+            if (e.Type == NavigationType.Secondary)
+            {
+                var type = GetSecondaryViewType(e.PageId);
+                SecondaryFrame.Navigate(type, e.Parameter, new DrillInNavigationTransitionInfo());
+            }
+            else if (e.Type == NavigationType.Main && SecondaryFrame.Content is AppPage)
+            {
+                SecondaryFrame.Navigate(typeof(Page));
+            }
+        }
+
         private void OnRequestShowVoidTraderItems(object sender, IEnumerable<VoidTraderItem> e)
         {
             var popup = new VoidTraderItemsView();
@@ -106,6 +123,15 @@ namespace Wfa.App.Pages
         /// <param name="element">UI元素.</param>
         private void RemoveFromHolder(UIElement element)
             => HolderContainer.Children.Remove(element);
+
+        private Type GetSecondaryViewType(PageIds pageId)
+        {
+            return pageId switch
+            {
+                PageIds.LibraryDetail => typeof(LibraryDetailPage),
+                _ => typeof(Page),
+            };
+        }
     }
 
     /// <summary>

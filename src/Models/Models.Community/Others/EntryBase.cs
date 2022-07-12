@@ -29,6 +29,18 @@ public class EntryBase
     [JsonProperty("name")]
     public string Name { get; set; }
 
+    /// <summary>
+    /// 维基缩略图.
+    /// </summary>
+    [JsonProperty("wikiaThumbnail")]
+    public string? WikiaThumbnail { get; set; }
+
+    /// <summary>
+    /// 维基地址.
+    /// </summary>
+    [JsonProperty("wikiaUrl")]
+    public string? WikiaUrl { get; set; }
+
     /// <inheritdoc/>
     public override bool Equals(object? obj) => obj is EntryBase @base && UniqueName == @base.UniqueName;
 

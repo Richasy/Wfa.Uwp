@@ -131,5 +131,6 @@ namespace Wfa.Models.Enums
         /// Mod 资料库.
         /// </summary>
         ModLib = 210,
+        LibraryDetail = 211,
     }
 }

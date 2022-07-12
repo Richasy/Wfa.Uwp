@@ -22,7 +22,7 @@ namespace Wfa.ViewModel
         /// <summary>
         /// 分区.
         /// </summary>
-        public ObservableCollection<LibrarySectionItemViewModel> Sections { get; }
+        public ObservableCollection<LibrarySectionViewModel> Sections { get; }
 
         /// <inheritdoc/>
         public ReactiveCommand<Unit, Unit> ActiveCommand { get; }
