@@ -95,5 +95,12 @@ namespace Wfa.Models.Enums
         ModDetail,
         PrimaryDetail,
         SecondaryDetail,
+        Accuracy,
+        Ammo,
+        CriticalChance,
+        CriticalMultiplier,
+        FireRate,
+        StatusChance,
+        MagazineSize,
     }
 }

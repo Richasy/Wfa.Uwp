@@ -52,8 +52,17 @@
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
     <Compile Include="Controls\App\WfaIcon.cs" />
+    <Compile Include="Controls\Library\ArchGunView.xaml.cs">
+      <DependentUpon>ArchGunView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Library\ArchwingView.xaml.cs">
       <DependentUpon>ArchwingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\PrimaryView.xaml.cs">
+      <DependentUpon>PrimaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\SecondaryView.xaml.cs">
+      <DependentUpon>SecondaryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Library\WarframeView.xaml.cs">
       <DependentUpon>WarframeView.xaml</DependentUpon>
@@ -246,7 +255,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\Library\ArchGunView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Library\ArchwingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\PrimaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\SecondaryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

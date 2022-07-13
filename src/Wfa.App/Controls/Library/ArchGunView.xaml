@@ -1,15 +1,15 @@
 ﻿<app:CenterPopup
-    x:Class="Wfa.App.Controls.Library.ArchwingView"
+    x:Class="Wfa.App.Controls.Library.ArchGunView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:app="using:Wfa.App.Controls.App"
-    xmlns:community="using:Wfa.Models.Community"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.Models.Data.Local"
     xmlns:market="using:Wfa.Models.Market"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    Title="{ext:Locale Name=ArchwingDetail}"
+    Title="{ext:Locale Name=ArchGunDetail}"
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
@@ -33,60 +33,23 @@
                 Stretch="Uniform" />
             <StackPanel Grid.Column="1" Spacing="12">
                 <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Text="{x:Bind ViewModel.Data.Name, Mode=OneWay}" />
-                <Grid ColumnSpacing="12" RowSpacing="4">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
-
-                    <app:IconTextBlock
-                        Symbol="Heart16"
-                        Text="{x:Bind ViewModel.Data.Health, Mode=OneWay}"
-                        ToolTipService.ToolTip="{ext:Locale Name=Health}" />
-                    <muxc:ProgressBar
-                        Grid.Column="1"
-                        Maximum="{x:Bind ViewModel.PropertyMaxValue, Mode=OneWay}"
-                        Value="{x:Bind ViewModel.Data.Health, Mode=OneWay}" />
-
-                    <app:IconTextBlock
-                        Grid.Row="1"
-                        Symbol="Shield20"
-                        Text="{x:Bind ViewModel.Data.Shield, Mode=OneWay}"
-                        ToolTipService.ToolTip="{ext:Locale Name=Shield}" />
-                    <muxc:ProgressBar
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        Maximum="{x:Bind ViewModel.PropertyMaxValue, Mode=OneWay}"
-                        Value="{x:Bind ViewModel.Data.Shield, Mode=OneWay}" />
-
-                    <app:IconTextBlock
-                        Grid.Row="2"
-                        Symbol="Target16"
-                        Text="{x:Bind ViewModel.Data.Armor, Mode=OneWay}"
-                        ToolTipService.ToolTip="{ext:Locale Name=Armor}" />
-                    <muxc:ProgressBar
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        Maximum="{x:Bind ViewModel.PropertyMaxValue, Mode=OneWay}"
-                        Value="{x:Bind ViewModel.Data.Armor, Mode=OneWay}" />
-
-                    <app:IconTextBlock
-                        Grid.Row="3"
-                        Symbol="Flash16"
-                        Text="{x:Bind ViewModel.Data.Power, Mode=OneWay}"
-                        ToolTipService.ToolTip="{ext:Locale Name=Power}" />
-                    <muxc:ProgressBar
-                        Grid.Row="3"
-                        Grid.Column="1"
-                        Maximum="{x:Bind ViewModel.PropertyMaxValue, Mode=OneWay}"
-                        Value="{x:Bind ViewModel.Data.Power, Mode=OneWay}" />
-                </Grid>
+                <TextBlock
+                    Style="{StaticResource CaptionTextBlockStyle}"
+                    Text="{x:Bind ViewModel.Data.Description}"
+                    TextWrapping="Wrap" />
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <muxc:RatingControl
+                        HorizontalAlignment="Left"
+                        IsReadOnly="True"
+                        MaxRating="5"
+                        Value="{x:Bind ViewModel.Data.Disposition}" />
+                    <TextBlock
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        Margin="0,-4,0,0"
+                        VerticalAlignment="Center"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="{x:Bind ViewModel.Data.OmegaAttenuation, Mode=OneWay}" />
+                </StackPanel>
             </StackPanel>
         </Grid>
 
@@ -155,50 +118,45 @@
                 <app:IconTextBlock Symbol="Globe16" Text="{ext:Locale Name=Wiki}" />
             </Button>
         </Grid>
+
         <ScrollViewer Style="{StaticResource PageScrollViewerStyle}" Grid.Row="2">
-            <StackPanel Margin="0,0,0,16" Spacing="12">
-                <StackPanel Spacing="4">
-                    <TextBlock
-                        Style="{StaticResource CaptionTextBlockStyle}"
-                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                        Text="{ext:Locale Name=Introduce}" />
-                    <TextBlock Text="{x:Bind ViewModel.Data.Description}" TextWrapping="Wrap" />
-                </StackPanel>
-                <StackPanel Spacing="4">
-                    <TextBlock
-                        Style="{StaticResource CaptionTextBlockStyle}"
-                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                        Text="{ext:Locale Name=Abilities}" />
-                    <muxc:ItemsRepeater Margin="0,-4,0,0" ItemsSource="{x:Bind ViewModel.Abilities}">
-                        <muxc:ItemsRepeater.Layout>
-                            <muxc:StackLayout />
-                        </muxc:ItemsRepeater.Layout>
-                        <muxc:ItemsRepeater.ItemTemplate>
-                            <DataTemplate x:DataType="community:ArchwingAbility">
+            <StackPanel Margin="0,0,0,16">
+                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.Properties}">
+                    <muxc:ItemsRepeater.Layout>
+                        <muxc:StackLayout Spacing="8" />
+                    </muxc:ItemsRepeater.Layout>
+                    <muxc:ItemsRepeater.ItemTemplate>
+                        <DataTemplate x:DataType="local:KeyValue">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
                                 <Grid
-                                    Padding="0,12"
-                                    BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"
-                                    BorderThickness="0,0,0,1"
-                                    RowSpacing="4">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
+                                    Padding="12"
+                                    BorderBrush="{ThemeResource ToolTipBorderThemeBrush}"
+                                    BorderThickness="1"
+                                    CornerRadius="4,0,0,4">
                                     <TextBlock
                                         HorizontalAlignment="Left"
                                         FontWeight="SemiBold"
-                                        Text="{x:Bind Name}" />
-                                    <TextBlock
-                                        Style="{StaticResource CaptionTextBlockStyle}"
-                                        Grid.Row="1"
-                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                        Text="{x:Bind Description}"
-                                        TextWrapping="Wrap" />
+                                        Text="{x:Bind Key}" />
                                 </Grid>
-                            </DataTemplate>
-                        </muxc:ItemsRepeater.ItemTemplate>
-                    </muxc:ItemsRepeater>
-                </StackPanel>
+                                <Grid
+                                    Grid.Column="1"
+                                    Padding="12"
+                                    BorderBrush="{ThemeResource ToolTipBorderThemeBrush}"
+                                    BorderThickness="0,1,1,1"
+                                    CornerRadius="0,4,4,0">
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        FontWeight="SemiBold"
+                                        Text="{x:Bind Value}" />
+                                </Grid>
+                            </Grid>
+                        </DataTemplate>
+                    </muxc:ItemsRepeater.ItemTemplate>
+                </muxc:ItemsRepeater>
             </StackPanel>
         </ScrollViewer>
     </Grid>

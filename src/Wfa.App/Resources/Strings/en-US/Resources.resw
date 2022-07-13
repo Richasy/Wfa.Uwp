@@ -123,8 +123,14 @@
   <data name="AboutToArrive" xml:space="preserve">
     <value>About to arrive</value>
   </data>
+  <data name="Accuracy" xml:space="preserve">
+    <value>Accuracy</value>
+  </data>
   <data name="AlertFormatText" xml:space="preserve">
     <value>The alert will ends in {0}, please log in to the game to view</value>
+  </data>
+  <data name="Ammo" xml:space="preserve">
+    <value>Ammo</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
     <value>App description</value>
@@ -183,6 +189,12 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>Battleship construction progress</value>
   </data>
+  <data name="CriticalChance" xml:space="preserve">
+    <value>Critical chance</value>
+  </data>
+  <data name="CriticalMultiplier" xml:space="preserve">
+    <value>Critical multiplier</value>
+  </data>
   <data name="DailySale" xml:space="preserve">
     <value>Daily discount</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>Expires {0}</value>
+  </data>
+  <data name="FireRate" xml:space="preserve">
+    <value>Fire rate</value>
   </data>
   <data name="Fissure" xml:space="preserve">
     <value>Fissures</value>
@@ -248,6 +263,9 @@
   </data>
   <data name="Location" xml:space="preserve">
     <value>Location</value>
+  </data>
+  <data name="MagazineSize" xml:space="preserve">
+    <value>Magazine size</value>
   </data>
   <data name="Melee" xml:space="preserve">
     <value>Melee</value>
@@ -344,6 +362,9 @@
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>
+  </data>
+  <data name="StatusChance" xml:space="preserve">
+    <value>Status chance</value>
   </data>
   <data name="SteelPath" xml:space="preserve">
     <value>Steel path</value>

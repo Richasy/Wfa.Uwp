@@ -123,8 +123,14 @@
   <data name="AboutToArrive" xml:space="preserve">
     <value>即将抵达</value>
   </data>
+  <data name="Accuracy" xml:space="preserve">
+    <value>精准度</value>
+  </data>
   <data name="AlertFormatText" xml:space="preserve">
     <value>警报将在 {0} 结束，请登录游戏查看</value>
+  </data>
+  <data name="Ammo" xml:space="preserve">
+    <value>弹药量</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
     <value>Warframe 的动态信息</value>
@@ -183,6 +189,12 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>战舰建造进度</value>
   </data>
+  <data name="CriticalChance" xml:space="preserve">
+    <value>暴击率</value>
+  </data>
+  <data name="CriticalMultiplier" xml:space="preserve">
+    <value>暴击倍率</value>
+  </data>
   <data name="DailySale" xml:space="preserve">
     <value>每日折扣</value>
   </data>
@@ -206,6 +218,9 @@
   </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}过期</value>
+  </data>
+  <data name="FireRate" xml:space="preserve">
+    <value>射速</value>
   </data>
   <data name="Fissure" xml:space="preserve">
     <value>虚空裂缝</value>
@@ -248,6 +263,9 @@
   </data>
   <data name="Location" xml:space="preserve">
     <value>地点</value>
+  </data>
+  <data name="MagazineSize" xml:space="preserve">
+    <value>装弹量</value>
   </data>
   <data name="Melee" xml:space="preserve">
     <value>近战武器</value>
@@ -344,6 +362,9 @@
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>突击任务</value>
+  </data>
+  <data name="StatusChance" xml:space="preserve">
+    <value>触发几率</value>
   </data>
   <data name="SteelPath" xml:space="preserve">
     <value>钢铁之路</value>

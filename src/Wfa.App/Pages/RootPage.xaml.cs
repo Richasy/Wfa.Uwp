@@ -113,6 +113,21 @@ namespace Wfa.App.Pages
                 var popup = new ArchwingView();
                 popup.Show(archwing);
             }
+            else if (e is ArchGun archGun)
+            {
+                var popup = new ArchGunView();
+                popup.Show(archGun);
+            }
+            else if (e is Primary primary)
+            {
+                var popup = new PrimaryView();
+                popup.Show(primary);
+            }
+            else if (e is Secondary secondary)
+            {
+                var popup = new SecondaryView();
+                popup.Show(secondary);
+            }
         }
 
         private void Back()

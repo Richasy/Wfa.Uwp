@@ -14,12 +14,16 @@
     <Compile Include="AppViewModel\AppViewModel.Properties.cs" />
     <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\EntryViewModelBase.cs" />
+    <Compile Include="Base\GunViewModelBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
+    <Compile Include="LibraryItems\ArchGunItemViewModel.cs" />
     <Compile Include="LibraryItems\ArchwingItemViewModel.cs" />
+    <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
+    <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />
     <Compile Include="StateItems\AlertViewModel.cs" />
     <Compile Include="StateItems\ArbitrationViewModel.cs" />

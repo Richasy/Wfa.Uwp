@@ -77,6 +77,9 @@ namespace Wfa.DI.App
             SplatRegistrations.Register<LibrarySectionViewModel>();
             SplatRegistrations.Register<WarframeItemViewModel>();
             SplatRegistrations.Register<ArchwingItemViewModel>();
+            SplatRegistrations.Register<ArchGunItemViewModel>();
+            SplatRegistrations.Register<PrimaryItemViewModel>();
+            SplatRegistrations.Register<SecondaryItemViewModel>();
 
             SplatRegistrations.RegisterConstant(Window.Current.Dispatcher);
 
