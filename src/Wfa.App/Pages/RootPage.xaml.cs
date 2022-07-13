@@ -108,6 +108,11 @@ namespace Wfa.App.Pages
                 var popup = new WarframeView();
                 popup.Show(warframe);
             }
+            else if (e is Archwing archwing)
+            {
+                var popup = new ArchwingView();
+                popup.Show(archwing);
+            }
         }
 
         private void Back()

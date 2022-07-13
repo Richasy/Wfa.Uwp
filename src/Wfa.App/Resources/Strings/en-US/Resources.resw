@@ -141,8 +141,17 @@
   <data name="ArchGun" xml:space="preserve">
     <value>Arch-melee</value>
   </data>
+  <data name="ArchGunDetail" xml:space="preserve">
+    <value>Arch-gun details</value>
+  </data>
   <data name="ArchMelee" xml:space="preserve">
     <value>Arch-gun</value>
+  </data>
+  <data name="ArchMeleeDetail" xml:space="preserve">
+    <value>Arch-melee details</value>
+  </data>
+  <data name="ArchwingDetail" xml:space="preserve">
+    <value>Archwing details</value>
   </data>
   <data name="Armor" xml:space="preserve">
     <value>Armor</value>
@@ -243,8 +252,14 @@
   <data name="Melee" xml:space="preserve">
     <value>Melee</value>
   </data>
+  <data name="MeleeDetail" xml:space="preserve">
+    <value>Melee details</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
+  </data>
+  <data name="ModDetail" xml:space="preserve">
+    <value>Mod details</value>
   </data>
   <data name="Modifier" xml:space="preserve">
     <value>Modifier</value>
@@ -285,6 +300,9 @@
   <data name="Primary" xml:space="preserve">
     <value>Primary</value>
   </data>
+  <data name="PrimaryDetail" xml:space="preserve">
+    <value>Primary details</value>
+  </data>
   <data name="Razorback" xml:space="preserve">
     <value>Razorback</value>
   </data>
@@ -311,6 +329,9 @@
   </data>
   <data name="Secondary" xml:space="preserve">
     <value>Secondary</value>
+  </data>
+  <data name="SecondaryDetail" xml:space="preserve">
+    <value>Secondary details</value>
   </data>
   <data name="Shield" xml:space="preserve">
     <value>Shield</value>

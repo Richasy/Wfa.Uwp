@@ -76,6 +76,7 @@ namespace Wfa.DI.App
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();
             SplatRegistrations.Register<WarframeItemViewModel>();
+            SplatRegistrations.Register<ArchwingItemViewModel>();
 
             SplatRegistrations.RegisterConstant(Window.Current.Dispatcher);
 

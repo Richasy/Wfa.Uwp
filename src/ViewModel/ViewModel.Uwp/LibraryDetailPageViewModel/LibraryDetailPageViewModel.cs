@@ -4,8 +4,6 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 using ReactiveUI;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
@@ -15,7 +13,6 @@ using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.LibraryItems;
-using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Core;
 
 namespace Wfa.ViewModel
@@ -110,32 +107,5 @@ namespace Wfa.ViewModel
         }
 
         private void Deactive() => TryClear(Items);
-
-        private async Task TestAsync()
-        {
-            var warframeImages = (await _dbContext.Warframes.ToListAsync()).Select(p => p.ImageName).ToList();
-            var archgunImages = (await _dbContext.ArchGun.ToListAsync()).Select(p => p.ImageName).ToList();
-            var archMeleeImages = (await _dbContext.ArchMelee.ToListAsync()).Select(p => p.ImageName).ToList();
-            var archwingImages = (await _dbContext.Archwing.ToListAsync()).Select(p => p.ImageName).ToList();
-            var primaryImages = (await _dbContext.Primaries.ToListAsync()).Select(p => p.ImageName).ToList();
-            var secondaryImages = (await _dbContext.Secondaries.ToListAsync()).Select(p => p.ImageName).ToList();
-            var meleeImages = (await _dbContext.Melee.ToListAsync()).Select(p => p.ImageName).ToList();
-            var modImages = (await _dbContext.Mods.ToListAsync()).Select(p => p.ImageName).ToList();
-            var images = warframeImages
-                .Concat(archgunImages)
-                .Concat(archMeleeImages)
-                .Concat(archwingImages)
-                .Concat(archwingImages)
-                .Concat(primaryImages)
-                .Concat(secondaryImages)
-                .Concat(meleeImages)
-                .Concat(modImages)
-                .Distinct();
-            var msg = JsonConvert.SerializeObject(images);
-            WriteMessage(msg);
-            var dp = new DataPackage();
-            dp.SetText(msg);
-            Clipboard.SetContent(dp);
-        }
     }
 }

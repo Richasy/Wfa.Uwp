@@ -1,17 +1,15 @@
 ﻿<app:CenterPopup
-    x:Class="Wfa.App.Controls.Library.WarframeView"
+    x:Class="Wfa.App.Controls.Library.ArchwingView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:app="using:Wfa.App.Controls.App"
     xmlns:community="using:Wfa.Models.Community"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
-    xmlns:icons="using:Richasy.FluentIcon.Uwp"
-    xmlns:local="using:Wfa.App.Controls.Library"
     xmlns:market="using:Wfa.Models.Market"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-    Title="{ext:Locale Name=WarframeDetail}"
+    Title="{ext:Locale Name=ArchwingDetail}"
     d:DesignHeight="300"
     d:DesignWidth="400"
     mc:Ignorable="d">
@@ -117,10 +115,10 @@
                             <muxc:ItemsRepeater.ItemTemplate>
                                 <DataTemplate x:DataType="market:MarketItem">
                                     <app:CardPanel
-                                        MinWidth="200"
                                         HorizontalAlignment="Stretch"
                                         Background="Transparent"
                                         Click="OnMarketItemClick"
+                                        MinWidth="200"
                                         DataContext="{x:Bind}"
                                         IsEnableHoverAnimation="False"
                                         StrokeThickness="0">
@@ -166,13 +164,6 @@
                         Text="{ext:Locale Name=Introduce}" />
                     <TextBlock Text="{x:Bind ViewModel.Data.Description}" TextWrapping="Wrap" />
                 </StackPanel>
-                <StackPanel Spacing="4" Visibility="{x:Bind ViewModel.HasPassiveDescription, Mode=OneWay}">
-                    <TextBlock
-                        Style="{StaticResource CaptionTextBlockStyle}"
-                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                        Text="{ext:Locale Name=PassiveAbility}" />
-                    <TextBlock Text="{x:Bind ViewModel.Data.PassiveDescription}" TextWrapping="Wrap" />
-                </StackPanel>
                 <StackPanel Spacing="4">
                     <TextBlock
                         Style="{StaticResource CaptionTextBlockStyle}"
@@ -183,7 +174,7 @@
                             <muxc:StackLayout />
                         </muxc:ItemsRepeater.Layout>
                         <muxc:ItemsRepeater.ItemTemplate>
-                            <DataTemplate x:DataType="community:WarframeAbility">
+                            <DataTemplate x:DataType="community:ArchwingAbility">
                                 <Grid
                                     Padding="0,12"
                                     BorderBrush="{ThemeResource ControlStrokeColorDefaultBrush}"

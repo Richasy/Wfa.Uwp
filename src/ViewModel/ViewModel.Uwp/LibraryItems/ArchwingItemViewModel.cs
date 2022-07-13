@@ -11,23 +11,23 @@ using Wfa.ViewModel.Base;
 namespace Wfa.ViewModel.LibraryItems
 {
     /// <summary>
-    /// 战甲条目视图模型.
+    /// Archwing 信息视图模型.
     /// </summary>
-    public sealed class WarframeItemViewModel : EntryViewModelBase<Warframe>
+    public sealed class ArchwingItemViewModel : EntryViewModelBase<Archwing>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WarframeItemViewModel"/> class.
+        /// Initializes a new instance of the <see cref="ArchwingItemViewModel"/> class.
         /// </summary>
-        public WarframeItemViewModel(
+        public ArchwingItemViewModel(
             LibraryDbContext dbContext,
             NavigationViewModel navigationViewModel)
             : base(dbContext, navigationViewModel)
-            => Abilities = new ObservableCollection<WarframeAbility>();
+            => Abilities = new ObservableCollection<ArchwingAbility>();
 
         /// <summary>
         /// 战甲技能.
         /// </summary>
-        public ObservableCollection<WarframeAbility> Abilities { get; }
+        public ObservableCollection<ArchwingAbility> Abilities { get; }
 
         /// <summary>
         /// 战甲属性最大值.
@@ -35,16 +35,9 @@ namespace Wfa.ViewModel.LibraryItems
         [Reactive]
         public double PropertyMaxValue { get; set; }
 
-        /// <summary>
-        /// 是否有被动技能.
-        /// </summary>
-        [Reactive]
-        public bool HasPassiveDescription { get; set; }
-
         /// <inheritdoc/>
-        protected override async Task InitializeAsync(Warframe data)
+        protected override async Task InitializeAsync(Archwing data)
         {
-            HasPassiveDescription = !string.IsNullOrEmpty(data.PassiveDescription);
             PropertyMaxValue = new double[] { data.Armor, data.Health, data.Power, data.Shield }.Max();
             TryClear(Abilities);
             if (data.Abilities?.Any() ?? false)

@@ -88,5 +88,12 @@ namespace Wfa.Models.Enums
         Abilities,
         RelatedMarketItem,
         Wiki,
+        ArchwingDetail,
+        ArchGunDetail,
+        ArchMeleeDetail,
+        MeleeDetail,
+        ModDetail,
+        PrimaryDetail,
+        SecondaryDetail,
     }
 }

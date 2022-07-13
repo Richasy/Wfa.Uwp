@@ -141,8 +141,17 @@
   <data name="ArchGun" xml:space="preserve">
     <value>空戰槍械</value>
   </data>
+  <data name="ArchGunDetail" xml:space="preserve">
+    <value>空戰槍械詳情</value>
+  </data>
   <data name="ArchMelee" xml:space="preserve">
     <value>空戰近戰武器</value>
+  </data>
+  <data name="ArchMeleeDetail" xml:space="preserve">
+    <value>空戰近戰武器詳情</value>
+  </data>
+  <data name="ArchwingDetail" xml:space="preserve">
+    <value>Archwing 詳情</value>
   </data>
   <data name="Armor" xml:space="preserve">
     <value>護甲值</value>
@@ -243,8 +252,14 @@
   <data name="Melee" xml:space="preserve">
     <value>近戰武器</value>
   </data>
+  <data name="MeleeDetail" xml:space="preserve">
+    <value>近戰武器詳情</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
+  </data>
+  <data name="ModDetail" xml:space="preserve">
+    <value>Mod 詳情</value>
   </data>
   <data name="Modifier" xml:space="preserve">
     <value>強化類型</value>
@@ -285,6 +300,9 @@
   <data name="Primary" xml:space="preserve">
     <value>主要武器</value>
   </data>
+  <data name="PrimaryDetail" xml:space="preserve">
+    <value>主要武器詳情</value>
+  </data>
   <data name="Razorback" xml:space="preserve">
     <value>利刃豺狼</value>
   </data>
@@ -311,6 +329,9 @@
   </data>
   <data name="Secondary" xml:space="preserve">
     <value>次要武器</value>
+  </data>
+  <data name="SecondaryDetail" xml:space="preserve">
+    <value>次要武器詳情</value>
   </data>
   <data name="Shield" xml:space="preserve">
     <value>護盾值</value>
