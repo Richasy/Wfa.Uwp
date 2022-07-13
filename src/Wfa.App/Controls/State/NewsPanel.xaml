@@ -5,7 +5,7 @@
     xmlns:app="using:Wfa.App.Controls.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
-    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:items="using:Wfa.ViewModel.StateItems"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     d:DesignHeight="300"

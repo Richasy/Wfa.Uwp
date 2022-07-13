@@ -11,7 +11,7 @@ using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 平原状态条目视图模型.

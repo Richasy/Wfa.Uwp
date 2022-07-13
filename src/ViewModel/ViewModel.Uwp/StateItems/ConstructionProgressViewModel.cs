@@ -7,7 +7,7 @@ using ReactiveUI.Fody.Helpers;
 using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 战舰建造进度视图模型.

@@ -11,7 +11,7 @@ using Wfa.Models.State;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 事件条目视图模型.

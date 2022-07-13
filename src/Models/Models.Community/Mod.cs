@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -33,12 +34,6 @@ public class Mod : EntryBase
     /// </summary>
     [JsonProperty("fusionLimit")]
     public int FusionLimit { get; set; }
-
-    /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string ImageName { get; set; }
 
     /// <summary>
     /// 是否为光环.
@@ -117,4 +112,10 @@ public class Mod : EntryBase
     /// </summary>
     [JsonProperty("modSetEffects")]
     public string? ModSetEffects { get; set; }
+
+    /// <inheritdoc/>
+    public override bool Equals(object? obj) => obj is Mod mod && base.Equals(obj) && Name == mod.Name;
+
+    /// <inheritdoc/>
+    public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), Name);
 }

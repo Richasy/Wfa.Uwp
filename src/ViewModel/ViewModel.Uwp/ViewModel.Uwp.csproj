@@ -18,23 +18,24 @@
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
-    <Compile Include="Items\AlertViewModel.cs" />
-    <Compile Include="Items\ArbitrationViewModel.cs" />
-    <Compile Include="Items\ConstructionProgressViewModel.cs" />
-    <Compile Include="Items\DailySaleViewModel.cs" />
-    <Compile Include="Items\EventItemViewModel.cs" />
-    <Compile Include="Items\FissureItemViewModel.cs" />
-    <Compile Include="Items\InvasionItemViewModel.cs" />
-    <Compile Include="Items\LibraryItemViewModel.cs" />
-    <Compile Include="Items\LibrarySectionViewModel.cs" />
-    <Compile Include="Items\SkirmishViewModel.cs" />
-    <Compile Include="Items\SortieViewModel.cs" />
-    <Compile Include="Items\SteelPathRewardItemViewModel.cs" />
-    <Compile Include="Items\SteelPathViewModel.cs" />
-    <Compile Include="Items\SyndicateMissionJobViewModel.cs" />
-    <Compile Include="Items\SyndicateMissionViewModel.cs" />
-    <Compile Include="Items\VoidTraderViewModel.cs" />
-    <Compile Include="Items\WorldCycleItemViewModel.cs" />
+    <Compile Include="LibraryItems\WarframeItemViewModel.cs" />
+    <Compile Include="StateItems\AlertViewModel.cs" />
+    <Compile Include="StateItems\ArbitrationViewModel.cs" />
+    <Compile Include="StateItems\ConstructionProgressViewModel.cs" />
+    <Compile Include="StateItems\DailySaleViewModel.cs" />
+    <Compile Include="StateItems\EventItemViewModel.cs" />
+    <Compile Include="StateItems\FissureItemViewModel.cs" />
+    <Compile Include="StateItems\InvasionItemViewModel.cs" />
+    <Compile Include="LibraryItems\LibraryItemViewModel.cs" />
+    <Compile Include="LibraryItems\LibrarySectionViewModel.cs" />
+    <Compile Include="StateItems\SkirmishViewModel.cs" />
+    <Compile Include="StateItems\SortieViewModel.cs" />
+    <Compile Include="StateItems\SteelPathRewardItemViewModel.cs" />
+    <Compile Include="StateItems\SteelPathViewModel.cs" />
+    <Compile Include="StateItems\SyndicateMissionJobViewModel.cs" />
+    <Compile Include="StateItems\SyndicateMissionViewModel.cs" />
+    <Compile Include="StateItems\VoidTraderViewModel.cs" />
+    <Compile Include="StateItems\WorldCycleItemViewModel.cs" />
     <Compile Include="LibraryDetailPageViewModel\LibraryDetailPageViewModel.cs" />
     <Compile Include="LibraryDetailPageViewModel\LibraryDetailPageViewModel.Properties.cs" />
     <Compile Include="LibraryPageViewModel\LibraryPageViewModel.cs" />
@@ -44,7 +45,7 @@
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Methods.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Properties.cs" />
-    <Compile Include="Items\NewsItemViewModel.cs" />
+    <Compile Include="StateItems\NewsItemViewModel.cs" />
     <Compile Include="NavigationViewModel\NavigationViewModel.cs" />
     <Compile Include="NavigationViewModel\NavigationViewModel.Properties.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +92,10 @@
     <ProjectReference Include="..\..\Models\Models.Enums\Models.Enums.csproj">
       <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
       <Name>Models.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Models\Models.Market\Models.Market.csproj">
+      <Project>{A03BF623-A01D-43F2-8FFE-131069E8C4CE}</Project>
+      <Name>Models.Market</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Models\Models.State\Models.State.csproj">
       <Project>{19162B6D-5B66-4CD9-912F-9E94933175BA}</Project>

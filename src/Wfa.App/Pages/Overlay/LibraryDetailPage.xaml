@@ -5,7 +5,7 @@
     xmlns:app="using:Wfa.App.Controls.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
-    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:items="using:Wfa.ViewModel.LibraryItems"
     xmlns:local="using:Wfa.App.Pages.Overlay"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -43,7 +43,7 @@
                 </muxc:ItemsRepeater.Layout>
                 <muxc:ItemsRepeater.ItemTemplate>
                     <DataTemplate x:DataType="items:LibraryItemViewModel">
-                        <app:CardPanel DataContext="{x:Bind}">
+                        <app:CardPanel Command="{x:Bind ShowDetailCommand}">
                             <Grid Padding="16,20" RowSpacing="8">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -52,7 +52,7 @@
                                 <app:CommonImageEx
                                     Width="96"
                                     Height="96"
-                                    ImageUrl="{x:Bind Image, Mode=OneWay}" />
+                                    ImageUrl="{x:Bind Image, Mode=OneWay, Converter={StaticResource LibraryImageConverter}}" />
                                 <TextBlock
                                     Style="{StaticResource BodyTextBlockStyle}"
                                     Grid.Row="1"
@@ -68,5 +68,16 @@
                 </muxc:ItemsRepeater.ItemTemplate>
             </muxc:ItemsRepeater>
         </ScrollViewer>
+
+        <TextBlock
+            Style="{StaticResource EmptyTextStyle}"
+            Grid.Row="1"
+            Text="{ext:Locale Name=NoData}"
+            Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay}" />
+
+        <muxc:ProgressRing
+            Style="{StaticResource PageProgressRingStyle}"
+            Grid.Row="1"
+            IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
     </Grid>
 </local:LibraryDetailPageBase>

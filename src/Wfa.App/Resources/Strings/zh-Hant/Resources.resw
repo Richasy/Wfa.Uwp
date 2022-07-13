@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Abilities" xml:space="preserve">
+    <value>技能列表</value>
+  </data>
   <data name="AboutToArrive" xml:space="preserve">
     <value>即將抵達</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="ArchMelee" xml:space="preserve">
     <value>空戰近戰武器</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>護甲值</value>
   </data>
   <data name="Arrived" xml:space="preserve">
     <value>已經到達</value>
@@ -210,8 +216,14 @@
   <data name="HasAlert" xml:space="preserve">
     <value>有新的警報！</value>
   </data>
+  <data name="Health" xml:space="preserve">
+    <value>生命值</value>
+  </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
+  </data>
+  <data name="Introduce" xml:space="preserve">
+    <value>介紹</value>
   </data>
   <data name="Invasions" xml:space="preserve">
     <value>入侵任務</value>
@@ -261,8 +273,14 @@
   <data name="OrbVallis" xml:space="preserve">
     <value>奧布山谷</value>
   </data>
+  <data name="PassiveAbility" xml:space="preserve">
+    <value>被動技能</value>
+  </data>
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>夜靈平野</value>
+  </data>
+  <data name="Power" xml:space="preserve">
+    <value>能量值</value>
   </data>
   <data name="Primary" xml:space="preserve">
     <value>主要武器</value>
@@ -272,6 +290,12 @@
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>刷新</value>
+  </data>
+  <data name="RelatedMarketItem" xml:space="preserve">
+    <value>相關商品</value>
+  </data>
+  <data name="RequiredMasteryRank" xml:space="preserve">
+    <value>需求段位</value>
   </data>
   <data name="Reward" xml:space="preserve">
     <value>獎勵</value>
@@ -287,6 +311,9 @@
   </data>
   <data name="Secondary" xml:space="preserve">
     <value>次要武器</value>
+  </data>
+  <data name="Shield" xml:space="preserve">
+    <value>護盾值</value>
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>查看物品</value>
@@ -315,8 +342,14 @@
   <data name="Warframe" xml:space="preserve">
     <value>戰甲</value>
   </data>
+  <data name="WarframeDetail" xml:space="preserve">
+    <value>戰甲詳情</value>
+  </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>維基百科</value>
   </data>
   <data name="WorldCycle" xml:space="preserve">
     <value>世界週期</value>

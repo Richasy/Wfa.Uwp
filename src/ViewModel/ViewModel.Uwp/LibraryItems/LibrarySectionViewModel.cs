@@ -8,7 +8,7 @@ using Wfa.Models.Enums;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.LibraryItems
 {
     /// <summary>
     /// 资料库分区条目视图模型.

@@ -4,6 +4,8 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using ReactiveUI;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
@@ -12,7 +14,9 @@ using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
+using Windows.ApplicationModel.DataTransfer;
+using Windows.UI.Core;
 
 namespace Wfa.ViewModel
 {
@@ -27,11 +31,13 @@ namespace Wfa.ViewModel
         public LibraryDetailPageViewModel(
             IResourceToolkit resourceToolkit,
             ICommunityProvider communityProvider,
-            LibraryDbContext dbContext)
+            LibraryDbContext dbContext,
+            CoreDispatcher dispatcher)
         {
             _resourceToolkit = resourceToolkit;
             _communityProvider = communityProvider;
             _dbContext = dbContext;
+            _dispatcher = dispatcher;
 
             Items = new ObservableCollection<LibraryItemViewModel>();
 
@@ -55,47 +61,81 @@ namespace Wfa.ViewModel
         private async Task ActiveAsync()
         {
             TryClear(Items);
-            switch (_type)
+            var task = Task.Run(async () =>
             {
-                case CommunityDataType.Warframe:
-                    var warframes = await _communityProvider.GetDataListAsync<Warframe>(_type);
-                    warframes.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.ArchGun:
-                    var archguns = await _communityProvider.GetDataListAsync<ArchGun>(_type);
-                    archguns.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.ArchMelee:
-                    var archMelees = await _communityProvider.GetDataListAsync<ArchMelee>(_type);
-                    archMelees.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.Archwing:
-                    var archwings = await _communityProvider.GetDataListAsync<Archwing>(_type);
-                    archwings.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.Melee:
-                    var melees = await _communityProvider.GetDataListAsync<Melee>(_type);
-                    melees.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.Primary:
-                    var primaries = await _communityProvider.GetDataListAsync<Primary>(_type);
-                    primaries.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.Secondary:
-                    var secondaries = await _communityProvider.GetDataListAsync<Secondary>(_type);
-                    secondaries.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                case CommunityDataType.Mod:
-                    var mods = await _communityProvider.GetDataListAsync<Mod>(_type);
-                    mods.ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
-                    break;
-                default:
-                    break;
-            }
+                await _dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+                {
+                    switch (_type)
+                    {
+                        case CommunityDataType.Warframe:
+                            var warframes = await _communityProvider.GetDataListAsync<Warframe>(_type);
+                            warframes.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.ArchGun:
+                            var archguns = await _communityProvider.GetDataListAsync<ArchGun>(_type);
+                            archguns.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.ArchMelee:
+                            var archMelees = await _communityProvider.GetDataListAsync<ArchMelee>(_type);
+                            archMelees.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.Archwing:
+                            var archwings = await _communityProvider.GetDataListAsync<Archwing>(_type);
+                            archwings.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.Melee:
+                            var melees = await _communityProvider.GetDataListAsync<Melee>(_type);
+                            melees.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.Primary:
+                            var primaries = await _communityProvider.GetDataListAsync<Primary>(_type);
+                            primaries.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.Secondary:
+                            var secondaries = await _communityProvider.GetDataListAsync<Secondary>(_type);
+                            secondaries.OrderBy(p => p.Name).ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        case CommunityDataType.Mod:
+                            var mods = await _communityProvider.GetDataListAsync<Mod>(_type);
+                            mods.OrderBy(p => p.Name).Distinct().ToList().ForEach(p => Items.Add(new LibraryItemViewModel(p)));
+                            break;
+                        default:
+                            break;
+                    }
+                }).AsTask();
+            });
 
+            await RunDelayTask(task);
             IsEmpty = Items.Count == 0;
         }
 
         private void Deactive() => TryClear(Items);
+
+        private async Task TestAsync()
+        {
+            var warframeImages = (await _dbContext.Warframes.ToListAsync()).Select(p => p.ImageName).ToList();
+            var archgunImages = (await _dbContext.ArchGun.ToListAsync()).Select(p => p.ImageName).ToList();
+            var archMeleeImages = (await _dbContext.ArchMelee.ToListAsync()).Select(p => p.ImageName).ToList();
+            var archwingImages = (await _dbContext.Archwing.ToListAsync()).Select(p => p.ImageName).ToList();
+            var primaryImages = (await _dbContext.Primaries.ToListAsync()).Select(p => p.ImageName).ToList();
+            var secondaryImages = (await _dbContext.Secondaries.ToListAsync()).Select(p => p.ImageName).ToList();
+            var meleeImages = (await _dbContext.Melee.ToListAsync()).Select(p => p.ImageName).ToList();
+            var modImages = (await _dbContext.Mods.ToListAsync()).Select(p => p.ImageName).ToList();
+            var images = warframeImages
+                .Concat(archgunImages)
+                .Concat(archMeleeImages)
+                .Concat(archwingImages)
+                .Concat(archwingImages)
+                .Concat(primaryImages)
+                .Concat(secondaryImages)
+                .Concat(meleeImages)
+                .Concat(modImages)
+                .Distinct();
+            var msg = JsonConvert.SerializeObject(images);
+            WriteMessage(msg);
+            var dp = new DataPackage();
+            dp.SetText(msg);
+            Clipboard.SetContent(dp);
+        }
     }
 }

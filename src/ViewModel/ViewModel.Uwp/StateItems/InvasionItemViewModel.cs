@@ -7,7 +7,7 @@ using Wfa.Models.Enums;
 using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 入侵条目视图模型.

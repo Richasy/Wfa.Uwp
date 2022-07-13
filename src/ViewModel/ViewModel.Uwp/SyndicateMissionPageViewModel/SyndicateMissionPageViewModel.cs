@@ -9,7 +9,7 @@ using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 using Windows.UI.Xaml;
 
 namespace Wfa.ViewModel

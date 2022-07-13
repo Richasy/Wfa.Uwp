@@ -3,7 +3,7 @@
 using System;
 using System.Linq;
 using Splat;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 
 namespace Wfa.ViewModel
 {

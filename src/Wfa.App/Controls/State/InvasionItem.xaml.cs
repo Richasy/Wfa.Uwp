@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using ReactiveUI;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 
 namespace Wfa.App.Controls.State
 {

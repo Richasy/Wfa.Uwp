@@ -12,7 +12,7 @@ using Wfa.Models.Enums;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
 
 namespace Wfa.ViewModel
 {
@@ -26,11 +26,9 @@ namespace Wfa.ViewModel
         /// </summary>
         public LibraryPageViewModel(
             IResourceToolkit resourceToolkit,
-            ISettingsToolkit settingsToolkit,
             LibraryDbContext dbContext)
         {
             _resourceToolkit = resourceToolkit;
-            _settingsToolkit = settingsToolkit;
             _dbContext = dbContext;
             Sections = new ObservableCollection<LibrarySectionViewModel>();
             AddSection(CommunityDataType.Warframe);

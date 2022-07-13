@@ -7,6 +7,7 @@ using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
+using Wfa.Models.Community;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
 using Wfa.Models.Enums;
@@ -151,6 +152,13 @@ namespace Wfa.ViewModel
         /// <param name="items">货品列表.</param>
         public void ShowVoidTraderItems(IEnumerable<VoidTraderItem> items)
             => RequestShowVoidTraderItems?.Invoke(this, items);
+
+        /// <summary>
+        /// 显示资料库条目.
+        /// </summary>
+        /// <param name="item">资料库条目.</param>
+        public void ShowLibraryItem(EntryBase item)
+            => RequestShowLibraryItem?.Invoke(this, item);
 
         private async Task CheckLibraryDatabaseAsync(bool ignoreDate = false)
         {

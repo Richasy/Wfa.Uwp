@@ -58,12 +58,6 @@ public class GunBase : EntryBase, IPolarities
     public double FireRate { get; set; }
 
     /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string? ImageName { get; set; }
-
-    /// <summary>
     /// 弹匣容量.
     /// </summary>
     [JsonProperty("magazineSize")]

@@ -9,13 +9,16 @@ using Wfa.Adapter;
 using Wfa.Adapter.Interfaces;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Enums;
 using Wfa.Provider;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
+using Wfa.ViewModel.StateItems;
 using Windows.Storage;
+using Windows.UI.Xaml;
 
 namespace Wfa.DI.App
 {
@@ -72,6 +75,9 @@ namespace Wfa.DI.App
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();
+            SplatRegistrations.Register<WarframeItemViewModel>();
+
+            SplatRegistrations.RegisterConstant(Window.Current.Dispatcher);
 
             SplatRegistrations.SetupIOC();
         }
@@ -80,7 +86,9 @@ namespace Wfa.DI.App
         {
             var localFolder = ApplicationData.Current.LocalFolder;
             var path = Path.Combine(localFolder.Path, "lib.db");
-            if (!File.Exists(path))
+            var settingsToolkit = Locator.Current.GetService<ISettingsToolkit>();
+            var dbVersion = settingsToolkit.ReadLocalSetting(SettingNames.DbVersion, string.Empty);
+            if (!File.Exists(path) || dbVersion != AppConstants.LibraryDbVersion)
             {
                 var dbFile = await localFolder.CreateFileAsync("lib.db", CreationCollisionOption.ReplaceExisting);
                 var sourceDb = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/lib.db"));
@@ -88,6 +96,7 @@ namespace Wfa.DI.App
             }
 
             var libContext = new LibraryDbContext(path);
+            settingsToolkit.WriteLocalSetting(SettingNames.DbVersion, AppConstants.LibraryDbVersion);
             SplatRegistrations.RegisterConstant(libContext);
         }
     }

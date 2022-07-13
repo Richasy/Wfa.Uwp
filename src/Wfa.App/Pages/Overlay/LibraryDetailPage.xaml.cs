@@ -1,7 +1,7 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
 using Wfa.ViewModel;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
 using Windows.UI.Xaml.Navigation;
 
 namespace Wfa.App.Pages.Overlay

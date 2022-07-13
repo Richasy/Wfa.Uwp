@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Abilities" xml:space="preserve">
+    <value>Abilities</value>
+  </data>
   <data name="AboutToArrive" xml:space="preserve">
     <value>About to arrive</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="ArchMelee" xml:space="preserve">
     <value>Arch-gun</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>Armor</value>
   </data>
   <data name="Arrived" xml:space="preserve">
     <value>Arrived</value>
@@ -210,8 +216,14 @@
   <data name="HasAlert" xml:space="preserve">
     <value>There are new alerts!</value>
   </data>
+  <data name="Health" xml:space="preserve">
+    <value>Health</value>
+  </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
+  </data>
+  <data name="Introduce" xml:space="preserve">
+    <value>Introduce</value>
   </data>
   <data name="Invasions" xml:space="preserve">
     <value>Invasions</value>
@@ -261,8 +273,14 @@
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
   </data>
+  <data name="PassiveAbility" xml:space="preserve">
+    <value>Passive ability</value>
+  </data>
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>Plains of Eidolon</value>
+  </data>
+  <data name="Power" xml:space="preserve">
+    <value>Power</value>
   </data>
   <data name="Primary" xml:space="preserve">
     <value>Primary</value>
@@ -272,6 +290,12 @@
   </data>
   <data name="Refresh" xml:space="preserve">
     <value>Refresh</value>
+  </data>
+  <data name="RelatedMarketItem" xml:space="preserve">
+    <value>Related items</value>
+  </data>
+  <data name="RequiredMasteryRank" xml:space="preserve">
+    <value>Required mastery rank</value>
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>
@@ -287,6 +311,9 @@
   </data>
   <data name="Secondary" xml:space="preserve">
     <value>Secondary</value>
+  </data>
+  <data name="Shield" xml:space="preserve">
+    <value>Shield</value>
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>Show items</value>
@@ -315,8 +342,14 @@
   <data name="Warframe" xml:space="preserve">
     <value>Warframe</value>
   </data>
+  <data name="WarframeDetail" xml:space="preserve">
+    <value>Warframe details</value>
+  </data>
   <data name="Warm" xml:space="preserve">
     <value>Warm</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>Wikipedia</value>
   </data>
   <data name="WorldCycle" xml:space="preserve">
     <value>World cycle</value>

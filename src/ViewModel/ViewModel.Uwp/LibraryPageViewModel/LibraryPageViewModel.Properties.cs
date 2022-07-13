@@ -6,7 +6,7 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Models.Data.Context;
 using Wfa.Toolkit.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
 
 namespace Wfa.ViewModel
 {
@@ -16,7 +16,6 @@ namespace Wfa.ViewModel
     public sealed partial class LibraryPageViewModel
     {
         private readonly IResourceToolkit _resourceToolkit;
-        private readonly ISettingsToolkit _settingsToolkit;
         private readonly LibraryDbContext _dbContext;
 
         /// <summary>

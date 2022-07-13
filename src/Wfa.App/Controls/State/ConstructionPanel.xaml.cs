@@ -2,7 +2,7 @@
 
 using ReactiveUI;
 using Wfa.Models.State;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 

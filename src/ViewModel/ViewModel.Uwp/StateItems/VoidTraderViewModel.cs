@@ -11,7 +11,7 @@ using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 虚空商人视图模型.

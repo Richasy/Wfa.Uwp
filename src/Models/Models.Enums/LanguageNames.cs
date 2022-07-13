@@ -77,5 +77,16 @@ namespace Wfa.Models.Enums
         ArchGun,
         NeverUpdate,
         LastUpdateTimeFormatText,
+        WarframeDetail,
+        RequiredMasteryRank,
+        Health,
+        Shield,
+        Armor,
+        Power,
+        Introduce,
+        PassiveAbility,
+        Abilities,
+        RelatedMarketItem,
+        Wiki,
     }
 }

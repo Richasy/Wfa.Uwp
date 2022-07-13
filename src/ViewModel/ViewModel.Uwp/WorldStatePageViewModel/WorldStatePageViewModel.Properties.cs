@@ -6,7 +6,7 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 using Windows.UI.Xaml;
 
 namespace Wfa.ViewModel

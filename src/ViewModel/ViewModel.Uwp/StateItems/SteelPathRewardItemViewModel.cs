@@ -6,7 +6,7 @@ using ReactiveUI.Fody.Helpers;
 using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 钢铁之路奖励条目视图模型.

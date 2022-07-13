@@ -2,8 +2,10 @@
 
 using System;
 using System.Collections.Generic;
+using Wfa.App.Controls.Library;
 using Wfa.App.Controls.State;
 using Wfa.App.Pages.Overlay;
+using Wfa.Models.Community;
 using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.Models.State;
@@ -31,6 +33,7 @@ namespace Wfa.App.Pages
             SizeChanged += OnSizeChanged;
             ViewModel.Navigating += OnNavigating;
             CoreViewModel.RequestShowVoidTraderItems += OnRequestShowVoidTraderItems;
+            CoreViewModel.RequestShowLibraryItem += OnRequestShowLibraryItem;
 
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
@@ -96,6 +99,15 @@ namespace Wfa.App.Pages
         {
             var popup = new VoidTraderItemsView();
             popup.Show(e);
+        }
+
+        private void OnRequestShowLibraryItem(object sender, EntryBase e)
+        {
+            if (e is Warframe warframe)
+            {
+                var popup = new WarframeView();
+                popup.Show(warframe);
+            }
         }
 
         private void Back()

@@ -8,7 +8,8 @@ using Wfa.Models.Data.Context;
 using Wfa.Models.Enums;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.LibraryItems;
+using Windows.UI.Core;
 
 namespace Wfa.ViewModel
 {
@@ -20,6 +21,7 @@ namespace Wfa.ViewModel
         private readonly IResourceToolkit _resourceToolkit;
         private readonly ICommunityProvider _communityProvider;
         private readonly LibraryDbContext _dbContext;
+        private readonly CoreDispatcher _dispatcher;
         private readonly ObservableAsPropertyHelper<bool> _isLoading;
 
         private CommunityDataType _type;

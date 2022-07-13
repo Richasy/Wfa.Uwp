@@ -11,7 +11,7 @@ using Wfa.Models.State;
 using Wfa.ViewModel.Base;
 using Windows.System;
 
-namespace Wfa.ViewModel.Items
+namespace Wfa.ViewModel.StateItems
 {
     /// <summary>
     /// 新闻条目视图模型.

@@ -70,12 +70,6 @@ public class MeleeBase : EntryBase, IPolarities
     public double HeavySlamAttack { get; set; }
 
     /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string? ImageName { get; set; }
-
-    /// <summary>
     /// 段位要求.
     /// </summary>
     [JsonProperty("masteryReq")]

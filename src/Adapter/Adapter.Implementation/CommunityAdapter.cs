@@ -104,7 +104,11 @@ namespace Wfa.Adapter
                 var i18nJobj = JObject.Parse(i18n);
                 warframe.Name = i18nJobj["name"].ToString();
                 warframe.Description = i18nJobj["description"].ToString();
-                warframe.PassiveDescription = i18nJobj["passiveDescription"].ToString();
+
+                if (i18nJobj.ContainsKey("passiveDescription"))
+                {
+                    warframe.PassiveDescription = i18nJobj["passiveDescription"].ToString();
+                }
 
                 var abilities = i18nJobj["abilities"].Children().ToArray();
                 for (var i = 0; i < abilities.Length; i++)
