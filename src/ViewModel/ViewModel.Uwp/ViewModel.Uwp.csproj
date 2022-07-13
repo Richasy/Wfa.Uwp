@@ -15,6 +15,7 @@
     <Compile Include="AppViewModel\AppViewModel.Threshold.cs" />
     <Compile Include="Base\EntryViewModelBase.cs" />
     <Compile Include="Base\GunViewModelBase.cs" />
+    <Compile Include="Base\MeleeViewModelBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />

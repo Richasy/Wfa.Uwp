@@ -102,5 +102,11 @@ namespace Wfa.Models.Enums
         FireRate,
         StatusChance,
         MagazineSize,
+        AttackSpeed,
+        AttackRange,
+        TotalDamage,
+        Tradable,
+        Tradability,
+        NotTradable,
     }
 }

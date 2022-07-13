@@ -168,6 +168,12 @@
   <data name="Attacker" xml:space="preserve">
     <value>Attacker</value>
   </data>
+  <data name="AttackRange" xml:space="preserve">
+    <value>Attack range</value>
+  </data>
+  <data name="AttackSpeed" xml:space="preserve">
+    <value>Attack speed</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -303,6 +309,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>Not found</value>
   </data>
+  <data name="NotTradable" xml:space="preserve">
+    <value>Not tradable</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
   </data>
@@ -374,6 +383,15 @@
   </data>
   <data name="Tier" xml:space="preserve">
     <value>Tier</value>
+  </data>
+  <data name="TotalDamage" xml:space="preserve">
+    <value>Total damage</value>
+  </data>
+  <data name="Tradability" xml:space="preserve">
+    <value>Tradability</value>
+  </data>
+  <data name="Tradable" xml:space="preserve">
+    <value>Tradable</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>Void trader</value>

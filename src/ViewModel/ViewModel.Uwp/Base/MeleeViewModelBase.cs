@@ -15,15 +15,15 @@ namespace Wfa.ViewModel.Base
     /// 枪械视图模型基类.
     /// </summary>
     /// <typeparam name="T">枪械数据.</typeparam>
-    public class GunViewModelBase<T> : EntryViewModelBase<T>
-        where T : GunBase
+    public class MeleeViewModelBase<T> : EntryViewModelBase<T>
+        where T : MeleeBase
     {
         private readonly IResourceToolkit _resourceToolkit;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GunViewModelBase"/> class.
+        /// Initializes a new instance of the <see cref="MeleeViewModelBase"/> class.
         /// </summary>
-        public GunViewModelBase(
+        public MeleeViewModelBase(
             LibraryDbContext dbContext,
             NavigationViewModel navigationViewModel,
             IResourceToolkit resourceToolkit)
@@ -41,13 +41,15 @@ namespace Wfa.ViewModel.Base
         /// <inheritdoc/>
         protected override async Task InitializeAsync(T data)
         {
-            AddProeprty(LanguageNames.Accuracy, data.Accuracy);
-            AddProeprty(LanguageNames.Ammo, data.Ammo);
+            AddProeprty(LanguageNames.TotalDamage, data.TotalDamage);
+            AddProeprty(
+                LanguageNames.Tradability,
+                data.Tradable ? _resourceToolkit.GetLocaleString(LanguageNames.Tradable) : _resourceToolkit.GetLocaleString(LanguageNames.NotTradable));
             AddProeprty(LanguageNames.CriticalChance, $"{Math.Round(data.CriticalChance * 100)}%");
             AddProeprty(LanguageNames.StatusChance, $"{Math.Round(data.ProcChance * 100)}%");
             AddProeprty(LanguageNames.CriticalMultiplier, $"{Math.Round(data.CriticalMultiplier, 1)}x");
-            AddProeprty(LanguageNames.FireRate, Math.Round(data.FireRate));
-            AddProeprty(LanguageNames.MagazineSize, data.MagazineSize);
+            AddProeprty(LanguageNames.AttackSpeed, Math.Round(data.FireRate));
+            AddProeprty(LanguageNames.AttackRange, data.Range);
             await base.InitializeAsync(data);
         }
 

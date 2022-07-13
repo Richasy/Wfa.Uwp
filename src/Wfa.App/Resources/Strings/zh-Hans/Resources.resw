@@ -168,6 +168,12 @@
   <data name="Attacker" xml:space="preserve">
     <value>入侵方</value>
   </data>
+  <data name="AttackRange" xml:space="preserve">
+    <value>攻击范围</value>
+  </data>
+  <data name="AttackSpeed" xml:space="preserve">
+    <value>攻击速度</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一页</value>
   </data>
@@ -303,6 +309,9 @@
   <data name="NotFound" xml:space="preserve">
     <value>未发现</value>
   </data>
+  <data name="NotTradable" xml:space="preserve">
+    <value>不可交易</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>奥布山谷</value>
   </data>
@@ -374,6 +383,15 @@
   </data>
   <data name="Tier" xml:space="preserve">
     <value>纪元</value>
+  </data>
+  <data name="TotalDamage" xml:space="preserve">
+    <value>总伤害</value>
+  </data>
+  <data name="Tradability" xml:space="preserve">
+    <value>可交易性</value>
+  </data>
+  <data name="Tradable" xml:space="preserve">
+    <value>可交易</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>虚空商人</value>
