@@ -22,7 +22,9 @@
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
     <Compile Include="LibraryItems\ArchGunItemViewModel.cs" />
+    <Compile Include="LibraryItems\ArchMeleeItemViewModel.cs" />
     <Compile Include="LibraryItems\ArchwingItemViewModel.cs" />
+    <Compile Include="LibraryItems\MeleeItemViewModel.cs" />
     <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
     <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />

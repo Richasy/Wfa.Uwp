@@ -145,13 +145,13 @@
     <value>Arbitration</value>
   </data>
   <data name="ArchGun" xml:space="preserve">
-    <value>Arch-melee</value>
+    <value>Arch-gun</value>
   </data>
   <data name="ArchGunDetail" xml:space="preserve">
     <value>Arch-gun details</value>
   </data>
   <data name="ArchMelee" xml:space="preserve">
-    <value>Arch-gun</value>
+    <value>Arch-melee</value>
   </data>
   <data name="ArchMeleeDetail" xml:space="preserve">
     <value>Arch-melee details</value>

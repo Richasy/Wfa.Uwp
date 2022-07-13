@@ -55,8 +55,14 @@
     <Compile Include="Controls\Library\ArchGunView.xaml.cs">
       <DependentUpon>ArchGunView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Library\ArchMeleeView.xaml.cs">
+      <DependentUpon>ArchMeleeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Library\ArchwingView.xaml.cs">
       <DependentUpon>ArchwingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\MeleeView.xaml.cs">
+      <DependentUpon>MeleeView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Library\PrimaryView.xaml.cs">
       <DependentUpon>PrimaryView.xaml</DependentUpon>
@@ -259,7 +265,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Library\ArchMeleeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Library\ArchwingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\MeleeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

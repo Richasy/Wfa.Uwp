@@ -128,6 +128,16 @@ namespace Wfa.App.Pages
                 var popup = new SecondaryView();
                 popup.Show(secondary);
             }
+            else if (e is Melee melee)
+            {
+                var popup = new MeleeView();
+                popup.Show(melee);
+            }
+            else if (e is ArchMelee archMelee)
+            {
+                var popup = new ArchMeleeView();
+                popup.Show(archMelee);
+            }
         }
 
         private void Back()
