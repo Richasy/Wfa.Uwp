@@ -68,11 +68,11 @@ namespace Wfa.ViewModel.LibraryItems
                     Title = _resourceToolkit.GetLocaleString(LanguageNames.Warframe);
                     break;
                 case CommunityDataType.ArchGun:
-                    Icon = WfaSymbol.Primary;
+                    Icon = WfaSymbol.Fly;
                     Title = _resourceToolkit.GetLocaleString(LanguageNames.ArchGun);
                     break;
                 case CommunityDataType.ArchMelee:
-                    Icon = WfaSymbol.Melee;
+                    Icon = WfaSymbol.LaurelLeft;
                     Title = _resourceToolkit.GetLocaleString(LanguageNames.ArchMelee);
                     break;
                 case CommunityDataType.Archwing:

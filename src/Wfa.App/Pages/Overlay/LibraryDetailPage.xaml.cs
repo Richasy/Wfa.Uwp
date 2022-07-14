@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using Wfa.ViewModel;
 using Wfa.ViewModel.LibraryItems;
 using Windows.UI.Xaml.Navigation;
@@ -26,6 +27,9 @@ namespace Wfa.App.Pages.Overlay
 
             base.OnNavigatedTo(e);
         }
+
+        private void OnSearchSubmitted(Windows.UI.Xaml.Controls.AutoSuggestBox sender, Windows.UI.Xaml.Controls.AutoSuggestBoxQuerySubmittedEventArgs args)
+            => ViewModel.SearchCommand.Execute(sender.Text).Subscribe();
     }
 
     /// <summary>

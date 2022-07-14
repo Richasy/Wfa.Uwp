@@ -44,7 +44,7 @@
                             VerticalAlignment="Top"
                             FontSize="60"
                             Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                            Symbol="{x:Bind ViewModel.Symbol, Mode=OneWay}" />
+                            Symbol="Sortie" />
                         <TextBlock
                             HorizontalAlignment="Left"
                             FontSize="20"

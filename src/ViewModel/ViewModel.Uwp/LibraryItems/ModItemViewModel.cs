@@ -57,11 +57,10 @@ namespace Wfa.ViewModel.LibraryItems
         protected override async Task InitializeAsync(Mod data)
         {
             await base.InitializeAsync(data);
-            CurrentLevel = -1;
+            CurrentLevel = 1;
             IsShowLevel = data.FusionLimit > 0;
             TotalLevel = data.FusionLimit;
             Description = Data.Effects.FirstOrDefault(p => p.Level == CurrentLevel)?.Description ?? string.Empty;
-            CurrentLevel = 0;
         }
 
         private void ChangeDescription()

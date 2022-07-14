@@ -87,6 +87,7 @@ namespace Wfa.ViewModel.StateItems
                 "Grineer" => WfaSymbol.Grineer,
                 "Corpus" => WfaSymbol.Corpus,
                 "Infested" => WfaSymbol.Infested,
+                "Infestation" => WfaSymbol.Infested,
                 "Orokin" => WfaSymbol.Orokin,
                 _ => WfaSymbol.Sortie,
             };

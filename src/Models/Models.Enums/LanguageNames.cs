@@ -108,5 +108,6 @@ namespace Wfa.Models.Enums
         Tradable,
         Tradability,
         NotTradable,
+        SearchLibrary,
     }
 }

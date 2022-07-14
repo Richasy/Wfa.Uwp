@@ -348,6 +348,9 @@
   <data name="RotationItems" xml:space="preserve">
     <value>Rotation items</value>
   </data>
+  <data name="SearchLibrary" xml:space="preserve">
+    <value>Search the library</value>
+  </data>
   <data name="SearchTip" xml:space="preserve">
     <value>Find what you want from the Warframe Market</value>
   </data>

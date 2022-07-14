@@ -26,6 +26,13 @@
                     <Run Text="{ext:Locale Name=Library}" />
                 </TextBlock>
             </app:AppPageHeader.Title>
+            <app:AppPageHeader.Element>
+                <AutoSuggestBox
+                    MinWidth="220"
+                    PlaceholderText="{ext:Locale Name=SearchLibrary}"
+                    QueryIcon="Find"
+                    QuerySubmitted="OnSearchSubmitted" />
+            </app:AppPageHeader.Element>
         </app:AppPageHeader>
 
         <ScrollViewer

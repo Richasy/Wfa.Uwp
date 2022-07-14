@@ -348,6 +348,9 @@
   <data name="RotationItems" xml:space="preserve">
     <value>轮替商品</value>
   </data>
+  <data name="SearchLibrary" xml:space="preserve">
+    <value>搜索资料库</value>
+  </data>
   <data name="SearchTip" xml:space="preserve">
     <value>从 Warframe Market 中找找你想要的</value>
   </data>

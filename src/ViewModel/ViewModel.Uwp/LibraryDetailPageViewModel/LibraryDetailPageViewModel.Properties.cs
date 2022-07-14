@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Reactive;
 using ReactiveUI;
@@ -23,6 +24,7 @@ namespace Wfa.ViewModel
         private readonly LibraryDbContext _dbContext;
         private readonly CoreDispatcher _dispatcher;
         private readonly ObservableAsPropertyHelper<bool> _isLoading;
+        private readonly List<LibraryItemViewModel> _totalItems;
 
         private CommunityDataType _type;
 
@@ -31,6 +33,11 @@ namespace Wfa.ViewModel
 
         /// <inheritdoc/>
         public ReactiveCommand<Unit, Unit> DeactiveCommand { get; }
+
+        /// <summary>
+        /// 搜索命令.
+        /// </summary>
+        public ReactiveCommand<string, Unit> SearchCommand { get; }
 
         /// <summary>
         /// 条目集合.
