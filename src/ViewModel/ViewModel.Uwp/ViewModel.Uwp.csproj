@@ -31,7 +31,10 @@
     <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
     <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />
+    <Compile Include="LichOrderPageViewModel\LichOrderPageViewModel.cs" />
+    <Compile Include="LichOrderPageViewModel\LichOrderPageViewModel.Properties.cs" />
     <Compile Include="MarketItems\ItemOrderViewModel.cs" />
+    <Compile Include="MarketItems\LichOrderViewModel.cs" />
     <Compile Include="MarketItems\MarketSuggestionItemViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />

@@ -49,6 +49,8 @@ namespace Wfa.Models.Data.Constants
             public const string PriceDescending = "price_desc";
             public const string CountAscending = "count_asc";
             public const string CountDescending = "count_desc";
+            public const string DamageAscending = "damage_asc";
+            public const string DamageDescending = "damage_desc";
 
             public const string InGame = "ingame";
             public const string Online = "online";
@@ -56,6 +58,8 @@ namespace Wfa.Models.Data.Constants
 
             public const string Seller = "seller";
             public const string Buyer = "buyer";
+            public const string Buyout = "buyout";
+            public const string Auction = "auction";
         }
     }
 }

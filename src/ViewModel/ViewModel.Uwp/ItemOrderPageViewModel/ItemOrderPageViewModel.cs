@@ -91,6 +91,7 @@ namespace Wfa.ViewModel
         {
             if (!_orders?.Any() ?? true)
             {
+                IsEmpty = true;
                 return;
             }
 

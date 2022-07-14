@@ -130,5 +130,10 @@ namespace Wfa.Models.Enums
         Count,
         Platinum,
         MarketMessageCopied,
+        DamageAscending,
+        DamageDescending,
+        Buyout,
+        Auction,
+        BuyoutPrice,
     }
 }
