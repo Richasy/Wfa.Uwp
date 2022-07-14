@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Wfa.App.Controls.App;
 using Wfa.App.Controls.Library;
 using Wfa.App.Controls.State;
 using Wfa.App.Pages.Overlay;
@@ -32,6 +34,7 @@ namespace Wfa.App.Pages
             Loaded += OnLoaded;
             SizeChanged += OnSizeChanged;
             ViewModel.Navigating += OnNavigating;
+            CoreViewModel.RequestShowTip += OnRequestShowTip;
             CoreViewModel.RequestShowVoidTraderItems += OnRequestShowVoidTraderItems;
             CoreViewModel.RequestShowLibraryItem += OnRequestShowLibraryItem;
 
@@ -70,6 +73,26 @@ namespace Wfa.App.Pages
             }
         }
 
+        /// <summary>
+        /// 显示提示信息，并在指定延时后关闭.
+        /// </summary>
+        /// <param name="element">要插入的元素.</param>
+        /// <param name="delaySeconds">延时时间(秒).</param>
+        /// <returns><see cref="Task"/>.</returns>
+        public async Task ShowTipAsync(UIElement element, double delaySeconds)
+        {
+            TipContainer.Visibility = Visibility.Visible;
+            TipContainer.Children.Add(element);
+            element.Visibility = Visibility.Visible;
+            await Task.Delay(TimeSpan.FromSeconds(delaySeconds));
+            element.Visibility = Visibility.Collapsed;
+            TipContainer.Children.Remove(element);
+            if (TipContainer.Children.Count == 0)
+            {
+                TipContainer.Visibility = Visibility.Collapsed;
+            }
+        }
+
         private void OnSizeChanged(object sender, SizeChangedEventArgs e)
             => CoreViewModel.InitializePadding();
 
@@ -94,6 +117,9 @@ namespace Wfa.App.Pages
                 SecondaryFrame.Navigate(typeof(Page));
             }
         }
+
+        private void OnRequestShowTip(object sender, AppTipNotificationEventArgs e)
+           => new TipPopup(e.Message).ShowAsync(e.Type);
 
         private void OnRequestShowVoidTraderItems(object sender, IEnumerable<VoidTraderItem> e)
         {
@@ -176,6 +202,9 @@ namespace Wfa.App.Pages
             return pageId switch
             {
                 PageIds.LibraryDetail => typeof(LibraryDetailPage),
+                PageIds.MarketItemOrder => typeof(ItemOrderPage),
+                PageIds.MarketLichOrder => typeof(LichOrderPage),
+                PageIds.MarketRivenOrder => typeof(RivenOrderPage),
                 _ => typeof(Page),
             };
         }

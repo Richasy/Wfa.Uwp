@@ -21,6 +21,8 @@
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
+    <Compile Include="ItemOrderPageViewModel\ItemOrderPageViewModel.cs" />
+    <Compile Include="ItemOrderPageViewModel\ItemOrderPageViewModel.Properties.cs" />
     <Compile Include="LibraryItems\ArchGunItemViewModel.cs" />
     <Compile Include="LibraryItems\ArchMeleeItemViewModel.cs" />
     <Compile Include="LibraryItems\ArchwingItemViewModel.cs" />
@@ -29,6 +31,16 @@
     <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
     <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />
+    <Compile Include="LichOrderPageViewModel\LichOrderPageViewModel.cs" />
+    <Compile Include="LichOrderPageViewModel\LichOrderPageViewModel.Properties.cs" />
+    <Compile Include="MarketItems\ItemOrderViewModel.cs" />
+    <Compile Include="MarketItems\LichOrderViewModel.cs" />
+    <Compile Include="MarketItems\MarketSuggestionItemViewModel.cs" />
+    <Compile Include="MarketItems\RivenOrderViewModel.cs" />
+    <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.cs" />
+    <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />
+    <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.cs" />
+    <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.Properties.cs" />
     <Compile Include="StateItems\AlertViewModel.cs" />
     <Compile Include="StateItems\ArbitrationViewModel.cs" />
     <Compile Include="StateItems\ConstructionProgressViewModel.cs" />

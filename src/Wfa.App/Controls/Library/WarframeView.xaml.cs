@@ -45,11 +45,5 @@ namespace Wfa.App.Controls.Library
             ViewModel = Locator.Current.GetService<WarframeItemViewModel>();
             ViewModel.InitializeCommand.Execute(data);
         }
-
-        private void OnMarketItemClick(object sender, RoutedEventArgs e)
-        {
-            var data = (sender as FrameworkElement).DataContext as MarketItem;
-            ViewModel.JumpToMarketCommand.Execute(data).Subscribe();
-        }
     }
 }

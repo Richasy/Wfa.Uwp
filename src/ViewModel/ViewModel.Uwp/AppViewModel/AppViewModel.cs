@@ -10,6 +10,7 @@ using ReactiveUI;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Constants;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
@@ -145,6 +146,14 @@ namespace Wfa.ViewModel
                 PageTopPadding = _resourceToolkit.GetResource<Thickness>("NarrowPageTopPadding");
             }
         }
+
+        /// <summary>
+        /// 显示提示.
+        /// </summary>
+        /// <param name="message">消息内容.</param>
+        /// <param name="type">消息类型.</param>
+        public void ShowTip(string message, InfoType type = InfoType.Information)
+            => RequestShowTip?.Invoke(this, new AppTipNotificationEventArgs(message, type));
 
         /// <summary>
         /// 显示虚空商人条目列表.

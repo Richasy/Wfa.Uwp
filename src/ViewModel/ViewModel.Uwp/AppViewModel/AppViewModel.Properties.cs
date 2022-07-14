@@ -7,6 +7,7 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Data.Local;
 using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
@@ -32,6 +33,11 @@ namespace Wfa.ViewModel
         private readonly ObservableAsPropertyHelper<bool> _isRequestingState;
 
         private bool? _isWide;
+
+        /// <summary>
+        /// 请求显示提醒.
+        /// </summary>
+        public event EventHandler<AppTipNotificationEventArgs> RequestShowTip;
 
         /// <summary>
         /// 请求显示虚空商人货品列表.

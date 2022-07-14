@@ -174,8 +174,20 @@
   <data name="AttackSpeed" xml:space="preserve">
     <value>Attack speed</value>
   </data>
+  <data name="Auction" xml:space="preserve">
+    <value>Auction</value>
+  </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
+  <data name="Buyout" xml:space="preserve">
+    <value>Buyout</value>
+  </data>
+  <data name="BuyoutPrice" xml:space="preserve">
+    <value>BP</value>
   </data>
   <data name="CambionDrift" xml:space="preserve">
     <value>Cambion drift</value>
@@ -195,6 +207,18 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>Battleship construction progress</value>
   </data>
+  <data name="CopyMessage" xml:space="preserve">
+    <value>Copy message</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="CountAscending" xml:space="preserve">
+    <value>Quantity ascending</value>
+  </data>
+  <data name="CountDescending" xml:space="preserve">
+    <value>Quantity descending</value>
+  </data>
   <data name="CriticalChance" xml:space="preserve">
     <value>Critical chance</value>
   </data>
@@ -203,6 +227,15 @@
   </data>
   <data name="DailySale" xml:space="preserve">
     <value>Daily discount</value>
+  </data>
+  <data name="Damage" xml:space="preserve">
+    <value>Damage</value>
+  </data>
+  <data name="DamageAscending" xml:space="preserve">
+    <value>Damage ascending</value>
+  </data>
+  <data name="DamageDescending" xml:space="preserve">
+    <value>Damage descending</value>
   </data>
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
@@ -215,6 +248,9 @@
   </data>
   <data name="Earth" xml:space="preserve">
     <value>Earth</value>
+  </data>
+  <data name="Element" xml:space="preserve">
+    <value>Element</value>
   </data>
   <data name="EndDateFormat" xml:space="preserve">
     <value>Ends in {0}</value>
@@ -246,11 +282,17 @@
   <data name="HasAlert" xml:space="preserve">
     <value>There are new alerts!</value>
   </data>
+  <data name="HasEphemera" xml:space="preserve">
+    <value>Has ephemera</value>
+  </data>
   <data name="Health" xml:space="preserve">
     <value>Health</value>
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
+  </data>
+  <data name="InGame" xml:space="preserve">
+    <value>In the game</value>
   </data>
   <data name="Introduce" xml:space="preserve">
     <value>Introduce</value>
@@ -258,11 +300,20 @@
   <data name="Invasions" xml:space="preserve">
     <value>Invasions</value>
   </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
   <data name="LastUpdateTimeFormatText" xml:space="preserve">
     <value>Recent Updates: {0}</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
   <data name="Library" xml:space="preserve">
     <value>Library</value>
+  </data>
+  <data name="Lich" xml:space="preserve">
+    <value>Lich</value>
   </data>
   <data name="Light" xml:space="preserve">
     <value>Light</value>
@@ -272,6 +323,12 @@
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>Magazine size</value>
+  </data>
+  <data name="MarketMessageCopied" xml:space="preserve">
+    <value>Message copied, please paste in in-game chat</value>
+  </data>
+  <data name="MasteryRank" xml:space="preserve">
+    <value>Mastery rank</value>
   </data>
   <data name="Melee" xml:space="preserve">
     <value>Melee</value>
@@ -312,8 +369,26 @@
   <data name="NotTradable" xml:space="preserve">
     <value>Not tradable</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="OnlineStatus" xml:space="preserve">
+    <value>Online status</value>
+  </data>
+  <data name="OpenWarframeMarket" xml:space="preserve">
+    <value>Open Warframe Market</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
+  </data>
+  <data name="OrderDetail" xml:space="preserve">
+    <value>Order details</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Order type</value>
   </data>
   <data name="PassiveAbility" xml:space="preserve">
     <value>Passive ability</value>
@@ -321,8 +396,26 @@
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>Plains of Eidolon</value>
   </data>
+  <data name="Platinum" xml:space="preserve">
+    <value>Platinum</value>
+  </data>
+  <data name="PositiveAscending" xml:space="preserve">
+    <value>Positive attribute ascending</value>
+  </data>
+  <data name="PositiveAttribute" xml:space="preserve">
+    <value>Positive attribute</value>
+  </data>
+  <data name="PositiveDescending" xml:space="preserve">
+    <value>Positive attribute descending</value>
+  </data>
   <data name="Power" xml:space="preserve">
     <value>Power</value>
+  </data>
+  <data name="PriceAscending" xml:space="preserve">
+    <value>Price ascending</value>
+  </data>
+  <data name="PriceDescending" xml:space="preserve">
+    <value>Price descending</value>
   </data>
   <data name="Primary" xml:space="preserve">
     <value>Primary</value>
@@ -342,8 +435,14 @@
   <data name="RequiredMasteryRank" xml:space="preserve">
     <value>Required mastery rank</value>
   </data>
+  <data name="Reroll" xml:space="preserve">
+    <value>Reroll</value>
+  </data>
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>
+  </data>
+  <data name="Riven" xml:space="preserve">
+    <value>Riven</value>
   </data>
   <data name="RotationItems" xml:space="preserve">
     <value>Rotation items</value>
@@ -363,6 +462,9 @@
   <data name="SecondaryDetail" xml:space="preserve">
     <value>Secondary details</value>
   </data>
+  <data name="Seller" xml:space="preserve">
+    <value>Seller</value>
+  </data>
   <data name="Shield" xml:space="preserve">
     <value>Shield</value>
   </data>
@@ -374,6 +476,12 @@
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>
+  </data>
+  <data name="SortType" xml:space="preserve">
+    <value>Sort by</value>
+  </data>
+  <data name="StartPrice" xml:space="preserve">
+    <value>SP</value>
   </data>
   <data name="StatusChance" xml:space="preserve">
     <value>Status chance</value>
@@ -395,6 +503,9 @@
   </data>
   <data name="Tradable" xml:space="preserve">
     <value>Tradable</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>Void trader</value>

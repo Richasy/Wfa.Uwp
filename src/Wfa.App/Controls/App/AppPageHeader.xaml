@@ -25,19 +25,20 @@
             FontSize="28"
             FontWeight="SemiLight"
             TextWrapping="NoWrap" />
-        <ContentPresenter
-            Grid.Column="1"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
-            Content="{x:Bind Element, Mode=OneWay}"
-            Visibility="{x:Bind Element, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}" />
-        <Button
-            x:Name="RefreshButton"
-            Grid.Column="1"
-            VerticalAlignment="Center"
-            Command="{x:Bind RefreshCommand, Mode=OneWay}"
-            Visibility="{x:Bind RefreshCommand, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
-            <local:IconTextBlock Symbol="ArrowSync16" Text="{ext:Locale Name=Refresh}" />
-        </Button>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <ContentPresenter
+                Margin="0,0,8,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Content="{x:Bind Element, Mode=OneWay}"
+                Visibility="{x:Bind Element, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}" />
+            <Button
+                x:Name="RefreshButton"
+                VerticalAlignment="Center"
+                Command="{x:Bind RefreshCommand, Mode=OneWay}"
+                Visibility="{x:Bind RefreshCommand, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
+                <local:IconTextBlock Symbol="ArrowSync16" Text="{ext:Locale Name=Refresh}" />
+            </Button>
+        </StackPanel>
     </Grid>
 </UserControl>
