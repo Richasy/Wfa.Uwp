@@ -40,6 +40,7 @@ namespace Wfa.ViewModel
             Orders = new ObservableCollection<LichOrderViewModel>();
             OrderTypeCollection = new ObservableCollection<KeyValue>();
             SortTypeCollection = new ObservableCollection<KeyValue>();
+            UserStatusCollection = new ObservableCollection<KeyValue>();
             Ephemeras = new ObservableCollection<LichEphemera>();
 
             AddFilter(OrderTypeCollection, Buyout, LanguageNames.Buyout);
@@ -100,9 +101,14 @@ namespace Wfa.ViewModel
                 return;
             }
 
+            if (Item == null)
+            {
+                return;
+            }
+
             var itemIdentifier = Item.Identifier;
             var buyoutPolicy = CurrentOrderType.Key == Buyout ? MarketBuyoutPolicy.DirectSale : MarketBuyoutPolicy.Auction;
-            var elementIdentifier = CurrentEphemera.Identifier == "none" ? string.Empty : CurrentEphemera.Identifier;
+            var elementIdentifier = CurrentEphemera.Identifier == "none" ? string.Empty : CurrentEphemera.Element;
             var sortPolicy = CurrentSortType.Key switch
             {
                 PriceDescending => MarketSortType.PriceDescending,
@@ -117,8 +123,13 @@ namespace Wfa.ViewModel
 
         private void Filter()
         {
+            if (Item == null || _orders == null)
+            {
+                return;
+            }
+
             TryClear(Orders);
-            if (_orders?.Count == 0)
+            if (_orders.Count == 0)
             {
                 IsEmpty = true;
                 return;

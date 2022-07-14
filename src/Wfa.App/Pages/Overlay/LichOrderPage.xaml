@@ -1,0 +1,105 @@
+﻿<local:LichOrderPageBase
+    x:Class="Wfa.App.Pages.Overlay.LichOrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:local="using:Wfa.App.Pages.Overlay"
+    xmlns:local1="using:Wfa.Models.Data.Local"
+    xmlns:market="using:Wfa.App.Controls.Market"
+    xmlns:market1="using:Wfa.Models.Market"
+    xmlns:marketitems="using:Wfa.ViewModel.MarketItems"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d">
+
+    <local:LichOrderPageBase.Resources>
+        <DataTemplate x:Key="FilterItemTemplate" x:DataType="local1:KeyValue">
+            <TextBlock Text="{x:Bind Value}" />
+        </DataTemplate>
+    </local:LichOrderPageBase.Resources>
+
+    <Grid RowSpacing="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <app:AppPageHeader RefreshCommand="{x:Bind ViewModel.ActiveCommand}">
+            <app:AppPageHeader.Title>
+                <TextBlock>
+                    <Run Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}" Text="{x:Bind ViewModel.Item.Name, Mode=OneWay}" />
+                    <Run Text="{ext:Locale Name=OrderDetail}" />
+                </TextBlock>
+            </app:AppPageHeader.Title>
+        </app:AppPageHeader>
+        <StackPanel
+            Grid.Row="1"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}"
+            Orientation="Horizontal"
+            Spacing="12">
+            <ComboBox
+                MinWidth="120"
+                Header="{ext:Locale Name=Element}"
+                ItemsSource="{x:Bind ViewModel.Ephemeras}"
+                SelectedItem="{x:Bind ViewModel.CurrentEphemera, Mode=TwoWay}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="market1:LichEphemera">
+                        <TextBlock Text="{x:Bind Name}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <ComboBox
+                MinWidth="120"
+                Header="{ext:Locale Name=OrderType}"
+                ItemTemplate="{StaticResource FilterItemTemplate}"
+                ItemsSource="{x:Bind ViewModel.OrderTypeCollection}"
+                SelectedItem="{x:Bind ViewModel.CurrentOrderType, Mode=TwoWay}" />
+            <ComboBox
+                MinWidth="120"
+                Header="{ext:Locale Name=OnlineStatus}"
+                ItemTemplate="{StaticResource FilterItemTemplate}"
+                ItemsSource="{x:Bind ViewModel.UserStatusCollection}"
+                SelectedItem="{x:Bind ViewModel.CurrentUserStatus, Mode=TwoWay}" />
+            <ComboBox
+                MinWidth="120"
+                Header="{ext:Locale Name=SortType}"
+                ItemTemplate="{StaticResource FilterItemTemplate}"
+                ItemsSource="{x:Bind ViewModel.SortTypeCollection}"
+                SelectedItem="{x:Bind ViewModel.CurrentSortType, Mode=TwoWay}" />
+            <ToggleSwitch Header="{ext:Locale Name=HasEphemera}" IsOn="{x:Bind ViewModel.HasEphemera, Mode=TwoWay}" />
+        </StackPanel>
+        <ScrollViewer
+            Style="{StaticResource PageScrollViewerStyle}"
+            Grid.Row="2"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
+            <muxc:ItemsRepeater Margin="0,4,0,24" ItemsSource="{x:Bind ViewModel.Orders}">
+                <muxc:ItemsRepeater.ItemTemplate>
+                    <DataTemplate x:DataType="marketitems:LichOrderViewModel">
+                        <market:LichOrder ViewModel="{x:Bind}" />
+                    </DataTemplate>
+                </muxc:ItemsRepeater.ItemTemplate>
+                <muxc:ItemsRepeater.Layout>
+                    <muxc:UniformGridLayout
+                        ItemsStretch="Fill"
+                        MinColumnSpacing="12"
+                        MinItemHeight="160"
+                        MinItemWidth="240"
+                        MinRowSpacing="12" />
+                </muxc:ItemsRepeater.Layout>
+            </muxc:ItemsRepeater>
+        </ScrollViewer>
+
+        <TextBlock
+            Style="{StaticResource EmptyTextStyle}"
+            Grid.Row="2"
+            Text="{ext:Locale Name=NoData}"
+            Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay}" />
+
+        <muxc:ProgressRing
+            Style="{StaticResource PageProgressRingStyle}"
+            Grid.Row="2"
+            IsActive="{x:Bind ViewModel.IsLoading, Mode=OneWay}" />
+    </Grid>
+</local:LichOrderPageBase>

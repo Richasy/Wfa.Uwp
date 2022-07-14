@@ -149,6 +149,9 @@
     <Compile Include="Pages\Overlay\LibraryDetailPage.xaml.cs">
       <DependentUpon>LibraryDetailPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Overlay\LichOrderPage.xaml.cs">
+      <DependentUpon>LichOrderPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
     </Compile>
@@ -408,6 +411,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Overlay\LibraryDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Overlay\LichOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

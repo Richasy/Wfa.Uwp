@@ -135,5 +135,9 @@ namespace Wfa.Models.Enums
         Buyout,
         Auction,
         BuyoutPrice,
+        StartPrice,
+        Damage,
+        Element,
+        HasEphemera,
     }
 }

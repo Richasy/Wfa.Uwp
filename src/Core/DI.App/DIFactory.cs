@@ -74,6 +74,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<FissurePageViewModel>();
             SplatRegistrations.RegisterLazySingleton<MarketSearchBoxViewModel>();
             SplatRegistrations.RegisterLazySingleton<ItemOrderPageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<LichOrderPageViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();

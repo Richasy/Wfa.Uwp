@@ -121,7 +121,7 @@ namespace Wfa.ViewModel
 
                 foreach (var item in searchResult)
                 {
-                    Suggestions.Add(new MarketSuggestionItemViewModel(item));
+                    Suggestions.Add(new MarketSuggestionItemViewModel(item, CurrentHeader.Type));
                 }
             }
         }

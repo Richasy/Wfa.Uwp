@@ -203,6 +203,7 @@ namespace Wfa.App.Pages
             {
                 PageIds.LibraryDetail => typeof(LibraryDetailPage),
                 PageIds.MarketItemOrder => typeof(ItemOrderPage),
+                PageIds.MarketLichOrder => typeof(LichOrderPage),
                 _ => typeof(Page),
             };
         }

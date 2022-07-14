@@ -12,7 +12,7 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <app:CardPanel IsEnableHoverAnimation="False">
+    <app:CardPanel Command="{x:Bind ViewModel.OpenOrderCommand}" IsEnableHoverAnimation="False">
         <Grid Padding="16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -21,7 +21,6 @@
             </Grid.RowDefinitions>
             <Grid ColumnSpacing="8">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition />
                     <ColumnDefinition Width="Auto" />
@@ -52,9 +51,52 @@
                     Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                     Symbol="Share16" />
             </Grid>
-            <StackPanel Grid.Row="2" Spacing="8">
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <TextBlock Text="{ext:Locale Name=StartPrice}" />
+            <StackPanel
+                Grid.Row="1"
+                VerticalAlignment="Center"
+                Spacing="8">
+                <StackPanel
+                    Orientation="Horizontal"
+                    Spacing="8"
+                    Visibility="{x:Bind ViewModel.Damage, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
+                    <TextBlock
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        VerticalAlignment="Center"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="{ext:Locale Name=Damage}" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                        Text="{x:Bind ViewModel.Damage, Mode=OneWay}" />
+                </StackPanel>
+                <StackPanel
+                    Orientation="Horizontal"
+                    Spacing="8"
+                    Visibility="{x:Bind ViewModel.Ephemera, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
+                    <TextBlock
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        VerticalAlignment="Center"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Text="{ext:Locale Name=Element}" />
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        FontSize="14"
+                        Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                        Text="{x:Bind ViewModel.Ephemera.Element, Mode=OneWay}" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <StackPanel
+                    Margin="0,0,20,0"
+                    Orientation="Horizontal"
+                    Spacing="4"
+                    Visibility="{x:Bind ViewModel.StartPrice, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
+                    <TextBlock
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        VerticalAlignment="Bottom"
+                        Text="{ext:Locale Name=StartPrice}"
+                        TextLineBounds="Tight" />
                     <TextBlock
                         VerticalAlignment="Bottom"
                         FontSize="14"
@@ -68,8 +110,15 @@
                         Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
                         Symbol="Platinum" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Spacing="8">
-                    <TextBlock Text="{ext:Locale Name=BuyoutPrice}" />
+                <StackPanel
+                    Orientation="Horizontal"
+                    Spacing="4"
+                    Visibility="{x:Bind ViewModel.BuyoutPrice, Mode=OneWay, Converter={StaticResource ObjectToVisibilityConverter}}">
+                    <TextBlock
+                        Style="{StaticResource CaptionTextBlockStyle}"
+                        VerticalAlignment="Bottom"
+                        Text="{ext:Locale Name=BuyoutPrice}"
+                        TextLineBounds="Tight" />
                     <TextBlock
                         VerticalAlignment="Bottom"
                         FontSize="14"

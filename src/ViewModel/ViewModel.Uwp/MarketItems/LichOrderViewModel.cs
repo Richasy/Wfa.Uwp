@@ -96,7 +96,7 @@ namespace Wfa.ViewModel.MarketItems
 
             Damage = order.Item.Damage <= 0 ? string.Empty : order.Item.Damage.ToString();
             BuyoutPrice = order.BuyoutPrice <= 0 ? string.Empty : order.BuyoutPrice.ToString();
-            StartPrice = order.StartingPrice <= 0 ? string.Empty : order.StartingPrice.ToString();
+            StartPrice = order.StartingPrice <= 0 || order.IsDirectSell ? string.Empty : order.StartingPrice.ToString();
         }
 
         private async Task GotoProfileAsync()
