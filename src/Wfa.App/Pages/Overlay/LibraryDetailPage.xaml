@@ -52,6 +52,7 @@
                                 <app:CommonImageEx
                                     Width="96"
                                     Height="96"
+                                    CornerRadius="{StaticResource ControlCornerRadius}"
                                     ImageUrl="{x:Bind Image, Mode=OneWay, Converter={StaticResource LibraryImageConverter}}" />
                                 <TextBlock
                                     Style="{StaticResource BodyTextBlockStyle}"

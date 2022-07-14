@@ -64,6 +64,9 @@
     <Compile Include="Controls\Library\MeleeView.xaml.cs">
       <DependentUpon>MeleeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Library\ModView.xaml.cs">
+      <DependentUpon>ModView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Library\PrimaryView.xaml.cs">
       <DependentUpon>PrimaryView.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,7 @@
     <Compile Include="Resources\Converters\MarketThumbConverter.cs" />
     <Compile Include="Resources\Converters\ObjectToBoolConverter.cs" />
     <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Resources\Converters\PolarityConverter.cs" />
     <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
@@ -274,6 +278,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Library\MeleeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\ModView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

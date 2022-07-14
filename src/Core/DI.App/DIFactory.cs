@@ -82,6 +82,7 @@ namespace Wfa.DI.App
             SplatRegistrations.Register<SecondaryItemViewModel>();
             SplatRegistrations.Register<ArchMeleeItemViewModel>();
             SplatRegistrations.Register<MeleeItemViewModel>();
+            SplatRegistrations.Register<ModItemViewModel>();
 
             SplatRegistrations.RegisterConstant(Window.Current.Dispatcher);
 

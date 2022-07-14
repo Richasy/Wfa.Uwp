@@ -21,7 +21,7 @@ namespace Wfa.ViewModel.Base
         private readonly IResourceToolkit _resourceToolkit;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GunViewModelBase"/> class.
+        /// Initializes a new instance of the <see cref="GunViewModelBase{T}"/> class.
         /// </summary>
         public GunViewModelBase(
             LibraryDbContext dbContext,

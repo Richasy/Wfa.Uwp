@@ -25,6 +25,7 @@
     <Compile Include="LibraryItems\ArchMeleeItemViewModel.cs" />
     <Compile Include="LibraryItems\ArchwingItemViewModel.cs" />
     <Compile Include="LibraryItems\MeleeItemViewModel.cs" />
+    <Compile Include="LibraryItems\ModItemViewModel.cs" />
     <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
     <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />

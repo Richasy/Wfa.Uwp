@@ -138,6 +138,11 @@ namespace Wfa.App.Pages
                 var popup = new ArchMeleeView();
                 popup.Show(archMelee);
             }
+            else if (e is Mod mod)
+            {
+                var popup = new ModView();
+                popup.Show(mod);
+            }
         }
 
         private void Back()
