@@ -378,6 +378,9 @@
   <data name="OnlineStatus" xml:space="preserve">
     <value>在线状态</value>
   </data>
+  <data name="OpenWarframeMarket" xml:space="preserve">
+    <value>打开 Warframe Market</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>奥布山谷</value>
   </data>

@@ -145,5 +145,6 @@ namespace Wfa.Models.Enums
         PositiveAttribute,
         PositiveDescending,
         PositiveAscending,
+        OpenWarframeMarket,
     }
 }

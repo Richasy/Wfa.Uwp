@@ -378,6 +378,9 @@
   <data name="OnlineStatus" xml:space="preserve">
     <value>Online status</value>
   </data>
+  <data name="OpenWarframeMarket" xml:space="preserve">
+    <value>Open Warframe Market</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
   </data>

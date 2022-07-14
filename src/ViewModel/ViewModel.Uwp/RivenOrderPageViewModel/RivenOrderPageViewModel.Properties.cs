@@ -32,6 +32,11 @@ namespace Wfa.ViewModel
         public ReactiveCommand<Unit, Unit> DeactiveCommand { get; }
 
         /// <summary>
+        /// 打开 Warframe.Market 命令.
+        /// </summary>
+        public ReactiveCommand<Unit, Unit> OpenWMCommand { get; }
+
+        /// <summary>
         /// 订单类型集合.
         /// </summary>
         public ObservableCollection<KeyValue> OrderTypeCollection { get; }

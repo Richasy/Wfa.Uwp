@@ -16,7 +16,7 @@ using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.MarketItems;
-
+using Windows.System;
 using static Wfa.Models.Data.Constants.AppConstants.Market;
 
 namespace Wfa.ViewModel
@@ -61,6 +61,7 @@ namespace Wfa.ViewModel
 
             ActiveCommand = ReactiveCommand.CreateFromTask(ActiveAsync);
             DeactiveCommand = ReactiveCommand.Create(Deactive);
+            OpenWMCommand = ReactiveCommand.CreateFromTask(OpenWarframeMarketAsync);
 
             _isLoading = ActiveCommand.IsExecuting.ToProperty(this, x => x.IsLoading);
 
@@ -153,5 +154,8 @@ namespace Wfa.ViewModel
 
         private void AddFilter(ObservableCollection<KeyValue> collection, string key, LanguageNames value)
             => collection.Add(new KeyValue(key, _resourceToolkit.GetLocaleString(value)));
+
+        private async Task OpenWarframeMarketAsync()
+            => await Launcher.LaunchUriAsync(new Uri($"https://warframe.market/auctions/search?type=riven&weapon_url_name={Item.Identifier}&polarity=any&sort_by=price_desc"));
     }
 }

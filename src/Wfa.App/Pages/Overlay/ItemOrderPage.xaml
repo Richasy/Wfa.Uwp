@@ -32,6 +32,11 @@
                     <Run Text="{ext:Locale Name=OrderDetail}" />
                 </TextBlock>
             </app:AppPageHeader.Title>
+            <app:AppPageHeader.Element>
+                <Button Command="{x:Bind ViewModel.OpenWMCommand}">
+                    <app:IconTextBlock Symbol="Globe16" Text="{ext:Locale Name=OpenWarframeMarket}" />
+                </Button>
+            </app:AppPageHeader.Element>
         </app:AppPageHeader>
         <StackPanel
             Grid.Row="1"

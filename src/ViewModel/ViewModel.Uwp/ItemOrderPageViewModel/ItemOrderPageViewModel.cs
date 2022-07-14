@@ -14,7 +14,7 @@ using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.MarketItems;
-
+using Windows.System;
 using static Wfa.Models.Data.Constants.AppConstants.Market;
 
 namespace Wfa.ViewModel
@@ -57,6 +57,7 @@ namespace Wfa.ViewModel
             ActiveCommand = ReactiveCommand.CreateFromTask(ActiveAsync);
             DeactiveCommand = ReactiveCommand.Create(Deactive);
             FilterCommand = ReactiveCommand.Create(Filter);
+            OpenWMCommand = ReactiveCommand.CreateFromTask(OpenWarframeMarketAsync);
 
             _isLoading = ActiveCommand.IsExecuting.ToProperty(this, x => x.IsLoading);
 
@@ -89,13 +90,18 @@ namespace Wfa.ViewModel
 
         private void Filter()
         {
-            if (!_orders?.Any() ?? true)
+            if (Item == null || _orders == null)
+            {
+                return;
+            }
+
+            TryClear(Orders);
+            if (_orders.Count == 0)
             {
                 IsEmpty = true;
                 return;
             }
 
-            TryClear(Orders);
             var isSell = CurrentOrderType.Key == Seller;
             var orderType = isSell ? "sell" : "buy";
             var orders = _orders.Where(p => p.OrderType == orderType)
@@ -124,5 +130,8 @@ namespace Wfa.ViewModel
 
         private void AddFilter(ObservableCollection<KeyValue> collection, string key, LanguageNames value)
             => collection.Add(new KeyValue(key, _resourceToolkit.GetLocaleString(value)));
+
+        private async Task OpenWarframeMarketAsync()
+            => await Launcher.LaunchUriAsync(new Uri($"https://warframe.market/items/{Item.Identifier}"));
     }
 }
