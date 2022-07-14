@@ -102,20 +102,8 @@ public class Mod : EntryBase
     public bool? IsExilus { get; set; }
 
     /// <summary>
-    /// 描述.
-    /// </summary>
-    [JsonProperty("description")]
-    public string? Description { get; set; }
-
-    /// <summary>
     /// Mod组合增益增幅比例.
     /// </summary>
     [JsonProperty("modSetEffects")]
     public string? ModSetEffects { get; set; }
-
-    /// <inheritdoc/>
-    public override bool Equals(object? obj) => obj is Mod mod && base.Equals(obj) && Name == mod.Name;
-
-    /// <inheritdoc/>
-    public override int GetHashCode() => HashCode.Combine(base.GetHashCode(), Name);
 }

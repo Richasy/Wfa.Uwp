@@ -148,11 +148,6 @@ namespace Wfa.Adapter
                 var i18nJobj = JObject.Parse(i18n);
                 mod.Name = i18nJobj["name"].ToString();
 
-                if (i18nJobj.ContainsKey("description"))
-                {
-                    mod.Description = i18nJobj["description"].ToString();
-                }
-
                 if (i18nJobj.ContainsKey("levelStats"))
                 {
                     levelList = i18nJobj["levelStats"].ToList();
@@ -164,7 +159,7 @@ namespace Wfa.Adapter
             {
                 var effectItem = new ModEffect
                 {
-                    Level = i + 1,
+                    Level = i,
                     Description = string.Join("\n", levelList[i]["stats"].Select(p => p.ToString())),
                 };
                 mod.Effects.Add(effectItem);

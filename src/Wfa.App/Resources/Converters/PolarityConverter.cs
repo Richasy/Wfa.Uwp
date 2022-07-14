@@ -20,7 +20,7 @@ namespace Wfa.App.Resources.Converters
                     "penjaga" => WfaSymbol.Penjaga,
                     "knoeksi" => WfaSymbol.Koneksi,
                     "unairu" => WfaSymbol.Unairu,
-                    "Umbra" => WfaSymbol.Umbra,
+                    "umbra" => WfaSymbol.Umbra,
                     _ => WfaSymbol.Arcane,
                 }
                 : WfaSymbol.Arcane;

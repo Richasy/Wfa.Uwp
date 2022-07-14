@@ -57,8 +57,10 @@ namespace Wfa.ViewModel.LibraryItems
         protected override async Task InitializeAsync(Mod data)
         {
             await base.InitializeAsync(data);
-            IsShowLevel = data.BaseDrain != null;
-            TotalLevel = data.BaseDrain ?? 0;
+            CurrentLevel = -1;
+            IsShowLevel = data.FusionLimit > 0;
+            TotalLevel = data.FusionLimit;
+            Description = Data.Effects.FirstOrDefault(p => p.Level == CurrentLevel)?.Description ?? string.Empty;
             CurrentLevel = 0;
         }
 
@@ -69,27 +71,9 @@ namespace Wfa.ViewModel.LibraryItems
                 return;
             }
 
-            if (CurrentLevel.ToString().Contains("."))
-            {
-                var level = CurrentLevel + 0.5;
-                if (level > Data.BaseDrain)
-                {
-                    level = Data.BaseDrain ?? 0d;
-                }
+            var level = CurrentLevel == -1 ? 0 : CurrentLevel;
 
-                CurrentLevel = Convert.ToInt32(level);
-                return;
-            }
-
-            if (CurrentLevel == 0)
-            {
-                Description = Data.Description;
-            }
-            else
-            {
-                var levelDesc = Data.Effects.FirstOrDefault(p => p.Level == CurrentLevel);
-                Description = levelDesc?.Description ?? Data.Description;
-            }
+            Description = Data.Effects.FirstOrDefault(p => p.Level == level)?.Description ?? string.Empty;
         }
     }
 }
