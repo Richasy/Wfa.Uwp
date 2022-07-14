@@ -177,6 +177,9 @@
   <data name="BackToPrevious" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>Buyer</value>
+  </data>
   <data name="CambionDrift" xml:space="preserve">
     <value>Cambion drift</value>
   </data>
@@ -194,6 +197,18 @@
   </data>
   <data name="ConstructionProgress" xml:space="preserve">
     <value>Battleship construction progress</value>
+  </data>
+  <data name="CopyMessage" xml:space="preserve">
+    <value>Copy message</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="CountAscending" xml:space="preserve">
+    <value>Quantity ascending</value>
+  </data>
+  <data name="CountDescending" xml:space="preserve">
+    <value>Quantity descending</value>
   </data>
   <data name="CriticalChance" xml:space="preserve">
     <value>Critical chance</value>
@@ -252,6 +267,9 @@
   <data name="HelpAndSupport" xml:space="preserve">
     <value>Help &amp; support</value>
   </data>
+  <data name="InGame" xml:space="preserve">
+    <value>In the game</value>
+  </data>
   <data name="Introduce" xml:space="preserve">
     <value>Introduce</value>
   </data>
@@ -278,6 +296,9 @@
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>Magazine size</value>
+  </data>
+  <data name="MarketMessageCopied" xml:space="preserve">
+    <value>Message copied, please paste in in-game chat</value>
   </data>
   <data name="Melee" xml:space="preserve">
     <value>Melee</value>
@@ -318,8 +339,23 @@
   <data name="NotTradable" xml:space="preserve">
     <value>Not tradable</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="OnlineStatus" xml:space="preserve">
+    <value>Online status</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>Orb vallis</value>
+  </data>
+  <data name="OrderDetail" xml:space="preserve">
+    <value>Order details</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Order type</value>
   </data>
   <data name="PassiveAbility" xml:space="preserve">
     <value>Passive ability</value>
@@ -327,8 +363,17 @@
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>Plains of Eidolon</value>
   </data>
+  <data name="Platinum" xml:space="preserve">
+    <value>Platinum</value>
+  </data>
   <data name="Power" xml:space="preserve">
     <value>Power</value>
+  </data>
+  <data name="PriceAscending" xml:space="preserve">
+    <value>Price ascending</value>
+  </data>
+  <data name="PriceDescending" xml:space="preserve">
+    <value>Price descending</value>
   </data>
   <data name="Primary" xml:space="preserve">
     <value>Primary</value>
@@ -372,6 +417,9 @@
   <data name="SecondaryDetail" xml:space="preserve">
     <value>Secondary details</value>
   </data>
+  <data name="Seller" xml:space="preserve">
+    <value>Seller</value>
+  </data>
   <data name="Shield" xml:space="preserve">
     <value>Shield</value>
   </data>
@@ -383,6 +431,9 @@
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>Sortie</value>
+  </data>
+  <data name="SortType" xml:space="preserve">
+    <value>Sort by</value>
   </data>
   <data name="StatusChance" xml:space="preserve">
     <value>Status chance</value>
@@ -404,6 +455,9 @@
   </data>
   <data name="Tradable" xml:space="preserve">
     <value>Tradable</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>Unknown</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>Void trader</value>

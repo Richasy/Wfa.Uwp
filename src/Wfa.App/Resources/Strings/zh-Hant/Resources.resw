@@ -177,6 +177,9 @@
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一頁</value>
   </data>
+  <data name="Buyer" xml:space="preserve">
+    <value>買家</value>
+  </data>
   <data name="CambionDrift" xml:space="preserve">
     <value>魔胎之境</value>
   </data>
@@ -194,6 +197,18 @@
   </data>
   <data name="ConstructionProgress" xml:space="preserve">
     <value>戰艦建造進度</value>
+  </data>
+  <data name="CopyMessage" xml:space="preserve">
+    <value>複製消息</value>
+  </data>
+  <data name="Count" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="CountAscending" xml:space="preserve">
+    <value>數量升序</value>
+  </data>
+  <data name="CountDescending" xml:space="preserve">
+    <value>數量降序</value>
   </data>
   <data name="CriticalChance" xml:space="preserve">
     <value>暴擊率</value>
@@ -252,6 +267,9 @@
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
   </data>
+  <data name="InGame" xml:space="preserve">
+    <value>遊戲中</value>
+  </data>
   <data name="Introduce" xml:space="preserve">
     <value>介紹</value>
   </data>
@@ -278,6 +296,9 @@
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>裝彈量</value>
+  </data>
+  <data name="MarketMessageCopied" xml:space="preserve">
+    <value>消息已復制，請在遊戲內的聊天框中粘貼</value>
   </data>
   <data name="Melee" xml:space="preserve">
     <value>近戰武器</value>
@@ -318,8 +339,23 @@
   <data name="NotTradable" xml:space="preserve">
     <value>不可交易</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>離線</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>在線</value>
+  </data>
+  <data name="OnlineStatus" xml:space="preserve">
+    <value>在線狀態</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>奧布山谷</value>
+  </data>
+  <data name="OrderDetail" xml:space="preserve">
+    <value>訂單詳情</value>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>訂單類型</value>
   </data>
   <data name="PassiveAbility" xml:space="preserve">
     <value>被動技能</value>
@@ -327,8 +363,17 @@
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>夜靈平野</value>
   </data>
+  <data name="Platinum" xml:space="preserve">
+    <value>白金數</value>
+  </data>
   <data name="Power" xml:space="preserve">
     <value>能量值</value>
+  </data>
+  <data name="PriceAscending" xml:space="preserve">
+    <value>價格升序</value>
+  </data>
+  <data name="PriceDescending" xml:space="preserve">
+    <value>價格降序</value>
   </data>
   <data name="Primary" xml:space="preserve">
     <value>主要武器</value>
@@ -372,6 +417,9 @@
   <data name="SecondaryDetail" xml:space="preserve">
     <value>次要武器詳情</value>
   </data>
+  <data name="Seller" xml:space="preserve">
+    <value>賣家</value>
+  </data>
   <data name="Shield" xml:space="preserve">
     <value>護盾值</value>
   </data>
@@ -383,6 +431,9 @@
   </data>
   <data name="Sortie" xml:space="preserve">
     <value>突擊任務</value>
+  </data>
+  <data name="SortType" xml:space="preserve">
+    <value>排序方式</value>
   </data>
   <data name="StatusChance" xml:space="preserve">
     <value>觸發機率</value>
@@ -404,6 +455,9 @@
   </data>
   <data name="Tradable" xml:space="preserve">
     <value>可交易</value>
+  </data>
+  <data name="Unknown" xml:space="preserve">
+    <value>未知</value>
   </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>虛空商人</value>

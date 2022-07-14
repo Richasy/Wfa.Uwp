@@ -1,0 +1,48 @@
+﻿// Copyright (c) Richasy. All rights reserved.
+
+using System;
+using Wfa.Models.Market;
+using Wfa.ViewModel;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Navigation;
+
+namespace Wfa.App.Pages.Overlay
+{
+    /// <summary>
+    /// 商店条目订单页面.
+    /// </summary>
+    public sealed partial class ItemOrderPage : ItemOrderPageBase
+    {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ItemOrderPage"/> class.
+        /// </summary>
+        public ItemOrderPage()
+        {
+            InitializeComponent();
+            Loaded += OnLoaded;
+            Unloaded += OnUnloaded;
+        }
+
+        /// <inheritdoc/>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter is MarketItem item)
+            {
+                ViewModel.SetData(item);
+            }
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+            => ViewModel.ActiveCommand.Execute().Subscribe();
+
+        private void OnUnloaded(object sender, RoutedEventArgs e)
+            => ViewModel.DeactiveCommand.Execute().Subscribe();
+    }
+
+    /// <summary>
+    /// <see cref="ItemOrderPage"/> 的基类.
+    /// </summary>
+    public class ItemOrderPageBase : AppPage<ItemOrderPageViewModel>
+    {
+    }
+}

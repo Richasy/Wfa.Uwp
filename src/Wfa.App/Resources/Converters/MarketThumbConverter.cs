@@ -8,7 +8,7 @@ namespace Wfa.App.Resources.Converters
     internal sealed class MarketThumbConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, string language)
-            => $"https://warframe.market/static/assets/{value}";
+            => value == null || string.IsNullOrEmpty(value?.ToString()) ? null : $"https://warframe.market/static/assets/{value}";
 
         public object ConvertBack(object value, Type targetType, object parameter, string language) => throw new NotImplementedException();
     }

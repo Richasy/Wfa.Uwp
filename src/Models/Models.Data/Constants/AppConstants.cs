@@ -42,5 +42,20 @@ namespace Wfa.Models.Data.Constants
         /// 伪加载时间.
         /// </summary>
         public const int FakeLoadingMilliseconds = 300;
+
+        public static class Market
+        {
+            public const string PriceAscending = "price_asc";
+            public const string PriceDescending = "price_desc";
+            public const string CountAscending = "count_asc";
+            public const string CountDescending = "count_desc";
+
+            public const string InGame = "ingame";
+            public const string Online = "online";
+            public const string Offline = "offline";
+
+            public const string Seller = "seller";
+            public const string Buyer = "buyer";
+        }
     }
 }

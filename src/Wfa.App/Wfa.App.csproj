@@ -51,6 +51,9 @@
     <Compile Include="Controls\App\CenterPopup\CenterPopup.Properties.cs" />
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
+    <Compile Include="Controls\App\TipPopup.xaml.cs">
+      <DependentUpon>TipPopup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\WfaIcon.cs" />
     <Compile Include="Controls\Library\ArchGunView.xaml.cs">
       <DependentUpon>ArchGunView.xaml</DependentUpon>
@@ -75,6 +78,9 @@
     </Compile>
     <Compile Include="Controls\Library\WarframeView.xaml.cs">
       <DependentUpon>WarframeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\ItemOrder.xaml.cs">
+      <DependentUpon>ItemOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\Market\LibraryMarketButton.xaml.cs">
       <DependentUpon>LibraryMarketButton.xaml</DependentUpon>
@@ -133,6 +139,9 @@
     </Compile>
     <Compile Include="Pages\LibraryPage.xaml.cs">
       <DependentUpon>LibraryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Overlay\ItemOrderPage.xaml.cs">
+      <DependentUpon>ItemOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Overlay\LibraryDetailPage.xaml.cs">
       <DependentUpon>LibraryDetailPage.xaml</DependentUpon>
@@ -271,6 +280,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\App\TipPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Library\ArchGunView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -300,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Library\WarframeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\ItemOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -376,6 +393,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\LibraryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Overlay\ItemOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
