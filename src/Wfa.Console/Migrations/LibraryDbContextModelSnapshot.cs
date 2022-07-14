@@ -468,6 +468,12 @@ namespace Wfa.Console.Migrations
                     b.Property<bool?>("Vaulted")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("WikiaThumbnail")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("WikiaUrl")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Archwing");

@@ -34,12 +34,6 @@ public class MechBase : EntryBase, IPolarities
     public double Health { get; set; }
 
     /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string ImageName { get; set; }
-
-    /// <summary>
     /// 段位需求.
     /// </summary>
     [JsonProperty("masteryReq")]

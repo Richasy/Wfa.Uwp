@@ -156,6 +156,10 @@
       <Project>{1D8683BF-5284-4FD2-8E57-8FDDAAFBDFFB}</Project>
       <Name>Models.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Models\Models.Enums\Models.Enums.csproj">
+      <Project>{E3C2B2A0-D5AB-44AB-AD4A-3D0C72365C80}</Project>
+      <Name>Models.Enums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Provider\Provider.Implementation\Provider.Implementation.csproj">
       <Project>{10E68C04-C482-4CB4-BE48-C93F78BE4462}</Project>
       <Name>Provider.Implementation</Name>

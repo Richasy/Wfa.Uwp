@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Abilities" xml:space="preserve">
+    <value>技能列表</value>
+  </data>
   <data name="AboutToArrive" xml:space="preserve">
     <value>即將抵達</value>
   </data>
+  <data name="Accuracy" xml:space="preserve">
+    <value>精準度</value>
+  </data>
   <data name="AlertFormatText" xml:space="preserve">
     <value>警報將在 {0} 結束，請登錄遊戲查看</value>
+  </data>
+  <data name="Ammo" xml:space="preserve">
+    <value>彈藥量</value>
   </data>
   <data name="AppDescription" xml:space="preserve">
     <value>用於檢測 Warframe 的各種信息</value>
@@ -135,11 +144,35 @@
   <data name="Arbitration" xml:space="preserve">
     <value>仲裁</value>
   </data>
+  <data name="ArchGun" xml:space="preserve">
+    <value>空戰槍械</value>
+  </data>
+  <data name="ArchGunDetail" xml:space="preserve">
+    <value>空戰槍械詳情</value>
+  </data>
+  <data name="ArchMelee" xml:space="preserve">
+    <value>空戰近戰武器</value>
+  </data>
+  <data name="ArchMeleeDetail" xml:space="preserve">
+    <value>空戰近戰武器詳情</value>
+  </data>
+  <data name="ArchwingDetail" xml:space="preserve">
+    <value>Archwing 詳情</value>
+  </data>
+  <data name="Armor" xml:space="preserve">
+    <value>護甲值</value>
+  </data>
   <data name="Arrived" xml:space="preserve">
     <value>已經到達</value>
   </data>
   <data name="Attacker" xml:space="preserve">
     <value>入侵方</value>
+  </data>
+  <data name="AttackRange" xml:space="preserve">
+    <value>攻擊範圍</value>
+  </data>
+  <data name="AttackSpeed" xml:space="preserve">
+    <value>攻擊速度</value>
   </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一頁</value>
@@ -161,6 +194,12 @@
   </data>
   <data name="ConstructionProgress" xml:space="preserve">
     <value>戰艦建造進度</value>
+  </data>
+  <data name="CriticalChance" xml:space="preserve">
+    <value>暴擊率</value>
+  </data>
+  <data name="CriticalMultiplier" xml:space="preserve">
+    <value>暴擊倍率</value>
   </data>
   <data name="DailySale" xml:space="preserve">
     <value>每日折扣</value>
@@ -186,6 +225,9 @@
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}過期</value>
   </data>
+  <data name="FireRate" xml:space="preserve">
+    <value>射速</value>
+  </data>
   <data name="Fissure" xml:space="preserve">
     <value>虛空裂縫</value>
   </data>
@@ -204,11 +246,20 @@
   <data name="HasAlert" xml:space="preserve">
     <value>有新的警報！</value>
   </data>
+  <data name="Health" xml:space="preserve">
+    <value>生命值</value>
+  </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
   </data>
+  <data name="Introduce" xml:space="preserve">
+    <value>介紹</value>
+  </data>
   <data name="Invasions" xml:space="preserve">
     <value>入侵任務</value>
+  </data>
+  <data name="LastUpdateTimeFormatText" xml:space="preserve">
+    <value>最近更新：{0}</value>
   </data>
   <data name="Library" xml:space="preserve">
     <value>資料庫</value>
@@ -219,11 +270,26 @@
   <data name="Location" xml:space="preserve">
     <value>地點</value>
   </data>
+  <data name="MagazineSize" xml:space="preserve">
+    <value>裝彈量</value>
+  </data>
+  <data name="Melee" xml:space="preserve">
+    <value>近戰武器</value>
+  </data>
+  <data name="MeleeDetail" xml:space="preserve">
+    <value>近戰武器詳情</value>
+  </data>
   <data name="Menu" xml:space="preserve">
     <value>菜單</value>
   </data>
+  <data name="ModDetail" xml:space="preserve">
+    <value>Mod 詳情</value>
+  </data>
   <data name="Modifier" xml:space="preserve">
     <value>強化類型</value>
+  </data>
+  <data name="NeverUpdate" xml:space="preserve">
+    <value>數據尚未更新</value>
   </data>
   <data name="News" xml:space="preserve">
     <value>新聞</value>
@@ -243,11 +309,26 @@
   <data name="NotFound" xml:space="preserve">
     <value>未發現</value>
   </data>
+  <data name="NotTradable" xml:space="preserve">
+    <value>不可交易</value>
+  </data>
   <data name="OrbVallis" xml:space="preserve">
     <value>奧布山谷</value>
   </data>
+  <data name="PassiveAbility" xml:space="preserve">
+    <value>被動技能</value>
+  </data>
   <data name="PlainsOfEidolon" xml:space="preserve">
     <value>夜靈平野</value>
+  </data>
+  <data name="Power" xml:space="preserve">
+    <value>能量值</value>
+  </data>
+  <data name="Primary" xml:space="preserve">
+    <value>主要武器</value>
+  </data>
+  <data name="PrimaryDetail" xml:space="preserve">
+    <value>主要武器詳情</value>
   </data>
   <data name="Razorback" xml:space="preserve">
     <value>利刃豺狼</value>
@@ -255,17 +336,35 @@
   <data name="Refresh" xml:space="preserve">
     <value>刷新</value>
   </data>
+  <data name="RelatedMarketItem" xml:space="preserve">
+    <value>相關商品</value>
+  </data>
+  <data name="RequiredMasteryRank" xml:space="preserve">
+    <value>需求段位</value>
+  </data>
   <data name="Reward" xml:space="preserve">
     <value>獎勵</value>
   </data>
   <data name="RotationItems" xml:space="preserve">
     <value>輪替商品</value>
   </data>
+  <data name="SearchLibrary" xml:space="preserve">
+    <value>搜索資料庫</value>
+  </data>
   <data name="SearchTip" xml:space="preserve">
     <value>從 Warframe Market 中找找你想要的</value>
   </data>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>在 WM 中搜索</value>
+  </data>
+  <data name="Secondary" xml:space="preserve">
+    <value>次要武器</value>
+  </data>
+  <data name="SecondaryDetail" xml:space="preserve">
+    <value>次要武器詳情</value>
+  </data>
+  <data name="Shield" xml:space="preserve">
+    <value>護盾值</value>
   </data>
   <data name="ShowItems" xml:space="preserve">
     <value>查看物品</value>
@@ -276,6 +375,9 @@
   <data name="Sortie" xml:space="preserve">
     <value>突擊任務</value>
   </data>
+  <data name="StatusChance" xml:space="preserve">
+    <value>觸發機率</value>
+  </data>
   <data name="SteelPath" xml:space="preserve">
     <value>鋼鐵之路</value>
   </data>
@@ -285,14 +387,32 @@
   <data name="Tier" xml:space="preserve">
     <value>紀元</value>
   </data>
+  <data name="TotalDamage" xml:space="preserve">
+    <value>總傷害</value>
+  </data>
+  <data name="Tradability" xml:space="preserve">
+    <value>可交易性</value>
+  </data>
+  <data name="Tradable" xml:space="preserve">
+    <value>可交易</value>
+  </data>
   <data name="VoidTrader" xml:space="preserve">
     <value>虛空商人</value>
   </data>
   <data name="VoidTraderItems" xml:space="preserve">
     <value>虛空商人貨品清單</value>
   </data>
+  <data name="Warframe" xml:space="preserve">
+    <value>戰甲</value>
+  </data>
+  <data name="WarframeDetail" xml:space="preserve">
+    <value>戰甲詳情</value>
+  </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>
+  </data>
+  <data name="Wiki" xml:space="preserve">
+    <value>維基百科</value>
   </data>
   <data name="WorldCycle" xml:space="preserve">
     <value>世界週期</value>

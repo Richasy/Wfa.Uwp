@@ -58,16 +58,6 @@ namespace Wfa.Models.Enums
         Fissure = 8,
 
         /// <summary>
-        /// 突击页面.
-        /// </summary>
-        Sortie = 9,
-
-        /// <summary>
-        /// 钢铁之路页面.
-        /// </summary>
-        SteelPath = 10,
-
-        /// <summary>
         /// Warframe Market 条目订单页面.
         /// </summary>
         MarketItemOrder = 100,
@@ -141,5 +131,6 @@ namespace Wfa.Models.Enums
         /// Mod 资料库.
         /// </summary>
         ModLib = 210,
+        LibraryDetail = 211,
     }
 }

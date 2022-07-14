@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Reactive;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
 using Wfa.Models.State;
 using Wfa.Provider.Interfaces;
@@ -36,6 +37,11 @@ namespace Wfa.ViewModel
         /// 请求显示虚空商人货品列表.
         /// </summary>
         public event EventHandler<IEnumerable<VoidTraderItem>> RequestShowVoidTraderItems;
+
+        /// <summary>
+        /// 请求显示资料库条目.
+        /// </summary>
+        public event EventHandler<EntryBase> RequestShowLibraryItem;
 
         /// <summary>
         /// 检查社区资料库更新的命令.

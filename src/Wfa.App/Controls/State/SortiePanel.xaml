@@ -44,7 +44,7 @@
                             VerticalAlignment="Top"
                             FontSize="60"
                             Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                            Symbol="{x:Bind ViewModel.Symbol, Mode=OneWay}" />
+                            Symbol="Sortie" />
                         <TextBlock
                             HorizontalAlignment="Left"
                             FontSize="20"
@@ -94,7 +94,7 @@
                                         HorizontalAlignment="Left"
                                         FontSize="20"
                                         FontWeight="Bold"
-                                        Text="{x:Bind MissionType, Mode=OneWay}"
+                                        Text="{x:Bind MissionType}"
                                         TextTrimming="CharacterEllipsis" />
                                     <StackPanel
                                         Grid.Row="1"
@@ -104,7 +104,7 @@
                                             Style="{StaticResource CaptionTextBlockStyle}"
                                             Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                                             Text="{ext:Locale Name=Modifier}" />
-                                        <TextBlock Text="{x:Bind Modifier, Mode=OneWay}" ToolTipService.ToolTip="{x:Bind ModifierDescription}" />
+                                        <TextBlock Text="{x:Bind Modifier}" ToolTipService.ToolTip="{x:Bind ModifierDescription}" />
                                     </StackPanel>
                                     <StackPanel
                                         Grid.Row="2"
@@ -115,7 +115,7 @@
                                             Style="{StaticResource CaptionTextBlockStyle}"
                                             Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                                             Text="{ext:Locale Name=Location}" />
-                                        <TextBlock Text="{x:Bind Node, Mode=OneWay}" />
+                                        <TextBlock Text="{x:Bind Node}" />
                                     </StackPanel>
                                 </Grid>
                             </app:CardPanel>

@@ -1,11 +1,14 @@
 ﻿// Copyright (c) Richasy. All rights reserved.
 
+using System;
 using ReactiveUI;
 using Splat;
 using Wfa.ViewModel;
+using Wfa.ViewModel.Interfaces;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Navigation;
 
 namespace Wfa.App.Pages
 {
@@ -63,7 +66,7 @@ namespace Wfa.App.Pages
         /// </summary>
         public AppPage()
         {
-            ViewModel = Splat.Locator.Current.GetService<TViewModel>();
+            ViewModel = Locator.Current.GetService<TViewModel>();
             DataContext = ViewModel;
         }
 
@@ -81,5 +84,23 @@ namespace Wfa.App.Pages
 
         /// <inheritdoc/>
         public override object GetViewModel() => ViewModel;
+
+        /// <inheritdoc/>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (ViewModel is IPageViewModel pageVM)
+            {
+                pageVM.ActiveCommand.Execute().Subscribe();
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            if (ViewModel is IPageViewModel pageVM)
+            {
+                pageVM.DeactiveCommand.Execute().Subscribe();
+            }
+        }
     }
 }

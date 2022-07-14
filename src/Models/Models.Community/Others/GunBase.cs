@@ -58,12 +58,6 @@ public class GunBase : EntryBase, IPolarities
     public double FireRate { get; set; }
 
     /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string? ImageName { get; set; }
-
-    /// <summary>
     /// 弹匣容量.
     /// </summary>
     [JsonProperty("magazineSize")]
@@ -140,18 +134,6 @@ public class GunBase : EntryBase, IPolarities
     /// </summary>
     [JsonProperty("type")]
     public string Type { get; set; }
-
-    /// <summary>
-    /// 维基缩略图.
-    /// </summary>
-    [JsonProperty("wikiaThumbnail")]
-    public string? WikiaThumbnail { get; set; }
-
-    /// <summary>
-    /// 维基地址.
-    /// </summary>
-    [JsonProperty("wikiaUrl")]
-    public string? WikiaUrl { get; set; }
 
     /// <inheritdoc/>
     [JsonProperty("selfPolarities")]

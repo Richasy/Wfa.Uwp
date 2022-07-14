@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
     xmlns:icons="using:Richasy.FluentIcon.Uwp"
-    xmlns:items="using:Wfa.ViewModel.Items"
+    xmlns:items="using:Wfa.ViewModel.StateItems"
     xmlns:local="using:Wfa.App.Controls.State"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"

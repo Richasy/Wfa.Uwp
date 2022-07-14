@@ -2,13 +2,18 @@
 
 using System;
 using System.Collections.Generic;
+using Wfa.App.Controls.Library;
 using Wfa.App.Controls.State;
+using Wfa.App.Pages.Overlay;
+using Wfa.Models.Community;
+using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.Models.State;
 using Wfa.ViewModel;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Animation;
 
 namespace Wfa.App.Pages
 {
@@ -26,7 +31,9 @@ namespace Wfa.App.Pages
             Current = this;
             Loaded += OnLoaded;
             SizeChanged += OnSizeChanged;
+            ViewModel.Navigating += OnNavigating;
             CoreViewModel.RequestShowVoidTraderItems += OnRequestShowVoidTraderItems;
+            CoreViewModel.RequestShowLibraryItem += OnRequestShowLibraryItem;
 
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
@@ -75,10 +82,67 @@ namespace Wfa.App.Pages
             Back();
         }
 
+        private void OnNavigating(object sender, AppNavigationEventArgs e)
+        {
+            if (e.Type == NavigationType.Secondary)
+            {
+                var type = GetSecondaryViewType(e.PageId);
+                SecondaryFrame.Navigate(type, e.Parameter, new DrillInNavigationTransitionInfo());
+            }
+            else if (e.Type == NavigationType.Main && SecondaryFrame.Content is AppPage)
+            {
+                SecondaryFrame.Navigate(typeof(Page));
+            }
+        }
+
         private void OnRequestShowVoidTraderItems(object sender, IEnumerable<VoidTraderItem> e)
         {
             var popup = new VoidTraderItemsView();
             popup.Show(e);
+        }
+
+        private void OnRequestShowLibraryItem(object sender, EntryBase e)
+        {
+            if (e is Warframe warframe)
+            {
+                var popup = new WarframeView();
+                popup.Show(warframe);
+            }
+            else if (e is Archwing archwing)
+            {
+                var popup = new ArchwingView();
+                popup.Show(archwing);
+            }
+            else if (e is ArchGun archGun)
+            {
+                var popup = new ArchGunView();
+                popup.Show(archGun);
+            }
+            else if (e is Primary primary)
+            {
+                var popup = new PrimaryView();
+                popup.Show(primary);
+            }
+            else if (e is Secondary secondary)
+            {
+                var popup = new SecondaryView();
+                popup.Show(secondary);
+            }
+            else if (e is Melee melee)
+            {
+                var popup = new MeleeView();
+                popup.Show(melee);
+            }
+            else if (e is ArchMelee archMelee)
+            {
+                var popup = new ArchMeleeView();
+                popup.Show(archMelee);
+            }
+            else if (e is Mod mod)
+            {
+                var popup = new ModView();
+                popup.Show(mod);
+            }
         }
 
         private void Back()
@@ -106,6 +170,15 @@ namespace Wfa.App.Pages
         /// <param name="element">UI元素.</param>
         private void RemoveFromHolder(UIElement element)
             => HolderContainer.Children.Remove(element);
+
+        private Type GetSecondaryViewType(PageIds pageId)
+        {
+            return pageId switch
+            {
+                PageIds.LibraryDetail => typeof(LibraryDetailPage),
+                _ => typeof(Page),
+            };
+        }
     }
 
     /// <summary>

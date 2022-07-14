@@ -26,7 +26,7 @@ namespace Wfa.Models.Enums
         Penjaga = '\ue928',
         Unairu = '\ue929',
         Vazarin = '\ue92a',
-        Zanurik = '\ue92b',
+        Zenurik = '\ue92b',
         Melee = '\uea5c',
         Lith = '\ue93b',
         Meso = '\ue939',

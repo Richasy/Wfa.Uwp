@@ -11,5 +11,6 @@ namespace Wfa.Models.Enums
         AppTheme,
         LanguageNeedInitialized,
         Platform,
+        DbVersion,
     }
 }

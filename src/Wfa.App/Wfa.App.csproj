@@ -52,6 +52,30 @@
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
     <Compile Include="Controls\App\WfaIcon.cs" />
+    <Compile Include="Controls\Library\ArchGunView.xaml.cs">
+      <DependentUpon>ArchGunView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\ArchMeleeView.xaml.cs">
+      <DependentUpon>ArchMeleeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\ArchwingView.xaml.cs">
+      <DependentUpon>ArchwingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\MeleeView.xaml.cs">
+      <DependentUpon>MeleeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\ModView.xaml.cs">
+      <DependentUpon>ModView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\PrimaryView.xaml.cs">
+      <DependentUpon>PrimaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\SecondaryView.xaml.cs">
+      <DependentUpon>SecondaryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Library\WarframeView.xaml.cs">
+      <DependentUpon>WarframeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\ArbitrationPanel.xaml.cs">
       <DependentUpon>ArbitrationPanel.xaml</DependentUpon>
     </Compile>
@@ -101,6 +125,12 @@
     <Compile Include="Pages\InvasionPage.xaml.cs">
       <DependentUpon>InvasionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LibraryPage.xaml.cs">
+      <DependentUpon>LibraryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Overlay\LibraryDetailPage.xaml.cs">
+      <DependentUpon>LibraryDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
     </Compile>
@@ -113,8 +143,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Converters\BoolToVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\FactionColorConverter.cs" />
+    <Compile Include="Resources\Converters\LibraryImageConverter.cs" />
+    <Compile Include="Resources\Converters\MarketThumbConverter.cs" />
     <Compile Include="Resources\Converters\ObjectToBoolConverter.cs" />
     <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
+    <Compile Include="Resources\Converters\PolarityConverter.cs" />
     <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
@@ -232,6 +265,38 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Controls\Library\ArchGunView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\ArchMeleeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\ArchwingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\MeleeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\ModView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\PrimaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\SecondaryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Library\WarframeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\State\ArbitrationPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -293,6 +358,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\InvasionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LibraryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Overlay\LibraryDetailPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

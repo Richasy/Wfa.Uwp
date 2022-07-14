@@ -60,6 +60,9 @@
             <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityReverseConverter" IsReverse="True" />
             <converters:FactionColorConverter x:Key="FactionColorConverter" />
             <converters:ThemeStringConverter x:Key="ThemeStringConverter" />
+            <converters:MarketThumbConverter x:Key="MarketThumbConverter" />
+            <converters:LibraryImageConverter x:Key="LibraryImageConverter" />
+            <converters:PolarityConverter x:Key="PolarityConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

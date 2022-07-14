@@ -70,12 +70,6 @@ public class MeleeBase : EntryBase, IPolarities
     public double HeavySlamAttack { get; set; }
 
     /// <summary>
-    /// 图片名.
-    /// </summary>
-    [JsonProperty("imageName")]
-    public string? ImageName { get; set; }
-
-    /// <summary>
     /// 段位要求.
     /// </summary>
     [JsonProperty("masteryReq")]
@@ -150,16 +144,4 @@ public class MeleeBase : EntryBase, IPolarities
     /// </summary>
     [JsonProperty("type")]
     public string Type { get; set; }
-
-    /// <summary>
-    /// 维基缩略图.
-    /// </summary>
-    [JsonProperty("wikiaThumbnail")]
-    public string? WikiaThumbnail { get; set; }
-
-    /// <summary>
-    /// 维基网址.
-    /// </summary>
-    [JsonProperty("wikiaUrl")]
-    public string? WikiaUrl { get; set; }
 }

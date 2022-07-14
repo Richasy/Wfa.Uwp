@@ -7,7 +7,7 @@ using Wfa.Provider.Interfaces;
 using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Base;
 using Wfa.ViewModel.Interfaces;
-using Wfa.ViewModel.Items;
+using Wfa.ViewModel.StateItems;
 
 namespace Wfa.ViewModel
 {
