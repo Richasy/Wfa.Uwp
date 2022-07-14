@@ -32,7 +32,7 @@ namespace Wfa.Models.Market
         /// 一口价.
         /// </summary>
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "buyout_price", Required = Required.Default)]
-        public int BuyoutPrice { get; set; }
+        public int? BuyoutPrice { get; set; }
 
         /// <summary>
         /// 是否可见.

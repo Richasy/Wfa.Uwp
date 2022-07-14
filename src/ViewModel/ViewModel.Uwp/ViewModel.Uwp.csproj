@@ -36,8 +36,11 @@
     <Compile Include="MarketItems\ItemOrderViewModel.cs" />
     <Compile Include="MarketItems\LichOrderViewModel.cs" />
     <Compile Include="MarketItems\MarketSuggestionItemViewModel.cs" />
+    <Compile Include="MarketItems\RivenOrderViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />
+    <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.cs" />
+    <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.Properties.cs" />
     <Compile Include="StateItems\AlertViewModel.cs" />
     <Compile Include="StateItems\ArbitrationViewModel.cs" />
     <Compile Include="StateItems\ConstructionProgressViewModel.cs" />

@@ -139,5 +139,11 @@ namespace Wfa.Models.Enums
         Damage,
         Element,
         HasEphemera,
+        MasteryRank,
+        Level,
+        Reroll,
+        PositiveAttribute,
+        PositiveDescending,
+        PositiveAscending,
     }
 }

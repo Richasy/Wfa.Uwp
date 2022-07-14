@@ -51,6 +51,8 @@ namespace Wfa.Models.Data.Constants
             public const string CountDescending = "count_desc";
             public const string DamageAscending = "damage_asc";
             public const string DamageDescending = "damage_desc";
+            public const string PositiveAscending = "positive_asc";
+            public const string PositiveDescending = "positive_desc";
 
             public const string InGame = "ingame";
             public const string Online = "online";

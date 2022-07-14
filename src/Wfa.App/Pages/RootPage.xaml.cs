@@ -204,6 +204,7 @@ namespace Wfa.App.Pages
                 PageIds.LibraryDetail => typeof(LibraryDetailPage),
                 PageIds.MarketItemOrder => typeof(ItemOrderPage),
                 PageIds.MarketLichOrder => typeof(LichOrderPage),
+                PageIds.MarketRivenOrder => typeof(RivenOrderPage),
                 _ => typeof(Page),
             };
         }

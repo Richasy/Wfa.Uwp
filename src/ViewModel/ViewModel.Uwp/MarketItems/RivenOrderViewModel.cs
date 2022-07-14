@@ -2,6 +2,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reactive;
 using System.Threading.Tasks;
 using ReactiveUI;
@@ -15,19 +17,23 @@ using Windows.System;
 namespace Wfa.ViewModel.MarketItems
 {
     /// <summary>
-    /// 玄骸订单视图模型.
+    /// 紫卡订单视图模型.
     /// </summary>
-    public sealed class LichOrderViewModel : ViewModelBase
+    public sealed class RivenOrderViewModel : ViewModelBase
     {
+        private readonly List<RivenAttribute> _attributes;
+        private readonly RivenWeapon _weapon;
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="ItemOrderViewModel"/> class.
+        /// Initializes a new instance of the <see cref="RivenOrderViewModel"/> class.
         /// </summary>
-        public LichOrderViewModel(AuctionLichOrder order, LichEphemera ephemera)
+        public RivenOrderViewModel(AuctionRivenOrder order, List<RivenAttribute> attributes, RivenWeapon weapon)
         {
-            Ephemera = ephemera;
+            PositiveAttributes = new ObservableCollection<string>();
+            NegativeAttributes = new ObservableCollection<string>();
+            _weapon = weapon;
+            _attributes = attributes;
             Initialize(order);
-            GotoProfileCommand = ReactiveCommand.CreateFromTask(GotoProfileAsync);
-            OpenOrderCommand = ReactiveCommand.CreateFromTask(OpenOrderAsync);
         }
 
         /// <summary>
@@ -44,7 +50,7 @@ namespace Wfa.ViewModel.MarketItems
         /// 数据.
         /// </summary>
         [Reactive]
-        public AuctionLichOrder Data { get; set; }
+        public AuctionRivenOrder Data { get; set; }
 
         /// <summary>
         /// 用户当前状态.
@@ -53,16 +59,14 @@ namespace Wfa.ViewModel.MarketItems
         public string Status { get; set; }
 
         /// <summary>
-        /// 伤害.
+        /// 增益属性.
         /// </summary>
-        [Reactive]
-        public string Damage { get; set; }
+        public ObservableCollection<string> PositiveAttributes { get; }
 
         /// <summary>
-        /// 幻纹元素.
+        /// 减益属性.
         /// </summary>
-        [Reactive]
-        public LichEphemera Ephemera { get; set; }
+        public ObservableCollection<string> NegativeAttributes { get; }
 
         /// <summary>
         /// 买断价.
@@ -76,14 +80,21 @@ namespace Wfa.ViewModel.MarketItems
         [Reactive]
         public string StartPrice { get; set; }
 
+        /// <summary>
+        /// 名称.
+        /// </summary>
+        [Reactive]
+        public string Name { get; set; }
+
         /// <inheritdoc/>
-        public override bool Equals(object obj) => obj is LichOrderViewModel model && EqualityComparer<AuctionLichOrder>.Default.Equals(Data, model.Data);
+        public override bool Equals(object obj) => obj is RivenOrderViewModel model && EqualityComparer<AuctionRivenOrder>.Default.Equals(Data, model.Data);
 
         /// <inheritdoc/>
         public override int GetHashCode() => HashCode.Combine(Data);
 
-        private void Initialize(AuctionLichOrder order)
+        private void Initialize(AuctionRivenOrder order)
         {
+            Name = $"{_weapon.Name} {order.Item.Name}";
             var resourceToolkit = Locator.Current.GetService<IResourceToolkit>();
             Data = order;
             Status = order.Owner.Status switch
@@ -94,7 +105,29 @@ namespace Wfa.ViewModel.MarketItems
                 _ => resourceToolkit.GetLocaleString(Models.Enums.LanguageNames.Unknown),
             };
 
-            Damage = order.Item.Damage <= 0 ? string.Empty : order.Item.Damage.ToString();
+            if (order.Item.Attributes?.Any() ?? false)
+            {
+                foreach (var attr in order.Item.Attributes)
+                {
+                    var sourceAttr = _attributes.FirstOrDefault(p => p.Identifier == attr.Identifier);
+                    if (sourceAttr == null)
+                    {
+                        continue;
+                    }
+
+                    var prefix = attr.Value > 0 ? "+" : string.Empty;
+                    var text = $"{prefix}{attr.Value}% {sourceAttr.Effect}";
+                    if (attr.IsPositive)
+                    {
+                        PositiveAttributes.Add(text);
+                    }
+                    else
+                    {
+                        NegativeAttributes.Add(text);
+                    }
+                }
+            }
+
             BuyoutPrice = order.BuyoutPrice == null || order.BuyoutPrice.Value <= 0 ? string.Empty : order.BuyoutPrice.ToString();
             StartPrice = order.StartingPrice <= 0 || order.IsDirectSell ? string.Empty : order.StartingPrice.ToString();
         }

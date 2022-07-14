@@ -88,6 +88,9 @@
     <Compile Include="Controls\Market\LichOrder.xaml.cs">
       <DependentUpon>LichOrder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Market\RivenOrder.xaml.cs">
+      <DependentUpon>RivenOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Market\SuggestItem.xaml.cs">
       <DependentUpon>SuggestItem.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,9 @@
     </Compile>
     <Compile Include="Pages\Overlay\LichOrderPage.xaml.cs">
       <DependentUpon>LichOrderPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Overlay\RivenOrderPage.xaml.cs">
+      <DependentUpon>RivenOrderPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
@@ -334,6 +340,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Market\RivenOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\Market\SuggestItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -415,6 +425,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Overlay\LichOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Overlay\RivenOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
