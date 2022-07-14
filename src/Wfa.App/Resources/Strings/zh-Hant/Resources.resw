@@ -258,11 +258,17 @@
   <data name="Invasions" xml:space="preserve">
     <value>入侵任務</value>
   </data>
+  <data name="Items" xml:space="preserve">
+    <value>物品</value>
+  </data>
   <data name="LastUpdateTimeFormatText" xml:space="preserve">
     <value>最近更新：{0}</value>
   </data>
   <data name="Library" xml:space="preserve">
     <value>資料庫</value>
+  </data>
+  <data name="Lich" xml:space="preserve">
+    <value>玄骸</value>
   </data>
   <data name="Light" xml:space="preserve">
     <value>淺色</value>
@@ -344,6 +350,9 @@
   </data>
   <data name="Reward" xml:space="preserve">
     <value>獎勵</value>
+  </data>
+  <data name="Riven" xml:space="preserve">
+    <value>裂罅</value>
   </data>
   <data name="RotationItems" xml:space="preserve">
     <value>輪替商品</value>

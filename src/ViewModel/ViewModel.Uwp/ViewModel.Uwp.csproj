@@ -29,6 +29,9 @@
     <Compile Include="LibraryItems\PrimaryItemViewModel.cs" />
     <Compile Include="LibraryItems\SecondaryItemViewModel.cs" />
     <Compile Include="LibraryItems\WarframeItemViewModel.cs" />
+    <Compile Include="MarketItems\MarketSuggestionItemViewModel.cs" />
+    <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.cs" />
+    <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />
     <Compile Include="StateItems\AlertViewModel.cs" />
     <Compile Include="StateItems\ArbitrationViewModel.cs" />
     <Compile Include="StateItems\ConstructionProgressViewModel.cs" />

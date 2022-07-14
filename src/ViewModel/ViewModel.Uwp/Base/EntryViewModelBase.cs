@@ -12,6 +12,7 @@ using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
 using Wfa.Models.Market;
 using Wfa.ViewModel.Interfaces;
+using Wfa.ViewModel.MarketItems;
 using Windows.System;
 
 namespace Wfa.ViewModel.Base
@@ -19,8 +20,30 @@ namespace Wfa.ViewModel.Base
     /// <summary>
     /// 资料库条目视图模型基类.
     /// </summary>
+    public class EntryViewModelBase : ViewModelBase
+    {
+        /// <summary>
+        /// 跳转到市场的命令.
+        /// </summary>
+        public ReactiveCommand<MarketItem, Unit> JumpToMarketCommand { get; protected set; }
+
+        /// <summary>
+        /// 相关的商店条目.
+        /// </summary>
+        public ObservableCollection<MarketSuggestionItemViewModel> MarketItems { get; protected set; }
+
+        /// <summary>
+        /// 是否有关联的商店条目.
+        /// </summary>
+        [Reactive]
+        public bool HasMarketItems { get; set; }
+    }
+
+    /// <summary>
+    /// 资料库条目视图模型基类.
+    /// </summary>
     /// <typeparam name="T">资料库数据类型.</typeparam>
-    public class EntryViewModelBase<T> : ViewModelBase, IDataInitializeViewModel<T>
+    public class EntryViewModelBase<T> : EntryViewModelBase, IDataInitializeViewModel<T>
         where T : EntryBase
     {
         private readonly LibraryDbContext _dbContext;
@@ -33,7 +56,7 @@ namespace Wfa.ViewModel.Base
             LibraryDbContext dbContext,
             NavigationViewModel navigationViewModel)
         {
-            MarketItems = new ObservableCollection<MarketItem>();
+            MarketItems = new ObservableCollection<MarketSuggestionItemViewModel>();
             _dbContext = dbContext;
             _navigationViewModel = navigationViewModel;
             InitializeCommand = ReactiveCommand.CreateFromTask<T>(InitializeAsync);
@@ -52,17 +75,7 @@ namespace Wfa.ViewModel.Base
         public ReactiveCommand<Unit, Unit> OpenWikiCommand { get; }
 
         /// <summary>
-        /// 跳转到市场的命令.
-        /// </summary>
-        public ReactiveCommand<MarketItem, Unit> JumpToMarketCommand { get; }
-
-        /// <summary>
-        /// 相关的商店条目.
-        /// </summary>
-        public ObservableCollection<MarketItem> MarketItems { get; }
-
-        /// <summary>
-        /// 战甲数据.
+        /// 数据.
         /// </summary>
         [Reactive]
         public T Data { get; set; }
@@ -72,12 +85,6 @@ namespace Wfa.ViewModel.Base
         /// </summary>
         [Reactive]
         public bool HasWikiLink { get; set; }
-
-        /// <summary>
-        /// 是否有关联的商店条目.
-        /// </summary>
-        [Reactive]
-        public bool HasMarketItems { get; set; }
 
         /// <summary>
         /// 初始化数据.
@@ -93,7 +100,7 @@ namespace Wfa.ViewModel.Base
             HasMarketItems = marketItems.Count > 0;
             if (HasMarketItems)
             {
-                marketItems.ForEach(p => MarketItems.Add(p));
+                marketItems.ForEach(p => MarketItems.Add(new MarketSuggestionItemViewModel(p)));
             }
         }
 

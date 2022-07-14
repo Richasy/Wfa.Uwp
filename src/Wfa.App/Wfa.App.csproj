@@ -76,6 +76,12 @@
     <Compile Include="Controls\Library\WarframeView.xaml.cs">
       <DependentUpon>WarframeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Market\LibraryMarketButton.xaml.cs">
+      <DependentUpon>LibraryMarketButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Market\SuggestItem.xaml.cs">
+      <DependentUpon>SuggestItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\ArbitrationPanel.xaml.cs">
       <DependentUpon>ArbitrationPanel.xaml</DependentUpon>
     </Compile>
@@ -294,6 +300,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\Library\WarframeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\LibraryMarketButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Market\SuggestItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

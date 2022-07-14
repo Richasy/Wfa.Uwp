@@ -258,11 +258,17 @@
   <data name="Invasions" xml:space="preserve">
     <value>Invasions</value>
   </data>
+  <data name="Items" xml:space="preserve">
+    <value>Items</value>
+  </data>
   <data name="LastUpdateTimeFormatText" xml:space="preserve">
     <value>Recent Updates: {0}</value>
   </data>
   <data name="Library" xml:space="preserve">
     <value>Library</value>
+  </data>
+  <data name="Lich" xml:space="preserve">
+    <value>Lich</value>
   </data>
   <data name="Light" xml:space="preserve">
     <value>Light</value>
@@ -344,6 +350,9 @@
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>
+  </data>
+  <data name="Riven" xml:space="preserve">
+    <value>Riven</value>
   </data>
   <data name="RotationItems" xml:space="preserve">
     <value>Rotation items</value>

@@ -109,5 +109,8 @@ namespace Wfa.Models.Enums
         Tradability,
         NotTradable,
         SearchLibrary,
+        Items,
+        Lich,
+        Riven,
     }
 }
