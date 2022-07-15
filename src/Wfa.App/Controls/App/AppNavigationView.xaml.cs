@@ -71,7 +71,7 @@ namespace Wfa.App.Controls.App
             var pageType = pageId switch
             {
                 PageIds.Help => throw new NotImplementedException(),
-                PageIds.Settings => throw new NotImplementedException(),
+                PageIds.Settings => typeof(SettingsPage),
                 PageIds.WorldStateHome => typeof(WorldStatePage),
                 PageIds.Library => typeof(LibraryPage),
                 PageIds.SyndicateMissions => typeof(SyndicateMissionPage),

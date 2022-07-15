@@ -63,6 +63,7 @@
             <converters:MarketThumbConverter x:Key="MarketThumbConverter" />
             <converters:LibraryImageConverter x:Key="LibraryImageConverter" />
             <converters:PolarityConverter x:Key="PolarityConverter" />
+            <converters:WikiTypeConverter x:Key="WikiTypeConverter" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

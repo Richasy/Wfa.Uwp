@@ -149,7 +149,7 @@ namespace Wfa.App
         private void OnUnhandledException(object sender, Windows.UI.Xaml.UnhandledExceptionEventArgs e)
         {
             e.Handled = true;
-            Locator.Current.GetService<IFullLogger>().Error(e.Exception);
+            Locator.Current.GetService<ILogger>().Write(e.Exception, "未捕获的错误", LogLevel.Error);
         }
     }
 }

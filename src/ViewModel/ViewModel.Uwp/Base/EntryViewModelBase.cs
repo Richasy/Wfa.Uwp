@@ -4,15 +4,20 @@ using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
+using Splat;
 using Wfa.Models.Community;
 using Wfa.Models.Data.Context;
+using Wfa.Models.Enums;
 using Wfa.Models.Market;
+using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel.Interfaces;
 using Wfa.ViewModel.MarketItems;
+using Windows.Globalization;
 using Windows.System;
 
 namespace Wfa.ViewModel.Base
@@ -48,6 +53,7 @@ namespace Wfa.ViewModel.Base
     {
         private readonly LibraryDbContext _dbContext;
         private readonly NavigationViewModel _navigationViewModel;
+        private string _wikiUrl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EntryViewModelBase{T}"/> class.
@@ -81,12 +87,6 @@ namespace Wfa.ViewModel.Base
         public T Data { get; set; }
 
         /// <summary>
-        /// 是否有维基链接.
-        /// </summary>
-        [Reactive]
-        public bool HasWikiLink { get; set; }
-
-        /// <summary>
         /// 初始化数据.
         /// </summary>
         /// <param name="data">源数据.</param>
@@ -94,8 +94,7 @@ namespace Wfa.ViewModel.Base
         protected virtual async Task InitializeAsync(T data)
         {
             Data = data;
-            HasWikiLink = !string.IsNullOrEmpty(data.WikiaUrl);
-
+            InitializeWikiUrl();
             var marketItems = await _dbContext.MarketItems.Where(p => p.Name.Contains(data.Name)).ToListAsync();
             HasMarketItems = marketItems.Count > 0;
             if (HasMarketItems)
@@ -105,9 +104,32 @@ namespace Wfa.ViewModel.Base
         }
 
         private Task OpenWikiAsync()
-            => Launcher.LaunchUriAsync(new Uri(Data.WikiaUrl)).AsTask();
+            => Launcher.LaunchUriAsync(new Uri(_wikiUrl)).AsTask();
 
         private void JumpToMarket(MarketItem item)
-            => _navigationViewModel.NavigateToSecondaryView(Models.Enums.PageIds.MarketItemOrder, item);
+            => _navigationViewModel.NavigateToSecondaryView(PageIds.MarketItemOrder, item);
+
+        private void InitializeWikiUrl()
+        {
+            var settingsToolkit = Locator.Current.GetService<ISettingsToolkit>();
+            var defaultWiki = ApplicationLanguages.Languages.First().Contains("zh", StringComparison.OrdinalIgnoreCase)
+                ? WikiType.Huiji
+                : WikiType.Fandom;
+            var preferWiki = settingsToolkit.ReadLocalSetting(SettingNames.PreferWiki, defaultWiki);
+            var prefix = preferWiki == WikiType.Huiji
+                ? "https://warframe.huijiwiki.com/wiki/"
+                : "https://warframe.fandom.com/wiki/";
+            var itemName = preferWiki == WikiType.Huiji && HasChinese(Data.Name)
+                ? Uri.EscapeDataString(Data.Name.Replace(" ", string.Empty))
+                : Uri.EscapeDataString(Data.Name);
+
+            // 如果条目名是中文，并且首选 Wiki 是 Fandom，那么就尝试直接调用数据自带的维基链接.
+            _wikiUrl = preferWiki == WikiType.Fandom && HasChinese(Data.Name) && !string.IsNullOrEmpty(Data.WikiaUrl)
+                ? Data.WikiaUrl
+                : $"{prefix}{itemName}";
+        }
+
+        private bool HasChinese(string str)
+            => Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
     }
 }

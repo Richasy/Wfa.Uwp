@@ -35,8 +35,8 @@ namespace Wfa.DI.App
             // 初始化日志模块.
             var rootFolder = ApplicationData.Current.LocalFolder;
             var logFolderName = AppConstants.LoggerFolder;
-            var fullPath = $"{rootFolder.Path}\\{logFolderName}\\";
-            NLog.GlobalDiagnosticsContext.Set("LogPath", fullPath);
+            var fullPath = Path.Combine(rootFolder.Path, logFolderName);
+            NLog.GlobalDiagnosticsContext.Set("LogPath", fullPath + "\\");
             Locator.CurrentMutable.UseNLogWithWrappingFullLogger();
 
             SplatRegistrations.RegisterLazySingleton<IFileToolkit, FileToolkit>();
@@ -76,6 +76,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<ItemOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<LichOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<RivenOrderPageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<SettingsPageViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();

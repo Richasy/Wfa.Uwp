@@ -120,6 +120,9 @@
   <data name="Abilities" xml:space="preserve">
     <value>技能列表</value>
   </data>
+  <data name="AboutThisApp" xml:space="preserve">
+    <value>關於此應用</value>
+  </data>
   <data name="AboutToArrive" xml:space="preserve">
     <value>即將抵達</value>
   </data>
@@ -140,6 +143,12 @@
   </data>
   <data name="AppShortName" xml:space="preserve">
     <value>WFA</value>
+  </data>
+  <data name="AppTheme" xml:space="preserve">
+    <value>應用主題</value>
+  </data>
+  <data name="AppThemeDescription" xml:space="preserve">
+    <value>選擇一個你偏好的應用主題</value>
   </data>
   <data name="Arbitration" xml:space="preserve">
     <value>仲裁</value>
@@ -195,11 +204,20 @@
   <data name="Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
+  <data name="Clean" xml:space="preserve">
+    <value>清除</value>
+  </data>
+  <data name="CleanLogger" xml:space="preserve">
+    <value>清除日誌記錄</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>關閉</value>
   </data>
   <data name="Cold" xml:space="preserve">
     <value>寒冷</value>
+  </data>
+  <data name="CommunityDatabase" xml:space="preserve">
+    <value>社區資料數據</value>
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>確認</value>
@@ -240,6 +258,12 @@
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
   </data>
+  <data name="DatabaseSetting" xml:space="preserve">
+    <value>數據庫設置</value>
+  </data>
+  <data name="DatabaseSettingDescription" xml:space="preserve">
+    <value>應用會從 WFCD 和 Warframe Market 緩存所需數據至本地，你可以檢查更新時間或者重新更新</value>
+  </data>
   <data name="DataUpdateDescription" xml:space="preserve">
     <value>應用將會從 github/WFCD 和 Warframe Market 中下載最新的遊戲資料，中國用戶可能會因為區域限制導致不能順利更新，請在幫助中查看解決方法</value>
   </data>
@@ -267,6 +291,9 @@
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}過期</value>
   </data>
+  <data name="FandomWiki" xml:space="preserve">
+    <value>Fandom 維基</value>
+  </data>
   <data name="FireRate" xml:space="preserve">
     <value>射速</value>
   </data>
@@ -282,8 +309,14 @@
   <data name="Found" xml:space="preserve">
     <value>已發現</value>
   </data>
+  <data name="Game" xml:space="preserve">
+    <value>遊戲</value>
+  </data>
   <data name="GameEvents" xml:space="preserve">
     <value>遊戲活動</value>
+  </data>
+  <data name="Generic" xml:space="preserve">
+    <value>通用</value>
   </data>
   <data name="HasAlert" xml:space="preserve">
     <value>有新的警報！</value>
@@ -296,6 +329,9 @@
   </data>
   <data name="HelpAndSupport" xml:space="preserve">
     <value>幫助 &amp; 支持</value>
+  </data>
+  <data name="HuijiWiki" xml:space="preserve">
+    <value>灰機維基</value>
   </data>
   <data name="InGame" xml:space="preserve">
     <value>遊戲中</value>
@@ -330,6 +366,9 @@
   <data name="LibraryUpdatingTitle" xml:space="preserve">
     <value>社區資料庫正在更新</value>
   </data>
+  <data name="License" xml:space="preserve">
+    <value>©2022 Richasy. MIT 許可證</value>
+  </data>
   <data name="Lich" xml:space="preserve">
     <value>玄骸</value>
   </data>
@@ -339,8 +378,23 @@
   <data name="Location" xml:space="preserve">
     <value>地點</value>
   </data>
+  <data name="LogEmptied" xml:space="preserve">
+    <value>已清除日誌記錄</value>
+  </data>
+  <data name="LoggerFolder" xml:space="preserve">
+    <value>日誌文件夾</value>
+  </data>
+  <data name="LoggerModule" xml:space="preserve">
+    <value>日誌記錄</value>
+  </data>
+  <data name="LoggerModuleDescription" xml:space="preserve">
+    <value>查看應用日誌或清除日誌記錄</value>
+  </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>裝彈量</value>
+  </data>
+  <data name="MarketDatabase" xml:space="preserve">
+    <value>市場商品數據</value>
   </data>
   <data name="MarketMessageCopied" xml:space="preserve">
     <value>消息已復制，請在遊戲內的聊天框中粘貼</value>
@@ -408,6 +462,9 @@
   <data name="OnlineStatus" xml:space="preserve">
     <value>在線狀態</value>
   </data>
+  <data name="OpenFolder" xml:space="preserve">
+    <value>打開文件夾</value>
+  </data>
   <data name="OpenWarframeMarket" xml:space="preserve">
     <value>打開 Warframe Market</value>
   </data>
@@ -441,6 +498,18 @@
   <data name="Power" xml:space="preserve">
     <value>能量值</value>
   </data>
+  <data name="PreferWiki" xml:space="preserve">
+    <value>偏好的維基百科</value>
+  </data>
+  <data name="PreferWikiDescription" xml:space="preserve">
+    <value>選一個你喜歡的百科，在查詢資料庫時，你可以點擊維基按鈕進入該維基查看條目的詳細信息</value>
+  </data>
+  <data name="Prelaunch" xml:space="preserve">
+    <value>預啟動</value>
+  </data>
+  <data name="PrelaunchDescription" xml:space="preserve">
+    <value>開啟預啟動，應用將在系統啟動後在後台靜默啟動，應用打開的速度會很快</value>
+  </data>
   <data name="PriceAscending" xml:space="preserve">
     <value>價格升序</value>
   </data>
@@ -453,6 +522,9 @@
   <data name="PrimaryDetail" xml:space="preserve">
     <value>主要武器詳情</value>
   </data>
+  <data name="PublisherApp" xml:space="preserve">
+    <value>開發者的其它應用</value>
+  </data>
   <data name="Razorback" xml:space="preserve">
     <value>利刃豺狼</value>
   </data>
@@ -462,11 +534,17 @@
   <data name="RelatedMarketItem" xml:space="preserve">
     <value>相關商品</value>
   </data>
+  <data name="Renew" xml:space="preserve">
+    <value>刷新</value>
+  </data>
   <data name="RequiredMasteryRank" xml:space="preserve">
     <value>需求段位</value>
   </data>
   <data name="Reroll" xml:space="preserve">
     <value>循環</value>
+  </data>
+  <data name="RestartWarning" xml:space="preserve">
+    <value>您更改了靜態資源，需要重啟應用才能生效</value>
   </data>
   <data name="Retry" xml:space="preserve">
     <value>重試</value>
@@ -498,6 +576,15 @@
   <data name="Seller" xml:space="preserve">
     <value>賣家</value>
   </data>
+  <data name="SetFailed" xml:space="preserve">
+    <value>設置失敗</value>
+  </data>
+  <data name="SetSuccess" xml:space="preserve">
+    <value>已成功設置</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>設置</value>
+  </data>
   <data name="Shield" xml:space="preserve">
     <value>護盾值</value>
   </data>
@@ -513,14 +600,35 @@
   <data name="SortType" xml:space="preserve">
     <value>排序方式</value>
   </data>
+  <data name="StartMethod" xml:space="preserve">
+    <value>啟動方式</value>
+  </data>
+  <data name="StartMethodDescription" xml:space="preserve">
+    <value>您可以選擇應用的啟動方式以更快速地打開應用</value>
+  </data>
   <data name="StartPrice" xml:space="preserve">
     <value>起拍價</value>
+  </data>
+  <data name="Startup" xml:space="preserve">
+    <value>自啟動</value>
+  </data>
+  <data name="StartupDescription" xml:space="preserve">
+    <value>將應用添加到開機啟動項，應用將在系統啟動後自動打開，並以最小化形式顯示在任務欄</value>
+  </data>
+  <data name="StartupDisabledByPolicy" xml:space="preserve">
+    <value>啟動項由您的組織或組策略管理，應用啟動項已被禁用</value>
+  </data>
+  <data name="StartupDisabledByUser" xml:space="preserve">
+    <value>啟動項由用戶手動禁用，您需要手動啟用才能生效</value>
   </data>
   <data name="StatusChance" xml:space="preserve">
     <value>觸發機率</value>
   </data>
   <data name="SteelPath" xml:space="preserve">
     <value>鋼鐵之路</value>
+  </data>
+  <data name="StoreComment" xml:space="preserve">
+    <value>求個好評</value>
   </data>
   <data name="SyndicateMissions" xml:space="preserve">
     <value>賞金任務</value>
