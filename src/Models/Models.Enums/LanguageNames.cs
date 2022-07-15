@@ -146,5 +146,16 @@ namespace Wfa.Models.Enums
         PositiveDescending,
         PositiveAscending,
         OpenWarframeMarket,
+        DataUpdating,
+        LibraryUpdatingTitle,
+        LibraryUpdatingDescription,
+        LibraryUpdated,
+        LibraryUpdateFailed,
+        MarketUpdatingTitle,
+        MarketUpdatingDescription,
+        MarketUpdated,
+        MarketUpdateFailed,
+        DataUpdateDescription,
+        Retry,
     }
 }

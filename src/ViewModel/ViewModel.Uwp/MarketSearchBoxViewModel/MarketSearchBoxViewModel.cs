@@ -101,15 +101,15 @@ namespace Wfa.ViewModel
             IEnumerable<ItemBase> searchResult = default;
             if (CurrentHeader.Type == MarketDataType.Items)
             {
-                searchResult = _marketItems.Where(p => p.Name.Contains(text, System.StringComparison.OrdinalIgnoreCase)).ToList();
+                searchResult = _marketItems.Where(p => p.Name.Contains(text, StringComparison.OrdinalIgnoreCase)).ToList();
             }
             else if (CurrentHeader.Type == MarketDataType.LichWeapons)
             {
-                searchResult = _lichWeapons.Where(p => p.Name.Contains(text, System.StringComparison.OrdinalIgnoreCase)).ToList();
+                searchResult = _lichWeapons.Where(p => p.Name.Contains(text, StringComparison.OrdinalIgnoreCase)).ToList();
             }
             else if (CurrentHeader.Type == MarketDataType.RivenWeapons)
             {
-                searchResult = _rivenWeapons.Where(p => p.Name.Contains(text, System.StringComparison.OrdinalIgnoreCase)).ToList();
+                searchResult = _rivenWeapons.Where(p => p.Name.Contains(text, StringComparison.OrdinalIgnoreCase)).ToList();
             }
 
             if (searchResult != null)

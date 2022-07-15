@@ -38,6 +38,13 @@
             Grid.Row="1"
             Visibility="Collapsed" />
 
+        <app:UpdateTipButton
+            Grid.Row="1"
+            Margin="24"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Visibility="{x:Bind CoreViewModel.IsLibraryUpdating, Mode=OneWay}" />
+
         <app:AppTitleBar x:Name="TitleBar" Canvas.ZIndex="1" />
     </Grid>
 </local:RootPageBase>

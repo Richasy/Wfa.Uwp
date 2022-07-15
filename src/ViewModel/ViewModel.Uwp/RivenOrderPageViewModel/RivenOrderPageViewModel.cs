@@ -3,6 +3,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reactive;
 using System.Reactive.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -69,7 +70,8 @@ namespace Wfa.ViewModel
                 .Subscribe(LogException);
 
             this.WhenAnyValue(x => x.CurrentOrderType, x => x.CurrentSortType, x => x.CurrentAttribute)
-                .Subscribe(async _ => await ActiveAsync());
+                .Select(_ => Unit.Default)
+                .InvokeCommand(ActiveCommand);
 
             this.WhenAnyValue(x => x.CurrentUserStatus)
                 .Subscribe(_ => Filter());

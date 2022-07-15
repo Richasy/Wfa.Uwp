@@ -43,6 +43,14 @@ namespace Wfa.Provider
                     list.ForEach(p => injectAction.Invoke(p));
                 }
 
+                var sourceList = await dataSet.ToListAsync();
+                var hasData = sourceList.Count > 0;
+                if (hasData)
+                {
+                    dataSet.RemoveRange(sourceList);
+                    await _dbContext.SaveChangesAsync();
+                }
+
                 // 移除表格数据.
                 await _dbContext.Database.ExecuteSqlRawAsync($"DELETE FROM {tableName};DELETE FROM sqlite_sequence Where name = \'{tableName}\'");
 

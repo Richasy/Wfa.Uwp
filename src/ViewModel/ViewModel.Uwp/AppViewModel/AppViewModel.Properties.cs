@@ -31,6 +31,8 @@ namespace Wfa.ViewModel
 
         private readonly DispatcherTimer _stateTimer;
         private readonly ObservableAsPropertyHelper<bool> _isRequestingState;
+        private readonly ObservableAsPropertyHelper<bool> _isCommunityUpdating;
+        private readonly ObservableAsPropertyHelper<bool> _isMarketUpdating;
 
         private bool? _isWide;
 
@@ -139,5 +141,33 @@ namespace Wfa.ViewModel
         /// </summary>
         [Reactive]
         public bool IsShowNightwave { get; set; }
+
+        /// <summary>
+        /// 资料库是否正在升级.
+        /// </summary>
+        [Reactive]
+        public bool IsLibraryUpdating { get; set; }
+
+        /// <summary>
+        /// 社区资料库是否正在升级.
+        /// </summary>
+        public bool IsCommunityUpdating => _isCommunityUpdating.Value;
+
+        /// <summary>
+        /// 市场数据是否正在升级.
+        /// </summary>
+        public bool IsMarketUpdating => _isMarketUpdating.Value;
+
+        /// <summary>
+        /// 社区资料库升级失败.
+        /// </summary>
+        [Reactive]
+        public bool IsCommunityUpdateFailed { get; set; }
+
+        /// <summary>
+        /// 市场资料库升级失败.
+        /// </summary>
+        [Reactive]
+        public bool IsMarketUpdateFailed { get; set; }
     }
 }

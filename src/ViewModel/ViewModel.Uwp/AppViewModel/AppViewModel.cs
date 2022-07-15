@@ -51,7 +51,7 @@ namespace Wfa.ViewModel
             IsNavigatePaneOpen = true;
             IsShowTitleBar = true;
 
-            _stateTimer = new Windows.UI.Xaml.DispatcherTimer();
+            _stateTimer = new DispatcherTimer();
             _stateTimer.Interval = TimeSpan.FromMinutes(1.5);
             _stateTimer.Tick += OnStateTimerTick;
 
@@ -71,18 +71,34 @@ namespace Wfa.ViewModel
             BeginLoopWorldStateCommand = ReactiveCommand.CreateFromTask(BeginLoopWorldStateAsync, outputScheduler: RxApp.MainThreadScheduler);
 
             _isRequestingState = RequestWorldStateCommand.IsExecuting.ToProperty(this, x => x.IsRequestingState, scheduler: RxApp.MainThreadScheduler);
+            _isMarketUpdating = UpdateWarframeMarketDatabaseCommand.IsExecuting.ToProperty(this, x => x.IsMarketUpdating);
+            _isCommunityUpdating = UpdateLibraryDatabaseCommand.IsExecuting.ToProperty(this, x => x.IsCommunityUpdating);
+
+            this.WhenAnyValue(x => x.IsCommunityUpdating, x => x.IsMarketUpdating, x => x.IsCommunityUpdateFailed, x => x.IsMarketUpdateFailed)
+                .Select(x => x.Item1 || x.Item2 || x.Item3 || x.Item4)
+                .Subscribe(t => IsLibraryUpdating = t);
 
             CheckLibraryDatabaseCommand.ThrownExceptions
                 .Merge(CheckWarframeMarketDatabaseCommand.ThrownExceptions)
                 .Merge(CheckTranslateDatabaseCommand.ThrownExceptions)
                 .Merge(CheckPatchDatabaseCommand.ThrownExceptions)
-                .Merge(UpdateWarframeMarketDatabaseCommand.ThrownExceptions)
-                .Merge(UpdateLibraryDatabaseCommand.ThrownExceptions)
                 .Merge(UpdateTranslateDatabaseCommand.ThrownExceptions)
                 .Merge(UpdatePatchDatabaseCommand.ThrownExceptions)
                 .Merge(RequestWorldStateCommand.ThrownExceptions)
                 .Merge(BeginLoopWorldStateCommand.ThrownExceptions)
                 .Subscribe(LogException);
+
+            UpdateLibraryDatabaseCommand.ThrownExceptions.Subscribe(ex =>
+            {
+                LogException(ex);
+                IsCommunityUpdateFailed = true;
+            });
+
+            UpdateWarframeMarketDatabaseCommand.ThrownExceptions.Subscribe(ex =>
+            {
+                LogException(ex);
+                IsCommunityUpdateFailed = true;
+            });
         }
 
         /// <summary>
@@ -120,6 +136,8 @@ namespace Wfa.ViewModel
             if (lanChanged)
             {
                 await _dbContext.SaveChangesAsync();
+                UpdateLibraryDatabaseCommand.Execute().Subscribe();
+                UpdateWarframeMarketDatabaseCommand.Execute().Subscribe();
             }
         }
 
@@ -175,7 +193,7 @@ namespace Wfa.ViewModel
             if (communityUpdateCheckResult.NeedUpdate)
             {
                 WriteMessage($"社区资料库需要更新，远端版本：{communityUpdateCheckResult.RemoteVersion}");
-                await UpdateLibraryDatabaseAsync(communityUpdateCheckResult.RemoteVersion);
+                UpdateLibraryDatabaseCommand.Execute().Subscribe();
             }
             else
             {
@@ -197,7 +215,7 @@ namespace Wfa.ViewModel
                 return;
             }
 
-            await UpdateWarframeMarketDatabaseAsync();
+            UpdateWarframeMarketDatabaseCommand.Execute().Subscribe();
         }
 
         private async Task CheckTranslateDatabaseAsync()
@@ -229,8 +247,13 @@ namespace Wfa.ViewModel
         private async Task UpdateLibraryDatabaseAsync(string remoteVersion = default)
         {
             WriteMessage($"开始缓存所需文件...");
+            IsCommunityUpdateFailed = false;
 
-            // TODO: 显示更新UI.
+            if (IsCommunityUpdating)
+            {
+                return;
+            }
+
             if (string.IsNullOrEmpty(remoteVersion))
             {
                 var communityUpdateCheckResult = await _communityProvider.CheckUpdateAsync(true);
@@ -274,6 +297,12 @@ namespace Wfa.ViewModel
         private async Task UpdateWarframeMarketDatabaseAsync()
         {
             WriteMessage($"开始更新 Warframe Market 资料...");
+            IsLibraryUpdating = false;
+
+            if (IsMarketUpdating)
+            {
+                return;
+            }
 
             var updateArray = new[]
             {

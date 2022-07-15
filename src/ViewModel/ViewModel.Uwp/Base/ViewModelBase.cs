@@ -77,6 +77,9 @@ namespace Wfa.ViewModel.Base
         /// </summary>
         /// <param name="msg">调试窗口需要显示的信息.</param>
         protected void WriteMessage(string msg)
-            => Debug.WriteLine(msg);
+        {
+            Debug.WriteLine(msg);
+            this.Log().Info(msg);
+        }
     }
 }
