@@ -41,6 +41,9 @@
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />
     <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.cs" />
     <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.Properties.cs" />
+    <Compile Include="SettingsPageViewModel\SettingsPageViewModel.cs" />
+    <Compile Include="SettingsPageViewModel\SettingsPageViewModel.Methods.cs" />
+    <Compile Include="SettingsPageViewModel\SettingsPageViewModel.Proeprties.cs" />
     <Compile Include="StateItems\AlertViewModel.cs" />
     <Compile Include="StateItems\ArbitrationViewModel.cs" />
     <Compile Include="StateItems\ConstructionProgressViewModel.cs" />
@@ -93,13 +96,13 @@
       <Version>6.2.14</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI">
-      <Version>18.2.5</Version>
+      <Version>18.2.9</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI.Fody">
-      <Version>18.2.5</Version>
+      <Version>18.2.9</Version>
     </PackageReference>
     <PackageReference Include="ReactiveUI.Uwp">
-      <Version>18.2.5</Version>
+      <Version>18.2.9</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

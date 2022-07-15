@@ -97,6 +97,22 @@
     <Compile Include="Controls\Market\SuggestItem.xaml.cs">
       <DependentUpon>SuggestItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Settings\DatabaseSettingSection.xaml.cs">
+      <DependentUpon>DatabaseSettingSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Settings\LoggerSettingSection.xaml.cs">
+      <DependentUpon>LoggerSettingSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Settings\SettingSectionControl.cs" />
+    <Compile Include="Controls\Settings\StartupSettingSection.xaml.cs">
+      <DependentUpon>StartupSettingSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Settings\ThemeSettingSection.xaml.cs">
+      <DependentUpon>ThemeSettingSection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Settings\WikiSettingSection.xaml.cs">
+      <DependentUpon>WikiSettingSection.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\State\ArbitrationPanel.xaml.cs">
       <DependentUpon>ArbitrationPanel.xaml</DependentUpon>
     </Compile>
@@ -161,6 +177,9 @@
     <Compile Include="Pages\Overlay\RivenOrderPage.xaml.cs">
       <DependentUpon>RivenOrderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
     </Compile>
@@ -179,6 +198,7 @@
     <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\PolarityConverter.cs" />
     <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
+    <Compile Include="Resources\Converters\WikiTypeConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
   </ItemGroup>
@@ -355,6 +375,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\Settings\DatabaseSettingSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Settings\LoggerSettingSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Settings\StartupSettingSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Settings\ThemeSettingSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Settings\WikiSettingSection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\State\ArbitrationPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -436,6 +476,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Overlay\RivenOrderPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -559,7 +603,9 @@
     <Content Include="Assets\dict.csv" />
     <Content Include="Assets\patch.csv" />
     <Content Include="Assets\Wfa.ttf" />
-    <None Include="NLog.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <PRIResource Include="Resources\Strings\zh-Hant\Resources.resw" />
     <None Include="Wfa.App_TemporaryKey.pfx" />
   </ItemGroup>

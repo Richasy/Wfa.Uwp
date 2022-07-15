@@ -63,8 +63,7 @@
                 x:Name="WikiButton"
                 Grid.Column="1"
                 HorizontalAlignment="Stretch"
-                Command="{x:Bind ViewModel.OpenWikiCommand}"
-                IsEnabled="{x:Bind ViewModel.HasWikiLink, Mode=OneWay}">
+                Command="{x:Bind ViewModel.OpenWikiCommand}">
                 <app:IconTextBlock Symbol="Globe16" Text="{ext:Locale Name=Wiki}" />
             </Button>
         </Grid>

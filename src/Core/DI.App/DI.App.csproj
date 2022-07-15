@@ -129,7 +129,7 @@
       <Version>6.2.14</Version>
     </PackageReference>
     <PackageReference Include="Splat">
-      <Version>14.3.4</Version>
+      <Version>14.4.1</Version>
     </PackageReference>
     <PackageReference Include="Splat.DependencyInjection.SourceGenerator">
       <Version>1.1.69</Version>
@@ -137,10 +137,10 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Splat.NLog">
-      <Version>14.3.4</Version>
+      <Version>14.4.1</Version>
     </PackageReference>
     <PackageReference Include="Splat.SimpleInjector">
-      <Version>14.3.4</Version>
+      <Version>14.4.1</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

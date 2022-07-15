@@ -12,5 +12,7 @@ namespace Wfa.Models.Enums
         LanguageNeedInitialized,
         Platform,
         DbVersion,
+        IsPrelaunch,
+        PreferWiki,
     }
 }
