@@ -43,6 +43,14 @@ namespace Wfa.Toolkit
         }
 
         /// <inheritdoc/>
+        public async Task<string> GetFileContentFromLocalPath(string path)
+        {
+            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri(path));
+            var content = await FileIO.ReadTextAsync(file);
+            return content;
+        }
+
+        /// <inheritdoc/>
         public async Task<Stream> GetFileStreamFromLocalPath(string path)
         {
             var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri(path));

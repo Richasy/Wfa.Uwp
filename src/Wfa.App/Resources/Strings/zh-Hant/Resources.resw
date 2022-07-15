@@ -174,6 +174,9 @@
   <data name="Arrived" xml:space="preserve">
     <value>已經到達</value>
   </data>
+  <data name="AskIssue" xml:space="preserve">
+    <value>Github issue</value>
+  </data>
   <data name="Attacker" xml:space="preserve">
     <value>入侵方</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="BackToPrevious" xml:space="preserve">
     <value>返回上一頁</value>
+  </data>
+  <data name="BiliHomePage" xml:space="preserve">
+    <value>開發者B站主頁</value>
   </data>
   <data name="Buyer" xml:space="preserve">
     <value>買家</value>
@@ -341,6 +347,13 @@
   </data>
   <data name="Invasions" xml:space="preserve">
     <value>入侵任務</value>
+  </data>
+  <data name="IsNeedFeedback" xml:space="preserve">
+    <value>需要反饋？</value>
+  </data>
+  <data name="IsNeedFeedbackDescription" xml:space="preserve">
+    <value>需要反饋應用使用中的問題？
+想提供一些建議？</value>
   </data>
   <data name="Items" xml:space="preserve">
     <value>物品</value>
@@ -522,6 +535,9 @@
   <data name="PrimaryDetail" xml:space="preserve">
     <value>主要武器詳情</value>
   </data>
+  <data name="ProjectHomePage" xml:space="preserve">
+    <value>項目主頁</value>
+  </data>
   <data name="PublisherApp" xml:space="preserve">
     <value>開發者的其它應用</value>
   </data>
@@ -533,6 +549,9 @@
   </data>
   <data name="RelatedMarketItem" xml:space="preserve">
     <value>相關商品</value>
+  </data>
+  <data name="RelatedProjects" xml:space="preserve">
+    <value>關聯項目</value>
   </data>
   <data name="Renew" xml:space="preserve">
     <value>刷新</value>

@@ -77,6 +77,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<LichOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<RivenOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<SettingsPageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<HelpPageViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();

@@ -33,7 +33,7 @@ namespace Wfa.Toolkit
         public string GetLanguageCode(bool isWindowsName = false)
         {
             var culture = CultureInfo.CurrentUICulture;
-            return isWindowsName ? culture.ThreeLetterWindowsLanguageName : culture.Name;
+            return culture.Name;
         }
 
         /// <inheritdoc/>

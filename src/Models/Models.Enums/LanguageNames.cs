@@ -193,5 +193,11 @@ namespace Wfa.Models.Enums
         HuijiWiki,
         PreferWiki,
         PreferWikiDescription,
+        IsNeedFeedback,
+        IsNeedFeedbackDescription,
+        AskIssue,
+        BiliHomePage,
+        ProjectHomePage,
+        RelatedProjects,
     }
 }
