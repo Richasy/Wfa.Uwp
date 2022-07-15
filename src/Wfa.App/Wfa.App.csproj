@@ -54,6 +54,9 @@
     <Compile Include="Controls\App\TipPopup.xaml.cs">
       <DependentUpon>TipPopup.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\App\UpdateTipButton.xaml.cs">
+      <DependentUpon>UpdateTipButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\WfaIcon.cs" />
     <Compile Include="Controls\Library\ArchGunView.xaml.cs">
       <DependentUpon>ArchGunView.xaml</DependentUpon>
@@ -293,6 +296,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\App\TipPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\App\UpdateTipButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

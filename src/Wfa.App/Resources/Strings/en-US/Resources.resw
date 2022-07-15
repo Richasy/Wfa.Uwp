@@ -240,6 +240,12 @@
   <data name="Dark" xml:space="preserve">
     <value>Dark</value>
   </data>
+  <data name="DataUpdateDescription" xml:space="preserve">
+    <value>The application will download the latest game data from github/WFCD and Warframe Market.</value>
+  </data>
+  <data name="DataUpdating" xml:space="preserve">
+    <value>Updateing information...</value>
+  </data>
   <data name="Day" xml:space="preserve">
     <value>Day</value>
   </data>
@@ -312,6 +318,18 @@
   <data name="Library" xml:space="preserve">
     <value>Library</value>
   </data>
+  <data name="LibraryUpdated" xml:space="preserve">
+    <value>Community database update complete</value>
+  </data>
+  <data name="LibraryUpdateFailed" xml:space="preserve">
+    <value>Community database update failed</value>
+  </data>
+  <data name="LibraryUpdatingDescription" xml:space="preserve">
+    <value>Fetching latest items data from WFCD</value>
+  </data>
+  <data name="LibraryUpdatingTitle" xml:space="preserve">
+    <value>Community database is being updated</value>
+  </data>
   <data name="Lich" xml:space="preserve">
     <value>Lich</value>
   </data>
@@ -326,6 +344,18 @@
   </data>
   <data name="MarketMessageCopied" xml:space="preserve">
     <value>Message copied, please paste in in-game chat</value>
+  </data>
+  <data name="MarketUpdated" xml:space="preserve">
+    <value>Market database update completed</value>
+  </data>
+  <data name="MarketUpdateFailed" xml:space="preserve">
+    <value>Market database update failed</value>
+  </data>
+  <data name="MarketUpdatingDescription" xml:space="preserve">
+    <value>Getting the latest items information from Warframe Market</value>
+  </data>
+  <data name="MarketUpdatingTitle" xml:space="preserve">
+    <value>Market database is being updated</value>
   </data>
   <data name="MasteryRank" xml:space="preserve">
     <value>Mastery rank</value>
@@ -437,6 +467,9 @@
   </data>
   <data name="Reroll" xml:space="preserve">
     <value>Reroll</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Retry</value>
   </data>
   <data name="Reward" xml:space="preserve">
     <value>Reward</value>

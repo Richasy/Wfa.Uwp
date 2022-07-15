@@ -37,6 +37,7 @@
             x:Name="SearchBox"
             HorizontalAlignment="Stretch"
             BorderThickness="0"
+            IsEnabled="{x:Bind _coreViewModel.IsMarketUpdating, Mode=OneWay, Converter={StaticResource ObjectToBoolReverseConverter}}"
             IsTabStop="True"
             ItemsSource="{x:Bind ViewModel.Suggestions}"
             PlaceholderText="{ext:Locale Name=SearchTip}"
@@ -47,8 +48,8 @@
             UpdateTextOnSelect="False"
             XYFocusLeftNavigationStrategy="Auto">
             <AutoSuggestBox.TextBoxStyle>
-                <Style TargetType="TextBox" BasedOn="{StaticResource AutoSuggestBoxTextBoxStyle}">
-                    <Setter Property="Padding" Value="92,8,0,8" />
+                <Style BasedOn="{StaticResource AutoSuggestBoxTextBoxStyle}" TargetType="TextBox">
+                    <Setter Property="Padding" Value="96,8,0,8" />
                 </Style>
             </AutoSuggestBox.TextBoxStyle>
             <AutoSuggestBox.ItemTemplate>
@@ -58,7 +59,7 @@
             </AutoSuggestBox.ItemTemplate>
         </AutoSuggestBox>
         <ComboBox
-            Width="80"
+            Width="84"
             HorizontalAlignment="Left"
             VerticalAlignment="Stretch"
             BorderThickness="0"

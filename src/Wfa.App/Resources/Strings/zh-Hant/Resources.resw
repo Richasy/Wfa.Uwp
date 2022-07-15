@@ -240,6 +240,12 @@
   <data name="Dark" xml:space="preserve">
     <value>深色</value>
   </data>
+  <data name="DataUpdateDescription" xml:space="preserve">
+    <value>應用將會從 github/WFCD 和 Warframe Market 中下載最新的遊戲資料，中國用戶可能會因為區域限制導致不能順利更新，請在幫助中查看解決方法</value>
+  </data>
+  <data name="DataUpdating" xml:space="preserve">
+    <value>資料更新中...</value>
+  </data>
   <data name="Day" xml:space="preserve">
     <value>白晝</value>
   </data>
@@ -312,6 +318,18 @@
   <data name="Library" xml:space="preserve">
     <value>資料庫</value>
   </data>
+  <data name="LibraryUpdated" xml:space="preserve">
+    <value>社區資料庫更新完成</value>
+  </data>
+  <data name="LibraryUpdateFailed" xml:space="preserve">
+    <value>社區資料庫更新失敗</value>
+  </data>
+  <data name="LibraryUpdatingDescription" xml:space="preserve">
+    <value>正在從 WFCD 獲取最新的物品資料內容</value>
+  </data>
+  <data name="LibraryUpdatingTitle" xml:space="preserve">
+    <value>社區資料庫正在更新</value>
+  </data>
   <data name="Lich" xml:space="preserve">
     <value>玄骸</value>
   </data>
@@ -326,6 +344,18 @@
   </data>
   <data name="MarketMessageCopied" xml:space="preserve">
     <value>消息已復制，請在遊戲內的聊天框中粘貼</value>
+  </data>
+  <data name="MarketUpdated" xml:space="preserve">
+    <value>市場資料庫更新完成</value>
+  </data>
+  <data name="MarketUpdateFailed" xml:space="preserve">
+    <value>市場資料庫更新失敗</value>
+  </data>
+  <data name="MarketUpdatingDescription" xml:space="preserve">
+    <value>正在從 Warframe Market 獲取最新的商品信息</value>
+  </data>
+  <data name="MarketUpdatingTitle" xml:space="preserve">
+    <value>市場資料庫正在更新</value>
   </data>
   <data name="MasteryRank" xml:space="preserve">
     <value>段位</value>
@@ -437,6 +467,9 @@
   </data>
   <data name="Reroll" xml:space="preserve">
     <value>循環</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>重試</value>
   </data>
   <data name="Reward" xml:space="preserve">
     <value>獎勵</value>

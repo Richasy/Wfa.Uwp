@@ -154,6 +154,11 @@ namespace Wfa.Adapter
                 }
             }
 
+            if ((mod.Effects?.Any() ?? false) && string.IsNullOrEmpty(i18n))
+            {
+                return mod;
+            }
+
             mod.Effects = new List<ModEffect>();
             for (var i = 0; i < levelList.Count; i++)
             {
