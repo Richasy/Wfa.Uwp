@@ -37,5 +37,12 @@ namespace Wfa.Toolkit.Interfaces
         /// <param name="path">本地文件路径.</param>
         /// <returns><see cref="Stream"/>.</returns>
         Task<Stream> GetFileStreamFromLocalPath(string path);
+
+        /// <summary>
+        /// 从本地路径获取文件内容.
+        /// </summary>
+        /// <param name="path">本地文件路径.</param>
+        /// <returns>文本内容.</returns>
+        Task<string> GetFileContentFromLocalPath(string path);
     }
 }

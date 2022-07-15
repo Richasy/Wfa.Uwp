@@ -1,0 +1,34 @@
+﻿[
+  {
+    "id": 1,
+    "name": "App",
+    "items": [
+      {
+        "id": 101,
+        "title": "What is Warframe Alerting Prime used for?",
+        "answer": "Warframe Alerting Prime, referred to as WFA, is a derivative application of the game Warframe. You can view various status information in the current game in the application, and also provide information on common game items and Warframe Market for trade"
+      },
+      {
+        "id": 103,
+        "title": "How are WFA data updated?",
+        "answer": "WFA provides a data update mechanism, in which community data (sourced from github/WFCD) will be checked for updates daily, while Warframe Market requires users to manually update in the settings page when necessary. \nWhen the application language is switched, the update mechanism will be automatically triggered, and the community data and market data will be re-cached according to the supported language"
+      },
+      {
+        "id": 104,
+        "title": "What should I do if the data update fails?",
+        "answer": "If your community data update fails, it may be that the network in your area cannot connect to Github. You can try to download FastGithub or hang an agent to solve it;\nIf your market data update fails, please confirm whether you you can open https://warframe.market. If you cannot open it, please refer to Github's handling method to solve it through a network proxy. \nBut after set proxy, the UWP application may not be able to access the network, this problem will provide a solution in the application's Github homepage"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Functions",
+    "items": [
+      {
+        "id": 201,
+        "title": "Why is WFA's own service offline?",
+        "answer": "Once WFA had its own data services, including accounts, riven markets and databases. However, the developer has been out of the game for a long time and has no interest and energy to keep up with game updates. Therefore, cutting out outdated services and accessing existing data in the community is a good thing for everyone"
+      }
+    ]
+  }
+]

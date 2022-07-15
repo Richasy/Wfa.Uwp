@@ -19,6 +19,8 @@
     <Compile Include="Base\ViewModelBase.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.cs" />
     <Compile Include="FissurePageViewModel\FissurePageViewModel.Properties.cs" />
+    <Compile Include="HelpPageViewModel\HelpPageViewModel.cs" />
+    <Compile Include="HelpPageViewModel\HelpPageViewModel.Properties.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.cs" />
     <Compile Include="InvasionPageViewModel\InvasionPageViewModel.Properties.cs" />
     <Compile Include="ItemOrderPageViewModel\ItemOrderPageViewModel.cs" />

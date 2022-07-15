@@ -51,6 +51,9 @@
     <Compile Include="Controls\App\CenterPopup\CenterPopup.Properties.cs" />
     <Compile Include="Controls\App\CommonImageEx\CommonImageEx.cs" />
     <Compile Include="Controls\App\IconTextBlock\IconTextBlock.cs" />
+    <Compile Include="Controls\App\QuestionPanel.xaml.cs">
+      <DependentUpon>QuestionPanel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\TipPopup.xaml.cs">
       <DependentUpon>TipPopup.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,9 @@
     <Compile Include="Pages\AppPage.cs" />
     <Compile Include="Pages\FissurePage.xaml.cs">
       <DependentUpon>FissurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HelpPage.xaml.cs">
+      <DependentUpon>HelpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\InvasionPage.xaml.cs">
       <DependentUpon>InvasionPage.xaml</DependentUpon>
@@ -275,8 +281,8 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Content Include="Resources\Misc\Update.en_US.txt" />
-    <Content Include="Resources\Misc\Update.zh_CN.txt" />
+    <Content Include="Resources\Misc\Question.en-US.json" />
+    <Content Include="Resources\Misc\Question.zh-CHS.json" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -314,6 +320,10 @@
     <Page Include="Controls\App\IconTextBlock\IconTextBlock.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\App\QuestionPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\App\TipPopup.xaml">
       <SubType>Designer</SubType>
@@ -452,6 +462,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FissurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -607,6 +621,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <PRIResource Include="Resources\Strings\zh-Hant\Resources.resw" />
+    <Content Include="Resources\Misc\Question.zh-CHT.json" />
     <None Include="Wfa.App_TemporaryKey.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />

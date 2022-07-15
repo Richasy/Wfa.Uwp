@@ -1,0 +1,161 @@
+﻿<local:HelpPageBase
+    x:Class="Wfa.App.Pages.HelpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:icons="using:Richasy.FluentIcon.Uwp"
+    xmlns:local="using:Wfa.App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="RootGrid" RowSpacing="8">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <app:AppPageHeader Title="{ext:Locale Name=HelpAndSupport}" />
+
+        <Grid
+            x:Name="WideContainer"
+            Grid.Row="1"
+            Margin="0,0,0,28"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}"
+            ColumnSpacing="20"
+            RowSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid x:Name="AboutContainer" RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- 提交问题导引模块 -->
+                <app:CardPanel x:Name="AskQuestionContainer" IsEnableHoverAnimation="False">
+                    <Grid Padding="16" RowSpacing="20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <icons:RegularFluentIcon
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            FontSize="64"
+                            FontWeight="Bold"
+                            Symbol="ChatBubblesQuestion24" />
+                        <StackPanel Grid.Row="1" Spacing="16">
+                            <TextBlock
+                                Style="{StaticResource SubtitleTextBlockStyle}"
+                                HorizontalAlignment="Center"
+                                FontWeight="Bold"
+                                Text="{ext:Locale Name=IsNeedFeedback}"
+                                TextAlignment="Center" />
+                            <TextBlock
+                                Style="{StaticResource BodyTextBlockStyle}"
+                                MaxWidth="360"
+                                HorizontalAlignment="Center"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                Text="{ext:Locale Name=IsNeedFeedbackDescription}"
+                                TextAlignment="Center"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                        <Button
+                            x:Name="AskIssueButton"
+                            Style="{StaticResource AccentButtonStyle}"
+                            Grid.Row="2"
+                            HorizontalAlignment="Stretch"
+                            Command="{x:Bind ViewModel.AskIssueCommand}"
+                            Content="{ext:Locale Name=AskIssue}" />
+                    </Grid>
+                </app:CardPanel>
+
+                <!-- 鸣谢/关于 -->
+                <Grid Grid.Row="1" RowSpacing="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid ColumnSpacing="16">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            x:Name="BiliHomePage"
+                            Height="40"
+                            HorizontalAlignment="Stretch"
+                            Command="{x:Bind ViewModel.GotoDeveloperBiliBiliHomePageCommand}">
+                            <TextBlock Text="{ext:Locale Name=BiliHomePage}" TextTrimming="CharacterEllipsis" />
+                        </Button>
+                        <Button
+                            x:Name="ProjectHomePage"
+                            Grid.Column="1"
+                            Height="40"
+                            HorizontalAlignment="Stretch"
+                            Command="{x:Bind ViewModel.GotoProjectHomeCommand}">
+                            <TextBlock Text="{ext:Locale Name=ProjectHomePage}" TextTrimming="CharacterEllipsis" />
+                        </Button>
+                    </Grid>
+                    <app:CardPanel
+                        x:Name="RelatedProjectContainer"
+                        Grid.Row="1"
+                        IsEnableHoverAnimation="False">
+                        <Grid Padding="16" RowSpacing="8">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Margin="12,0,0,0"
+                                FontWeight="Bold"
+                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                Text="{ext:Locale Name=RelatedProjects}"
+                                TextTrimming="CharacterEllipsis" />
+                            <ListView
+                                x:Name="LinkView"
+                                Grid.Row="1"
+                                IsItemClickEnabled="True"
+                                ItemClick="OnLinkViewItemClickAsync"
+                                ItemsSource="{x:Bind ViewModel.LinkCollection}"
+                                SelectionMode="None">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Foreground="{ThemeResource AccentTextFillColorSecondaryBrush}" Text="{Binding Key}" />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Grid>
+                    </app:CardPanel>
+                </Grid>
+            </Grid>
+
+            <Grid x:Name="QuestionContainer" Grid.Column="1">
+                <app:QuestionPanel />
+            </Grid>
+        </Grid>
+
+        <ScrollViewer
+            x:Name="NarrowScrollViewer"
+            Grid.Row="1"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}"
+            HorizontalScrollMode="Disabled"
+            Visibility="Collapsed">
+            <Grid
+                x:Name="NarrowContainer"
+                Margin="0,0,0,12"
+                RowSpacing="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</local:HelpPageBase>
