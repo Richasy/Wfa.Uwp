@@ -51,6 +51,7 @@ namespace Wfa.Provider
             var totalRequest = _httpProvider.GetRequestMessage(HttpMethod.Get, ServiceConstants.State.StateInformation(platform, lan));
             var totalResponse = await _httpProvider.SendAsync(totalRequest);
             var jsonStr = await _httpProvider.ParseAsync<string>(totalResponse);
+            await RequestEnSyndicateMissionIfNeededAsync(language, platform);
             var totalObj = JObject.Parse(jsonStr);
             _cacheTime = DateTime.Now;
 
@@ -83,7 +84,15 @@ namespace Wfa.Provider
             InitializeSkirmish(language);
             InitializeSteelPath(language);
             InitializeVoidTrader(language);
-            InitializeSyndicateMissions(totalObj, "syndicateMissions", language);
+
+            if (!string.IsNullOrEmpty(_enSyndicateMissions))
+            {
+                InitializeSyndicateMissions(_enSyndicateMissions, language);
+            }
+            else if (totalObj.ContainsKey("syndicateMissions"))
+            {
+                InitializeSyndicateMissions(totalObj["syndicateMissions"].ToString(), language);
+            }
 
             StateChanged?.Invoke(this, EventArgs.Empty);
         }

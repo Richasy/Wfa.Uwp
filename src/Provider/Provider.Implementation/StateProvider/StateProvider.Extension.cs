@@ -3,7 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ToolGood.Words;
@@ -29,6 +31,7 @@ namespace Wfa.Provider
         private IEnumerable<Event> _events;
         private IEnumerable<Fissure> _fissures;
         private IEnumerable<Invasion> _invasions;
+        private string _enSyndicateMissions;
         private Sortie _sortie;
         private SyndicateMission _ostronSyndicateMission;
         private SyndicateMission _entratiSyndicateMission;
@@ -58,14 +61,9 @@ namespace Wfa.Provider
             return JsonConvert.DeserializeObject<T>(json);
         }
 
-        private void InitializeSyndicateMissions(JObject totalObj, string key, string language)
+        private void InitializeSyndicateMissions(string json, string language)
         {
-            if (!totalObj.ContainsKey(key))
-            {
-                return;
-            }
-
-            var syndicateMissions = totalObj[key] as JArray;
+            var syndicateMissions = JArray.Parse(json);
             _ostronSyndicateMission = GetSyndicateMission(syndicateMissions, "Ostrons", language);
             _entratiSyndicateMission = GetSyndicateMission(syndicateMissions, "Entrati", language);
             _solarisSyndicateMission = GetSyndicateMission(syndicateMissions, "Solaris United", language);
@@ -389,5 +387,18 @@ namespace Wfa.Provider
 
         private bool HasChinese(string str)
             => Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
+
+        private async Task RequestEnSyndicateMissionIfNeededAsync(string language, string platform)
+        {
+            if (language == AppConstants.LanguageEn)
+            {
+                return;
+            }
+
+            var request = _httpProvider.GetRequestMessage(HttpMethod.Get, ServiceConstants.State.SyndicateMissions(platform));
+            var response = await _httpProvider.SendAsync(request);
+            var data = await _httpProvider.ParseAsync<string>(response);
+            _enSyndicateMissions = data;
+        }
     }
 }
