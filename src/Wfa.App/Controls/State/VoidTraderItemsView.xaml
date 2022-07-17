@@ -29,7 +29,10 @@
                                     <ColumnDefinition Width="72" />
                                     <ColumnDefinition Width="72" />
                                 </Grid.ColumnDefinitions>
-                                <TextBlock Text="{x:Bind Name}" TextTrimming="CharacterEllipsis" />
+                                <TextBlock
+                                    Text="{x:Bind Name}"
+                                    TextTrimming="CharacterEllipsis"
+                                    ToolTipService.ToolTip="{x:Bind Name}" />
                                 <StackPanel
                                     Grid.Column="1"
                                     HorizontalAlignment="Right"

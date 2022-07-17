@@ -214,7 +214,7 @@ namespace Wfa.Provider
                 {
                     if (!HasChinese(item.Name))
                     {
-                        item.Name = TranslateItem(item.Name, language);
+                        item.Name = TranslateSyndicateReward(item.Name, language);
                     }
                 }
             }
@@ -234,7 +234,7 @@ namespace Wfa.Provider
 
             if (!HasChinese(_dailySale.Item) && language != AppConstants.LanguageEn)
             {
-                _dailySale.Item = TranslateItem(_dailySale.Item, language);
+                _dailySale.Item = TranslateSyndicateReward(_dailySale.Item, language);
             }
         }
 
