@@ -41,6 +41,8 @@
     <Compile Include="MarketItems\RivenOrderViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.cs" />
     <Compile Include="MarketSearchBoxViewModel\MarketSearchBoxViewModel.Properties.cs" />
+    <Compile Include="NightwavePageViewModel\NightwavePageViewModel.cs" />
+    <Compile Include="NightwavePageViewModel\NightwavePageViewModel.Properties.cs" />
     <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.cs" />
     <Compile Include="RivenOrderPageViewModel\RivenOrderPageViewModel.Properties.cs" />
     <Compile Include="SettingsPageViewModel\SettingsPageViewModel.cs" />
@@ -55,6 +57,7 @@
     <Compile Include="StateItems\InvasionItemViewModel.cs" />
     <Compile Include="LibraryItems\LibraryItemViewModel.cs" />
     <Compile Include="LibraryItems\LibrarySectionViewModel.cs" />
+    <Compile Include="StateItems\NightwaveItemViewModel.cs" />
     <Compile Include="StateItems\SkirmishViewModel.cs" />
     <Compile Include="StateItems\SortieViewModel.cs" />
     <Compile Include="StateItems\SteelPathRewardItemViewModel.cs" />

@@ -249,6 +249,9 @@
   <data name="CriticalMultiplier" xml:space="preserve">
     <value>暴擊倍率</value>
   </data>
+  <data name="Daily" xml:space="preserve">
+    <value>日常</value>
+  </data>
   <data name="DailySale" xml:space="preserve">
     <value>每日折扣</value>
   </data>
@@ -586,6 +589,9 @@
   <data name="SearchTipSlim" xml:space="preserve">
     <value>在 WM 中搜索</value>
   </data>
+  <data name="SeasonFormat" xml:space="preserve">
+    <value>第{0}賽季</value>
+  </data>
   <data name="Secondary" xml:space="preserve">
     <value>次要武器</value>
   </data>
@@ -681,6 +687,12 @@
   </data>
   <data name="Warm" xml:space="preserve">
     <value>溫暖</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>周常</value>
+  </data>
+  <data name="WeeklyElite" xml:space="preserve">
+    <value>周常精英</value>
   </data>
   <data name="Wiki" xml:space="preserve">
     <value>維基百科</value>

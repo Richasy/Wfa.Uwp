@@ -249,6 +249,9 @@
   <data name="CriticalMultiplier" xml:space="preserve">
     <value>Critical multiplier</value>
   </data>
+  <data name="Daily" xml:space="preserve">
+    <value>Daily</value>
+  </data>
   <data name="DailySale" xml:space="preserve">
     <value>Daily discount</value>
   </data>
@@ -586,6 +589,9 @@ Want to offer some advice?</value>
   <data name="SearchTipSlim" xml:space="preserve">
     <value>Search in WM</value>
   </data>
+  <data name="SeasonFormat" xml:space="preserve">
+    <value>Season {0}</value>
+  </data>
   <data name="Secondary" xml:space="preserve">
     <value>Secondary</value>
   </data>
@@ -681,6 +687,12 @@ Want to offer some advice?</value>
   </data>
   <data name="Warm" xml:space="preserve">
     <value>Warm</value>
+  </data>
+  <data name="Weekly" xml:space="preserve">
+    <value>Weekly</value>
+  </data>
+  <data name="WeeklyElite" xml:space="preserve">
+    <value>Weekly Elite</value>
   </data>
   <data name="Wiki" xml:space="preserve">
     <value>Wikipedia</value>

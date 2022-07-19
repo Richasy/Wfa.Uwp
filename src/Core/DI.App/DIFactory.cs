@@ -72,6 +72,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<SyndicateMissionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<InvasionPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<FissurePageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<NightwavePageViewModel>();
             SplatRegistrations.RegisterLazySingleton<MarketSearchBoxViewModel>();
             SplatRegistrations.RegisterLazySingleton<ItemOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<LichOrderPageViewModel>();

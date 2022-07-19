@@ -76,7 +76,7 @@ namespace Wfa.App.Controls.App
                 PageIds.Library => typeof(LibraryPage),
                 PageIds.SyndicateMissions => typeof(SyndicateMissionPage),
                 PageIds.Invasions => typeof(InvasionPage),
-                PageIds.Nightwave => typeof(Page),
+                PageIds.Nightwave => typeof(NightwavePage),
                 PageIds.Fissure => typeof(FissurePage),
                 _ => default,
             };
