@@ -199,5 +199,9 @@ namespace Wfa.Models.Enums
         BiliHomePage,
         ProjectHomePage,
         RelatedProjects,
+        Daily,
+        WeeklyElite,
+        Weekly,
+        SeasonFormat,
     }
 }

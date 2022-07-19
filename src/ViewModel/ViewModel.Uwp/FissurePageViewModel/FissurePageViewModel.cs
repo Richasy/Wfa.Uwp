@@ -36,16 +36,19 @@ namespace Wfa.ViewModel
         {
             _stateProvider.StateChanged += OnStateChanged;
             InitializeData();
+            _timer.Start();
         }
 
         private void Deactive()
-            => _stateProvider.StateChanged -= OnStateChanged;
+        {
+            _timer.Stop();
+            _stateProvider.StateChanged -= OnStateChanged;
+        }
 
         private void InitializeData()
         {
             var fissures = _stateProvider.GetFissures();
 
-            IsLoading = fissures == null;
             if (!(fissures?.Any() ?? false))
             {
                 IsLoading = fissures == null;
