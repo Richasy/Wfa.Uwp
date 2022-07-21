@@ -30,14 +30,17 @@ namespace Wfa.ViewModel
         /// Initializes a new instance of the <see cref="AppViewModel"/> class.
         /// </summary>
         public AppViewModel(
+            IAppToolkit appToolkit,
             ISettingsToolkit settingsToolkit,
             IResourceToolkit resourceToolkit,
             ICommunityProvider communityProvider,
             IMarketProvider marketProvider,
             IWikiProvider wikiProvider,
             IStateProvider stateProvider,
+            IUpdateProvider updateProvider,
             LibraryDbContext dbContext)
         {
+            _appToolkit = appToolkit;
             _settingsToolkit = settingsToolkit;
             _resourceToolkit = resourceToolkit;
 
@@ -45,6 +48,7 @@ namespace Wfa.ViewModel
             _marketProvider = marketProvider;
             _wikiProvider = wikiProvider;
             _stateProvider = stateProvider;
+            _updateProvider = updateProvider;
             _dbContext = dbContext;
 
             _isWide = null;
@@ -57,6 +61,7 @@ namespace Wfa.ViewModel
 
             _stateProvider.StateChanged += OnWorldStateChanged;
 
+            CheckAppUpgradeCommand = ReactiveCommand.CreateFromTask(CheckAppUpdateAsync, outputScheduler: RxApp.MainThreadScheduler);
             CheckLibraryDatabaseCommand = ReactiveCommand.CreateFromTask<bool>(CheckLibraryDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
             CheckWarframeMarketDatabaseCommand = ReactiveCommand.CreateFromTask(CheckWaframeMarketDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);
             CheckTranslateDatabaseCommand = ReactiveCommand.CreateFromTask(CheckTranslateDatabaseAsync, outputScheduler: RxApp.MainThreadScheduler);

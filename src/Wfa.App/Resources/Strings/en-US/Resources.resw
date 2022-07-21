@@ -333,6 +333,9 @@
   <data name="HasEphemera" xml:space="preserve">
     <value>Has ephemera</value>
   </data>
+  <data name="HasUpdate" xml:space="preserve">
+    <value>New updates!</value>
+  </data>
   <data name="Health" xml:space="preserve">
     <value>Health</value>
   </data>
@@ -341,6 +344,9 @@
   </data>
   <data name="HuijiWiki" xml:space="preserve">
     <value>Huiji Wiki</value>
+  </data>
+  <data name="IgnoreVersion" xml:space="preserve">
+    <value>Ignore</value>
   </data>
   <data name="InGame" xml:space="preserve">
     <value>In the game</value>
@@ -478,6 +484,9 @@ Want to offer some advice?</value>
   <data name="OnlineStatus" xml:space="preserve">
     <value>Online status</value>
   </data>
+  <data name="OpenDownloadPage" xml:space="preserve">
+    <value>Download</value>
+  </data>
   <data name="OpenFolder" xml:space="preserve">
     <value>Open folder</value>
   </data>
@@ -525,6 +534,9 @@ Want to offer some advice?</value>
   </data>
   <data name="PrelaunchDescription" xml:space="preserve">
     <value>Turn on pre-launch, the application will start silently in the background after the system starts, and the application opening speed will be very fast</value>
+  </data>
+  <data name="PreRelease" xml:space="preserve">
+    <value>Pre-release</value>
   </data>
   <data name="PriceAscending" xml:space="preserve">
     <value>Price ascending</value>

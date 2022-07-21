@@ -14,5 +14,6 @@ namespace Wfa.Models.Enums
         DbVersion,
         IsPrelaunch,
         PreferWiki,
+        IgnoreVersion,
     }
 }

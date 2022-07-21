@@ -37,6 +37,7 @@ namespace Wfa.App.Pages
             CoreViewModel.RequestShowTip += OnRequestShowTip;
             CoreViewModel.RequestShowVoidTraderItems += OnRequestShowVoidTraderItems;
             CoreViewModel.RequestShowLibraryItem += OnRequestShowLibraryItem;
+            CoreViewModel.RequestShowAppUpgradeDialog += OnRequestShowAppUpgradeDialogAsync;
 
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
         }
@@ -97,7 +98,12 @@ namespace Wfa.App.Pages
             => CoreViewModel.InitializePadding();
 
         private void OnLoaded(object sender, RoutedEventArgs e)
-            => CoreViewModel.InitializePadding();
+        {
+            CoreViewModel.InitializePadding();
+#if !DEBUG
+            CoreViewModel.CheckAppUpgradeCommand.Execute().Subscribe();
+#endif
+        }
 
         private void OnBackRequested(object sender, BackRequestedEventArgs e)
         {
@@ -168,6 +174,17 @@ namespace Wfa.App.Pages
             {
                 var popup = new ModView();
                 popup.Show(mod);
+            }
+        }
+
+        private async void OnRequestShowAppUpgradeDialogAsync(object sender, AppUpgradeEventArgs e)
+        {
+            try
+            {
+                await new AppUpgradeDialog(e).ShowAsync();
+            }
+            catch (Exception)
+            {
             }
         }
 
