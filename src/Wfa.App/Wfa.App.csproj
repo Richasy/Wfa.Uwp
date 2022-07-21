@@ -22,6 +22,7 @@
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <PackageCertificateKeyFile>Wfa.App_TemporaryKey.pfx</PackageCertificateKeyFile>
     <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(SolutionDir)\src\Shared\SharedAssemblyInfo.cs">
