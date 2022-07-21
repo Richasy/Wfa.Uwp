@@ -73,7 +73,8 @@ namespace Wfa.ViewModel
         /// 设置数据.
         /// </summary>
         /// <param name="data">条目数据.</param>
-        public void SetData(MarketItem data) => Item = data;
+        public void SetData(MarketItem data)
+            => Item = data;
 
         private async Task ActiveAsync()
         {
@@ -84,7 +85,6 @@ namespace Wfa.ViewModel
 
         private void Deactive()
         {
-            Item = null;
             TryClear(Orders);
         }
 

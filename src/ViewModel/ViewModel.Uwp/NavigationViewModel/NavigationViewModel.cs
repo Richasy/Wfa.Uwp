@@ -100,7 +100,7 @@ namespace Wfa.ViewModel
         {
             IsSecondaryViewShown = true;
             CloseAllPopup();
-            if (pageId != SecondaryViewId)
+            if (pageId != SecondaryViewId || pageId.ToString().Contains("Order"))
             {
                 SecondaryViewId = pageId;
                 var args = new AppNavigationEventArgs(NavigationType.Secondary, pageId, parameter);
