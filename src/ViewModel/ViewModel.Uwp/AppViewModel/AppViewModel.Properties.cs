@@ -22,11 +22,13 @@ namespace Wfa.ViewModel
     {
         private readonly ISettingsToolkit _settingsToolkit;
         private readonly IResourceToolkit _resourceToolkit;
+        private readonly IAppToolkit _appToolkit;
 
         private readonly ICommunityProvider _communityProvider;
         private readonly IMarketProvider _marketProvider;
         private readonly IWikiProvider _wikiProvider;
         private readonly IStateProvider _stateProvider;
+        private readonly IUpdateProvider _updateProvider;
         private readonly LibraryDbContext _dbContext;
 
         private readonly DispatcherTimer _stateTimer;
@@ -42,6 +44,11 @@ namespace Wfa.ViewModel
         public event EventHandler<AppTipNotificationEventArgs> RequestShowTip;
 
         /// <summary>
+        /// 请求显示升级提示.
+        /// </summary>
+        public event EventHandler<AppUpgradeEventArgs> RequestShowAppUpgradeDialog;
+
+        /// <summary>
         /// 请求显示虚空商人货品列表.
         /// </summary>
         public event EventHandler<IEnumerable<VoidTraderItem>> RequestShowVoidTraderItems;
@@ -50,6 +57,11 @@ namespace Wfa.ViewModel
         /// 请求显示资料库条目.
         /// </summary>
         public event EventHandler<EntryBase> RequestShowLibraryItem;
+
+        /// <summary>
+        /// 检查应用更新命令.
+        /// </summary>
+        public ReactiveCommand<Unit, Unit> CheckAppUpgradeCommand { get; }
 
         /// <summary>
         /// 检查社区资料库更新的命令.

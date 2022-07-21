@@ -203,5 +203,9 @@ namespace Wfa.Models.Enums
         WeeklyElite,
         Weekly,
         SeasonFormat,
+        HasUpdate,
+        OpenDownloadPage,
+        IgnoreVersion,
+        PreRelease,
     }
 }

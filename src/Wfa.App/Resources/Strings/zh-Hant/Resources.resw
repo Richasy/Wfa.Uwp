@@ -333,6 +333,9 @@
   <data name="HasEphemera" xml:space="preserve">
     <value>是否有幻紋</value>
   </data>
+  <data name="HasUpdate" xml:space="preserve">
+    <value>有新的更新！</value>
+  </data>
   <data name="Health" xml:space="preserve">
     <value>生命值</value>
   </data>
@@ -341,6 +344,9 @@
   </data>
   <data name="HuijiWiki" xml:space="preserve">
     <value>灰機維基</value>
+  </data>
+  <data name="IgnoreVersion" xml:space="preserve">
+    <value>忽略該版本</value>
   </data>
   <data name="InGame" xml:space="preserve">
     <value>遊戲中</value>
@@ -478,6 +484,9 @@
   <data name="OnlineStatus" xml:space="preserve">
     <value>在線狀態</value>
   </data>
+  <data name="OpenDownloadPage" xml:space="preserve">
+    <value>打開下載頁</value>
+  </data>
   <data name="OpenFolder" xml:space="preserve">
     <value>打開文件夾</value>
   </data>
@@ -525,6 +534,9 @@
   </data>
   <data name="PrelaunchDescription" xml:space="preserve">
     <value>開啟預啟動，應用將在系統啟動後在後台靜默啟動，應用打開的速度會很快</value>
+  </data>
+  <data name="PreRelease" xml:space="preserve">
+    <value>預覽版</value>
   </data>
   <data name="PriceAscending" xml:space="preserve">
     <value>價格升序</value>

@@ -42,6 +42,9 @@
     <Compile Include="Controls\App\AppTitleBar.xaml.cs">
       <DependentUpon>AppTitleBar.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\App\AppUpgradeDialog.xaml.cs">
+      <DependentUpon>AppUpgradeDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\App\CardPanel\CardPanel.cs" />
     <Compile Include="Controls\App\CardPanel\CardPanel.Fields.cs" />
     <Compile Include="Controls\App\CardPanel\CardPanel.Properties.cs" />
@@ -305,6 +308,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\App\AppTitleBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\App\AppUpgradeDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

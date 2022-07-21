@@ -63,6 +63,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<IMarketProvider, MarketProvider>();
             SplatRegistrations.RegisterLazySingleton<IStateProvider, StateProvider>();
             SplatRegistrations.RegisterLazySingleton<IWikiProvider, WikiProvider>();
+            SplatRegistrations.RegisterLazySingleton<IUpdateProvider, UpdateProvider>();
 
             SplatRegistrations.RegisterLazySingleton<AppViewModel>();
             SplatRegistrations.RegisterLazySingleton<NavigationViewModel>();
