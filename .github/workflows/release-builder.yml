@@ -15,7 +15,7 @@ jobs:
     env:
       SigningCertificate: Wfa.App_TemporaryKey.pfx
       Solution_Path: .\Wfa.Uwp.sln
-      UWP_Project_Directory: src\App
+      UWP_Project_Directory: src\Wfa.App
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
