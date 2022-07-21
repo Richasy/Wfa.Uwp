@@ -57,21 +57,12 @@ jobs:
         BuildMode: SideloadOnly
         Configuration: Release
         
-    - name: Build ARM64
-      run: msbuild $env:Solution_Path /p:Platform=ARM64 /p:AppxBundlePlatforms="ARM64" /p:AppxPackageDir=C:\Package\ARM64 /p:PackageCertificateKeyFile=$env:SigningCertificate /restore
-      env:
-        BuildMode: SideloadOnly
-        Configuration: Release
-   
     - name: Create x86 archive
       run: Compress-Archive -Path C:\Package\x86\App_${{github.event.inputs.version}}_Test -DestinationPath C:\Package\Wfa.Uwp_${{github.event.inputs.version}}_x86.zip
       
     - name: Create x64 archive
       run: Compress-Archive -Path C:\Package\x64\App_${{github.event.inputs.version}}_Test -DestinationPath C:\Package\Wfa.Uwp_${{github.event.inputs.version}}_x64.zip
       
-    - name: Create ARM64 archive
-      run: Compress-Archive -Path C:\Package\ARM64\App_${{github.event.inputs.version}}_Test -DestinationPath C:\Package\Wfa.Uwp_${{github.event.inputs.version}}_ARM64.zip
-
     - name: Update x86 release asset
       id: upload-release-asset-x86
       uses: actions/upload-release-asset@v1
@@ -92,15 +83,4 @@ jobs:
         upload_url: ${{ steps.release-drafter.outputs.upload_url }}
         asset_path: C:\Package\Wfa.Uwp_${{github.event.inputs.version}}_x64.zip
         asset_name: Wfa.Uwp_${{github.event.inputs.version}}_x64.zip
-        asset_content_type: application/zip
-        
-    - name: Update ARM64 release asset
-      id: upload-release-asset-ARM64
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.release-drafter.outputs.upload_url }}
-        asset_path: C:\Package\Wfa.Uwp_${{github.event.inputs.version}}_ARM64.zip
-        asset_name: Wfa.Uwp_${{github.event.inputs.version}}_ARM64.zip
         asset_content_type: application/zip
