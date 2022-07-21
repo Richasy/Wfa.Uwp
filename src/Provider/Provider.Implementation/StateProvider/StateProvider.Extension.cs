@@ -164,6 +164,9 @@ namespace Wfa.Provider
                     item.MissionType = language == AppConstants.LanguageChs
                         ? WordsHelper.ToSimplifiedChinese(item.MissionType)
                         : WordsHelper.ToTraditionalChinese(item.MissionType);
+                    item.Enemy = language == AppConstants.LanguageChs
+                        ? WordsHelper.ToSimplifiedChinese(item.Enemy)
+                        : WordsHelper.ToTraditionalChinese(item.Enemy);
                 }
             }
         }
