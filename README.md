@@ -56,6 +56,13 @@
 
 借助 Github 平台提供的 Discussions 功能，对于一般讨论、提议或分享，我们都可以在 [Warframe Alerting Prime论坛](https://github.com/Richasy/Wfa.Uwp/discussions) 中进行，欢迎来这里进行讨论。
 
+## 📣 鸣谢
+
+- [Warframe Community Developers](https://github.com/WFCD)
+- [Warframe Market](https://warframe.market/)
+- [Warframe 中文维基](https://warframe.huijiwiki.com/wiki/Mainpage)
+- [Fandom Wiki](https://warframe.fandom.com/wiki/WARFRAME_Wiki)
+
 ## 🧩 截图
 
 ![桌面截图](./assets/screenshot.png)
