@@ -83,6 +83,8 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<HelpPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<ToolsPageViewModel>();
 
+            SplatRegistrations.RegisterLazySingleton<TranslateModuleViewModel>();
+
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();
             SplatRegistrations.Register<WarframeItemViewModel>();

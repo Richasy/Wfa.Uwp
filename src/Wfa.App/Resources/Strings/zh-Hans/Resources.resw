@@ -234,6 +234,9 @@
   <data name="ConstructionProgress" xml:space="preserve">
     <value>战舰建造进度</value>
   </data>
+  <data name="Copied" xml:space="preserve">
+    <value>已复制到剪切板</value>
+  </data>
   <data name="CopyMessage" xml:space="preserve">
     <value>复制消息</value>
   </data>
@@ -299,6 +302,9 @@
   </data>
   <data name="Enemy" xml:space="preserve">
     <value>敌人</value>
+  </data>
+  <data name="EnToZh" xml:space="preserve">
+    <value>英译中</value>
   </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}过期</value>
@@ -691,6 +697,9 @@
   <data name="Tradable" xml:space="preserve">
     <value>可交易</value>
   </data>
+  <data name="TranslateTip" xml:space="preserve">
+    <value>输入要查询的条目</value>
+  </data>
   <data name="Unknown" xml:space="preserve">
     <value>未知</value>
   </data>
@@ -729,5 +738,8 @@
   </data>
   <data name="ZhEnTranslate" xml:space="preserve">
     <value>中英翻译</value>
+  </data>
+  <data name="ZhToEn" xml:space="preserve">
+    <value>中译英</value>
   </data>
 </root>

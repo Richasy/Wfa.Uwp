@@ -211,5 +211,9 @@ namespace Wfa.Models.Enums
         ZhEnTranslate,
         FriendsLink,
         BiliVideo,
+        ZhToEn,
+        EnToZh,
+        Copied,
+        TranslateTip,
     }
 }

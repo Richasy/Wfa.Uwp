@@ -75,6 +75,8 @@
     <Compile Include="ToolsPageViewModel\ToolsPageViewModel.cs" />
     <Compile Include="ToolsPageViewModel\ToolsPageViewModel.Properties.cs" />
     <Compile Include="Tools\ToolItemViewModel.cs" />
+    <Compile Include="Tools\TranslateItemViewModel.cs" />
+    <Compile Include="Tools\TranslateModuleViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Methods.cs" />
     <Compile Include="WorldStatePageViewModel\WorldStatePageViewModel.Properties.cs" />
