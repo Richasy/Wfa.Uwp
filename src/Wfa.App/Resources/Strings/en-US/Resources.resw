@@ -195,6 +195,9 @@
   <data name="BiliHomePage" xml:space="preserve">
     <value>Developer BiliBili page</value>
   </data>
+  <data name="BiliVideo" xml:space="preserve">
+    <value>BiliBili videos</value>
+  </data>
   <data name="Buyer" xml:space="preserve">
     <value>Buyer</value>
   </data>
@@ -222,6 +225,9 @@
   <data name="Cold" xml:space="preserve">
     <value>Cold</value>
   </data>
+  <data name="Community" xml:space="preserve">
+    <value>Community</value>
+  </data>
   <data name="CommunityDatabase" xml:space="preserve">
     <value>Community data</value>
   </data>
@@ -230,6 +236,9 @@
   </data>
   <data name="ConstructionProgress" xml:space="preserve">
     <value>Battleship construction progress</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>Copied to clipboard</value>
   </data>
   <data name="CopyMessage" xml:space="preserve">
     <value>Copy message</value>
@@ -297,6 +306,9 @@
   <data name="Enemy" xml:space="preserve">
     <value>Enemy</value>
   </data>
+  <data name="EnToZh" xml:space="preserve">
+    <value>EN to CHS</value>
+  </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>Expires {0}</value>
   </data>
@@ -317,6 +329,9 @@
   </data>
   <data name="Found" xml:space="preserve">
     <value>Found</value>
+  </data>
+  <data name="FriendLinks" xml:space="preserve">
+    <value>Friend links</value>
   </data>
   <data name="Game" xml:space="preserve">
     <value>Game</value>
@@ -414,6 +429,9 @@ Want to offer some advice?</value>
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>Magazine size</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>Market</value>
   </data>
   <data name="MarketDatabase" xml:space="preserve">
     <value>Market items</value>
@@ -673,6 +691,9 @@ Want to offer some advice?</value>
   <data name="Tier" xml:space="preserve">
     <value>Tier</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Toolbox</value>
+  </data>
   <data name="TotalDamage" xml:space="preserve">
     <value>Total damage</value>
   </data>
@@ -681,6 +702,9 @@ Want to offer some advice?</value>
   </data>
   <data name="Tradable" xml:space="preserve">
     <value>Tradable</value>
+  </data>
+  <data name="TranslateTip" xml:space="preserve">
+    <value>Find translation</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
@@ -717,5 +741,8 @@ Want to offer some advice?</value>
   </data>
   <data name="Zariman" xml:space="preserve">
     <value>Zariman</value>
+  </data>
+  <data name="ZhToEn" xml:space="preserve">
+    <value>CHS to EN</value>
   </data>
 </root>

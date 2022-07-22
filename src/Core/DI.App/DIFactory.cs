@@ -84,6 +84,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<ToolsPageViewModel>();
 
             SplatRegistrations.RegisterLazySingleton<TranslateModuleViewModel>();
+            SplatRegistrations.RegisterLazySingleton<FriendLinksModuleViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();

@@ -209,11 +209,13 @@ namespace Wfa.Models.Enums
         PreRelease,
         Tools,
         ZhEnTranslate,
-        FriendsLink,
+        FriendLinks,
         BiliVideo,
         ZhToEn,
         EnToZh,
         Copied,
         TranslateTip,
+        Market,
+        Community,
     }
 }

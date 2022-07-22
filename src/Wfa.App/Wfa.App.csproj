@@ -178,6 +178,9 @@
     <Compile Include="Pages\NightwavePage.xaml.cs">
       <DependentUpon>NightwavePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Overlay\FriendLinksPage.xaml.cs">
+      <DependentUpon>FriendLinksPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Overlay\ItemOrderPage.xaml.cs">
       <DependentUpon>ItemOrderPage.xaml</DependentUpon>
     </Compile>
@@ -497,6 +500,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\NightwavePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Overlay\FriendLinksPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

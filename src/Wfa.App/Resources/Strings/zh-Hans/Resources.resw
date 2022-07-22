@@ -225,6 +225,9 @@
   <data name="Cold" xml:space="preserve">
     <value>寒冷</value>
   </data>
+  <data name="Community" xml:space="preserve">
+    <value>社区</value>
+  </data>
   <data name="CommunityDatabase" xml:space="preserve">
     <value>社区资料数据</value>
   </data>
@@ -327,7 +330,7 @@
   <data name="Found" xml:space="preserve">
     <value>已发现</value>
   </data>
-  <data name="FriendsLink" xml:space="preserve">
+  <data name="FriendLinks" xml:space="preserve">
     <value>友链</value>
   </data>
   <data name="Game" xml:space="preserve">
@@ -426,6 +429,9 @@
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>装弹量</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>市场</value>
   </data>
   <data name="MarketDatabase" xml:space="preserve">
     <value>市场商品数据</value>

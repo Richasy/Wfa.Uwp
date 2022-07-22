@@ -59,7 +59,7 @@ namespace Wfa.ViewModel.Tools
             Name = type switch
             {
                 ToolType.Translate => _resourceToolkit.GetLocaleString(LanguageNames.ZhEnTranslate),
-                ToolType.FriendLinks => _resourceToolkit.GetLocaleString(LanguageNames.FriendsLink),
+                ToolType.FriendLinks => _resourceToolkit.GetLocaleString(LanguageNames.FriendLinks),
                 ToolType.BiliSearch => _resourceToolkit.GetLocaleString(LanguageNames.BiliVideo),
                 _ => throw new NotSupportedException(),
             };
