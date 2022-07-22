@@ -38,24 +38,29 @@ namespace Wfa.Models.Enums
         Library = 4,
 
         /// <summary>
+        /// 工具页.
+        /// </summary>
+        Tools = 5,
+
+        /// <summary>
         /// 赏金奖励页面.
         /// </summary>
-        SyndicateMissions = 5,
+        SyndicateMissions = 6,
 
         /// <summary>
         /// 入侵页面.
         /// </summary>
-        Invasions = 6,
+        Invasions = 7,
 
         /// <summary>
         /// 午夜电波页面.
         /// </summary>
-        Nightwave = 7,
+        Nightwave = 8,
 
         /// <summary>
         /// 虚空裂缝页面.
         /// </summary>
-        Fissure = 8,
+        Fissure = 9,
 
         /// <summary>
         /// Warframe Market 条目订单页面.
@@ -88,49 +93,8 @@ namespace Wfa.Models.Enums
         Translate = 201,
 
         /// <summary>
-        /// 跳转到哔哩哔哩的 Warframe 搜索结果页.
+        /// 资料库详情页.
         /// </summary>
-        BiliSearch = 202,
-
-        /// <summary>
-        /// 战甲资料库.
-        /// </summary>
-        WarframeLib = 203,
-
-        /// <summary>
-        /// 飞行装甲资料库.
-        /// </summary>
-        ArchwingLib = 204,
-
-        /// <summary>
-        /// 空战枪械资料库.
-        /// </summary>
-        ArchGunLib = 205,
-
-        /// <summary>
-        /// 空战近战资料库.
-        /// </summary>
-        ArchMeleeLib = 206,
-
-        /// <summary>
-        /// 主要武器资料库.
-        /// </summary>
-        PrimaryLib = 207,
-
-        /// <summary>
-        /// 次要武器资料库.
-        /// </summary>
-        SecondaryLib = 208,
-
-        /// <summary>
-        /// 近战武器资料库.
-        /// </summary>
-        MeleeLib = 209,
-
-        /// <summary>
-        /// Mod 资料库.
-        /// </summary>
-        ModLib = 210,
-        LibraryDetail = 211,
+        LibraryDetail = 202,
     }
 }

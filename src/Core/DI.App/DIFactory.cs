@@ -17,6 +17,7 @@ using Wfa.Toolkit.Interfaces;
 using Wfa.ViewModel;
 using Wfa.ViewModel.LibraryItems;
 using Wfa.ViewModel.StateItems;
+using Wfa.ViewModel.Tools;
 using Windows.Storage;
 using Windows.UI.Xaml;
 
@@ -80,6 +81,7 @@ namespace Wfa.DI.App
             SplatRegistrations.RegisterLazySingleton<RivenOrderPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<SettingsPageViewModel>();
             SplatRegistrations.RegisterLazySingleton<HelpPageViewModel>();
+            SplatRegistrations.RegisterLazySingleton<ToolsPageViewModel>();
 
             SplatRegistrations.Register<WorldCycleItemViewModel>();
             SplatRegistrations.Register<LibrarySectionViewModel>();
@@ -91,6 +93,7 @@ namespace Wfa.DI.App
             SplatRegistrations.Register<ArchMeleeItemViewModel>();
             SplatRegistrations.Register<MeleeItemViewModel>();
             SplatRegistrations.Register<ModItemViewModel>();
+            SplatRegistrations.Register<ToolItemViewModel>();
 
             SplatRegistrations.RegisterConstant(Window.Current.Dispatcher);
 

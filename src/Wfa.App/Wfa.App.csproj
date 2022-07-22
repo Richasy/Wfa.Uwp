@@ -196,6 +196,9 @@
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ToolsPage.xaml.cs">
+      <DependentUpon>ToolsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WorldStatePage.xaml.cs">
       <DependentUpon>WorldStatePage.xaml</DependentUpon>
     </Compile>
@@ -211,6 +214,7 @@
     <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\PolarityConverter.cs" />
     <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
+    <Compile Include="Resources\Converters\ToolIconConverter.cs" />
     <Compile Include="Resources\Converters\WikiTypeConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
@@ -513,6 +517,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SyndicateMissionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ToolsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

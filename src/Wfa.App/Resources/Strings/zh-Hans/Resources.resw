@@ -195,6 +195,9 @@
   <data name="BiliHomePage" xml:space="preserve">
     <value>开发者B站主页</value>
   </data>
+  <data name="BiliVideo" xml:space="preserve">
+    <value>BiliBili视频</value>
+  </data>
   <data name="Buyer" xml:space="preserve">
     <value>买家</value>
   </data>
@@ -317,6 +320,9 @@
   </data>
   <data name="Found" xml:space="preserve">
     <value>已发现</value>
+  </data>
+  <data name="FriendsLink" xml:space="preserve">
+    <value>友链</value>
   </data>
   <data name="Game" xml:space="preserve">
     <value>游戏</value>
@@ -673,6 +679,9 @@
   <data name="Tier" xml:space="preserve">
     <value>纪元</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具箱</value>
+  </data>
   <data name="TotalDamage" xml:space="preserve">
     <value>总伤害</value>
   </data>
@@ -717,5 +726,8 @@
   </data>
   <data name="Zariman" xml:space="preserve">
     <value>扎里曼号</value>
+  </data>
+  <data name="ZhEnTranslate" xml:space="preserve">
+    <value>中英翻译</value>
   </data>
 </root>

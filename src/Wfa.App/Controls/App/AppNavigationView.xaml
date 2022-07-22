@@ -54,11 +54,6 @@
                         <icons:RegularFluentIcon Symbol="Globe16" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
-                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Library" Content="{ext:Locale Name=Library}">
-                    <muxc:NavigationViewItem.Icon>
-                        <icons:RegularFluentIcon Symbol="Library16" />
-                    </muxc:NavigationViewItem.Icon>
-                </muxc:NavigationViewItem>
                 <muxc:NavigationViewItem ext:NavigationExtension.PageId="SyndicateMissions" Content="{ext:Locale Name=SyndicateMissions}">
                     <muxc:NavigationViewItem.Icon>
                         <icons:RegularFluentIcon Symbol="Reward16" />
@@ -80,6 +75,16 @@
                 <muxc:NavigationViewItem ext:NavigationExtension.PageId="Fissure" Content="{ext:Locale Name=Fissure}">
                     <muxc:NavigationViewItem.Icon>
                         <local:WfaIcon Symbol="Fissure" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Library" Content="{ext:Locale Name=Library}">
+                    <muxc:NavigationViewItem.Icon>
+                        <icons:RegularFluentIcon Symbol="Library16" />
+                    </muxc:NavigationViewItem.Icon>
+                </muxc:NavigationViewItem>
+                <muxc:NavigationViewItem ext:NavigationExtension.PageId="Tools" Content="{ext:Locale Name=Tools}">
+                    <muxc:NavigationViewItem.Icon>
+                        <icons:RegularFluentIcon Symbol="Toolbox16" />
                     </muxc:NavigationViewItem.Icon>
                 </muxc:NavigationViewItem>
             </muxc:NavigationView.MenuItems>
