@@ -57,6 +57,16 @@ namespace Wfa.ViewModel.StateItems
             FomorianProgress = Convert.ToDouble(data.FomorianProgress);
             RazorbackProgress = Convert.ToDouble(data.RazorbackProgress);
 
+            if (FomorianProgress > 100)
+            {
+                FomorianProgress = 100d;
+            }
+
+            if (RazorbackProgress > 100)
+            {
+                RazorbackProgress = 100d;
+            }
+
             FomorianProgressText = FomorianProgress.ToString("0");
             RazaorbackProgressText = RazorbackProgress.ToString("0");
         }
