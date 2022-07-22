@@ -67,6 +67,11 @@ namespace Wfa.ViewModel
             AddOrUpdateMission(ostron);
             AddOrUpdateMission(solaris);
             AddOrUpdateMission(entrati);
+
+            if (CurrentMission == null)
+            {
+                CurrentMission = Missions.First();
+            }
         }
 
         private void AddOrUpdateMission(SyndicateMission mission)

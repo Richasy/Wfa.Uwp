@@ -30,6 +30,12 @@ namespace Wfa.ViewModel
         public ObservableCollection<SyndicateMissionViewModel> Missions { get; }
 
         /// <summary>
+        /// 当前选中的赏金任务.
+        /// </summary>
+        [Reactive]
+        public SyndicateMissionViewModel CurrentMission { get; set; }
+
+        /// <summary>
         /// 是否正在加载.
         /// </summary>
         [Reactive]
