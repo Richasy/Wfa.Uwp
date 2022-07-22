@@ -195,6 +195,9 @@
   <data name="BiliHomePage" xml:space="preserve">
     <value>开发者B站主页</value>
   </data>
+  <data name="BiliVideo" xml:space="preserve">
+    <value>BiliBili视频</value>
+  </data>
   <data name="Buyer" xml:space="preserve">
     <value>买家</value>
   </data>
@@ -222,6 +225,9 @@
   <data name="Cold" xml:space="preserve">
     <value>寒冷</value>
   </data>
+  <data name="Community" xml:space="preserve">
+    <value>社区</value>
+  </data>
   <data name="CommunityDatabase" xml:space="preserve">
     <value>社区资料数据</value>
   </data>
@@ -230,6 +236,9 @@
   </data>
   <data name="ConstructionProgress" xml:space="preserve">
     <value>战舰建造进度</value>
+  </data>
+  <data name="Copied" xml:space="preserve">
+    <value>已复制到剪切板</value>
   </data>
   <data name="CopyMessage" xml:space="preserve">
     <value>复制消息</value>
@@ -297,6 +306,9 @@
   <data name="Enemy" xml:space="preserve">
     <value>敌人</value>
   </data>
+  <data name="EnToZh" xml:space="preserve">
+    <value>英译中</value>
+  </data>
   <data name="ExpiryDateFormat" xml:space="preserve">
     <value>{0}过期</value>
   </data>
@@ -317,6 +329,9 @@
   </data>
   <data name="Found" xml:space="preserve">
     <value>已发现</value>
+  </data>
+  <data name="FriendLinks" xml:space="preserve">
+    <value>友链</value>
   </data>
   <data name="Game" xml:space="preserve">
     <value>游戏</value>
@@ -414,6 +429,9 @@
   </data>
   <data name="MagazineSize" xml:space="preserve">
     <value>装弹量</value>
+  </data>
+  <data name="Market" xml:space="preserve">
+    <value>市场</value>
   </data>
   <data name="MarketDatabase" xml:space="preserve">
     <value>市场商品数据</value>
@@ -673,6 +691,9 @@
   <data name="Tier" xml:space="preserve">
     <value>纪元</value>
   </data>
+  <data name="Tools" xml:space="preserve">
+    <value>工具箱</value>
+  </data>
   <data name="TotalDamage" xml:space="preserve">
     <value>总伤害</value>
   </data>
@@ -681,6 +702,9 @@
   </data>
   <data name="Tradable" xml:space="preserve">
     <value>可交易</value>
+  </data>
+  <data name="TranslateTip" xml:space="preserve">
+    <value>输入要查询的条目</value>
   </data>
   <data name="Unknown" xml:space="preserve">
     <value>未知</value>
@@ -717,5 +741,11 @@
   </data>
   <data name="Zariman" xml:space="preserve">
     <value>扎里曼号</value>
+  </data>
+  <data name="ZhEnTranslate" xml:space="preserve">
+    <value>中英翻译</value>
+  </data>
+  <data name="ZhToEn" xml:space="preserve">
+    <value>中译英</value>
   </data>
 </root>

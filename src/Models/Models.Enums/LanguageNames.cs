@@ -207,5 +207,15 @@ namespace Wfa.Models.Enums
         OpenDownloadPage,
         IgnoreVersion,
         PreRelease,
+        Tools,
+        ZhEnTranslate,
+        FriendLinks,
+        BiliVideo,
+        ZhToEn,
+        EnToZh,
+        Copied,
+        TranslateTip,
+        Market,
+        Community,
     }
 }

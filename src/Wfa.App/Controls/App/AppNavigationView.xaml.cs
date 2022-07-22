@@ -11,7 +11,6 @@ using Wfa.Models.Data.Local;
 using Wfa.Models.Enums;
 using Wfa.ViewModel;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
 
 namespace Wfa.App.Controls.App
@@ -78,6 +77,7 @@ namespace Wfa.App.Controls.App
                 PageIds.Invasions => typeof(InvasionPage),
                 PageIds.Nightwave => typeof(NightwavePage),
                 PageIds.Fissure => typeof(FissurePage),
+                PageIds.Tools => typeof(ToolsPage),
                 _ => default,
             };
 

@@ -1,0 +1,77 @@
+﻿<local:ToolsPageBase
+    x:Class="Wfa.App.Pages.ToolsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:app="using:Wfa.App.Controls.App"
+    xmlns:converters="using:Wfa.App.Resources.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ext="using:Wfa.App.Resources.Extensions"
+    xmlns:icons="using:Richasy.FluentIcon.Uwp"
+    xmlns:items="using:Wfa.ViewModel.LibraryItems"
+    xmlns:local="using:Wfa.App.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:tools="using:Wfa.ViewModel.Tools"
+    mc:Ignorable="d">
+
+    <local:ToolsPageBase.Resources>
+        <converters:ToolIconConverter x:Key="IconConverter" />
+    </local:ToolsPageBase.Resources>
+
+    <Grid RowSpacing="8">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <app:AppPageHeader Title="{ext:Locale Name=Tools}" />
+        <ScrollViewer
+            Style="{StaticResource PageScrollViewerStyle}"
+            Grid.Row="1"
+            Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
+            <muxc:ItemsRepeater Margin="0,4,0,0" ItemsSource="{x:Bind ViewModel.Tools}">
+                <muxc:ItemsRepeater.Layout>
+                    <muxc:UniformGridLayout
+                        ItemsStretch="Fill"
+                        MinColumnSpacing="12"
+                        MinItemHeight="160"
+                        MinItemWidth="140"
+                        MinRowSpacing="12" />
+                </muxc:ItemsRepeater.Layout>
+                <muxc:ItemsRepeater.ItemTemplate>
+                    <DataTemplate x:DataType="tools:ToolItemViewModel">
+                        <app:CardPanel Command="{x:Bind ActiveCommand}" DataContext="{x:Bind}">
+                            <Grid Padding="16,20" RowSpacing="8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Border
+                                    Width="80"
+                                    Height="80"
+                                    HorizontalAlignment="Center"
+                                    Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"
+                                    CornerRadius="{StaticResource ControlCornerRadius}">
+                                    <icons:RegularFluentIcon
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        FontSize="40"
+                                        Symbol="{x:Bind Type, Converter={StaticResource IconConverter}, Mode=OneWay}" />
+                                </Border>
+
+                                <TextBlock
+                                    Style="{StaticResource BodyTextBlockStyle}"
+                                    Grid.Row="1"
+                                    Margin="0,12,0,0"
+                                    HorizontalAlignment="Center"
+                                    FontWeight="Bold"
+                                    Text="{x:Bind Name, Mode=OneWay}"
+                                    TextAlignment="Center"
+                                    TextTrimming="CharacterEllipsis" />
+                            </Grid>
+                        </app:CardPanel>
+                    </DataTemplate>
+                </muxc:ItemsRepeater.ItemTemplate>
+            </muxc:ItemsRepeater>
+        </ScrollViewer>
+    </Grid>
+</local:ToolsPageBase>

@@ -178,6 +178,9 @@
     <Compile Include="Pages\NightwavePage.xaml.cs">
       <DependentUpon>NightwavePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Overlay\FriendLinksPage.xaml.cs">
+      <DependentUpon>FriendLinksPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Overlay\ItemOrderPage.xaml.cs">
       <DependentUpon>ItemOrderPage.xaml</DependentUpon>
     </Compile>
@@ -190,11 +193,17 @@
     <Compile Include="Pages\Overlay\RivenOrderPage.xaml.cs">
       <DependentUpon>RivenOrderPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Overlay\TranslatePage.xaml.cs">
+      <DependentUpon>TranslatePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SyndicateMissionPage.xaml.cs">
       <DependentUpon>SyndicateMissionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ToolsPage.xaml.cs">
+      <DependentUpon>ToolsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\WorldStatePage.xaml.cs">
       <DependentUpon>WorldStatePage.xaml</DependentUpon>
@@ -211,6 +220,8 @@
     <Compile Include="Resources\Converters\ObjectToVisibilityConverter.cs" />
     <Compile Include="Resources\Converters\PolarityConverter.cs" />
     <Compile Include="Resources\Converters\ThemeStringConverter.cs" />
+    <Compile Include="Resources\Converters\ToolIconConverter.cs" />
+    <Compile Include="Resources\Converters\TranslateTypeConverter.cs" />
     <Compile Include="Resources\Converters\WikiTypeConverter.cs" />
     <Compile Include="Resources\Extensions\LocaleExtension.cs" />
     <Compile Include="Resources\Extensions\NavigationExtension.cs" />
@@ -492,6 +503,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Overlay\FriendLinksPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Overlay\ItemOrderPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -508,11 +523,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Overlay\TranslatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SyndicateMissionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ToolsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

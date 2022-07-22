@@ -222,6 +222,8 @@ namespace Wfa.App.Pages
                 PageIds.MarketItemOrder => typeof(ItemOrderPage),
                 PageIds.MarketLichOrder => typeof(LichOrderPage),
                 PageIds.MarketRivenOrder => typeof(RivenOrderPage),
+                PageIds.Translate => typeof(TranslatePage),
+                PageIds.FriendLinks => typeof(FriendLinksPage),
                 _ => typeof(Page),
             };
         }
