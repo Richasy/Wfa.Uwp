@@ -22,15 +22,11 @@
             BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}"
             BorderThickness="0,0,0,1">
             <TextBlock
-                HorizontalAlignment="Left"
-                FontWeight="Bold"
-                Text="{x:Bind ViewModel.Name, Mode=OneWay}" />
-            <TextBlock
                 Style="{StaticResource CaptionTextBlockStyle}"
                 Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                 Text="{x:Bind ViewModel.Countdown, Mode=OneWay}" />
         </StackPanel>
-        <muxc:ItemsRepeater Grid.Row="1" ItemsSource="{x:Bind ViewModel.Jobs}">
+        <muxc:ItemsRepeater Grid.Row="1" ItemsSource="{x:Bind ViewModel.Jobs, Mode=OneWay}">
             <muxc:ItemsRepeater.Layout>
                 <muxc:UniformGridLayout
                     ItemsStretch="Fill"

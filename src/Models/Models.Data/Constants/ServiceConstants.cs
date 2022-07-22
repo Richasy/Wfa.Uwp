@@ -64,7 +64,7 @@ namespace Wfa.Models.Data.Constants
                 => $"{StateApiBase}{platform}?language={language}";
 
             public static string SyndicateMissions(string platform)
-                => $"{StateApiBase}{platform}/syndicateMissions";
+                => $"{StateApiBase}{platform}/syndicateMissions?language=en";
         }
 
         public static class Query

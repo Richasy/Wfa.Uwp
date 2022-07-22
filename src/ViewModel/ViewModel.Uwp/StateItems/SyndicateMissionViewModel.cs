@@ -57,6 +57,12 @@ namespace Wfa.ViewModel.StateItems
         [Reactive]
         public string Countdown { get; set; }
 
+        /// <summary>
+        /// 图标.
+        /// </summary>
+        [Reactive]
+        public WfaSymbol Symbol { get; set; }
+
         private void UpdateCountdown()
         {
             if (_expiryTime == DateTime.MinValue || _expiryTime < DateTime.Now)
@@ -72,7 +78,7 @@ namespace Wfa.ViewModel.StateItems
         private void UpdateData(SyndicateMission mission)
         {
             Name = mission.Name;
-            var symbol = mission.Key switch
+            Symbol = mission.Key switch
             {
                 "Ostrons" => WfaSymbol.Ostron,
                 "Solaris United" => WfaSymbol.Solaris,
@@ -85,7 +91,7 @@ namespace Wfa.ViewModel.StateItems
             {
                 // 赏金列表刷新了.
                 TryClear(Jobs);
-                mission.Jobs.ForEach(p => Jobs.Add(new SyndicateMissionJobViewModel(p, symbol)));
+                mission.Jobs.ForEach(p => Jobs.Add(new SyndicateMissionJobViewModel(p, Symbol)));
             }
 
             UpdateCountdown();

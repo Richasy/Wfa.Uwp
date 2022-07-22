@@ -15,25 +15,42 @@
     <Grid RowSpacing="8">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <app:AppPageHeader Title="{ext:Locale Name=SyndicateMissions}" RefreshCommand="{x:Bind CoreViewModel.RequestWorldStateCommand}" />
+        <muxc:NavigationView
+            Style="{StaticResource TopNavigationViewStyle}"
+            Grid.Row="1"
+            Margin="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}"
+            MenuItemsSource="{x:Bind ViewModel.Missions}"
+            SelectedItem="{x:Bind ViewModel.CurrentMission, Mode=TwoWay}">
+            <muxc:NavigationView.MenuItemTemplate>
+                <DataTemplate x:DataType="items:SyndicateMissionViewModel">
+                    <muxc:NavigationViewItem Content="{x:Bind}">
+                        <muxc:NavigationViewItem.ContentTemplate>
+                            <DataTemplate x:DataType="items:SyndicateMissionViewModel">
+                                <StackPanel Orientation="Horizontal" Spacing="4">
+                                    <app:WfaIcon
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        Symbol="{x:Bind Symbol, Mode=OneWay}" />
+                                    <TextBlock
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Center"
+                                        Text="{x:Bind Name, Mode=OneWay}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </muxc:NavigationViewItem.ContentTemplate>
+                    </muxc:NavigationViewItem>
+                </DataTemplate>
+            </muxc:NavigationView.MenuItemTemplate>
+        </muxc:NavigationView>
         <ScrollViewer
             Style="{StaticResource PageScrollViewerStyle}"
-            Grid.Row="1"
+            Grid.Row="2"
             Padding="{x:Bind CoreViewModel.PageHorizontalPadding, Mode=OneWay}">
-            <Grid x:Name="ContentContainer" Margin="0,0,0,24">
-                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.Missions}">
-                    <muxc:ItemsRepeater.Layout>
-                        <muxc:StackLayout Spacing="20" />
-                    </muxc:ItemsRepeater.Layout>
-                    <muxc:ItemsRepeater.ItemTemplate>
-                        <DataTemplate x:DataType="items:SyndicateMissionViewModel">
-                            <state:SyndicateMissionPanel ViewModel="{x:Bind}" />
-                        </DataTemplate>
-                    </muxc:ItemsRepeater.ItemTemplate>
-                </muxc:ItemsRepeater>
-            </Grid>
+            <state:SyndicateMissionPanel Margin="0,4,0,24" ViewModel="{x:Bind ViewModel.CurrentMission, Mode=OneWay}" />
         </ScrollViewer>
         <muxc:ProgressRing
             Style="{StaticResource PageProgressRingStyle}"
