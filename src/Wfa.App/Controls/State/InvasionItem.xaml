@@ -47,14 +47,20 @@
                                 Style="{StaticResource CaptionTextBlockStyle}"
                                 Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                 Text="{ext:Locale Name=Attacker}" />
-                            <TextBlock FontWeight="Bold" Text="{x:Bind ViewModel.AttackerName, Mode=OneWay}" />
+                            <TextBlock
+                                FontWeight="Bold"
+                                Text="{x:Bind ViewModel.AttackerName, Mode=OneWay}"
+                                TextTrimming="CharacterEllipsis" />
                         </StackPanel>
                         <StackPanel Spacing="8">
                             <TextBlock
                                 Style="{StaticResource CaptionTextBlockStyle}"
                                 Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                                 Text="{ext:Locale Name=Reward}" />
-                            <TextBlock FontWeight="Bold" Text="{x:Bind ViewModel.AttackerReward, Mode=OneWay}" />
+                            <TextBlock
+                                FontWeight="Bold"
+                                Text="{x:Bind ViewModel.AttackerReward, Mode=OneWay}"
+                                TextTrimming="CharacterEllipsis" />
                         </StackPanel>
                     </StackPanel>
                     <app:WfaIcon
@@ -95,14 +101,20 @@
                             Style="{StaticResource CaptionTextBlockStyle}"
                             Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                             Text="{ext:Locale Name=Defender}" />
-                        <TextBlock FontWeight="Bold" Text="{x:Bind ViewModel.DefenderName, Mode=OneWay}" />
+                        <TextBlock
+                            FontWeight="Bold"
+                            Text="{x:Bind ViewModel.DefenderName, Mode=OneWay}"
+                            TextTrimming="CharacterEllipsis" />
                     </StackPanel>
                     <StackPanel Spacing="8">
                         <TextBlock
                             Style="{StaticResource CaptionTextBlockStyle}"
                             Foreground="{ThemeResource TextFillColorSecondaryBrush}"
                             Text="{ext:Locale Name=Reward}" />
-                        <TextBlock FontWeight="Bold" Text="{x:Bind ViewModel.DefenderReward, Mode=OneWay}" />
+                        <TextBlock
+                            FontWeight="Bold"
+                            Text="{x:Bind ViewModel.DefenderReward, Mode=OneWay}"
+                            TextTrimming="CharacterEllipsis" />
                     </StackPanel>
                 </StackPanel>
                 <app:WfaIcon

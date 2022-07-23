@@ -742,6 +742,9 @@ Want to offer some advice?</value>
   <data name="Zariman" xml:space="preserve">
     <value>Zariman</value>
   </data>
+  <data name="ZhEnTranslate" xml:space="preserve">
+    <value>Translation</value>
+  </data>
   <data name="ZhToEn" xml:space="preserve">
     <value>CHS to EN</value>
   </data>
