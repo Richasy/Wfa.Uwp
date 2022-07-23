@@ -65,7 +65,7 @@
                                     VerticalAlignment="Top"
                                     IsActive="{x:Bind ViewModel.IsCommunityUpdating}" />
                                 <StackPanel Grid.Column="1" Spacing="4">
-                                    <TextBlock Text="{ext:Locale Name=LibraryUpdatingTitle}" />
+                                    <TextBlock Text="{ext:Locale Name=LibraryUpdatingTitle}" TextTrimming="CharacterEllipsis" />
                                     <TextBlock
                                         Style="{StaticResource CaptionTextBlockStyle}"
                                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"
@@ -125,7 +125,7 @@
                                     VerticalAlignment="Top"
                                     IsActive="{x:Bind ViewModel.IsMarketUpdating}" />
                                 <StackPanel Grid.Column="1" Spacing="4">
-                                    <TextBlock Text="{ext:Locale Name=MarketUpdatingTitle}" />
+                                    <TextBlock Text="{ext:Locale Name=MarketUpdatingTitle}" TextTrimming="CharacterEllipsis" />
                                     <TextBlock
                                         Style="{StaticResource CaptionTextBlockStyle}"
                                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"

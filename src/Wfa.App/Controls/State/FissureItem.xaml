@@ -31,7 +31,8 @@
                 HorizontalAlignment="Left"
                 FontSize="20"
                 FontWeight="Bold"
-                Text="{x:Bind ViewModel.Data.MissionType, Mode=OneWay}" />
+                Text="{x:Bind ViewModel.Data.MissionType, Mode=OneWay}"
+                TextTrimming="CharacterEllipsis" />
             <StackPanel
                 Grid.Row="1"
                 HorizontalAlignment="Left"
@@ -40,7 +41,7 @@
                     Style="{StaticResource CaptionTextBlockStyle}"
                     Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                     Text="{ext:Locale Name=Location}" />
-                <TextBlock Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}" />
+                <TextBlock Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}" TextTrimming="CharacterEllipsis" />
             </StackPanel>
             <StackPanel
                 Grid.Row="2"
@@ -67,7 +68,8 @@
                 HorizontalAlignment="Left"
                 VerticalAlignment="Bottom"
                 Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                Text="{x:Bind ViewModel.Countdown}" />
+                Text="{x:Bind ViewModel.Countdown}"
+                TextTrimming="CharacterEllipsis" />
             <Ellipse
                 Grid.Row="4"
                 Width="8"

@@ -104,7 +104,10 @@
                                             Style="{StaticResource CaptionTextBlockStyle}"
                                             Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                                             Text="{ext:Locale Name=Modifier}" />
-                                        <TextBlock Text="{x:Bind Modifier}" ToolTipService.ToolTip="{x:Bind ModifierDescription}" />
+                                        <TextBlock
+                                            Text="{x:Bind Modifier}"
+                                            TextTrimming="CharacterEllipsis"
+                                            ToolTipService.ToolTip="{x:Bind ModifierDescription}" />
                                     </StackPanel>
                                     <StackPanel
                                         Grid.Row="2"
@@ -115,7 +118,7 @@
                                             Style="{StaticResource CaptionTextBlockStyle}"
                                             Foreground="{ThemeResource TextFillColorTertiaryBrush}"
                                             Text="{ext:Locale Name=Location}" />
-                                        <TextBlock Text="{x:Bind Node}" />
+                                        <TextBlock Text="{x:Bind Node}" TextTrimming="CharacterEllipsis" />
                                     </StackPanel>
                                 </Grid>
                             </app:CardPanel>

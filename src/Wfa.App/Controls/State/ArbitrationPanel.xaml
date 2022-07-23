@@ -61,6 +61,8 @@
                     Grid.Row="2"
                     HorizontalAlignment="Left"
                     Text="{x:Bind ViewModel.Data.Node, Mode=OneWay}"
+                    TextTrimming="CharacterEllipsis"
+                    TextWrapping="NoWrap"
                     Visibility="{x:Bind ViewModel.IsEmpty, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
 
                 <TextBlock
