@@ -15,5 +15,7 @@ namespace Wfa.Models.Enums
         IsPrelaunch,
         PreferWiki,
         IgnoreVersion,
+        DictVersion,
+        PatchVersion,
     }
 }
