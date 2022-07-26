@@ -228,12 +228,17 @@ namespace Wfa.ViewModel
             var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WikiDictUpdateTimeKey);
             if (!string.IsNullOrEmpty(meta?.Value))
             {
-                // 不需要初始化.
-                WriteMessage("维基翻译数据已初始化完成");
-                return;
+                var localVersion = _settingsToolkit.ReadLocalSetting(SettingNames.DictVersion, string.Empty);
+                if (localVersion == AppConstants.DictVersion)
+                {
+                    // 不需要初始化.
+                    WriteMessage("维基翻译数据已初始化完成");
+                    return;
+                }
             }
 
             await UpdateTranslateDatabaseAsync();
+            _settingsToolkit.WriteLocalSetting(SettingNames.DictVersion, AppConstants.DictVersion);
         }
 
         private async Task CheckPatchDatabaseAsync()
@@ -241,12 +246,17 @@ namespace Wfa.ViewModel
             var meta = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WikiPatchUpdateTimeKey);
             if (!string.IsNullOrEmpty(meta?.Value))
             {
-                // 不需要初始化.
-                WriteMessage("维基简繁互译数据已初始化完成");
-                return;
+                var localVersion = _settingsToolkit.ReadLocalSetting(SettingNames.PatchVersion, string.Empty);
+                if (localVersion == AppConstants.PatchVersion)
+                {
+                    // 不需要初始化.
+                    WriteMessage("维基简繁互译数据已初始化完成");
+                    return;
+                }
             }
 
             await UpdatePatchDatabaseAsync();
+            _settingsToolkit.WriteLocalSetting(SettingNames.PatchVersion, AppConstants.DictVersion);
         }
 
         private async Task UpdateLibraryDatabaseAsync(string remoteVersion = default)

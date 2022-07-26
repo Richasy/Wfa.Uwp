@@ -24,6 +24,8 @@ namespace Wfa.Models.Data.Constants
         public const string SettingContainerName = "Richasy.Wfa.Uwp";
         public const string StartupTaskId = "Richasy.Wfa";
         public const string LibraryDbVersion = "v1.0";
+        public const string DictVersion = "220726";
+        public const string PatchVersion = "220726";
 
         public const int AppMinWidth = 500;
         public const int AppMinHeight = 500;
