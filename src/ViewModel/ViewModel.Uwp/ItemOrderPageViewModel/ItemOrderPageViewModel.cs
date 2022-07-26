@@ -111,15 +111,15 @@ namespace Wfa.ViewModel
             {
                 orders = orders.OrderBy(p => p.Platinum);
             }
-            else if (CurrentOrderType.Key == PriceDescending)
+            else if (CurrentSortType.Key == PriceDescending)
             {
                 orders = orders.OrderByDescending(p => p.Platinum);
             }
-            else if (CurrentOrderType.Key == CountAscending)
+            else if (CurrentSortType.Key == CountAscending)
             {
                 orders = orders.OrderBy(p => p.Quantity);
             }
-            else if (CurrentOrderType.Key == CountDescending)
+            else if (CurrentSortType.Key == CountDescending)
             {
                 orders = orders.OrderByDescending(p => p.Quantity);
             }
