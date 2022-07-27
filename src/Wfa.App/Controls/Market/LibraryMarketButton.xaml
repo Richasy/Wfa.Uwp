@@ -27,7 +27,7 @@
         </StackPanel>
         <Button.Flyout>
             <Flyout FlyoutPresenterStyle="{StaticResource ThinPaddingFlyoutPresenterStyle}" Placement="Bottom">
-                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.MarketItems}">
+                <muxc:ItemsRepeater ItemsSource="{x:Bind ViewModel.MarketItems, Mode=OneWay}">
                     <muxc:ItemsRepeater.Layout>
                         <muxc:StackLayout Spacing="2" />
                     </muxc:ItemsRepeater.Layout>

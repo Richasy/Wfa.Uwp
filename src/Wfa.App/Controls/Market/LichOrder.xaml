@@ -12,7 +12,7 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <app:CardPanel Command="{x:Bind ViewModel.OpenOrderCommand}" IsEnableHoverAnimation="False">
+    <app:CardPanel Command="{x:Bind ViewModel.OpenOrderCommand, Mode=OneWay}" IsEnableHoverAnimation="False">
         <Grid Padding="16">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
