@@ -5,7 +5,6 @@
     xmlns:app="using:Wfa.App.Controls.App"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:ext="using:Wfa.App.Resources.Extensions"
-    xmlns:icons="using:Richasy.FluentIcon.Uwp"
     xmlns:local="using:Wfa.App.Controls.Market"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
@@ -13,7 +12,7 @@
     d:DesignWidth="400"
     mc:Ignorable="d">
 
-    <app:CardPanel Command="{x:Bind ViewModel.OpenOrderCommand}" IsEnableHoverAnimation="False">
+    <app:CardPanel Command="{x:Bind ViewModel.OpenOrderCommand, Mode=OneWay}" IsEnableHoverAnimation="False">
         <Grid Padding="16" RowSpacing="4">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
