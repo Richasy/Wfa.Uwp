@@ -17,5 +17,6 @@ namespace Wfa.Models.Enums
         IgnoreVersion,
         DictVersion,
         PatchVersion,
+        IsCommunityDatabaseAutoUpdate,
     }
 }

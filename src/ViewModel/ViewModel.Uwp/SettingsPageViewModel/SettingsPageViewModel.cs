@@ -55,6 +55,7 @@ namespace Wfa.ViewModel
             AppTheme = ReadSetting(SettingNames.AppTheme, AppConstants.ThemeDefault);
             _initializeTheme = AppTheme;
             IsPrelaunch = ReadSetting(SettingNames.IsPrelaunch, true);
+            IsCommunityDatabaseAutoUpdate = ReadSetting(SettingNames.IsCommunityDatabaseAutoUpdate, false);
             WikiInit();
             StartupInitAsync();
             DatabaseUpdateTimeInitAsync();
@@ -80,6 +81,9 @@ namespace Wfa.ViewModel
                     break;
                 case nameof(PreferWiki):
                     WriteSetting(SettingNames.PreferWiki, PreferWiki);
+                    break;
+                case nameof(IsCommunityDatabaseAutoUpdate):
+                    WriteSetting(SettingNames.IsCommunityDatabaseAutoUpdate, IsCommunityDatabaseAutoUpdate);
                     break;
                 default:
                     break;
