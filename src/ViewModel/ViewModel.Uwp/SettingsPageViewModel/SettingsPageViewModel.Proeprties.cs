@@ -86,5 +86,11 @@ namespace Wfa.ViewModel
         /// </summary>
         [Reactive]
         public WikiType PreferWiki { get; set; }
+
+        /// <summary>
+        /// 社区数据库是否自动更新.
+        /// </summary>
+        [Reactive]
+        public bool IsCommunityDatabaseAutoUpdate { get; set; }
     }
 }

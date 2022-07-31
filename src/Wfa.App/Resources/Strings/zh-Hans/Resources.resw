@@ -231,6 +231,12 @@
   <data name="CommunityDatabase" xml:space="preserve">
     <value>社区资料数据</value>
   </data>
+  <data name="CommunityDatabaseAutoUpdate" xml:space="preserve">
+    <value>自动更新社区数据库</value>
+  </data>
+  <data name="CommunityDatabaseAutoUpdateDescription" xml:space="preserve">
+    <value>应用将每天比对一次本地数据与 WFCD 数据的版本，如有更新则自动触发更新程序</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>确认</value>
   </data>

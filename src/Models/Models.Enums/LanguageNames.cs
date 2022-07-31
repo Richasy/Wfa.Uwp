@@ -217,5 +217,7 @@ namespace Wfa.Models.Enums
         TranslateTip,
         Market,
         Community,
+        CommunityDatabaseAutoUpdate,
+        CommunityDatabaseAutoUpdateDescription,
     }
 }

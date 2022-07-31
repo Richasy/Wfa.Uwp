@@ -25,6 +25,7 @@ namespace Wfa.Provider
     {
         private readonly LibraryDbContext _dbContext;
         private readonly IFileToolkit _fileToolkit;
+        private readonly ISettingsToolkit _settingsToolkit;
         private readonly ICommunityAdapter _communityAdapter;
         private readonly IHttpProvider _httpProvider;
 

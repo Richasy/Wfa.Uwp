@@ -29,6 +29,19 @@
                 <uwp:ExpanderExWrapper Style="{StaticResource WrapperInExpanderContentStyle}">
                     <uwp:ExpanderExWrapper.MainContent>
                         <uwp:ExpanderExDescriptor
+                            Title="{ext:Locale Name=CommunityDatabaseAutoUpdate}"
+                            Description="{ext:Locale Name=CommunityDatabaseAutoUpdateDescription}"
+                            IconVisibility="Collapsed"
+                            IsAutoHideIcon="False" />
+                    </uwp:ExpanderExWrapper.MainContent>
+                    <uwp:ExpanderExWrapper.WrapContent>
+                        <ToggleSwitch Style="{StaticResource RightAlignedCompactToggleSwitchStyle}" IsOn="{x:Bind ViewModel.IsCommunityDatabaseAutoUpdate, Mode=TwoWay}" />
+                    </uwp:ExpanderExWrapper.WrapContent>
+                </uwp:ExpanderExWrapper>
+                <uwp:ExpanderExItemSeparator />
+                <uwp:ExpanderExWrapper Style="{StaticResource WrapperInExpanderContentStyle}">
+                    <uwp:ExpanderExWrapper.MainContent>
+                        <uwp:ExpanderExDescriptor
                             Title="{ext:Locale Name=CommunityDatabase}"
                             Description="{x:Bind ViewModel.CommunityDatabaseUpdateTime, Mode=OneWay}"
                             IconVisibility="Collapsed"

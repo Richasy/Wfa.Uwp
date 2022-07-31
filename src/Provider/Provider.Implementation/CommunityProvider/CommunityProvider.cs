@@ -30,11 +30,13 @@ namespace Wfa.Provider
         public CommunityProvider(
             LibraryDbContext dbContext,
             IFileToolkit fileToolkit,
+            ISettingsToolkit settingsToolkit,
             ICommunityAdapter communityAdapter,
             IHttpProvider httpProvider)
         {
             _dbContext = dbContext;
             _fileToolkit = fileToolkit;
+            _settingsToolkit = settingsToolkit;
             _communityAdapter = communityAdapter;
             _httpProvider = httpProvider;
         }
@@ -64,14 +66,23 @@ namespace Wfa.Provider
         {
             var localId = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsReleaseIdKey);
             var updateTime = await _dbContext.Metas.FirstOrDefaultAsync(p => p.Name == AppConstants.WarframeItemsUpdateTimeKey);
+            var isAutoUpdate = _settingsToolkit.ReadLocalSetting(SettingNames.IsCommunityDatabaseAutoUpdate, false);
 
             var time = updateTime == null
                 ? DateTimeOffset.MinValue
                 : DateTimeOffset.FromUnixTimeSeconds(Convert.ToInt64(updateTime.Value));
-            var cloudId = await GetWarframeItemsLatestReleaseIdAsync();
-            var isToday = time.Date.Equals(DateTimeOffset.Now.Date) && !ignoreDate;
-            var needUpdate = string.IsNullOrEmpty(localId?.Value) || (cloudId != localId.Value && !isToday);
-            return new CommunityUpdateCheckResult(needUpdate, cloudId);
+
+            if (time != DateTimeOffset.MinValue && !isAutoUpdate)
+            {
+                return new CommunityUpdateCheckResult(false, string.Empty);
+            }
+            else
+            {
+                var cloudId = await GetWarframeItemsLatestReleaseIdAsync();
+                var isToday = time.Date.Equals(DateTimeOffset.Now.Date) && !ignoreDate;
+                var needUpdate = string.IsNullOrEmpty(localId?.Value) || (cloudId != localId.Value && !isToday);
+                return new CommunityUpdateCheckResult(needUpdate, cloudId);
+            }
         }
 
         /// <inheritdoc/>

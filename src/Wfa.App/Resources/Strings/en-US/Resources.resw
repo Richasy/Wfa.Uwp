@@ -231,6 +231,12 @@
   <data name="CommunityDatabase" xml:space="preserve">
     <value>Community data</value>
   </data>
+  <data name="CommunityDatabaseAutoUpdate" xml:space="preserve">
+    <value>Auto update library</value>
+  </data>
+  <data name="CommunityDatabaseAutoUpdateDescription" xml:space="preserve">
+    <value>App will compare the version of the local data with the WFCD data once a day, and update if have news</value>
+  </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm</value>
   </data>
