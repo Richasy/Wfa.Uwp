@@ -35,7 +35,7 @@
                                     ToolTipService.ToolTip="{x:Bind Name}" />
                                 <StackPanel
                                     Grid.Column="1"
-                                    HorizontalAlignment="Right"
+                                    HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
                                     Orientation="Horizontal"
                                     Spacing="8">
