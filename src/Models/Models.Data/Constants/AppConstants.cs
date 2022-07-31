@@ -55,6 +55,8 @@ namespace Wfa.Models.Data.Constants
             public const string DamageDescending = "damage_desc";
             public const string PositiveAscending = "positive_asc";
             public const string PositiveDescending = "positive_desc";
+            public const string ModRankAscending = "modrank_asc";
+            public const string ModRankDescending = "modrank_desc";
 
             public const string InGame = "ingame";
             public const string Online = "online";

@@ -91,13 +91,37 @@
                         Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
                         Symbol="Platinum" />
                 </StackPanel>
-                <app:IconTextBlock
+                <StackPanel
                     Grid.Column="1"
                     VerticalAlignment="Bottom"
-                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                    Symbol="Box16"
-                    Text="{x:Bind ViewModel.Data.Quantity, Mode=OneWay}"
-                    ToolTipService.ToolTip="{ext:Locale Name=Count}" />
+                    Orientation="Horizontal">
+                    <app:IconTextBlock
+                        VerticalAlignment="Bottom"
+                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                        Symbol="Box16"
+                        Text="{x:Bind ViewModel.Data.Quantity, Mode=OneWay}"
+                        ToolTipService.ToolTip="{ext:Locale Name=Count}" />
+                    <Border
+                        MinWidth="20"
+                        MinHeight="20"
+                        Margin="8,0,0,-2"
+                        VerticalAlignment="Bottom"
+                        BorderBrush="{ThemeResource AccentFillColorDefaultBrush}"
+                        BorderThickness="2"
+                        CornerRadius="10"
+                        ToolTipService.ToolTip="{ext:Locale Name=ModRank}"
+                        Visibility="{x:Bind ViewModel.IsMod, Mode=OneWay}">
+                        <TextBlock
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="10"
+                            FontWeight="Bold"
+                            Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"
+                            Text="{x:Bind ViewModel.Data.ModRank, Mode=OneWay}"
+                            TextLineBounds="Tight" />
+                    </Border>
+                </StackPanel>
+
                 <Button
                     x:Name="CopyMessageButton"
                     Grid.Column="2"
