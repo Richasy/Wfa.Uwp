@@ -475,6 +475,15 @@
   <data name="Modifier" xml:space="preserve">
     <value>強化類型</value>
   </data>
+  <data name="ModRank" xml:space="preserve">
+    <value>Mod等級</value>
+  </data>
+  <data name="ModRankAscending" xml:space="preserve">
+    <value>Mod等級升序</value>
+  </data>
+  <data name="ModRankDescending" xml:space="preserve">
+    <value>Mod等級降序</value>
+  </data>
   <data name="NeverUpdate" xml:space="preserve">
     <value>數據尚未更新</value>
   </data>

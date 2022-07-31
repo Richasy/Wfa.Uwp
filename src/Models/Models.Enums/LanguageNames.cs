@@ -219,5 +219,8 @@ namespace Wfa.Models.Enums
         Community,
         CommunityDatabaseAutoUpdate,
         CommunityDatabaseAutoUpdateDescription,
+        ModRankAscending,
+        ModRankDescending,
+        ModRank,
     }
 }

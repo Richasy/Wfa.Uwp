@@ -80,11 +80,30 @@ namespace Wfa.ViewModel
         {
             TryClear(Orders);
             _orders = (await _marketProvider.GetItemOrdersAsync(Item.Identifier)).ToList();
+
+            if ((_orders?.Any() ?? false) && _orders.First().ModRank != null)
+            {
+                // 这是Mod订单列表.
+                AddFilter(SortTypeCollection, ModRankAscending, LanguageNames.ModRankAscending);
+                AddFilter(SortTypeCollection, ModRankDescending, LanguageNames.ModRankDescending);
+            }
+
             Filter();
         }
 
         private void Deactive()
         {
+            if (SortTypeCollection.Count > 4)
+            {
+                RemoveFilter(SortTypeCollection, ModRankAscending);
+                RemoveFilter(SortTypeCollection, ModRankDescending);
+            }
+
+            if (CurrentSortType == null || !SortTypeCollection.Contains(CurrentSortType))
+            {
+                CurrentSortType = SortTypeCollection.FirstOrDefault();
+            }
+
             TryClear(Orders);
         }
 
@@ -107,6 +126,11 @@ namespace Wfa.ViewModel
             var orders = _orders.Where(p => p.OrderType == orderType)
                                 .Where(p => p.User.Status == CurrentUserStatus.Key);
 
+            if (CurrentSortType == null)
+            {
+                CurrentSortType = SortTypeCollection.FirstOrDefault();
+            }
+
             if (CurrentSortType.Key == PriceAscending)
             {
                 orders = orders.OrderBy(p => p.Platinum);
@@ -123,6 +147,14 @@ namespace Wfa.ViewModel
             {
                 orders = orders.OrderByDescending(p => p.Quantity);
             }
+            else if (CurrentSortType.Key == ModRankAscending)
+            {
+                orders = orders.OrderBy(p => p.ModRank);
+            }
+            else if (CurrentSortType.Key == ModRankDescending)
+            {
+                orders = orders.OrderByDescending(p => p.ModRank);
+            }
 
             orders.ToList().ForEach(p => Orders.Add(new ItemOrderViewModel(p, Item)));
             IsEmpty = Orders.Count == 0;
@@ -130,6 +162,9 @@ namespace Wfa.ViewModel
 
         private void AddFilter(ObservableCollection<KeyValue> collection, string key, LanguageNames value)
             => collection.Add(new KeyValue(key, _resourceToolkit.GetLocaleString(value)));
+
+        private void RemoveFilter(ObservableCollection<KeyValue> collection, string key)
+            => collection.Remove(collection.FirstOrDefault(p => p.Key == key));
 
         private async Task OpenWarframeMarketAsync()
             => await Launcher.LaunchUriAsync(new Uri($"https://warframe.market/items/{Item.Identifier}"));

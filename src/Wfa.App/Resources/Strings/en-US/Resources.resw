@@ -475,6 +475,15 @@ Want to offer some advice?</value>
   <data name="Modifier" xml:space="preserve">
     <value>Modifier</value>
   </data>
+  <data name="ModRank" xml:space="preserve">
+    <value>Mod rank</value>
+  </data>
+  <data name="ModRankAscending" xml:space="preserve">
+    <value>Mod rank ascending</value>
+  </data>
+  <data name="ModRankDescending" xml:space="preserve">
+    <value>Mod rank descending</value>
+  </data>
   <data name="NeverUpdate" xml:space="preserve">
     <value>Data has not been updated</value>
   </data>

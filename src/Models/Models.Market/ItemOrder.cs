@@ -70,6 +70,12 @@ namespace Wfa.Models.Market
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "id", Required = Required.Default)]
         public string Id { get; set; }
 
+        /// <summary>
+        /// Mod 等级.
+        /// </summary>
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore, PropertyName = "mod_rank", Required = Required.Default)]
+        public int? ModRank { get; set; }
+
         /// <inheritdoc/>
         public override bool Equals(object obj) => obj is ItemOrder order && Id == order.Id;
 

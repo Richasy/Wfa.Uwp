@@ -74,6 +74,12 @@ namespace Wfa.ViewModel.MarketItems
         [Reactive]
         public string Message { get; set; }
 
+        /// <summary>
+        /// 是否为 Mod.
+        /// </summary>
+        [Reactive]
+        public bool IsMod { get; set; }
+
         /// <inheritdoc/>
         public override bool Equals(object obj) => obj is ItemOrderViewModel model && EqualityComparer<ItemOrder>.Default.Equals(Data, model.Data);
 
@@ -95,6 +101,7 @@ namespace Wfa.ViewModel.MarketItems
                 ? "WTS"
                 : "WTB";
             IsSell = order.OrderType == "sell";
+            IsMod = order.ModRank != null;
 
             var sp = _targetItem.Identifier.Split("_").ToList();
             for (var i = 0; i < sp.Count; i++)
