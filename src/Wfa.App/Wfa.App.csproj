@@ -232,8 +232,6 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\boss_Nef_Anyo.png" />
-    <Content Include="Assets\boss_Tyl_Regor.png" />
     <Content Include="Assets\Logo\LargeTile.scale-100.png" />
     <Content Include="Assets\Logo\LargeTile.scale-125.png" />
     <Content Include="Assets\Logo\LargeTile.scale-150.png" />
