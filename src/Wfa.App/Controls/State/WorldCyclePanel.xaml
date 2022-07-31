@@ -45,12 +45,21 @@
                                 VerticalAlignment="Bottom"
                                 FontSize="60"
                                 Foreground="{ThemeResource CardBackgroundFillColorDefaultBrush}"
-                                Symbol="{x:Bind FactionSymbol, Mode=OneWay}" />
+                                Symbol="{x:Bind FactionSymbol, Mode=OneWay}"
+                                Visibility="{x:Bind IconIsImage, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
                             <app:CommonImageEx
                                 Width="60"
                                 HorizontalAlignment="Center"
                                 DecodePixelWidth="120"
-                                ImageUrl="{x:Bind StatusIcon, Mode=OneWay}" />
+                                ImageUrl="{x:Bind StatusIcon, Mode=OneWay}"
+                                Visibility="{x:Bind IconIsImage, Mode=OneWay, Converter={StaticResource BoolToVisibilityReverseConverter}}" />
+                            <app:WfaIcon
+                                HorizontalAlignment="Center"
+                                FontSize="60"
+                                Height="60"
+                                Foreground="{x:Bind FactionSymbol, Mode=OneWay, Converter={StaticResource FactionColorConverter}}"
+                                Symbol="{x:Bind FactionSymbol, Mode=OneWay}"
+                                Visibility="{x:Bind IconIsImage, Mode=OneWay}" />
                             <TextBlock
                                 Grid.Row="1"
                                 HorizontalAlignment="Center"

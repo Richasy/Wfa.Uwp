@@ -73,6 +73,12 @@ namespace Wfa.ViewModel.StateItems
         public string Countdown { get; set; }
 
         /// <summary>
+        /// 是否将图标作为状态图片.
+        /// </summary>
+        [Reactive]
+        public bool IconIsImage { get; set; }
+
+        /// <summary>
         /// 源数据.
         /// </summary>
         public object Data { get; set; }
@@ -103,6 +109,7 @@ namespace Wfa.ViewModel.StateItems
             }
             else if (data is ZarimanStatus zariman)
             {
+                IconIsImage = true;
                 LoadDataFromZariman(zariman);
             }
         }
@@ -173,11 +180,10 @@ namespace Wfa.ViewModel.StateItems
         private void LoadDataFromZariman(ZarimanStatus zariman)
         {
             Name = _resourceToolkit.GetLocaleString(LanguageNames.Zariman);
-            FactionSymbol = WfaSymbol.Orokin;
+            FactionSymbol = zariman.IsCorpus
+                ? WfaSymbol.Corpus
+                : WfaSymbol.Grineer;
             Status = zariman.State.ToUpper();
-            StatusIcon = zariman.IsCorpus
-                ? "ms-appx:///Assets/boss_Nef_Anyo.png"
-                : "ms-appx:///Assets/boss_Tyl_Regor.png";
             UpdateCountdown();
         }
     }
