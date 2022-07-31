@@ -50,7 +50,8 @@
                             FontSize="20"
                             FontWeight="Bold"
                             Text="{x:Bind ViewModel.BossName, Mode=OneWay}"
-                            TextTrimming="CharacterEllipsis" />
+                            TextTrimming="CharacterEllipsis"
+                            ToolTipService.ToolTip="{x:Bind ViewModel.BossName, Mode=OneWay}" />
                         <StackPanel
                             Grid.Row="1"
                             HorizontalAlignment="Left"
