@@ -1,4 +1,15 @@
-﻿Parallax,"""星察"""
+﻿Ven'kra Tel,"""文克拉·泰尔"""
+Sprag,"""斯普拉"""
+Gaze (Secondary),"""凝目（次要）"""
+Rattleguts (Secondary),"""响胆（次要）"""
+Tombfinger (Secondary),"""墓指（次要）"""
+Vermisplicer (Secondary),"""虫置（次要）"""
+Sporelacer (Secondary),"""孢射（次要）"""
+Catchmoon (Secondary),"""捕月（次要）"""
+Nightwatch Carrier,"""夜巡搬运者"""
+Critical Precision,"""致命精准"""
+Vile Discharge,"""邪恶释放"""
+Parallax,"""星察"""
 Vericres,"""真月武扇"""
 Gaze (Primary),"""凝目（主要）"""
 Rattleguts (Primary),"""响胆（主要）"""
@@ -313,29 +324,28 @@ Kuva Nukor,"""赤毒努寇微波枪"""
 Kuva Hind,"""赤毒雌鹿"""
 Kuva Bramma,"""赤毒布拉玛"""
 RUSE WAR FIELD,"""RUSE战场"""
-GIAN POINT,"""GIAN点"""
 NSU GRID,"""NSU区格"""
 GANALEN'S GRAVE,"""GANALEN之墓"""
 H-2 CLOUD,"""H-2星云"""
 R-9 CLOUD,"""R-9星云"""
-SOVER STRAIT,"""SOVER峡道"""
+SOVER STRAIT,"""深眠峡道"""
 POSIT CLUSTER,"""POSIT星团"""
 MINHAST STATION,"""MINHAST站点"""
 PHANGHOUL SATELLITES,"""PHANGHOUL卫星"""
 IOTA TEMPLE,"""IOTA神殿"""
 JEX LANES,"""JEX之道"""
-OGAL CLUSTER,"""OGAL星团"""
+OGAL CLUSTER,"""奥加尔星团"""
 KORMS BELT,"""KORMS地带"""
 RIAN BELT,"""RIAN地带"""
 BENDAR CLUSTER,"""BENDAR星团"""
 FREE FLIGHT,"""自由航行"""
 MORDO CLUSTER,"""MORDO星团"""
-KASIO'S REST,"""KASIO安息处"""
+KASIO'S REST,"""卡希欧安息处"""
 VILA GAP,"""VILA间隙"""
 SPIRO GAP,"""SPIRO间隙"""
-NODO GAP,"""NODO间隙"""
-LUPAL PASS,"""LUPAL通道"""
-VAND CLUSTER,"""VAND星团"""
+NODO GAP,"""诺朵星峡"""
+LUPAL PASS,"""卢帕星道"""
+VAND CLUSTER,"""水域星团"""
 Anomaly Shard,"""异常碎片"""
 Masseter,"""咀嚼金棒"""
 Symbilyst,"""共生使"""
@@ -818,7 +828,7 @@ Psychic Bolts,"""精神飞刃"""
 Pull,"""吸引"""
 Radial Blind,"""致盲"""
 Radial Disarm,"""解除武装"""
-Radial Javelin,"""标枪"""
+Radial Javelin,"""广域标枪"""
 Renewal,"""疗愈脉动"""
 Reckoning,"""惩戒清算"""
 Rest & Rage,"""暂息-怒气"""
@@ -1039,7 +1049,7 @@ Arid Hellion,"""沙漠恶徒"""
 Drekar Hellion,"""龙舰恶徒"""
 Hellion Dargyn,"""恶徒轻型艇"""
 Hyena Pack,"""鬣狗群"""
-Infested Tumor,"""Infested肿瘤"""
+Infested Tumor,"""感染肿瘤"""
 Jackal,"""豺狼"""
 Jordas Golem,"""Jordas魔像"""
 Juggernaut,"""巨兽"""
@@ -1587,7 +1597,7 @@ Jet Stream,"""急流"""
 Soul Survivor,"""幸存生灵"""
 Spare Parts,"""残余"""
 Spoiled Strike,"""腐坏打击"""
-Speed Holster,"""快速切换"""
+Speed Holster,"""切换增幅"""
 Speed Trigger,"""灵敏扳机"""
 Split Chamber,"""分裂膛室"""
 Sprint Boost,"""冲刺提升"""
@@ -2624,7 +2634,6 @@ Collar Blueprint,"""项圈蓝图"""
 Collar Band,"""项圈带"""
 Collar Buckle,"""项圈扣"""
 Hellion Power Carrier,"""核心搬运恶徒"""
-Mutalist Osprey Carrier,"""异融能量运送者"""
 Operation Sling-Stone,"""行动代号：机弦"""
 Rubico,"""绝路"""
 Radiation,"""辐射"""
@@ -2813,7 +2822,7 @@ Glyph Prism,"""浮印光谱"""
 Glyph,"""浮印"""
 Weapon Cosmetics,"""武器外观"""
 Daman Sugatra,"""达曼坠饰"""
-Mutalist Carrier Osprey,"""异融运输者鱼鹰"""
+Mutalist Osprey Carrier,"""异融运输者鱼鹰"""
 Arcane Distiller,"""赋能萃聚器"""
 Riven Disposition,"""裂罅倾向性"""
 Javlok,"""燃焰标枪"""
@@ -2823,7 +2832,7 @@ Larva,"""幼体"""
 Parasitic Link,"""寄生链接"""
 Ravenous,"""贪婪"""
 Hema,"""血肢"""
-Hirudo,"""蚂蝗"""
+Hirudo,"""蚂蟥"""
 Thorac Syandana,"""胸廓披饰"""
 Infested Salvage,"""Infested资源回收"""
 Tether Grenades,"""系绳榴弹"""
@@ -3010,7 +3019,6 @@ Voltage Sequence,"""电压数列"""
 Magnetized Discharge,"""磁吸释放"""
 Blitz,"""闪击"""
 Parasitic,"""寄生"""
-Energy Leech,"""能量吸取"""
 Caustic,"""腐蚀"""
 Leech,"""吸血"""
 Sanguine,"""血红"""
@@ -3106,7 +3114,7 @@ Halls of Ascension,"""月球密室"""
 jordas,"""jordas"""
 Affinity Range,"""经验范围"""
 Ability Strength,"""技能强度"""
-Ability Duration,"""技能持续时间"""
+Ability Duration,"""技能持续"""
 Ability Range,"""技能范围"""
 Ability Efficiency,"""技能效率"""
 Nox,"""毒化者"""
@@ -5198,7 +5206,7 @@ Exa Brain,"""艾脑"""
 Anoscopic Sensor,"""微孔视觉感应器"""
 Parallel Biode,"""并联生物二极体"""
 Dissipator Coil,"""消散线圈"""
-Muon Battery,"""缪子电池"""
+Muon Battery,"""缈子电池"""
 Thermal Laser,"""热能激光"""
 Venedo Case,"""维内多箱"""
 Neural Relay,"""神经中继器"""
@@ -5675,6 +5683,7 @@ Kuva Brakk,"""赤毒布拉克"""
 Kuva Chakkhurr,"""赤毒邪眼"""
 Kuva Shildeg,"""赤毒希尔德"""
 Kuva Ayanga,"""赤毒怒雷"""
+Kuva Ayanga(Atmosphere),"""赤毒怒雷（大气层内）"""
 Requiem Mods,"""安魂MOD"""
 Requiem Relics,"""安魂遗物"""
 Riven Sliver,"""裂罅碎块"""
@@ -7227,7 +7236,7 @@ Mirewinder Parallel Biode,"""污泥环绕者并联生物二极体"""
 Recaster Neural Relay,"""续播机神经中继器"""
 Scrubber Exa Brain,"""洗涤者艾脑"""
 Eye-Eye Rotoblade,"""目-目旋叶片"""
-Brickie Muon Battery,"""砖瓦匠缪子电池"""
+Brickie Muon Battery,"""砖瓦匠缈子电池"""
 Auto-Spool,"""全自动（预热）"""
 Kavasa Prime Kubrow Collar,"""喀婆萨Prime项圈"""
 Solar Rail Junction,"""星际航道接合点"""
@@ -7542,733 +7551,41 @@ Prime Neuroptics,"""头部神经光元"""
 Prime Carapace,"""外壳"""
 Prime Chassis,"""机体"""
 Prime Systems,"""系统"""
+Peculiar Audience,"""观众怪奇"""
+Archon Shard,"""执刑官源力石"""
+Soaker Ephemera,"""浸透幻纹"""
+Raptwing Ephemera,"""狂翼幻纹"""
+Seraphayre Ephemera,"""六翼天使幻纹"""
+Frost Ion Skin,"""Frost离子外观"""
+Azure Archon Shard,"""蔚蓝执刑官源力石"""
+Crimson Archon Shard,"""深红执刑官源力石"""
+Amber Archon Shard,"""琥珀执刑官源力石"""
+Veilbreaker,"""破障者"""
+Axios Javelin,"""崇敬标枪"""
+Tharros Strike,"""豪勇之击"""
+Rally Point,"""集结点"""
+Final Stand,"""终极之战"""
+Shotgun Barrage,"""霰弹弹幕"""
+Amalgam Shotgun Barrage,"""并合霰弹弹幕"""
+Archon Vitality,"""执刑官生命力"""
+Archon Flow,"""执刑官川流不息"""
+Archon Stretch,"""执刑官延伸"""
+Archon Intensify,"""执刑官聚精会神"""
+Archon Continuity,"""执刑官持久力"""
+Kahl-175,"""卡尔-175"""
+Kahl's Garrison,"""卡尔驻军"""
+Rogg-417,"""罗格-417"""
+Slaytra,"""屠煞"""
+Aegrit,"""骇敌榴弹"""
+Tauforged Azure Archon Shard,"""蔚蓝执刑官TAU融造源力石"""
+Tauforged Amber Archon Shard,"""琥珀执刑官TAU融造源力石"""
+Tauforged Crimson Archon Shard,"""深红执刑官TAU融造源力石"""
+Drifter's Camp,"""漂泊者营地"""
+Afentis,"""圣英"""
+Archon Hunt,"""执刑官猎杀"""
+Holster Amp,"""切换增幅"""
+Stock (Kahl),"""存货储备"""
+Phantasma Prime,"""幻离子Prime"""
+Tatsu Prime,"""龙辰Prime"""
+Skaut,"""伺航"""
 Category,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
-,
